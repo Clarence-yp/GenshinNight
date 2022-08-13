@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: d58dffce91b104b409c84ce458c632df
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Novecento wide
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d3f98739240ae6b4fae3df4fc44e9ce4, type: 3}
+  - {fileID: 12800000, guid: 427bd9f1612af4b43b1c6cda26648c08, type: 3}
+  - {fileID: 12800000, guid: 1489c6ba095d5754285f717d8834c117, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

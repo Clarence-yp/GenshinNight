@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2c60633f-8e57-426f-98ee-a17bf149105b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/拖动/DragSlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/register/mapRegister.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/EnemyWaveController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/poolElement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/UISprite/SpriteElement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/gameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/素材/地图方块/门/redDoorButtonController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/operDataEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/基础战斗/动画函数/OperAnimEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/UI辅助/gradualChange.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/InitManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIFunc.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/静态函数/Interpreter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/testController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/基础战斗/索敌范围/SearchAndGive.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIElements.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/register/blueDoorRegister.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/EnemyCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/plugins/Spine/spine-unity/Modules/SkeletonRenderSeparator/SkeletonPartsRenderer.cs" />
+      <option value="$PROJECT_DIR$/Assets/plugins/Spine/spine-unity/Modules/SkeletonRenderSeparator/SkeletonRenderSeparator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton-Tint.shader" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/OperatorCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/BattleCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton-Tint_back.shader" />
+      <option value="$PROJECT_DIR$/Assets/Spine/Runtime/spine-unity/Shaders/SkeletonTint.shader" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/索敌范围/SearchAndGiveCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/动画函数/OperAnimEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/地图方块/mapRegister.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/gameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/InitRegister.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/register/cameraRegister.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/静态函数/Interpreter.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/register/mapRegister.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/register/blueDoorRegister.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/UI辅助/gradualChange.cs" />
+      <option value="$PROJECT_DIR$/Assets/素材/地图方块/门/redDoorUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/EnemyWaveController.cs" />
+      <option value="$PROJECT_DIR$/Assets/素材/地图方块/门/redDoorButtonController.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/拖动/OperDrag.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/EnemyCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/静态函数/BaseFunc.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/索敌范围/SearchAndGive.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/poolElement.cs" />
+      <option value="$PROJECT_DIR$/Assets/预制体/DragSlot/dirDrag.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/testController.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/InitManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/MainCanvasElements.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/MainCanvasElements.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/拖动/DragSlot.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIFunc.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIElements.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/operDataEnum.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/ElementCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/UISprite/SpriteElement.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/scriOb/operData.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/BattleCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/OperatorCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIManager.cs" />
+    </changedPaths>
+  </component>
+  <component name="ProjectId" id="2CLJ4eYzcxbZZMpkEZvMiXfmI5c" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c60633f-8e57-426f-98ee-a17bf149105b" name="Default Changelist" comment="" />
+      <created>1658575744631</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658575744631</updated>
+      <workItem from="1658575751265" duration="8345000" />
+      <workItem from="1658625469630" duration="11308000" />
+      <workItem from="1658712233276" duration="16746000" />
+      <workItem from="1658814248822" duration="17786000" />
+      <workItem from="1658885476846" duration="11650000" />
+      <workItem from="1659010853104" duration="4620000" />
+      <workItem from="1659020854786" duration="4079000" />
+      <workItem from="1659056141752" duration="13568000" />
+      <workItem from="1659148761548" duration="8361000" />
+      <workItem from="1659246747328" duration="9865000" />
+      <workItem from="1659316809886" duration="4819000" />
+      <workItem from="1659802623022" duration="739000" />
+      <workItem from="1659840515456" duration="12444000" />
+      <workItem from="1660054016269" duration="4160000" />
+      <workItem from="1660136907745" duration="3766000" />
+      <workItem from="1660314742855" duration="3866000" />
+      <workItem from="1660359361686" duration="1295000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
