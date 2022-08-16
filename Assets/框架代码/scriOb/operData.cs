@@ -78,10 +78,22 @@ public class operData : ScriptableObject
     public float magicDef;//法抗
     public float life;//生命
     public int maxBlock;//最大阻挡数
+    public float maxAtkInterval;// 最小攻击间隔
+    
+    [Header("放置与撤退")]
     public int cost;//放置费用
     public int consumPlace;//消耗可放置人数
     public float reTime;//再部署时间
+    
+    [Header("各精英阶段的最大等级")]
     public int[] maxLevel = new int[3];//各精英阶段的最大等级
+
+    [Header("元素属性")] 
+    public float elementalMastery;
+    public float elementalDamage;
+    public float elementalResistance;
+    public float spRecharge;
+    
     
     [Header("干员特性")] 
     [TextArea] 

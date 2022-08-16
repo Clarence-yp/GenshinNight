@@ -61,11 +61,11 @@ public class EnemyCore : ElementCore
 
     private void InitCalculation()
     {
-        battleCalculation.atk_.ChangeBaseValue(ei_.atk);
-        battleCalculation.def_.ChangeBaseValue(ei_.def);
-        battleCalculation.magicDef_.ChangeBaseValue(ei_.magicDef);
-        battleCalculation.life_.ChangeBaseValue(ei_.life);
-        battleCalculation.maxBlock = ei_.consumeBlock;
+        fightCalculation.atk_.ChangeBaseValue(ei_.atk);
+        fightCalculation.def_.ChangeBaseValue(ei_.def);
+        fightCalculation.magicDef_.ChangeBaseValue(ei_.magicDef);
+        fightCalculation.life_.ChangeBaseValue(ei_.life);
+        fightCalculation.maxBlock = ei_.consumeBlock;
     }
 
     private void Move()
@@ -175,20 +175,20 @@ public class EnemyCore : ElementCore
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("operator") && !other.CompareTag("box")) return;
-        BattleCore battleCore = other.GetComponent<BattleCore>();
-        battleCore.battleCore_DieAction += DelBattleCore_EnemyBlock;
-        blockList.Add(battleCore);
+        ElementCore elementCore = other.GetComponent<ElementCore>();
+        elementCore.public_DieAction += DelBattleCore_EnemyBlock;
+        blockList.Add(elementCore);
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("operator") && !other.CompareTag("box")) return;
-        BattleCore battleCore = other.GetComponent<BattleCore>();
-        battleCore.battleCore_DieAction -= DelBattleCore_EnemyBlock;
-        DelBattleCore_EnemyBlock(battleCore);
+        ElementCore elementCore = other.GetComponent<ElementCore>();
+        elementCore.public_DieAction -= DelBattleCore_EnemyBlock;
+        DelBattleCore_EnemyBlock(elementCore);
     }
     
-    private void DelBattleCore_EnemyBlock(BattleCore bc_)
+    private void DelBattleCore_EnemyBlock(ElementCore bc_)
     {
         blockList.Remove(bc_);
     }

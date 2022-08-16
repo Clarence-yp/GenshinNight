@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using Spine;
+using UnityEditor;
 using UnityEngine;
 
 public class OperatorCore : ElementCore
@@ -14,6 +15,8 @@ public class OperatorCore : ElementCore
     [HideInInspector] public int eliteLevel;    // 干员精英化等级
     [HideInInspector] public int operID;        // 在InitManager的offOperList里的编号
     [HideInInspector] public int skillNum;      // 该干员选择的技能编号
+
+    public bool prePutOn;           // 一开始就在场上的
     
     // spine动画相关
     [HideInInspector] public GameObject animObject;
@@ -22,8 +25,7 @@ public class OperatorCore : ElementCore
 
     // atkRange相关
     public SearchAndGive atkRange;      // 当前atkRange的脚本
-    public AtkRangeShowController atkRangeShowController;
-    
+
     private Action defaultTurn;         // 干员朝默认方向旋转的函数
     
     // 阻挡相关
@@ -35,9 +37,14 @@ public class OperatorCore : ElementCore
         animObject = transform.Find("anim").gameObject;
         anim = animObject.GetComponent<Animator>();
         ac_ = new SpineAnimController(anim, 0.3f);
-        atkRangeShowController = new AtkRangeShowController(this);
         
-        
+        // 这里是注册所有干员atkRange信息
+        foreach (var atkRange in od_.atkRange)
+        {
+            GameObject tmp = Instantiate(atkRange);
+            Destroy(tmp);
+        }
+
         InitCalculation();      // 初始化battleCalculation
         ChangeAtkRange();       // 生成atkRange
     }
@@ -45,8 +52,11 @@ public class OperatorCore : ElementCore
     protected override void Start_ElementCore_Down()
     {
         OperInit();
-        
+
         Start_OperatorCore_Down();
+
+        if (prePutOn) return;
+        gameObject.SetActive(false);
     }
 
     protected virtual void Start_OperatorCore_Down() {}
@@ -73,17 +83,20 @@ public class OperatorCore : ElementCore
         // 让Anim开始播放动画
         anim.SetBool("start", true);
 
-        // 初始化当前阻挡数
-        block = battleCalculation.maxBlock;
     }
 
     private void InitCalculation()
     {
-        battleCalculation.atk_.ChangeBaseValue(od_.atk);
-        battleCalculation.def_.ChangeBaseValue(od_.def);
-        battleCalculation.magicDef_.ChangeBaseValue(od_.magicDef);
-        battleCalculation.life_.ChangeBaseValue(od_.life);
-        battleCalculation.maxBlock = od_.maxBlock;
+        fightCalculation.atk_.ChangeBaseValue(od_.atk);
+        fightCalculation.def_.ChangeBaseValue(od_.def);
+        fightCalculation.magicDef_.ChangeBaseValue(od_.magicDef);
+        fightCalculation.life_.InitBaseLife(od_.life);
+        fightCalculation.maxBlock = od_.maxBlock;
+
+        fightCalculation.mastery.ChangeBaseValue(od_.elementalMastery);
+        fightCalculation.elementDamage.ChangeBaseValue(od_.elementalDamage);
+        fightCalculation.elementResistance.ChangeBaseValue(od_.elementalResistance);
+        fightCalculation.spRecharge.ChangeBaseValue(od_.spRecharge);
     }
 
     
@@ -114,27 +127,27 @@ public class OperatorCore : ElementCore
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("enemy")) return;
-        BattleCore battleCore = other.GetComponent<BattleCore>();
-        blockList.Add(battleCore);
-        battleCore.battleCore_DieAction += DelBattleCore_OperBlock;
+        ElementCore elementCore = other.GetComponent<ElementCore>();
+        blockList.Add(elementCore);
+        elementCore.public_DieAction += DelBattleCore_OperBlock;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("enemy")) return;
-        BattleCore battleCore = other.GetComponent<BattleCore>();
-        battleCore.battleCore_DieAction -= DelBattleCore_OperBlock;
-        DelBattleCore_OperBlock(battleCore);
+        ElementCore elementCore = other.GetComponent<ElementCore>();
+        elementCore.public_DieAction -= DelBattleCore_OperBlock;
+        DelBattleCore_OperBlock(elementCore);
     }
 
     // 敌人死亡时，处理block相关的回调函数
-    private void DelBattleCore_OperBlock(BattleCore bc_)
+    private void DelBattleCore_OperBlock(ElementCore bc_)
     {
         blockList.Remove(bc_);
         EnemyCore ec_ = (EnemyCore)bc_;
         if (alreadyBlockSet.ContainsKey(ec_) && alreadyBlockSet[ec_])
         {
-            block += ec_.battleCalculation.maxBlock;
+            block += ec_.fightCalculation.maxBlock;
             alreadyBlockSet[ec_] = false;
             ec_.UnBlocked();
         }
@@ -147,10 +160,10 @@ public class OperatorCore : ElementCore
             EnemyCore ec_ = (EnemyCore)i;
             if (alreadyBlockSet.ContainsKey(ec_) && alreadyBlockSet[ec_]) continue;
             
-            if (ec_.battleCalculation.maxBlock <= block)
+            if (ec_.fightCalculation.maxBlock <= block)
             {
                 ec_.BeBlocked();
-                block -= ec_.battleCalculation.maxBlock;
+                block -= ec_.fightCalculation.maxBlock;
                 alreadyBlockSet[ec_] = true;
             }
         }
@@ -158,31 +171,41 @@ public class OperatorCore : ElementCore
 
     
     /// <summary>
-    /// 摧毁旧的atkRange，根据目前的精英化等级生成一个新的atkRange
+    /// 摧毁旧的atkRange，生成一个新的atkRange，同时更新block的值
     /// </summary>
-    public void ChangeAtkRange()
+    public void ChangeAtkRange(GameObject NewRange)
     {
         // 记录当前的rotation，更换后保持不变
         Quaternion rol;
         rol = Quaternion.Euler(0, 0, 0);
         if (atkRange != null) rol = atkRange.transform.rotation;
-        
-        foreach (var i in operatorList)
+
+        while (operatorList.Count > 0)
         {
-            atkRange.pretendExit(i.gameObject);
+            atkRange.pretendExit(operatorList[0].gameObject);
         }
-        foreach (var i in enemyList)
+        while (enemyList.Count > 0)
         {
-            atkRange.pretendExit(i.gameObject);
+            atkRange.pretendExit(enemyList[0].gameObject);
         }
 
         if (atkRange != null) Destroy(atkRange.gameObject);
-        
-        GameObject newRange = Instantiate(od_.atkRange[eliteLevel]
-            , transform, true);
+
+        GameObject newRange = Instantiate(NewRange, transform, true);
         newRange.transform.localPosition=Vector3.zero;
         newRange.transform.rotation = rol;
         atkRange = newRange.GetComponent<SearchAndGive>();
+        
+        // 初始化当前阻挡数
+        block = fightCalculation.maxBlock;
+    }
+    
+    /// <summary>
+    /// 生成当前精英化等级的atkRange
+    /// </summary>
+    public void ChangeAtkRange()
+    {
+        ChangeAtkRange(od_.atkRange[eliteLevel]);
     }
     
     /// <summary>
@@ -209,8 +232,8 @@ public class OperatorCore : ElementCore
     /// </summary>
     public virtual void OnAttack()
     {
-        battleCalculation.Atk();
-        battleCalculation.Battle(this, target, 1, DamageMode.Physical);
+        fightCalculation.NorAtkStartCool();
+        fightCalculation.Fight(this, target, 1, DamageMode.Physical);
     }
     
     public virtual void Skill1() { }
@@ -343,69 +366,4 @@ public class SpineAnimController
     
 }
 
-public class AtkRangeShowController
-{
-    private List<GameObject> showingRangeImage = new List<GameObject>();
-    private OperatorCore oc_;
 
-    public AtkRangeShowController(OperatorCore ooc)
-    {
-        oc_ = ooc;
-    }
-    
-    
-    /// <summary>
-    /// 在世界方块上展示攻击范围
-    /// </summary>
-    public void ShowAtkRange()
-    {
-        float rol_y = oc_.atkRange.transform.rotation.eulerAngles.y;
-        foreach (var detaPos in oc_.atkRange.RangePos)
-        {
-            Vector3 pos = new Vector3();
-            if (rol_y == 0)
-            {
-                pos.x = detaPos.x;
-                pos.z = detaPos.y;
-            }
-            if (rol_y == 270)
-            {
-                pos.x = -detaPos.y;
-                pos.z = detaPos.x;
-            }
-            if (rol_y == 180)
-            {
-                pos.x = -detaPos.x;
-                pos.z = detaPos.y;
-            }
-            if (rol_y == 90)
-            {
-                pos.x = -detaPos.y;
-                pos.z = -detaPos.x;
-            }
-            pos += oc_.anim.transform.position;
-            pos.z -= BaseFunc.operAnimFix_z;
-
-            if (InitManager.GetMap(pos) == null) continue;
-            if (Interpreter.isHigh(InitManager.GetMap(pos).type))
-                pos.y = BaseFunc.highOper_y + 0.01f;
-            else pos.y = 0.01f;
-            
-            GameObject showing = PoolManager.GetObj(SpriteElement.atkRangeImage);
-            showing.transform.position = pos;
-            showingRangeImage.Add(showing);
-        }
-    }
-
-    /// <summary>
-    /// 销毁展示的攻击范围
-    /// </summary>
-    public void HideAtkRange()
-    {
-        foreach (var i in showingRangeImage)
-        {
-            PoolManager.RecycleObj(i);
-        }
-        showingRangeImage.Clear();
-    }
-}

@@ -7,13 +7,10 @@ public class PoolManager : MonoBehaviour
     // 对象池
     private const int maxCount = 64;
     private static Dictionary<string, List<GameObject>> pool = new Dictionary<string, List<GameObject>>();
-
+    private static Dictionary<string, GameObject> objPrt = new Dictionary<string, GameObject>();
+    
     public static void RecycleObj(GameObject obj)
     {
-        var par = Camera.main;
-        var localPos = obj.transform.localPosition;
-        obj.transform.SetParent(par.transform);
-        obj.transform.localPosition = localPos;
         obj.SetActive(false);
          
         if (pool.ContainsKey(obj.name))
@@ -31,6 +28,12 @@ public class PoolManager : MonoBehaviour
     
     public static GameObject GetObj(GameObject perfab)
     {
+        // 如果没有父物体则生成
+        if (!objPrt.ContainsKey(perfab.name))
+        {
+            objPrt.Add(perfab.name, new GameObject(perfab.name + "对象池"));
+        }
+
         // 池子中有
         GameObject result = null;
         if (pool.ContainsKey(perfab.name))
@@ -40,14 +43,16 @@ public class PoolManager : MonoBehaviour
                 result = pool[perfab.name][0];
                 result.SetActive(true);
                 pool[perfab.name].Remove(result);
+                result.transform.parent = objPrt[perfab.name].transform;
                 return result;
             }
         }
         // 池子中缺少
-        result = Instantiate(perfab);
+        result = Instantiate(perfab, null);
         result.name = perfab.name;
         RecycleObj(result);
         GetObj(result);
+        result.transform.parent = objPrt[perfab.name].transform;
         return result;
     }
     

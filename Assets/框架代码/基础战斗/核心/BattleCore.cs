@@ -5,25 +5,23 @@ using UnityEngine;
 
 public class BattleCore : MonoBehaviour
 {
-    [HideInInspector] public List<BattleCore> operatorList = new List<BattleCore>();
-    [HideInInspector] public List<BattleCore> enemyList = new List<BattleCore>();
+    [HideInInspector] public List<ElementCore> operatorList = new List<ElementCore>();
+    [HideInInspector] public List<ElementCore> enemyList = new List<ElementCore>();
     [HideInInspector] public AimingMode aimingMode;
     [HideInInspector] public float tarPriority = 0;         // 在别的BattleCore队列中排序的参照，由外部维护
     public bool dieNow = false;     //调试变量，立即杀死自身
     
     // BattleCore瞄准的目标
-    public BattleCore target { get; private set; } = null;
+    public ElementCore target { get; private set; } = null;
     public bool tarIsNull { get; private set; } = true;
 
-    public BattleCalculation battleCalculation { get; private set; } = new BattleCalculation();
-    
     // 当死亡时给外界广播回调用的函数
-    public Action<BattleCore> battleCore_DieAction;
+    public Action<ElementCore> public_DieAction;
     // 当死亡时给自身子类调用的函数，最后调用
     protected Action dieAction;
     
     // 阻挡的BattleCore列表
-    [HideInInspector] public List<BattleCore> blockList = new List<BattleCore>();
+    [HideInInspector] public List<ElementCore> blockList = new List<ElementCore>();
 
     
     private void Start()
@@ -36,29 +34,15 @@ public class BattleCore : MonoBehaviour
 
     private void Update()
     {
-        CheckDie();
+        
         ChooseTarget();
-        battleCalculation.Update();
-
-        if (dieNow)     // 测试用，后期删掉
-            battleCalculation.GetDamage(1e9f, DamageMode.Magic);
+        
         
         Update_BattleCore_Down();
     }
 
     protected virtual void Update_BattleCore_Down() {}
 
-    private void CheckDie()
-    {
-        if (battleCalculation.life_.life <= 0)
-        {
-            battleCore_DieAction?.Invoke(this);
-
-
-            dieAction?.Invoke();
-        }
-    }
-    
     protected virtual int operCmp(BattleCore a, BattleCore b)
     {
         // 给攻击范围内的干员排序，默认以priority（放置顺序）从大到小排
@@ -114,15 +98,7 @@ public class BattleCore : MonoBehaviour
     }
     
 
-    /// <summary>  
-    /// 表示该BattleCore是否可以进行普攻
-    /// </summary>
-    protected bool CanAtk()
-    {
-        bool k = true;
-        k = k & battleCalculation.CanAtk();
-        return k;
-    }
+    
 }
 
 public enum AimingMode
@@ -145,8 +121,7 @@ public class BattleCalculation
     public ValueBuffer atk_ = new ValueBuffer(0);
     public ValueBuffer def_ = new ValueBuffer(0);
     public ValueBuffer magicDef_ = new ValueBuffer(0);
-    public LifeController life_ = new LifeController(1);
-    public SPController sp_ = new SPController();
+    public LifeController life_ = new LifeController();
 
     // 进阶数据
     public float minAtkInterval = 2.5f;     // 最小攻击间隔
@@ -165,18 +140,17 @@ public class BattleCalculation
     private List<Func<float, float>> getDamFuncList = new List<Func<float, float>>();
 
 
-    public void Update()
+    public virtual void Update()
     {
         // 该函数需在其它函数的Update里调用才会生效
         atkInterval = atkInterval - Time.deltaTime <= 0 ? 0 : atkInterval - Time.deltaTime;
     }
     
     /// <summary>  
-    /// 计算该BattleCore一次输出的基础伤害
+    /// 将baseDamage过一遍BattleCore里的buff
     /// </summary>
-    public float CauseDamage()
+    protected float Bat_CauseDamage(float dam)
     {
-        float dam = atk_.val;
         dam *= causeDamInc_.val < -1 ? 0 : 1 + causeDamInc_.val;
         foreach (var damFunc in causeDamFuncList)
             dam = damFunc(dam);
@@ -185,10 +159,8 @@ public class BattleCalculation
     
     /// <summary>  
     /// 该BattleCore受到一次伤害，计算并改变life_的值
-    /// <param name="baseDamage">本次伤害的基础数值</param>
-    /// <param name="mode">本次伤害的伤害类型</param>
     /// </summary>
-    public void GetDamage(float baseDamage, DamageMode mode)
+    protected void Bat_GetDamage(float baseDamage, DamageMode mode)
     {
         float dam = baseDamage;
         dam *= getDamInc_.val < -1 ? 0 : 1 + getDamInc_.val;
@@ -202,26 +174,12 @@ public class BattleCalculation
         
         life_.GetDamage(dam);
     }
-
-    /// <summary>  
-    /// 两个BattleCore造成一次伤害，结束后更新彼此数值
-    /// </summary>
-    /// <param name="attacker">攻击方的BattleCore</param>
-    /// <param name="defender">防御方的BattleCore</param>
-    /// <param name="multi">本次攻击的倍率</param>
-    /// <param name="mode">本次攻击的DamageMode</param>
-    /// 
-    public void Battle(BattleCore attacker, BattleCore defender, float multi, DamageMode mode)
-    {
-        float dam = attacker.battleCalculation.CauseDamage();
-        dam *= multi;
-        defender.battleCalculation.GetDamage(dam, mode);
-    }
+    
 
     /// <summary>  
     /// 表示该BattleCore进行了一次普攻，开始冷却
     /// </summary>
-    public void Atk()
+    public void NorAtkStartCool()
     {
         atkInterval = minAtkInterval;
     }
@@ -277,12 +235,20 @@ public class ValueBuffer
     /// <summary>  
     /// 更改基础数值
     /// </summary>
-    /// <param name="newBaseVal">新的基础数值</param>
     public void ChangeBaseValue(float newBaseVal)
     {
         baseVal = newBaseVal;
         RefreshValue();
     }
+    
+    /// <summary>  
+    /// 增加基础数值
+    /// </summary>
+    public void AddBaseValue(float addBaseVal)
+    {
+        ChangeBaseValue(baseVal + addBaseVal);
+    }
+    
     
     /// <summary>  
     /// 加入新的数值buff
@@ -308,8 +274,9 @@ public class LifeController : ValueBuffer
     // lifeController父类的val为最大生命值，子类的life为当前生命值
     public float life { get; private set; }
 
-    public LifeController(float v)
+    public void InitBaseLife(float v)
     {
+        ChangeBaseValue(v);
         life = v;
     }
 

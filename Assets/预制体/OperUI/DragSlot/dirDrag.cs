@@ -54,7 +54,7 @@ public class dirDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHand
 
     public void OnDrag(PointerEventData eventData)
     {
-
+        OperatorCore oc_ = workingDragSlot.operatorCore;
         Vector2 pos = eventData.position - (Vector2) prt.position;
         float x = pos.x;
         float y = pos.y;
@@ -79,9 +79,8 @@ public class dirDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHand
             if (direction != FourDirection.Right)
             {
                 direction = FourDirection.Right;
-                workingDragSlot.operatorCore.atkRange.transform.rotation = faceRight;
-                workingDragSlot.operatorCore.atkRangeShowController.HideAtkRange();
-                workingDragSlot.operatorCore.atkRangeShowController.ShowAtkRange();
+                oc_.atkRange.transform.rotation = faceRight;
+                OperUIManager.rightUIController.ShowAtkRange(oc_);
             }
         }
         if (y - x > 0 && y + x > 0)
@@ -89,9 +88,8 @@ public class dirDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHand
             if (direction != FourDirection.UP)
             {
                 direction = FourDirection.UP;
-                workingDragSlot.operatorCore.atkRange.transform.rotation = faceUP;
-                workingDragSlot.operatorCore.atkRangeShowController.HideAtkRange();
-                workingDragSlot.operatorCore.atkRangeShowController.ShowAtkRange();
+                oc_.atkRange.transform.rotation = faceUP;
+                OperUIManager.rightUIController.ShowAtkRange(oc_);
             }
         }
         if (y - x > 0 && y + x < 0)
@@ -100,9 +98,8 @@ public class dirDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHand
             if (direction != FourDirection.Left)
             {
                 direction = FourDirection.Left;
-                workingDragSlot.operatorCore.atkRange.transform.rotation = faceLeft;
-                workingDragSlot.operatorCore.atkRangeShowController.HideAtkRange();
-                workingDragSlot.operatorCore.atkRangeShowController.ShowAtkRange();
+                oc_.atkRange.transform.rotation = faceLeft;
+                OperUIManager.rightUIController.ShowAtkRange(oc_);
             }
         }
         if (y - x < 0 && y + x < 0)
@@ -110,9 +107,8 @@ public class dirDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHand
             if (direction != FourDirection.Down)
             {
                 direction = FourDirection.Down;
-                workingDragSlot.operatorCore.atkRange.transform.rotation = faceDown;
-                workingDragSlot.operatorCore.atkRangeShowController.HideAtkRange();
-                workingDragSlot.operatorCore.atkRangeShowController.ShowAtkRange();
+                oc_.atkRange.transform.rotation = faceDown;
+                OperUIManager.rightUIController.ShowAtkRange(oc_);
             }
         }
         
@@ -123,7 +119,7 @@ public class dirDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         draging = false;
-        workingDragSlot.operatorCore.atkRangeShowController.HideAtkRange();
+        OperUIManager.rightUIController.HideAtkRange();
         Vector2 pos = rectTransform.anchoredPosition;
         
         if (pos.x > 0 && pos.y > 0 && 0.8 * pos.x + pos.y > putBorder ||

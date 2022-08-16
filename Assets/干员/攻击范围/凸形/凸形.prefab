@@ -61,7 +61,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 1}
+  m_Size: {x: 3, y: 1, z: 3}
   m_Center: {x: 1, y: 0, z: 0}
 --- !u!65 &3901284821649048713
 BoxCollider:
@@ -85,19 +85,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 6645886670027540070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40812f3df3e31ea45b684129b497176e, type: 3}
+  m_Script: {fileID: 11500000, guid: d5c978f06aff1aa4f981751df22f4a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showRange: 0
-  stripe: {fileID: 279611806117922351, guid: 1091f290700407e4f82162ccc53f207f, type: 3}
-  detaxy:
+  RangePos:
   - {x: 0, y: 0}
-  - {x: 1, y: 0}
-  - {x: 2, y: 0}
-  - {x: 3, y: 0}
   - {x: 0, y: 1}
-  - {x: 1, y: 1}
-  - {x: 2, y: 1}
   - {x: 0, y: -1}
+  - {x: 1, y: 0}
+  - {x: 1, y: 1}
   - {x: 1, y: -1}
+  - {x: 2, y: 0}
+  - {x: 2, y: 1}
   - {x: 2, y: -1}
+  - {x: 3, y: 0}

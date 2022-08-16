@@ -55,6 +55,7 @@
      <Compile Include="Assets\框架代码\scriOb\enemyInfo.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\OperatorCore.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\ElementCore.cs" />
+     <Compile Include="Assets\框架代码\UI相关\OperUI\elitismPutOn.cs" />
      <Compile Include="Assets\框架代码\UI相关\UISprite\SpriteElement.cs" />
      <Compile Include="Assets\框架代码\关卡控制\拖动\DragSlot.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Hexagonal Rule Tile\HexagonalRuleTile.cs" />
@@ -74,7 +75,6 @@
      <Compile Include="Assets\框架代码\scriOb\levelData.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Isometric Rule Tile\IsometricRuleTile.cs" />
      <Compile Include="Assets\框架代码\静态函数\Interpreter.cs" />
-     <Compile Include="Assets\框架代码\辅助脚本\对象池\poolElement.cs" />
      <Compile Include="Assets\素材\地图方块\门\redDoorUI.cs" />
      <Compile Include="Assets\testController.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Tint Brush Smooth\Scripts\TintTextureGenerator.cs" />

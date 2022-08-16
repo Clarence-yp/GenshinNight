@@ -97,7 +97,7 @@ public class EnemyWaveController : MonoBehaviour        // 按波次和时间生
             EnemyCore ec = enemyQueue.Dequeue();
             ec.gameObject.SetActive(true);
             InitManager.enemyList.Add(ec);
-            ec.battleCore_DieAction += DelFromEnemyList;
+            ec.public_DieAction += DelFromEnemyList;
         }
         // 如果当前波次的所有敌人均已生成，开始进入下一波的等待
         if (enemyQueue.Count == 0 && !disableWaveUI && !waving)

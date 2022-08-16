@@ -54,10 +54,15 @@ public class operDataEnum : Editor
     private SerializedProperty magicDef;
     private SerializedProperty life;
     private SerializedProperty maxBlock;
+    private SerializedProperty maxAtkInterval;
     private SerializedProperty cost;
     private SerializedProperty consumPlace;
     private SerializedProperty reTime;
     private SerializedProperty maxLevel;
+    private SerializedProperty  elementalMastery;
+    private SerializedProperty  elementalDamage;
+    private SerializedProperty  elementalResistance;
+    private SerializedProperty  spRecharge;
     private SerializedProperty  Description;
     //"成长属性"4中变量
     private SerializedProperty growingAtk;
@@ -154,10 +159,15 @@ public class operDataEnum : Editor
         magicDef = od_.FindProperty("magicDef");
         life = od_.FindProperty("life");
         maxBlock = od_.FindProperty("maxBlock");
+        maxAtkInterval = od_.FindProperty("maxAtkInterval");
         cost = od_.FindProperty("cost");
         consumPlace = od_.FindProperty("consumPlace");
         reTime = od_.FindProperty("reTime");
         maxLevel = od_.FindProperty("maxLevel");
+        elementalMastery = od_.FindProperty("elementalMastery");
+        elementalDamage = od_.FindProperty("elementalDamage");
+        elementalResistance = od_.FindProperty("elementalResistance");
+        spRecharge = od_.FindProperty("spRecharge");
         Description = od_.FindProperty("Description");
         //"成长属性"4中变量
         growingAtk = od_.FindProperty("growingAtk");
@@ -259,10 +269,15 @@ public class operDataEnum : Editor
             EditorGUILayout.PropertyField(magicDef);
             EditorGUILayout.PropertyField(life);
             EditorGUILayout.PropertyField(maxBlock);
+            EditorGUILayout.PropertyField(maxAtkInterval);
             EditorGUILayout.PropertyField(cost);
             EditorGUILayout.PropertyField(consumPlace);
             EditorGUILayout.PropertyField(reTime);
             EditorGUILayout.PropertyField(maxLevel);
+            EditorGUILayout.PropertyField(elementalMastery);
+            EditorGUILayout.PropertyField(elementalDamage);
+            EditorGUILayout.PropertyField(elementalResistance);
+            EditorGUILayout.PropertyField(spRecharge);
             EditorGUILayout.PropertyField(Description);
         }
         else if (type.enumValueIndex == 4)

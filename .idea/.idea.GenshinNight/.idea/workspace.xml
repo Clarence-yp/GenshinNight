@@ -1,18 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c60633f-8e57-426f-98ee-a17bf149105b" name="Default Changelist" comment="" />
+    <list default="true" id="2c60633f-8e57-426f-98ee-a17bf149105b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GenshinNight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GenshinNight/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GenshinNight/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GenshinNight/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GenshinNight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GenshinNight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/operDataEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/operDataEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/干员/干员模型/达达利亚/达达利亚.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/干员/干员模型/达达利亚/达达利亚.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/干员/干员模型/达达利亚/达达利亚.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/干员/干员模型/达达利亚/达达利亚.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/干员/攻击范围/凸形/凸形.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/干员/攻击范围/凸形/凸形.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIElements.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIElements.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIFunc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIFunc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/scriOb/operData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/scriOb/operData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/关卡控制/EnemyWaveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/关卡控制/EnemyWaveController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/关卡控制/InitManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/关卡控制/InitManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/BattleCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/BattleCore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/ElementCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/ElementCore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/EnemyCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/EnemyCore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/OperatorCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/OperatorCore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/基础战斗/索敌范围/SearchAndGive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/基础战斗/索敌范围/SearchAndGive.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/poolElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/poolElement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/预制体/OperUI/DragSlot/dirDrag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/预制体/OperUI/DragSlot/dirDrag.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/06/06a0e87d8ca1c40b0ef0ad2547aac953" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/0e/0ecde7d0000e3c7a4689109e7e36fca0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/11/1116f281d8d7c79f9fd32e3db58f9a08" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/12/1250ebd6fe10abc1daa46c17cab624c6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/21/21d7ac52ce8dd7fe3469d309fadbb7f7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/28/283cc236818f29f99573c2e9ef858f5f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/38/3883395d73ab5b2f3357822f9e45c818" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/56/568e893d9d694e5a51c32be8dcb7ba3a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/5d/5d43bb56a6fbd2420ccec54196cd18bc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/75/759ce4d7c6e5117c73df684e08d0abc8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/77/77d46917b0af3788d7f102abb9cea615" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/83/83ee9316f13e5a8d4307fb00b1b1766e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/86/86bdc1609c2493a78b3f3457a5790d05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/91/9165329a8bf5bf18f49d4223f3f103bc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/9a/9ae85394d64859a4e1931213d961c5d2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/9d/9d358cf432d2173bd1f220bd5a1d6845" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a1/a1c7e1452bbe5b54372e3d510a2bcefd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c0/c07bd5b6f37791be59e1f6faa5c7df43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/cb/cb71663dbb92b3a546f4f3e1f9c4d4fe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/cb/cb7d77fc7bc4bbbfd8e76395b9502ca6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d1/d1cf4cb576f795f013bfe7e5145d6ae7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e8/e8a562d3adee5303a5686c040641f367" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f0/f0ed4e484edc5068eb7f6320d75f64d8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/4d/4d2a36d9faf65734f0bbefb3ee623532.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/4d/4d2a36d9faf65734f0bbefb3ee623532.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/cb/cb519d47b587f77c48fd851d9214e6fd.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/cb/cb519d47b587f77c48fd851d9214e6fd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/49/496b726812d25d1dea4783e0387e7eb6.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/49/496b726812d25d1dea4783e0387e7eb6.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/拖动/DragSlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/register/mapRegister.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/EnemyWaveController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/poolElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/UISprite/SpriteElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/gameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/素材/地图方块/门/redDoorButtonController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -20,6 +87,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/基础战斗/动画函数/OperAnimEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/UI辅助/gradualChange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/elitismPutOn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/InitManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIFunc.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/静态函数/Interpreter.cs" root0="FORCE_HIGHLIGHTING" />
@@ -49,34 +117,37 @@
       <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/register/blueDoorRegister.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/UI辅助/gradualChange.cs" />
       <option value="$PROJECT_DIR$/Assets/素材/地图方块/门/redDoorUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/EnemyWaveController.cs" />
       <option value="$PROJECT_DIR$/Assets/素材/地图方块/门/redDoorButtonController.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/拖动/OperDrag.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/EnemyCore.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/静态函数/BaseFunc.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/索敌范围/SearchAndGive.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/poolElement.cs" />
       <option value="$PROJECT_DIR$/Assets/预制体/DragSlot/dirDrag.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" />
       <option value="$PROJECT_DIR$/Assets/testController.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/CameraController.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/InitManager.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/MainCanvasElements.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/MainCanvasElements.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/拖动/DragSlot.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIFunc.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIElements.cs" />
-      <option value="$PROJECT_DIR$/Assets/Editor/operDataEnum.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/ElementCore.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/UISprite/SpriteElement.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/InitManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/预制体/OperUI/DragSlot/dirDrag.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/elitismPutOn.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIElements.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/scriOb/operData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/operDataEnum.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/BattleCore.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/OperatorCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/ElementCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/EnemyCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/索敌范围/SearchAndGive.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIFunc.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/EnemyWaveController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2CLJ4eYzcxbZZMpkEZvMiXfmI5c" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -134,7 +205,9 @@
       <workItem from="1660054016269" duration="4160000" />
       <workItem from="1660136907745" duration="3766000" />
       <workItem from="1660314742855" duration="3866000" />
-      <workItem from="1660359361686" duration="1295000" />
+      <workItem from="1660359361686" duration="9194000" />
+      <workItem from="1660443349244" duration="16819000" />
+      <workItem from="1660574287478" duration="3937000" />
     </task>
     <servers />
   </component>
@@ -143,6 +216,18 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

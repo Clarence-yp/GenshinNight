@@ -6,13 +6,6 @@ using UnityEngine;
 public class InitManager : MonoBehaviour
 {
     private static InitManager instance;
-
-    // 关卡初始数据
-    public static int cost;
-    public static int exp;
-    public static int maxLife;
-    public static int remainPlace;
-    public static float enemyDelay;
     
     // 当前场上所有的干员/敌人
     public static List<OperatorCore> operList = new List<OperatorCore>();
@@ -42,6 +35,9 @@ public class InitManager : MonoBehaviour
     private static CameraController cameraController_ = null;
     // 敌人波次控制器
     public static EnemyWaveController enemyWaveController;
+    
+    // 关卡资源控制器
+    public static ResourceController resourceController = new ResourceController();
 
 
     private void Awake()
@@ -71,14 +67,16 @@ public class InitManager : MonoBehaviour
                 OperatorCore oc_ = newOper.GetComponent<OperatorCore>();
                 oc_.operID = id;
                 offOperList[id].Add(oc_);
-                newOper.SetActive(false);
             }
         }
         
         // 初始化拖拽单元控制器
         dragSlotController.Init();
         
-        
+        // 初始化关卡资源控制器
+        resourceController.Init(1000, 1000, 1000, 1000);
+
+
     }
     
     public static void Clear()
@@ -224,7 +222,63 @@ public class DragSlotController
             }
         }
     }
+}
+
+
+public class ResourceController
+{
+    public float cost { get; private set; }
+    public float exp { get; private set; }
+    public int life { get; private set; }
+    public int remainPlace { get; private set; }
+
+
+    /// <summary>
+    /// 初始化关卡资源
+    /// </summary>
+    public void Init(float cost_p, float exp_p, int life_p, int remainPlace_p)
+    {
+        cost = cost_p;
+        exp = exp_p;
+        life = life_p;
+        remainPlace = remainPlace_p;
+    }
+
+    /// <summary>
+    /// cost增加v
+    /// </summary>
+    public void CostIncrease(float v)
+    {
+        cost += v;
+    }
+
+    /// <summary>
+    /// exp增加v
+    /// </summary>
+    public void ExpIncrease(float v)
+    {
+        exp += v;
+    }
+
+    /// <summary>
+    /// life增加v
+    /// </summary>
+    public void LifeIncrease(int v)
+    {
+        life += v;
+    }
+
+    /// <summary>
+    /// remainPlace增加v
+    /// </summary>
+    public void RemainPlaceIncrease(int v)
+    {
+        remainPlace += v;
+    }
     
     
     
+    
+    
+
 }
