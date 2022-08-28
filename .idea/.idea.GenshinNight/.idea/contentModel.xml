@@ -666,6 +666,9 @@
             <e p="UI辅助" t="Include">
               <e p="gradualChange.cs" t="Include" />
             </e>
+            <e p="世界UI" t="Include">
+              <e p="LifeSliderController.cs" t="Include" />
+            </e>
           </e>
           <e p="关卡控制" t="Include">
             <e p="CameraController.cs" t="Include" />
@@ -681,6 +684,7 @@
           </e>
           <e p="基础战斗" t="Include">
             <e p="动画函数" t="Include">
+              <e p="EnemyAnimEvent.cs" t="Include" />
               <e p="OperAnimEvent.cs" t="Include" />
             </e>
             <e p="核心" t="Include">
@@ -688,6 +692,7 @@
               <e p="ElementCore.cs" t="Include" />
               <e p="EnemyCore.cs" t="Include" />
               <e p="OperatorCore.cs" t="Include" />
+              <e p="PropertyCore.cs" t="Include" />
             </e>
             <e p="索敌范围" t="Include">
               <e p="SearchAndGive.cs" t="Include" />

@@ -29,15 +29,15 @@ public class SearchAndGive : MonoBehaviour
     {
         if (other.CompareTag("operator"))
         {
-            ElementCore elementCore = other.GetComponent<ElementCore>();
-            _bc.operatorList.Add(elementCore);
-            elementCore.public_DieAction += DelBattleCore_Oper;
+            BattleCore battleCore = other.GetComponent<BattleCore>();
+            _bc.operatorList.Add(battleCore);
+            battleCore.DieAction += DelBattleCore_Oper;
         }
         else if (other.CompareTag("enemy"))
         {
-            ElementCore elementCore = other.GetComponent<ElementCore>();
-            _bc.enemyList.Add(elementCore);
-            elementCore.public_DieAction += DelBattleCore_Enemy;
+            BattleCore battleCore = other.GetComponent<BattleCore>();
+            _bc.enemyList.Add(battleCore);
+            battleCore.DieAction += DelBattleCore_Enemy;
         }
     }
 
@@ -54,26 +54,26 @@ public class SearchAndGive : MonoBehaviour
     {
         if (other.CompareTag("operator"))
         {
-            ElementCore elementCore = other.GetComponent<ElementCore>();
-            _bc.operatorList.Remove(elementCore);
-            elementCore.public_DieAction -= DelBattleCore_Oper;
+            BattleCore battleCore = other.GetComponent<BattleCore>();
+            _bc.operatorList.Remove(battleCore);
+            battleCore.DieAction -= DelBattleCore_Oper;
         }
         else if (other.CompareTag("enemy"))
         {
-            ElementCore elementCore = other.GetComponent<ElementCore>();
-            _bc.enemyList.Remove(elementCore);
-            elementCore.public_DieAction -= DelBattleCore_Enemy;
+            BattleCore battleCore = other.GetComponent<BattleCore>();
+            _bc.enemyList.Remove(battleCore);
+            battleCore.DieAction -= DelBattleCore_Enemy;
         }
     }
 
 
-    private void DelBattleCore_Oper(ElementCore dying_bc)
+    private void DelBattleCore_Oper(BattleCore dying_bc)
     {
-        // 用于死亡的回调函数，在List里删掉要死的这个ElementCore
+        // 用于死亡的回调函数，在List里删掉要死的这个BattleCore
         _bc.operatorList.Remove(dying_bc);
     }
     
-    private void DelBattleCore_Enemy(ElementCore dying_bc)
+    private void DelBattleCore_Enemy(BattleCore dying_bc)
     {
         _bc.enemyList.Remove(dying_bc);
     }

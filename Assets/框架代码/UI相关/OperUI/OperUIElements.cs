@@ -145,11 +145,23 @@ public class OperUIElements : MonoBehaviour
     public static Text maxSpText;
     public Text skillDescriptionText_p;
     public static Text skillDescriptionText;
-    
+
+    [Header("EdgeUI相关")] 
+    public Text expText_p;
+    public static Text expText;
+    public Text costText_p;
+    public static Text costText;
+    public Slider costSlider_p;
+    public static Slider costSlider;
+    public Text remainPlaceText_p;
+    public static Text remainPlaceText;
+    public Text waveText_p;
+    public static Text waveText;
+    public Text levelHPText_p;
+    public static Text levelHPText;
     
 
-
-        private void Awake()
+    private void Awake()
     {
         if (instance != null)
         {
@@ -237,6 +249,13 @@ public class OperUIElements : MonoBehaviour
         maxSpText = maxSpText_p;
         skillDescriptionText = skillDescriptionText_p;
 
+        // EdgeUI相关
+        expText = expText_p;
+        costText = costText_p;
+        costSlider = costSlider_p;
+        remainPlaceText = remainPlaceText_p;
+        waveText = waveText_p;
+        levelHPText = levelHPText_p;
     }
     
 }

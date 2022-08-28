@@ -5,7 +5,7 @@ using System.IO.MemoryMappedFiles;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class EnemyCore : ElementCore
+public class EnemyCore : BattleCore
 {
     [Header("敌人数据")]
     public enemyInfo ei_;
@@ -28,17 +28,14 @@ public class EnemyCore : ElementCore
         InitManager.Register(this);
     }
 
-    protected override void Start_ElementCore_Down()
+    protected override void Start_BattleCore_Down()
     {
         anim = transform.Find("anim").GetComponent<Animator>();
-        ac_ = new SpineAnimController(anim, 0.3f);
+        ac_ = new SpineAnimController(anim, this, 0.3f);
         epc_ = new EnemyPathController(this, pointList);
         
         // 初始化battleCalculation
         InitCalculation();
-        
-        // 给父类注册函数，敌人死亡后直接destroy自己
-        dieAction = () => Destroy(gameObject);
 
         Start_EnemyCore_Down();
         gameObject.SetActive(false);        // 敌人开始是处于关闭状态
@@ -46,7 +43,7 @@ public class EnemyCore : ElementCore
 
     protected virtual void Start_EnemyCore_Down() {}
     
-    protected override void Update_ElementCore_Down()
+    protected override void Update_BattleCore_Down()
     {
         ac_.Update();
         epc_.Update();
@@ -61,11 +58,12 @@ public class EnemyCore : ElementCore
 
     private void InitCalculation()
     {
-        fightCalculation.atk_.ChangeBaseValue(ei_.atk);
-        fightCalculation.def_.ChangeBaseValue(ei_.def);
-        fightCalculation.magicDef_.ChangeBaseValue(ei_.magicDef);
-        fightCalculation.life_.ChangeBaseValue(ei_.life);
-        fightCalculation.maxBlock = ei_.consumeBlock;
+        atk_.ChangeBaseValue(ei_.atk);
+        def_.ChangeBaseValue(ei_.def);
+        magicDef_.ChangeBaseValue(ei_.magicDef);
+        life_.InitBaseLife(ei_.life);
+        maxBlock = ei_.consumeBlock;
+        minAtkInterval = ei_.minAtkInterval;
     }
 
     private void Move()
@@ -151,7 +149,13 @@ public class EnemyCore : ElementCore
     protected virtual void ReachEnd()
     {
         // 敌人到达终点后
-        
+        if (dying) return;
+        dying = true;
+        InitManager.resourceController.HPIncrease(-ei_.consumeHP);
+        anim.transform.parent = null;
+        transform.position = new Vector3(999, 999, 999);
+        ac_.ChangeColor(Color.black);
+        Invoke(nameof(DestroySelf), 0.8f);
     }
     
     /// <summary>
@@ -175,22 +179,50 @@ public class EnemyCore : ElementCore
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("operator") && !other.CompareTag("box")) return;
-        ElementCore elementCore = other.GetComponent<ElementCore>();
-        elementCore.public_DieAction += DelBattleCore_EnemyBlock;
-        blockList.Add(elementCore);
+        BattleCore battleCore = other.GetComponent<BattleCore>();
+        battleCore.DieAction += DelBattleCore_EnemyBlock;
+        blockList.Add(battleCore);
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("operator") && !other.CompareTag("box")) return;
-        ElementCore elementCore = other.GetComponent<ElementCore>();
-        elementCore.public_DieAction -= DelBattleCore_EnemyBlock;
-        DelBattleCore_EnemyBlock(elementCore);
+        BattleCore battleCore = other.GetComponent<BattleCore>();
+        battleCore.DieAction -= DelBattleCore_EnemyBlock;
+        DelBattleCore_EnemyBlock(battleCore);
     }
     
-    private void DelBattleCore_EnemyBlock(ElementCore bc_)
+    private void DelBattleCore_EnemyBlock(BattleCore bc_)
     {
         blockList.Remove(bc_);
+    }
+
+
+    protected override void DieBegin()
+    {// 死亡撤退函数
+        anim.transform.parent = null;
+        transform.position = new Vector3(999, 999, 999);
+
+        anim.SetBool("die", true);
+        ac_.ChangeColor(Color.black);
+    }
+
+    public void OnAttack()
+    {
+        NorAtkStartCool();
+        Battle(this, target, 1, DamageMode.Physical);
+    }
+
+    public void OnDie()
+    {
+        Destroy(anim.gameObject);
+        Destroy(gameObject);
+    }
+
+    private void DestroySelf()
+    {
+        Destroy(anim.gameObject);
+        Destroy(gameObject);
     }
     
 }

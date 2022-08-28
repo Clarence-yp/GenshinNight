@@ -10,6 +10,7 @@ public class EnemyWaveController : MonoBehaviour        // 按波次和时间生
     
     
     public int wave { get; private set; } = -1;     // 当前波次
+    public int maxWave { get; private set; }
     private float timeLine = 0;                     // 当前波次的时间轴
     private float nxtWaveTime;                      // 等待的时间轴
     private bool waving;                            // 当前是否处于下一波次展示时间
@@ -31,8 +32,11 @@ public class EnemyWaveController : MonoBehaviour        // 按波次和时间生
             i.startButton.onClick.AddListener(NextWaveStart);
         }
         
+        maxWave = InitManager.allEnemyList.Count;
         foreach (var i in InitManager.allEnemyList)
         {
+            
+            
             // 统计每一波次的敌人名称
             List<Dictionary<string, int>> map = new List<Dictionary<string, int>>();
             redDoorTextList.Add(new List<string>());
@@ -83,7 +87,6 @@ public class EnemyWaveController : MonoBehaviour        // 按波次和时间生
         {
             i.sliderImage.fillAmount = 1;
         }
-        
     }
     
     void Update()
@@ -97,7 +100,7 @@ public class EnemyWaveController : MonoBehaviour        // 按波次和时间生
             EnemyCore ec = enemyQueue.Dequeue();
             ec.gameObject.SetActive(true);
             InitManager.enemyList.Add(ec);
-            ec.public_DieAction += DelFromEnemyList;
+            ec.DieAction += DelFromEnemyList;
         }
         // 如果当前波次的所有敌人均已生成，开始进入下一波的等待
         if (enemyQueue.Count == 0 && !disableWaveUI && !waving)

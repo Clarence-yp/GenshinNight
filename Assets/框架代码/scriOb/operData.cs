@@ -95,9 +95,10 @@ public class operData : ScriptableObject
     public float spRecharge;
     
     
-    [Header("干员特性")] 
-    [TextArea] 
-    public string[] Description = new string[3];
+    [Header("干员特性与详细天赋")]
+    [TextArea] public string[] Description = new string[3];
+    [TextArea] public string[] talent1 = new string[3];
+    [TextArea] public string[] talent2 = new string[3];
     
     [Header("等级成长数据")] 
     public float[] growingAtk = new float[3];//成长攻击

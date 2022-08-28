@@ -7,7 +7,7 @@ public class OperAnimEvent : MonoBehaviour
 {
     private OperatorCore oc_;
 
-    private void Start()
+    private void Awake()
     {
         oc_ = transform.parent.GetComponent<OperatorCore>();
     }
@@ -20,6 +20,11 @@ public class OperAnimEvent : MonoBehaviour
     public void OnAttack()
     {
         oc_.OnAttack();
+    }
+
+    public void OnDie()
+    {
+        oc_.OnDie();
     }
 
     public void skill1()

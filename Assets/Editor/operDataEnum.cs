@@ -64,6 +64,8 @@ public class operDataEnum : Editor
     private SerializedProperty  elementalResistance;
     private SerializedProperty  spRecharge;
     private SerializedProperty  Description;
+    private SerializedProperty  talent1;
+    private SerializedProperty  talent2;
     //"成长属性"4中变量
     private SerializedProperty growingAtk;
     private SerializedProperty growingDef;
@@ -169,6 +171,8 @@ public class operDataEnum : Editor
         elementalResistance = od_.FindProperty("elementalResistance");
         spRecharge = od_.FindProperty("spRecharge");
         Description = od_.FindProperty("Description");
+        talent1 = od_.FindProperty("talent1");
+        talent2 = od_.FindProperty("talent2");
         //"成长属性"4中变量
         growingAtk = od_.FindProperty("growingAtk");
         growingDef = od_.FindProperty("growingDef");
@@ -279,6 +283,8 @@ public class operDataEnum : Editor
             EditorGUILayout.PropertyField(elementalResistance);
             EditorGUILayout.PropertyField(spRecharge);
             EditorGUILayout.PropertyField(Description);
+            EditorGUILayout.PropertyField(talent1);
+            EditorGUILayout.PropertyField(talent2);
         }
         else if (type.enumValueIndex == 4)
         {

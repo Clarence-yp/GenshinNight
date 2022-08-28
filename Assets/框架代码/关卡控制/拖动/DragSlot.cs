@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler
 {
-    public OperatorCore operatorCore;       // 干员预制体，关卡内不释放
+    [HideInInspector] public OperatorCore operatorCore;       // 干员预制体，关卡内不释放
     private Transform operatorAnim;         // 干员预制体下的动画子物体
     private dirDrag dirDrag_;               
 
@@ -14,7 +14,11 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     public RectTransform rectTransform;
         
     public Image operImage;
-    private Animator operImageAnim;         // 干员头像动画控制器，控制拖动时的上浮与下沉
+    public Image elementImage;
+    public Text costText;
+    public GameObject numPanel;
+    public Text numText;
+    private Animator anim;         // 干员头像动画控制器，控制拖动时的上浮与下沉
     
     
     private float reTime;                   // 剩余再部署时间
@@ -23,8 +27,7 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        operImage = transform.Find("operImage").GetComponent<Image>();
-        operImageAnim = operImage.GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         InitManager.dragSlotController.Register(this);
         
     }
@@ -34,12 +37,34 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
         dirDrag_ = OperUIElements.dragPanel.transform.Find("MovingArrow").GetComponent<dirDrag>();
     }
 
-    
-    void Update()
+
+    public void Refresh(OperatorCore oc_)
     {
-        
+        operatorCore = oc_;
+        int id = operatorCore.operID;
+        operData od_ = InitManager.allOperDataList[id];
+
+        operImage.sprite = od_.imageInQueue;
+        elementImage.sprite = SpriteElement.GetElementSprite(od_.elementType);
+        costText.text = operatorCore.costNeed.ToString();
+
+        int num = InitManager.offOperList[id].Count;
+        switch (num)
+        {
+            case 0:
+                gameObject.SetActive(false);
+                break;
+            case 1:
+                numPanel.SetActive(false);
+                break;
+            default:
+                numPanel.SetActive(true);
+                numText.text = "X" + num;
+                break;
+        }
     }
-    
+
+
     bool CanPut()
     {
         // if (reTime > 0) return false;
@@ -70,7 +95,7 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
 
         OperUIManager.OpenOperUI(UIstate.Dragging, operatorCore);
 
-        operImageAnim.SetBool("up", true);  // 底部头像上浮
+        anim.SetBool("up", true);  // 底部头像上浮
         operatorAnim = operatorCore.animObject.transform;
         
         // 将anim单独拿出，作为拖动对象
@@ -130,7 +155,7 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     /// </summary>
     public void DragRecover()
     {
-        operImageAnim.SetBool("up", false);  // 底部头像下沉
+        anim.SetBool("up", false);  // 底部头像下沉
         InitManager.TimeRecover();
         OperUIManager.CloseOperUI();
             

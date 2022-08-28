@@ -21,6 +21,7 @@ public class OperUIManager : MonoBehaviour
     public static RightUIController rightUIController;
     public static LevelUIController levelUIController;
     public static SkillUIController skillUIController;
+    public static EdgeUIController edgeUIController;
     
     private void Awake()
     {
@@ -40,10 +41,13 @@ public class OperUIManager : MonoBehaviour
         rightUIController = new RightUIController();
         levelUIController = new LevelUIController();
         skillUIController = new SkillUIController();
+        edgeUIController = new EdgeUIController();
     }
 
     private void Update()
     {
+        edgeUIController.Update();
+        
         if (!showing) return;
         rightUIController.Update();
         levelUIController.Update();
@@ -54,7 +58,7 @@ public class OperUIManager : MonoBehaviour
     /// </summary>
     public static void Init()
     {
-        
+        // edgeUIController.Init();
     }
 
     /// <summary>
@@ -92,6 +96,7 @@ public class OperUIManager : MonoBehaviour
 
     public static void CloseOperUI()
     {
+        if (showingOper == null) return;
         CloseAllController();
         showingOper = null;
         showing = false;
@@ -146,7 +151,7 @@ public class RightUIController
         rightSkillImage.sprite = oc_.od_.skillImage[oc_.skillNum];
         
         
-        SPController sp_ = OperUIManager.showingOper.fightCalculation.sp_;
+        SPController sp_ = OperUIManager.showingOper.sp_;
         if (!sp_.during)
         {   // 不在技能持续时间内，说明在技力积攒阶段
             colorSliderFill.color = greenSliderColor;
@@ -353,7 +358,6 @@ public class LevelUIController
     {// 在UI打开或换人时调用一次
         OperatorCore oc_ = OperUIManager.showingOper;
         operData od_ = oc_.od_;
-        BattleCalculation bc_ = oc_.fightCalculation;
 
         if (oc_.eliteLevel == 0)
         {
@@ -385,15 +389,14 @@ public class LevelUIController
     {// 当UI打开时，每帧调用
         OperatorCore oc_ = OperUIManager.showingOper;
         operData od_ = oc_.od_;
-        BattleCalculation bc_ = oc_.fightCalculation;
 
-        atkText.text = bc_.atk_.val.ToString(CultureInfo.InvariantCulture);
-        defText.text = bc_.def_.val.ToString(CultureInfo.InvariantCulture);
-        magicDefText.text = bc_.magicDef_.val.ToString(CultureInfo.InvariantCulture);
-        blockText.text = bc_.maxBlock.ToString(CultureInfo.InvariantCulture);
+        atkText.text = oc_.atk_.val.ToString(CultureInfo.InvariantCulture);
+        defText.text = oc_.def_.val.ToString(CultureInfo.InvariantCulture);
+        magicDefText.text = oc_.magicDef_.val.ToString(CultureInfo.InvariantCulture);
+        blockText.text = oc_.maxBlock.ToString(CultureInfo.InvariantCulture);
         
-        lifeText.text = bc_.life_.life + "/" + bc_.life_.val;
-        lifeSlider.value = bc_.life_.life / bc_.life_.val;
+        lifeText.text = oc_.life_.life + "/" + oc_.life_.val;
+        lifeSlider.value = oc_.life_.life / oc_.life_.val;
     }
 
     /// <summary>
@@ -457,11 +460,15 @@ public class SkillUIController
     private Color32 skillTextChooseColor = new Color32(50, 220, 50, 255);
     private Color32 buttonChooseColor = new Color32(0, 0, 0, 255);
     private Color32 buttonUnChooseColor = new Color32(120, 120, 120, 255);
-    
+
+    private Color32 skillCanChooseColor = new Color32(0, 200, 0, 150);
+    private Color32 skillIsChoosedColor = new Color32(150, 150, 150, 150);
+    private Color32 skillCanLevelUpColor = new Color32(0, 200, 200, 150);
+    private Color32 skillMaxLevelUpColor = new Color32(150, 150, 150, 150);
     
     
     public SkillUISta skillUISta;
-
+    public int showSkillNum { get; private set; }
 
     public SkillUIController()
     {
@@ -511,28 +518,32 @@ public class SkillUIController
     }
 
     private void SetStaBySkillNum()
-    {// 根据自身选择的skillNum，更新skillUISta
-        skill_1_ButtonText.color=Color.white;
-        skill_2_ButtonText.color=Color.white;
-        skill_3_ButtonText.color=Color.white;
-        
+    {
+        // 根据自身选择的skillNum，更新skillUISta
+        skillUISta = OperUIManager.showingOper.skillNum switch
+        {
+            0 => SkillUISta.skill1,
+            1 => SkillUISta.skill2,
+            2 => SkillUISta.skill3,
+            _ => skillUISta
+        };
+    }
+
+    private void SetSkillButtonColorBySkillNum()
+    {
+        skill_1_ButtonText.color = Color.white;
+        skill_2_ButtonText.color = Color.white;
+        skill_3_ButtonText.color = Color.white;
         switch (OperUIManager.showingOper.skillNum)
         {
             case 0:
                 skill_1_ButtonText.color = skillTextChooseColor;
-                skillUISta = SkillUISta.skill1;
                 break;
             case 1:
                 skill_2_ButtonText.color = skillTextChooseColor;
-                skillUISta = SkillUISta.skill2;
                 break;
             case 2:
                 skill_3_ButtonText.color = skillTextChooseColor;
-                skillUISta = SkillUISta.skill3;
-                break;
-            default:
-                skill_1_ButtonText.color = skillTextChooseColor;
-                skillUISta = SkillUISta.skill1;
                 break;
         }
     }
@@ -540,13 +551,13 @@ public class SkillUIController
     public void SetBySta()
     {
         SetStaBySkillNum();
+        SetSkillButtonColorBySkillNum();
         RefreshBySta();
     }
 
     public void Refresh()
     {
         RefreshBySta();
-        RefreshContents();
     }
 
     private void RefreshBySta()
@@ -590,17 +601,139 @@ public class SkillUIController
         RefreshContents();
     }
 
+    private Color GetRecoverTypeColor(recoverType type)
+    {
+        return type switch
+        {
+            recoverType.auto => new Color32(12, 193, 94, 255),
+            recoverType.atk => new Color32(230, 36, 58, 255),
+            recoverType.beAtk => new Color32(255, 162, 28, 255),
+            _ => Color.black
+        };
+    }
+
+    private string GetRecoverTypeText(recoverType type)
+    {
+        return type switch
+        {
+            recoverType.auto => "自动回复",
+            recoverType.atk => "攻击回复",
+            recoverType.beAtk => "受击回复",
+            _ => "?!?!"
+        };
+    }
+
+    private string GetReleaseTypeText(releaseType type)
+    {
+        return type switch
+        {
+            releaseType.hand => "手动触发",
+            releaseType.auto => "自动触发",
+            releaseType.atk => "攻击触发",
+            releaseType.passive => "被动技能",
+            _ => "??!!"
+        };
+    }
+    
+    
     private void RefreshContents()
     {
-        // elementalMasteryText=
-        // elementalDamageText;
-        // elementalResistanceText;
-        // spRechargeText;
-        // currentBlockText;
-        // atkSpeedText;
-        // minAtkInterval;
-        // talent1;
-        // talent2;
+        OperatorCore oc_ = OperUIManager.showingOper;
+        operData od_ = oc_.od_;
+        int skillNum = oc_.skillNum;
+        showSkillNum = skillUISta switch
+        {
+            SkillUISta.skill1 => 0,
+            SkillUISta.skill2 => 1,
+            SkillUISta.skill3 => 2,
+            _ => 0
+        };
+        int skillLevel = oc_.skillLevel[showSkillNum];
+
+        // 刷新已选择技能文字的颜色
+        SetSkillButtonColorBySkillNum();
+
+        // 刷新详细数据与详细天赋
+        elementalMasteryText.text = oc_.elementMastery.val.ToString("f0");
+        elementalDamageText.text = oc_.elementDamage.val * 100 + "%";
+        elementalResistanceText.text = oc_.elementResistance.val * 100 + "%";
+        spRechargeText.text = oc_.sp_.spRecharge.val * 100 + "%";
+        currentBlockText.text = (oc_.maxBlock - oc_.block).ToString();
+        atkSpeedText.text = (oc_.atkSpeed * 100).ToString("f0");
+        minAtkInterval.text = oc_.minAtkInterval.ToString("f1");
+        talent1.text = od_.talent1[oc_.eliteLevel];
+        talent2.text = od_.talent2[oc_.eliteLevel];
+        
+        // 刷新技能图标
+        skillImage.sprite = od_.skillImage[showSkillNum];
+        // 刷新技能按钮
+        if (skillNum == showSkillNum)
+        {
+            skillChooseImage.color = skillIsChoosedColor;
+            skillChooseText.text = "已选择";
+        }
+        else
+        {
+            skillChooseImage.color = skillCanChooseColor;
+            skillChooseText.text = "选择";
+        }
+        
+        // 根据当前选择的技能，刷新描述界面
+        switch (showSkillNum)
+        {
+            case 0:
+                skillCostText.text = od_.costNeed0[Math.Min(skillLevel, 5)].ToString();
+                skillExpText.text = od_.expNeed0[Math.Min(skillLevel, 5)].ToString();
+                skillName.text = od_.skillName0;
+                recoveryTypeImage.color = GetRecoverTypeColor(od_.skill0_recoverType);
+                recoveryTypeText.text = GetRecoverTypeText(od_.skill0_recoverType);
+                triggerTypeText.text = GetReleaseTypeText(od_.skill0_releaseType);
+                durationText.text = od_.duration0[skillLevel].ToString("f0");
+                beginSpText.text = od_.initSP0[skillLevel].ToString();
+                maxSpText.text = od_.maxSP0[skillLevel].ToString();
+                skillDescriptionText.text = od_.description0[skillLevel];
+                break;
+            case 1:
+                skillCostText.text = od_.costNeed1[Math.Min(skillLevel, 5)].ToString();
+                skillExpText.text = od_.expNeed1[Math.Min(skillLevel, 5)].ToString();
+                skillName.text = od_.skillName1;
+                recoveryTypeImage.color = GetRecoverTypeColor(od_.skill1_recoverType);
+                recoveryTypeText.text = GetRecoverTypeText(od_.skill1_recoverType);
+                triggerTypeText.text = GetReleaseTypeText(od_.skill1_releaseType);
+                durationText.text = od_.duration1[skillLevel].ToString("f0");
+                beginSpText.text = od_.initSP1[skillLevel].ToString();
+                maxSpText.text = od_.maxSP1[skillLevel].ToString();
+                skillDescriptionText.text = od_.description1[skillLevel];
+                break;
+            case 2:
+                skillCostText.text = od_.costNeed2[Math.Min(skillLevel, 5)].ToString();
+                skillExpText.text = od_.expNeed2[Math.Min(skillLevel, 5)].ToString();
+                skillName.text = od_.skillName2;
+                recoveryTypeImage.color = GetRecoverTypeColor(od_.skill2_recoverType);
+                recoveryTypeText.text = GetRecoverTypeText(od_.skill2_recoverType);
+                triggerTypeText.text = GetReleaseTypeText(od_.skill2_releaseType);
+                durationText.text = od_.duration2[skillLevel].ToString("f0");
+                beginSpText.text = od_.initSP2[skillLevel].ToString();
+                maxSpText.text = od_.maxSP2[skillLevel].ToString();
+                skillDescriptionText.text = od_.description2[skillLevel];
+                break;
+        }
+
+        // 刷新一些其他技能描述界面
+        skillLevelText.text = (skillLevel + 1).ToString();
+        if (skillLevel < 6)
+        {
+            skillLevelUpImage.color = skillCanLevelUpColor;
+            skillLevelUpText.text = "升级";
+            skillResource.SetActive(true);
+        }
+        else
+        {
+            skillLevelUpImage.color = skillMaxLevelUpColor;
+            skillLevelUpText.text = "已满级";
+            skillResource.SetActive(false);
+        }
+        
     }
     
     
@@ -614,3 +747,60 @@ public enum SkillUISta
     detailedValue,
     detailedTalent
 }
+
+public class EdgeUIController
+{
+    public Text expText;
+    public Text costText;
+    public Slider costSlider;
+    public Text remainPlaceText;
+    public Text waveText;
+    public Text levelHPText;
+
+    private float costDetaTime;
+    
+    public EdgeUIController()
+    {
+        expText = OperUIElements.expText;
+        costText = OperUIElements.costText;
+        costSlider = OperUIElements.costSlider;
+        remainPlaceText = OperUIElements.remainPlaceText;
+        waveText = OperUIElements.waveText;
+        levelHPText = OperUIElements.levelHPText;
+    }
+
+    public void Init()
+    {
+        costDetaTime = 0;
+    }
+
+    public void Update()
+    {
+        AutoGetCost();
+        Refresh();
+    }
+
+    private void AutoGetCost()
+    {
+        costDetaTime += Time.deltaTime;
+        if (costDetaTime >= 1)
+        {
+            costDetaTime = 0;
+            InitManager.resourceController.CostIncrease(1);
+        }
+    }
+
+    private void Refresh()
+    {
+        expText.text = InitManager.resourceController.exp.ToString("f0");
+        costText.text = InitManager.resourceController.cost.ToString("f0");
+        costSlider.value = costDetaTime;
+        remainPlaceText.text = InitManager.resourceController.remainPlace.ToString();
+        waveText.text = (InitManager.enemyWaveController.wave + 1) + "/" +
+                        InitManager.enemyWaveController.maxWave;
+        levelHPText.text = InitManager.resourceController.HP.ToString();
+    }
+
+
+}
+

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 407436062082884714}
-  - component: {fileID: 407436062082884724}
   - component: {fileID: 407436062082884725}
+  - component: {fileID: 407436062082884724}
   m_Layer: 0
   m_Name: "\u8FBE\u8FBE\u5229\u4E9A"
   m_TagString: operator
@@ -34,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &407436062082884725
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407436062082884715}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.9, z: 0.9}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &407436062082884724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,29 +64,22 @@ MonoBehaviour:
   aimingMode: 1
   tarPriority: 0
   dieNow: 0
+  atkSpeed: 0
+  minAtkInterval: 2.5
+  maxBlock: 0
+  dying: 0
   blockList: []
   od_: {fileID: 11400000, guid: be7173dac5267314eae606baccb149cd, type: 2}
   level: 0
   eliteLevel: 0
+  skillLevel: 000000000000000000000000
+  costNeed: 0
   operID: 0
   skillNum: 0
   prePutOn: 0
   animObject: {fileID: 0}
   anim: {fileID: 0}
   atkRange: {fileID: 0}
---- !u!65 &407436062082884725
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 407436062082884715}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9, z: 0.9}
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &407436063783036259
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +93,7 @@ GameObject:
   - component: {fileID: 407436063783036271}
   - component: {fileID: 407436063783036268}
   - component: {fileID: 407436063783036269}
+  - component: {fileID: 7682074555246998942}
   m_Layer: 0
   m_Name: anim
   m_TagString: Untagged
@@ -215,6 +222,18 @@ MonoBehaviour:
     useCustomMixMode: 1
     layerMixModes: 01000000
     layerBlendModes: 01000000
+--- !u!114 &7682074555246998942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407436063783036259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057f82d5be717d847aacc294297d8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &434272592026909408
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,7 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.4635191, b: 1, a: 0.7058824}
+  m_Color: {r: 0, g: 0.4627452, b: 1, a: 0.7058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -813,8 +832,9 @@ GameObject:
   - component: {fileID: 2177530866912063466}
   - component: {fileID: 4778106341536076353}
   - component: {fileID: 3282559724887836233}
+  - component: {fileID: 8980548114881520339}
   m_Layer: 5
-  m_Name: "\u8840\u6761Canvas"
+  m_Name: "\u5E72\u5458Canvas"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -904,6 +924,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8980548114881520339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669732439964332774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727f2c169ab68a34e9d461150a698199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grayLifeSlider: {fileID: 5651927087492248366}
+  blueLifeSlider: {fileID: 7362286737011649260}
+  skillSlider: {fileID: 5022104746347073204}
 --- !u!1 &7679971740809662336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.79874206, g: 1, b: 0, a: 0.7058824}
+  m_Color: {r: 0.7971698, g: 1, b: 0, a: 0.7058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

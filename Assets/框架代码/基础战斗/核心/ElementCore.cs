@@ -3,32 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ElementCore : BattleCore
+public class ElementCore : PropertyCore
 {
     private List<ElementSlot> atcEleList = new List<ElementSlot>(); // 附着元素列表
     private float eleDecreaseSpeed = 0.3f;                          // 每秒元素自然消失量
+    
+    // 元素数据
+    public ValueBuffer elementMastery = new ValueBuffer(0);    
+    public ValueBuffer elementDamage = new ValueBuffer(1); 
+    public ValueBuffer elementResistance = new ValueBuffer(0);
 
-    public ValueBuffer elementalMastery = new ValueBuffer(0);
-    
-    public FightCalculation fightCalculation { get; private set; } = new FightCalculation();
-    
-    protected override void Start_BattleCore_Down()
+
+
+    protected override void Start_Property_Down()
     {
-
         Start_ElementCore_Down();
     }
 
     protected virtual void Start_ElementCore_Down() {}
-    
-    protected override void Update_BattleCore_Down()
-    {
-        fightCalculation.Update();
-        CheckDie();
 
-        if (dieNow) // 测试用，后期删掉
-            fightCalculation.GetDamage(1e9f, DamageMode.Magic);
-        
-        
+    protected override void Update_Property_Down()
+    {
         Update_ElementCore_Down();
     }
     
@@ -47,25 +42,34 @@ public class ElementCore : BattleCore
         }
     }
     
-    private void CheckDie()
+    
+    /// <summary>  
+    /// 带元素的攻击输出
+    /// </summary>
+    public float CauseDamage(float mul, ElementSlot elementSlot)
     {
-        if (fightCalculation.life_.life <= 0)
-        {
-            public_DieAction?.Invoke(this);
-            dieAction?.Invoke();
-        }
+        float dam = CauseDamage(mul);
+        
+        // 元素伤害
+        if (elementSlot.eleType != ElementType.Physics)
+            dam *= elementDamage.val;
+
+        return dam;
     }
     
     /// <summary>  
-    /// 表示该Core是否可以进行普攻
+    /// 受到一次元素伤害
     /// </summary>
-    protected bool CanAtk()
+    public void GetDamage(float baseDamage, DamageMode mode, ElementSlot elementSlot)
     {
-        bool k = true;
-        k = k & fightCalculation.CanAtk();
-        return k;
+        ///////// 这里处理元素反应相关，后面再实现
+        
+        
+        // 元素抗性
+        if (elementSlot.eleType != ElementType.Physics) 
+            baseDamage *= (1 - elementResistance.val / 100);
+        GetDamage(baseDamage, mode);
     }
-    
 
     private void Overloaded(ElementSlot firElement, ElementSlot sedElement, float mastery)           
     {
@@ -118,83 +122,6 @@ public class ElementCore : BattleCore
     private void RemoveElement()        
     {
         // 从附着元素列表里移除元素
-    }
-    
-}
-
-
-public class FightCalculation : BattleCalculation
-{
-    // 元素数据
-    public ValueBuffer mastery = new ValueBuffer(0);
-    public ValueBuffer elementDamage = new ValueBuffer(1);
-    public ValueBuffer elementResistance = new ValueBuffer(0);
-    public ValueBuffer spRecharge = new ValueBuffer(1);
-    
-    public SPController sp_ = new SPController();
-    
-    public override void Update()
-    {
-        base.Update();
-    }
-
-    /// <summary>  
-    /// 计算该Core一次输出的基础伤害*倍率
-    /// </summary>
-    public float CauseDamage(float mul, ElementSlot elementSlot)
-    {
-        float dam = atk_.val * mul;
-        
-        // 元素伤害
-        if (elementSlot.eleType != ElementType.Physics)
-            dam *= elementDamage.val;
-
-        return Bat_CauseDamage(dam);
-    }
-
-    public float CauseDamage(float mul)
-    {
-        return CauseDamage(mul, new ElementSlot());
-    }
-
-    public float CauseDamage()
-    {
-        return CauseDamage(1f, new ElementSlot());
-    }
-
-    
-    /// <summary>  
-    /// 该Core受到一次伤害
-    /// </summary>
-    public void GetDamage(float baseDamage, DamageMode mode, ElementSlot elementSlot)
-    {
-        ///////// 这里处理元素反应相关，后面再实现
-        
-        
-        // 元素抗性
-        baseDamage *= (1 - elementResistance.val / 100);
-        Bat_GetDamage(baseDamage,mode);
-    }
-
-    public void GetDamage(float baseDamage, DamageMode mode)
-    {
-        GetDamage(baseDamage, mode, new ElementSlot());
-    }
-
-
-    /// <summary>  
-    /// attacker对defender造成一次伤害，结束后更新彼此数值
-    /// </summary>
-    public void Fight(ElementCore attacker, ElementCore defender,
-        float multi, DamageMode mode, ElementSlot elementSlot)
-    {
-        float dam = attacker.fightCalculation.CauseDamage(multi, elementSlot);
-        defender.fightCalculation.GetDamage(dam, mode, elementSlot);
-    }
-    
-    public void Fight(ElementCore attacker, ElementCore defender, float multi, DamageMode mode)
-    {
-        Fight(attacker, defender, multi, mode, new ElementSlot());
     }
     
 }

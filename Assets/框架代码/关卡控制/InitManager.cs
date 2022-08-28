@@ -212,13 +212,13 @@ public class DragSlotController
             while (j < InitManager.offOperList.Count && InitManager.offOperList[j].Count == 0) j++;
             if (j >= InitManager.offOperList.Count)
             {
-                dragSlotList[i].operImage.color = transparent;
+                dragSlotList[i].gameObject.SetActive(false);
                 dragSlotList[i].operatorCore = null;
             }
             else
             {
-                dragSlotList[i].operImage.sprite = InitManager.allOperDataList[j].imageInQueue;
-                dragSlotList[i].operatorCore = InitManager.offOperList[j][0];
+                dragSlotList[i].gameObject.SetActive(true);
+                dragSlotList[i].Refresh(InitManager.offOperList[j][0]);
             }
         }
     }
@@ -229,10 +229,10 @@ public class ResourceController
 {
     public float cost { get; private set; }
     public float exp { get; private set; }
-    public int life { get; private set; }
+    public int HP { get; private set; }
     public int remainPlace { get; private set; }
-
-
+    
+    
     /// <summary>
     /// 初始化关卡资源
     /// </summary>
@@ -240,7 +240,7 @@ public class ResourceController
     {
         cost = cost_p;
         exp = exp_p;
-        life = life_p;
+        HP = life_p;
         remainPlace = remainPlace_p;
     }
 
@@ -263,9 +263,9 @@ public class ResourceController
     /// <summary>
     /// life增加v
     /// </summary>
-    public void LifeIncrease(int v)
+    public void HPIncrease(int v)
     {
-        life += v;
+        HP += v;
     }
 
     /// <summary>

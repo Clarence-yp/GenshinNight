@@ -22,15 +22,16 @@ MonoBehaviour:
   talentDescription: "\u65E0"
   dropCost: 0
   dropExp: 1
+  consumeHP: 1
   speed: 3
   fearResistance: 0
   isDrone: 0
-  headImage: {fileID: 21300000, guid: 55340c9f15bedc048a007eae3c7f7946, type: 3}
-  enemyPrefab: {fileID: 3602014035755773250, guid: b5f6b4a58e6379b40b0c337dac9c4011, type: 3}
+  headImage: {fileID: 0}
+  enemyPrefab: {fileID: 1161707832541733115, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
   skillName: "\u5954\u8DD1"
+  RecoverType: 0
   ReleaseType: 0
   startSP: 5
   maxSP: 5
   during: 5
   skillDescription: "\u730E\u72D7\u8FDB\u5165\u72C2\u5954\u72B6\u6001\uFF0C\u5927\u5E45\u63D0\u5347\u81EA\u8EAB\u7684\u79FB\u52A8\u901F\u5EA6"
-  skill_recoverType: 0

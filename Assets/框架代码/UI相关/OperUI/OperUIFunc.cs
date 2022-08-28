@@ -11,7 +11,7 @@ public class OperUIFunc : MonoBehaviour
     /// </summary>
     public void Exit()
     {
-        
+        OperUIManager.showingOper.Retreat();
     }
 
     /// <summary>
@@ -29,7 +29,6 @@ public class OperUIFunc : MonoBehaviour
     {
         OperatorCore oc_ = OperUIManager.showingOper;
         operData od_ = oc_.od_;
-        BattleCalculation bc_ = oc_.fightCalculation;
 
         if (oc_.eliteLevel >= 2) return;
         if (oc_.level < od_.maxLevel[oc_.eliteLevel]) return;
@@ -39,11 +38,11 @@ public class OperUIFunc : MonoBehaviour
         InitManager.resourceController.ExpIncrease(-od_.elitismExp[oc_.eliteLevel]);
         
 
-        bc_.atk_.AddBaseValue(od_.elitismAtk[oc_.eliteLevel]);
-        bc_.def_.AddBaseValue(od_.elitismDef[oc_.eliteLevel]);
-        bc_.magicDef_.AddBaseValue(od_.elitismMagicDef[oc_.eliteLevel]);
-        bc_.life_.AddBaseValue(od_.elitismLife[oc_.eliteLevel]);
-        bc_.maxBlock += od_.elitismBlock[oc_.eliteLevel];
+        oc_.atk_.AddBaseValue(od_.elitismAtk[oc_.eliteLevel]);
+        oc_.def_.AddBaseValue(od_.elitismDef[oc_.eliteLevel]);
+        oc_.magicDef_.AddBaseValue(od_.elitismMagicDef[oc_.eliteLevel]);
+        oc_.life_.AddBaseValue(od_.elitismLife[oc_.eliteLevel]);
+        oc_.maxBlock += od_.elitismBlock[oc_.eliteLevel];
         
         
         oc_.eliteLevel++;
@@ -59,7 +58,6 @@ public class OperUIFunc : MonoBehaviour
     {
         OperatorCore oc_ = OperUIManager.showingOper;
         operData od_ = oc_.od_;
-        BattleCalculation bc_ = oc_.fightCalculation;
 
         int dx = Math.Min(upLevel, oc_.od_.maxLevel[oc_.eliteLevel] - oc_.level);
         if (dx == 0 || InitManager.resourceController.cost < dx ||
@@ -68,9 +66,9 @@ public class OperUIFunc : MonoBehaviour
         InitManager.resourceController.ExpIncrease(-dx);
 
         oc_.level += dx;
-        bc_.atk_.AddBaseValue(od_.growingAtk[oc_.eliteLevel] * dx);
-        bc_.def_.AddBaseValue(od_.growingDef[oc_.eliteLevel] * dx);
-        bc_.life_.AddBaseValue(od_.growingLife[oc_.eliteLevel] * dx);
+        oc_.atk_.AddBaseValue(od_.growingAtk[oc_.eliteLevel] * dx);
+        oc_.def_.AddBaseValue(od_.growingDef[oc_.eliteLevel] * dx);
+        oc_.life_.AddBaseValue(od_.growingLife[oc_.eliteLevel] * dx);
         
         OperUIManager.Refresh();
     }
@@ -127,18 +125,53 @@ public class OperUIFunc : MonoBehaviour
         OperUIManager.skillUIController.skillUISta = SkillUISta.detailedTalent;
         OperUIManager.skillUIController.Refresh();
     }
-    
-    
-    
-    
-    
 
+
+    /// <summary>
+    /// 技能选择按钮
+    /// </summary>
+    public void SkillChoose()
+    {
+        int skillID = OperUIManager.skillUIController.showSkillNum;
+        OperatorCore oc_ = OperUIManager.showingOper;
+        oc_.skillNum = skillID;
+        OperUIManager.Refresh();
+    }
+    
     /// <summary>
     /// 技能升级按钮
     /// </summary>
-    public void SkillLevelUp(int skillID)
+    public void SkillLevelUp()
     {
-        
+        int skillID = OperUIManager.skillUIController.showSkillNum;
+        OperatorCore oc_ = OperUIManager.showingOper;
+        operData od_ = oc_.od_;
+        int skillLevel = oc_.skillLevel[skillID];
+
+        if (skillLevel >= 6) return;
+
+        int coseNeed = skillID switch
+        {
+            0 => od_.costNeed0[skillLevel],
+            1 => od_.costNeed1[skillLevel],
+            2 => od_.costNeed2[skillLevel],
+            _ => throw new ArgumentOutOfRangeException(nameof(skillID), skillID, null)
+        };
+        int expNeed = skillID switch
+        {
+            0 => od_.expNeed0[skillLevel],
+            1 => od_.expNeed1[skillLevel],
+            2 => od_.expNeed2[skillLevel],
+            _ => throw new ArgumentOutOfRangeException(nameof(skillID), skillID, null)
+        };
+
+        if (InitManager.resourceController.cost < coseNeed) return;
+        if (InitManager.resourceController.exp < expNeed) return;
+        InitManager.resourceController.CostIncrease(-coseNeed);
+        InitManager.resourceController.ExpIncrease(-expNeed);
+
+        oc_.skillLevel[skillID]++;
+        OperUIManager.skillUIController.Refresh();
     }
     
     

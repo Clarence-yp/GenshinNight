@@ -6,13 +6,15 @@ using Spine;
 using UnityEditor;
 using UnityEngine;
 
-public class OperatorCore : ElementCore
+public class OperatorCore : BattleCore
 {
     [Header("干员数据")]
     public operData od_;
 
     [HideInInspector] public int level;         // 干员等级
     [HideInInspector] public int eliteLevel;    // 干员精英化等级
+    [HideInInspector] public int[] skillLevel = new int[3];    // 干员技能等级[0:6]
+    [HideInInspector] public int costNeed;      // 干员当前部署费用
     [HideInInspector] public int operID;        // 在InitManager的offOperList里的编号
     [HideInInspector] public int skillNum;      // 该干员选择的技能编号
 
@@ -20,23 +22,22 @@ public class OperatorCore : ElementCore
     
     // spine动画相关
     [HideInInspector] public GameObject animObject;
-    public Animator anim;
+    [HideInInspector] public Animator anim;
     private SpineAnimController ac_;
 
     // atkRange相关
-    public SearchAndGive atkRange;      // 当前atkRange的脚本
-
+    [HideInInspector] public SearchAndGive atkRange;      // 当前atkRange的脚本
     private Action defaultTurn;         // 干员朝默认方向旋转的函数
     
     // 阻挡相关
-    private int block;                  // 当前剩余可用阻挡数
+    public int block { get; private set; }      // 当前剩余可用阻挡数
     private Dictionary<EnemyCore, bool> alreadyBlockSet = new Dictionary<EnemyCore, bool>();
 
     private void Awake()
     {
         animObject = transform.Find("anim").gameObject;
         anim = animObject.GetComponent<Animator>();
-        ac_ = new SpineAnimController(anim, 0.3f);
+        ac_ = new SpineAnimController(anim, this, 0.3f);
         
         // 这里是注册所有干员atkRange信息
         foreach (var atkRange in od_.atkRange)
@@ -49,9 +50,11 @@ public class OperatorCore : ElementCore
         ChangeAtkRange();       // 生成atkRange
     }
 
-    protected override void Start_ElementCore_Down()
+    protected override void Start_BattleCore_Down()
     {
         OperInit();
+        ac_.ChangeDefaultColorImmediately();
+        
 
         Start_OperatorCore_Down();
 
@@ -61,7 +64,7 @@ public class OperatorCore : ElementCore
 
     protected virtual void Start_OperatorCore_Down() {}
     
-    protected override void Update_ElementCore_Down()
+    protected override void Update_BattleCore_Down()
     {
         Fight();
         CheckBlock();
@@ -73,8 +76,11 @@ public class OperatorCore : ElementCore
     protected virtual void Update_OperatorCore_Down() {}
 
     public void OperInit()
-    {
-        // 在每次登场时的初始化函数，用于初始化本OperatorCore
+    {// 在每次登场时的初始化函数，用于初始化本OperatorCore
+        
+        
+        // 重设生命值
+        life_.RecoverCompletely();
         
         // 根据当前朝向设定默认朝向
         if (anim.transform.localScale.x > 0) defaultTurn = ac_.TurnRight;
@@ -82,21 +88,24 @@ public class OperatorCore : ElementCore
         
         // 让Anim开始播放动画
         anim.SetBool("start", true);
-
+        
     }
 
     private void InitCalculation()
     {
-        fightCalculation.atk_.ChangeBaseValue(od_.atk);
-        fightCalculation.def_.ChangeBaseValue(od_.def);
-        fightCalculation.magicDef_.ChangeBaseValue(od_.magicDef);
-        fightCalculation.life_.InitBaseLife(od_.life);
-        fightCalculation.maxBlock = od_.maxBlock;
+        atk_.ChangeBaseValue(od_.atk);
+        def_.ChangeBaseValue(od_.def);
+        magicDef_.ChangeBaseValue(od_.magicDef);
+        life_.InitBaseLife(od_.life);
+        maxBlock = od_.maxBlock;
+        minAtkInterval = od_.maxAtkInterval;
 
-        fightCalculation.mastery.ChangeBaseValue(od_.elementalMastery);
-        fightCalculation.elementDamage.ChangeBaseValue(od_.elementalDamage);
-        fightCalculation.elementResistance.ChangeBaseValue(od_.elementalResistance);
-        fightCalculation.spRecharge.ChangeBaseValue(od_.spRecharge);
+        elementMastery.ChangeBaseValue(od_.elementalMastery);
+        elementDamage.ChangeBaseValue(od_.elementalDamage);
+        elementResistance.ChangeBaseValue(od_.elementalResistance);
+        sp_.spRecharge.ChangeBaseValue(od_.spRecharge);
+
+        costNeed = od_.cost;
     }
 
     
@@ -127,27 +136,27 @@ public class OperatorCore : ElementCore
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("enemy")) return;
-        ElementCore elementCore = other.GetComponent<ElementCore>();
-        blockList.Add(elementCore);
-        elementCore.public_DieAction += DelBattleCore_OperBlock;
+        BattleCore battleCore = other.GetComponent<BattleCore>();
+        blockList.Add(battleCore);
+        battleCore.DieAction += DelBattleCore_OperBlock;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("enemy")) return;
-        ElementCore elementCore = other.GetComponent<ElementCore>();
-        elementCore.public_DieAction -= DelBattleCore_OperBlock;
-        DelBattleCore_OperBlock(elementCore);
+        BattleCore battleCore = other.GetComponent<BattleCore>();
+        battleCore.DieAction -= DelBattleCore_OperBlock;
+        DelBattleCore_OperBlock(battleCore);
     }
 
     // 敌人死亡时，处理block相关的回调函数
-    private void DelBattleCore_OperBlock(ElementCore bc_)
+    private void DelBattleCore_OperBlock(BattleCore bc_)
     {
         blockList.Remove(bc_);
         EnemyCore ec_ = (EnemyCore)bc_;
         if (alreadyBlockSet.ContainsKey(ec_) && alreadyBlockSet[ec_])
         {
-            block += ec_.fightCalculation.maxBlock;
+            block += ec_.maxBlock;
             alreadyBlockSet[ec_] = false;
             ec_.UnBlocked();
         }
@@ -160,10 +169,10 @@ public class OperatorCore : ElementCore
             EnemyCore ec_ = (EnemyCore)i;
             if (alreadyBlockSet.ContainsKey(ec_) && alreadyBlockSet[ec_]) continue;
             
-            if (ec_.fightCalculation.maxBlock <= block)
+            if (ec_.maxBlock <= block)
             {
                 ec_.BeBlocked();
-                block -= ec_.fightCalculation.maxBlock;
+                block -= ec_.maxBlock;
                 alreadyBlockSet[ec_] = true;
             }
         }
@@ -197,7 +206,7 @@ public class OperatorCore : ElementCore
         atkRange = newRange.GetComponent<SearchAndGive>();
         
         // 初始化当前阻挡数
-        block = fightCalculation.maxBlock;
+        block = maxBlock;
     }
     
     /// <summary>
@@ -209,6 +218,45 @@ public class OperatorCore : ElementCore
     }
     
     /// <summary>
+    /// 干员撤退函数（普通撤退，不是死亡）
+    /// </summary>
+    public void Retreat()
+    {
+        DieAction?.Invoke(this);
+        costNeed = costNeed + od_.cost / 2 >= od_.cost * 2 ? od_.cost * 2 : costNeed + od_.cost / 2;
+
+        OperUIManager.CloseOperUI();
+        if (!prePutOn)
+        {
+            InitManager.offOperList[operID].Add(this);
+            InitManager.dragSlotController.RefreshDragSlot();
+        }
+        InitManager.resourceController.CostIncrease(od_.cost / 2);
+
+        transform.position = new Vector3(999, 999, 999);
+        anim.CrossFade("default", 0, 0, 0);
+        gameObject.SetActive(false);
+    }
+
+    protected override void DieBegin()
+    {// 死亡撤退函数
+        anim.transform.parent = null;
+        transform.position = new Vector3(999, 999, 999);
+        costNeed = costNeed + od_.cost / 2 > od_.cost * 2 ? od_.cost * 2 : costNeed + od_.cost / 2;
+        
+        OperUIManager.CloseOperUI();
+        if (!prePutOn)
+        {
+            InitManager.offOperList[operID].Add(this);
+            InitManager.dragSlotController.RefreshDragSlot();
+        }
+
+        anim.SetBool("die", true);
+        ac_.ChangeColor(Color.black);
+    }
+    
+    
+    /// <summary>
     /// 点击干员时调用的函数
     /// </summary>
     public void OnClick()
@@ -217,25 +265,25 @@ public class OperatorCore : ElementCore
         OperUIManager.OpenOperUI(UIstate.UP, this);
     }
     
+    public virtual void OnStart() {}
     
-
-    /// <summary>
-    /// 在登场动画关键帧调用
-    /// </summary>
-    public virtual void OnStart()
-    {
-        
-    }
-
-    /// <summary>
-    /// 普通攻击，在攻击动画关键帧调用
-    /// </summary>
     public virtual void OnAttack()
     {
-        fightCalculation.NorAtkStartCool();
-        fightCalculation.Fight(this, target, 1, DamageMode.Physical);
+        NorAtkStartCool();
+        Battle(this, target, 1, DamageMode.Physical);
     }
+
+    public void OnDie()
+    {
+        ac_.ChangeDefaultColorImmediately();
+        anim.transform.parent = transform;
+        dying = false;
+        gameObject.SetActive(false);
+    }
+
+
     
+
     public virtual void Skill1() { }
     
     public virtual void Skill2() { }
@@ -247,8 +295,9 @@ public class OperatorCore : ElementCore
 public class SpineAnimController
 {
     private const float turnSpeed = 10;
-    private const float colorSpeed = 10;
-    
+    private const float colorSpeed = 5;
+
+    private BattleCore prtBattleCore;
     private Animator anim;
     private MeshRenderer meshRenderer;
     
@@ -259,12 +308,14 @@ public class SpineAnimController
     
     private Action colorAction;
     private bool colorChanging = false;
-    private Color tarColor = new Color32(255, 255, 255, 255);
-    private static readonly Color defaultColor = new Color32(255, 255, 255, 255);
+    private Color tarColor = new Color(1, 1, 1, 1);
+    private Color nowColor = new Color(1, 1, 1, 1);
+    private static readonly Color defaultColor = new Color(1, 1, 1, 1);
 
-    public SpineAnimController(Animator animator, float scale)
+    public SpineAnimController(Animator animator, BattleCore bc_, float scale)
     {
         anim = animator;
+        prtBattleCore = bc_;
         meshRenderer = anim.GetComponent<MeshRenderer>();
         leftScale = new Vector3(-scale, scale, scale);
         rightScale = new Vector3(scale, scale, scale);
@@ -274,10 +325,11 @@ public class SpineAnimController
     public void Update()
     {
         // 该函数需在其它函数的Update里调用才会生效
-        
+
         // 旋转
-        anim.transform.localScale =
-            Vector3.Lerp(anim.transform.localScale, tarScale, turnSpeed * Time.deltaTime);
+        if(!prtBattleCore.dying)
+            anim.transform.localScale =
+                Vector3.Lerp(anim.transform.localScale, tarScale, turnSpeed * Time.deltaTime);
         
         ColorAnim();
     }
@@ -289,12 +341,13 @@ public class SpineAnimController
         if (colorChanging)
         {
             MaterialPropertyBlock mpb = new MaterialPropertyBlock();
-            mpb.SetColor("_Color", Color.Lerp(mpb.GetColor("_Color"), tarColor,
-                colorSpeed * Time.deltaTime));
+            
+            nowColor = Color.Lerp(nowColor, tarColor, colorSpeed * Time.deltaTime);
+            mpb.SetColor("_Color", nowColor);
             meshRenderer.SetPropertyBlock (mpb);
-
-            Color color = mpb.GetColor("_Color");
-            float det = color.r - tarColor.r + color.b - tarColor.b + color.g - tarColor.g + color.a - tarColor.a;
+            
+            float det = nowColor.r - tarColor.r + nowColor.b - tarColor.b + 
+                nowColor.g - tarColor.g + nowColor.a - tarColor.a;
             if (Math.Abs(det) < 0.01)
             {
                 colorChanging = false;
@@ -362,6 +415,17 @@ public class SpineAnimController
     {
         tarColor = defaultColor;
         colorChanging = true;
+    }
+    
+    /// <summary>
+    /// 调用一次，人物颜色将立刻恢复为默认颜色
+    /// </summary>
+    public void ChangeDefaultColorImmediately()
+    {
+        tarColor = defaultColor;
+        MaterialPropertyBlock mpb = new MaterialPropertyBlock();
+        mpb.SetColor("_Color", tarColor);
+        meshRenderer.SetPropertyBlock (mpb);
     }
     
 }

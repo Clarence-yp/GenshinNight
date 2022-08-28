@@ -21,6 +21,9 @@ public class enemyInfo : ScriptableObject
     public int dropCost;
     public int dropExp;
     
+    [Header("消耗关卡生命值")] 
+    public int consumeHP;
+    
     [Header("初始速度")]
     public float speed;
     
@@ -36,6 +39,9 @@ public class enemyInfo : ScriptableObject
     
     [Header("技能1")] 
     public string skillName;
+    [EnumLabel("回复类型")]
+    public recoverType RecoverType;
+    [EnumLabel("释放类型")]
     public releaseType ReleaseType;
     public float startSP;
     public float maxSP;
@@ -43,6 +49,5 @@ public class enemyInfo : ScriptableObject
     [TextArea]
     public string skillDescription;
     
-    [EnumLabel("回复类型")]
-    public recoverType skill_recoverType;
+    
 }

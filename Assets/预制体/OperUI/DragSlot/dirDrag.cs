@@ -50,6 +50,7 @@ public class dirDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHand
     public void OnBeginDrag(PointerEventData eventData)
     {
         draging = true;
+        direction = FourDirection.None;
     }
 
     public void OnDrag(PointerEventData eventData)
