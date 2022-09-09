@@ -18,7 +18,7 @@ public class operDataEnum : Editor
     private SerializedProperty  atkRange;
     private SerializedProperty  elementType;
     private SerializedProperty  is3D;
-    private SerializedProperty  isMedical;
+    private SerializedProperty  aimingMode;
     private SerializedProperty  canAtkDrone;
     private SerializedProperty  banLowGround;
     private SerializedProperty  banHighGround;
@@ -125,7 +125,7 @@ public class operDataEnum : Editor
         atkRange = od_.FindProperty("atkRange");
         elementType = od_.FindProperty("elementType");
         is3D = od_.FindProperty("is3D");
-        isMedical = od_.FindProperty("isMedical");
+        aimingMode = od_.FindProperty("aimingMode");
         canAtkDrone = od_.FindProperty("canAtkDrone");
         banLowGround = od_.FindProperty("banLowGround");
         banHighGround = od_.FindProperty("banHighGround");
@@ -231,7 +231,7 @@ public class operDataEnum : Editor
             EditorGUILayout.PropertyField(atkRange);
             EditorGUILayout.PropertyField(elementType);
             EditorGUILayout.PropertyField(is3D);
-            EditorGUILayout.PropertyField(isMedical);
+            EditorGUILayout.PropertyField(aimingMode);
             EditorGUILayout.PropertyField(canAtkDrone);
             EditorGUILayout.PropertyField(banLowGround);
             EditorGUILayout.PropertyField(banHighGround);

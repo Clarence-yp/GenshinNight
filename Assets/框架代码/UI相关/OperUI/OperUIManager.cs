@@ -92,6 +92,7 @@ public class OperUIManager : MonoBehaviour
         StartAllController();           // 初始化所有Controller
         gc_.gameObject.SetActive(true);
         gc_.Show();
+        
     }
 
     public static void CloseOperUI()
@@ -259,7 +260,7 @@ public class RightUIController
                 pos.y = BaseFunc.highOper_y + 0.01f;
             else pos.y = 0.01f;
             
-            GameObject showing = PoolManager.GetObj(SpriteElement.atkRangeImage);
+            GameObject showing = PoolManager.GetObj(SpriteElement.instance.atkRangeImage);
             showing.transform.position = pos;
             showingRangeImage.Add(showing);
         }
@@ -361,21 +362,21 @@ public class LevelUIController
 
         if (oc_.eliteLevel == 0)
         {
-            elitismImage.sprite = SpriteElement.elitismSprite0;
+            elitismImage.sprite = SpriteElement.instance.elitismSprite0;
             elitismCostText.text = od_.elitismCost[0].ToString();
             elitismExpText.text = od_.elitismCost[0].ToString();
             operImage.sprite = od_.operUIImage1;
         }
         else if (oc_.eliteLevel == 1)
         {
-            elitismImage.sprite = SpriteElement.elitismSprite1;
+            elitismImage.sprite = SpriteElement.instance.elitismSprite1;
             elitismCostText.text = od_.elitismCost[1].ToString();
             elitismExpText.text = od_.elitismCost[1].ToString();
             operImage.sprite = od_.operUIImage1;
         }
         else if (oc_.eliteLevel == 2)
         {
-            elitismImage.sprite = SpriteElement.elitismSprite2;
+            elitismImage.sprite = SpriteElement.instance.elitismSprite2;
             operImage.sprite = od_.operUIImage2;
         }
 

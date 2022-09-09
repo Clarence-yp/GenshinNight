@@ -24,8 +24,9 @@ public class operData : ScriptableObject
     [Header("是否是3D素材")]
     public bool is3D;
     
-    [Header("是否是医疗干员")]
-    public bool isMedical;
+    [Header("瞄准模式")]
+    [EnumLabel("aimingMode")] 
+    public AimingMode aimingMode;
     
     [Header("是否可以打无人机")]
     public bool canAtkDrone;

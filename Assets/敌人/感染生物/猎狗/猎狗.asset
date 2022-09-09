@@ -23,7 +23,7 @@ MonoBehaviour:
   dropCost: 0
   dropExp: 1
   consumeHP: 1
-  speed: 3
+  speed: 1
   fearResistance: 0
   isDrone: 0
   headImage: {fileID: 0}

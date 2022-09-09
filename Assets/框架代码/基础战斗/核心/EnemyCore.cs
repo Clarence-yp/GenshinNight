@@ -151,6 +151,7 @@ public class EnemyCore : BattleCore
         // 敌人到达终点后
         if (dying) return;
         dying = true;
+        if (DieAction != null) DieAction(this);
         InitManager.resourceController.HPIncrease(-ei_.consumeHP);
         anim.transform.parent = null;
         transform.position = new Vector3(999, 999, 999);

@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05912043f2434048840b2fbbbe94273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alphaSpeed: 0.5
+  alphaSpeed: 0.4
 --- !u!1 &1034084423814297146
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +524,8 @@ MonoBehaviour:
   rewardUI: {fileID: 6375411009333419198}
   costText: {fileID: 7093021972794789008}
   expText: {fileID: 7785739605341901790}
+  Canvas1: {fileID: 523186886899337112}
+  Canvas2: {fileID: 3850299256554673149}
 --- !u!1 &2714362908397803715
 GameObject:
   m_ObjectHideFlags: 0

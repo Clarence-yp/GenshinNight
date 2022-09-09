@@ -632,6 +632,7 @@
               <e p="Spine" t="Include">
                 <e p="bili.atlas.txt" t="Include" />
               </e>
+              <e p="Tartaglia.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -699,10 +700,15 @@
             </e>
           </e>
           <e p="辅助脚本" t="Include">
-            <e p="ChineseTranslation.cs" t="Include" />
             <e p="destroySelf.cs" t="Include" />
+            <e p="中文显示" t="Include">
+              <e p="ChineseTranslation.cs" t="Include" />
+            </e>
             <e p="对象池" t="Include">
               <e p="PoolManager.cs" t="Include" />
+            </e>
+            <e p="运动轨迹" t="Include">
+              <e p="parabola.cs" t="Include" />
             </e>
           </e>
           <e p="静态函数" t="Include">
@@ -711,6 +717,13 @@
           </e>
         </e>
         <e p="素材" t="Include">
+          <e p="Epic Toon FX" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ETFXLightFade.cs" t="Include" />
+              <e p="ETFXPitchRandomizer.cs" t="Include" />
+              <e p="ETFXRotation.cs" t="Include" />
+            </e>
+          </e>
           <e p="地图方块" t="Include">
             <e p="门" t="Include">
               <e p="redDoorButtonController.cs" t="Include" />

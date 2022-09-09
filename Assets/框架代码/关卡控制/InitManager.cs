@@ -15,6 +15,9 @@ public class InitManager : MonoBehaviour
     public static List<int> allOperNumList = new List<int>();
     // 本场战斗还未布置的所有干员，按角色划分，二级队列为多数量干员（箱子等）准备
     public static List<List<OperatorCore>> offOperList = new List<List<OperatorCore>>();
+    // operReTime[i]=t表示id为i的干员目前的再部署时间为t，反应到DragSlot上
+    public static List<float> operReTime = new List<float>();
+    
     // 本场战斗会出现的所有敌人，按波次切分
     public static List<List<EnemyCore>> allEnemyList = new List<List<EnemyCore>>();
     public static int totEnemyNum;
@@ -58,15 +61,14 @@ public class InitManager : MonoBehaviour
         for (int i = 0; i < allOperDataList.Count; i++)
         {
             offOperList.Add(new List<OperatorCore>());
-            int id = offOperList.Count - 1;
             for (int j = 0; j < allOperNumList[i]; j++)
             {
                 GameObject newOper=Instantiate(allOperDataList[i].operPrefab, 
                     null, true);
                 newOper.transform.position = new Vector3(999, 999, 999);
                 OperatorCore oc_ = newOper.GetComponent<OperatorCore>();
-                oc_.operID = id;
-                offOperList[id].Add(oc_);
+                oc_.operID = i;
+                offOperList[i].Add(oc_);
             }
         }
         
@@ -74,7 +76,7 @@ public class InitManager : MonoBehaviour
         dragSlotController.Init();
         
         // 初始化关卡资源控制器
-        resourceController.Init(1000, 1000, 1000, 1000);
+        resourceController.Init(1000, 1000, 10, 1000);
 
 
     }
@@ -118,6 +120,13 @@ public class InitManager : MonoBehaviour
         redDoorUILIst.Add(rdu_);
     }
 
+    public static void Register(operData od_, int num)
+    {
+        allOperDataList.Add(od_);
+        allOperNumList.Add(num);
+        operReTime.Add(0);
+    }
+
     public static void Register(EnemyCore ec_)
     {
         while(allEnemyList.Count<=ec_.wave)
@@ -139,42 +148,45 @@ public class InitManager : MonoBehaviour
         if (!mp.ContainsKey(pos)) return null;
         return mp[pos];
     }
-    
-    
-    
+
+
+    public static void TimeSlow()
+    {
+        Time.timeScale = 0.1f;
+        DisableAllRedDoorUI();
+    }
     
     public static void TimeSlowDrag()
     {
-        // if(!gameManager.pause)
-        //     Time.timeScale = 0.1f;
+        TimeSlow();
         cameraController_.ChangeTar(cameraController_.basePos, cameraController_.slowRol);
-        // cameraController_.tarPos = cameraController_.rightPos;
-        // DisableAllRedDoorUI();
     }
     public static void TimeSlowPick(Transform oper)
     {
-        // if(!gameManager.pause)
-        //     Time.timeScale = 0.1f;
-        
+        TimeSlow();
         Vector3 tarPos = cameraController_.basePos;
         tarPos.x = oper.position.x - 1f;
         tarPos.z = oper.position.z - 6f;
         cameraController_.ChangeTar(tarPos, cameraController_.slowRol);
-
-        // DisableAllRedDoorUI();
     }
     public static void TimeRecover()
     {
-        // if (gameManager.pause)
-        //     Time.timeScale = 0;
-        // else if (gameManager.twoFast)
-        //     Time.timeScale = 2;
-        // else 
-        //     Time.timeScale = 1;
-
+        Time.timeScale = 1;
         cameraController_.ChangeTar(cameraController_.basePos, cameraController_.baseRol);
+        dragSlotController.DownAnims();
+        EnableAllRedDoorUI();
+    }
 
-        // EnableAllRedDoorUI();
+    private static void DisableAllRedDoorUI()
+    {
+        foreach (var i in redDoorUILIst)
+            i.DisableUI();
+    }
+    
+    private static void EnableAllRedDoorUI()
+    {
+        foreach (var i in redDoorUILIst)
+            i.EnableUI();
     }
     
 }
@@ -213,7 +225,7 @@ public class DragSlotController
             if (j >= InitManager.offOperList.Count)
             {
                 dragSlotList[i].gameObject.SetActive(false);
-                dragSlotList[i].operatorCore = null;
+                dragSlotList[i].Refresh(null);
             }
             else
             {
@@ -222,6 +234,18 @@ public class DragSlotController
             }
         }
     }
+    
+    /// <summary>
+    /// 让所有的DragSlot缩回去
+    /// </summary>
+    public void DownAnims()
+    {
+        foreach (var i in dragSlotList)
+        {
+            i.anim.SetBool("up", false);  // 下沉
+        }
+    }
+    
 }
 
 

@@ -18,14 +18,14 @@ MonoBehaviour:
   EnName: 
   elementType: 4
   is3D: 0
-  isMedical: 0
+  aimingMode: 1
   canAtkDrone: 0
   banLowGround: 0
   banHighGround: 0
   imageInQueue: {fileID: 21300000, guid: 4108bcfeeb8160e40bd762692f588242, type: 3}
   spineDefault: {fileID: 0}
-  operUIImage1: {fileID: 21300000, guid: 258ad48e483716d4daee206619eaffcb, type: 3}
-  operUIImage2: {fileID: 21300000, guid: 258ad48e483716d4daee206619eaffcb, type: 3}
+  operUIImage1: {fileID: 21300000, guid: 0ba884868b9eebe4ba63a0db412b6e42, type: 3}
+  operUIImage2: {fileID: 21300000, guid: 0ba884868b9eebe4ba63a0db412b6e42, type: 3}
   operPrefab: {fileID: 407436062082884715, guid: bc9af281e58d6fb44b6ad82a5db02409, type: 3}
   Report: {fileID: 0}
   LevelUP: {fileID: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
   End_Not3Star: {fileID: 0}
   End_Fail: {fileID: 0}
   Touch: {fileID: 0}
-  atk: 0
+  atk: 100
   def: 0
   magicDef: 0
   life: 200
@@ -51,7 +51,7 @@ MonoBehaviour:
   maxAtkInterval: 0
   cost: 20
   consumPlace: 1
-  reTime: 0
+  reTime: 10
   maxLevel: 32000000500000005a000000
   elementalMastery: 0
   elementalDamage: 0
@@ -137,9 +137,9 @@ MonoBehaviour:
   - 0
   - 0
   atkRange:
-  - {fileID: 6645886670027540070, guid: 519f9df20952ce04881a6ddc8faaad46, type: 3}
-  - {fileID: 6645886670027540070, guid: d83d20e73992eec4bb801bc1c55b54d4, type: 3}
-  - {fileID: 6645886670027540070, guid: d83d20e73992eec4bb801bc1c55b54d4, type: 3}
+  - {fileID: 6645886670027540070, guid: c1567fd0fff17094f821aee0b69ff388, type: 3}
+  - {fileID: 6645886670027540070, guid: 39c3625c660bb524fb6a439233dddd32, type: 3}
+  - {fileID: 6645886670027540070, guid: 39c3625c660bb524fb6a439233dddd32, type: 3}
   atkRangeImage:
   - {fileID: 0}
   - {fileID: 0}

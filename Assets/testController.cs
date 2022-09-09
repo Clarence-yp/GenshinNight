@@ -9,10 +9,8 @@ public class testController : MonoBehaviour
     
     private void Awake()
     {
-        InitManager.allOperDataList.Add(dadaliya);
-        InitManager.allOperNumList.Add(1);
-        InitManager.allOperDataList.Add(dadaliya);
-        InitManager.allOperNumList.Add(1);
+        InitManager.Register(dadaliya, 1);
+        InitManager.Register(dadaliya, 1);
     }
 
     void Start()

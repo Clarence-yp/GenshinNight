@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407436062082884714}
   - component: {fileID: 407436062082884725}
-  - component: {fileID: 407436062082884724}
+  - component: {fileID: 5168407642968191803}
   m_Layer: 0
   m_Name: "\u8FBE\u8FBE\u5229\u4E9A"
   m_TagString: operator
@@ -47,7 +47,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &407436062082884724
+--- !u!114 &5168407642968191803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,16 +56,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 407436062082884715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f74acd04f8c783a49b583997a7930a02, type: 3}
+  m_Script: {fileID: 11500000, guid: add7deb9bd06b4142889c97e70f40193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   operatorList: []
   enemyList: []
-  aimingMode: 1
+  aimingMode: 0
   tarPriority: 0
   dieNow: 0
   atkSpeed: 0
-  minAtkInterval: 2.5
+  minAtkInterval: 0
   maxBlock: 0
   dying: 0
   blockList: []
@@ -80,6 +80,7 @@ MonoBehaviour:
   animObject: {fileID: 0}
   anim: {fileID: 0}
   atkRange: {fileID: 0}
+  norArrow: {fileID: 8307805351159478916, guid: 20ad7eaba7e761b448c7b77997e1b331, type: 3}
 --- !u!1 &407436063783036259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1135,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 407436062082884724}
+      - m_Target: {fileID: 5168407642968191803}
         m_TargetAssemblyTypeName: OperatorCore, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1

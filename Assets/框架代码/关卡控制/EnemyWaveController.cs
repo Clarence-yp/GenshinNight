@@ -83,6 +83,7 @@ public class EnemyWaveController : MonoBehaviour        // 按波次和时间生
         }
         
         NextWaveUI();
+        nxtWaveTime = MaxWaveTime;
         foreach (var i in InitManager.redDoorUILIst)
         {
             i.sliderImage.fillAmount = 1;
@@ -148,21 +149,19 @@ public class EnemyWaveController : MonoBehaviour        // 按波次和时间生
     {
         wave++;
         if (wave >= InitManager.allEnemyList.Count) return;
+        
         timeLine = 0;
         enemyQueue.Clear();
         if (!disableWaveUI)
         {
             float leftTime = MaxWaveTime - nxtWaveTime;
             
-            int gexp = (int) Math.Ceiling(10f * leftTime / MaxWaveTime);
-            int gcost = 10;
-            // int gcost = (int) cost_.GetCostDuring(leftTime);
-            // cost_.GetCost(gcost);
-            // exp_.GetExp(gexp);
-            
+            int rewords = (int) Math.Ceiling(10f * leftTime / MaxWaveTime);
+            InitManager.resourceController.CostIncrease(rewords);
+            InitManager.resourceController.ExpIncrease(rewords);
             
             foreach (var i in InitManager.redDoorUILIst)
-                i.ChangeRewardUI(gcost, gexp);
+                i.ChangeRewardUI(rewords, rewords);
             
             // foreach (var i in operDragList)
             //     i.reTime = i.reTime - leftTime > 0 ? i.reTime - leftTime : 0;

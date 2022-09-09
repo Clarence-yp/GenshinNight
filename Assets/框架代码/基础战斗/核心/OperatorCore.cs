@@ -16,6 +16,7 @@ public class OperatorCore : BattleCore
     [HideInInspector] public int[] skillLevel = new int[3];    // 干员技能等级[0:6]
     [HideInInspector] public int costNeed;      // 干员当前部署费用
     [HideInInspector] public int operID;        // 在InitManager的offOperList里的编号
+    [HideInInspector] public ValueBuffer recoverTime = new ValueBuffer(0);   // 干员再部署时间
     [HideInInspector] public int skillNum;      // 该干员选择的技能编号
 
     public bool prePutOn;           // 一开始就在场上的
@@ -23,7 +24,7 @@ public class OperatorCore : BattleCore
     // spine动画相关
     [HideInInspector] public GameObject animObject;
     [HideInInspector] public Animator anim;
-    private SpineAnimController ac_;
+    protected SpineAnimController ac_;
 
     // atkRange相关
     [HideInInspector] public SearchAndGive atkRange;      // 当前atkRange的脚本
@@ -46,6 +47,7 @@ public class OperatorCore : BattleCore
             Destroy(tmp);
         }
 
+        aimingMode = od_.aimingMode;
         InitCalculation();      // 初始化battleCalculation
         ChangeAtkRange();       // 生成atkRange
     }
@@ -104,6 +106,7 @@ public class OperatorCore : BattleCore
         elementDamage.ChangeBaseValue(od_.elementalDamage);
         elementResistance.ChangeBaseValue(od_.elementalResistance);
         sp_.spRecharge.ChangeBaseValue(od_.spRecharge);
+        recoverTime.ChangeBaseValue(od_.reTime);
 
         costNeed = od_.cost;
     }
@@ -230,8 +233,9 @@ public class OperatorCore : BattleCore
         {
             InitManager.offOperList[operID].Add(this);
             InitManager.dragSlotController.RefreshDragSlot();
+            InitManager.resourceController.CostIncrease(od_.cost / 2);
+            InitManager.resourceController.RemainPlaceIncrease(od_.consumPlace);
         }
-        InitManager.resourceController.CostIncrease(od_.cost / 2);
 
         transform.position = new Vector3(999, 999, 999);
         anim.CrossFade("default", 0, 0, 0);
@@ -249,6 +253,7 @@ public class OperatorCore : BattleCore
         {
             InitManager.offOperList[operID].Add(this);
             InitManager.dragSlotController.RefreshDragSlot();
+            InitManager.resourceController.RemainPlaceIncrease(od_.consumPlace);
         }
 
         anim.SetBool("die", true);

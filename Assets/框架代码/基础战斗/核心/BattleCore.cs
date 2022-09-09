@@ -58,7 +58,10 @@ public class BattleCore : ElementCore
         if (life_.life <= 0 && !dying)
         {
             dying = true;
-            DieAction?.Invoke(this);
+            if (DieAction != null)
+            {
+                DieAction(this);
+            }
             DieBegin();
         }
     }
@@ -155,9 +158,11 @@ public class BattleCore : ElementCore
     
 }
 
-public enum AimingMode
+public enum AimingMode : byte
 {
+    [EnumLabel("瞄准干员")]
     operatorFirst,
+    [EnumLabel("瞄准敌人")]
     enemyFirst
 }
 

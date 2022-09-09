@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler
 {
     [HideInInspector] public OperatorCore operatorCore;       // 干员预制体，关卡内不释放
+    [HideInInspector] public bool operIsNull = true;
     private Transform operatorAnim;         // 干员预制体下的动画子物体
     private dirDrag dirDrag_;               
 
@@ -18,10 +19,9 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     public Text costText;
     public GameObject numPanel;
     public Text numText;
-    private Animator anim;         // 干员头像动画控制器，控制拖动时的上浮与下沉
-    
-    
-    private float reTime;                   // 剩余再部署时间
+    public GameObject recoverPanel;
+    public Text recoverText;
+    [HideInInspector] public Animator anim;     // 干员头像动画控制器，控制拖动时的上浮与下沉
 
 
     private void Awake()
@@ -37,10 +37,32 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
         dirDrag_ = OperUIElements.dragPanel.transform.Find("MovingArrow").GetComponent<dirDrag>();
     }
 
+    private void Update()
+    {
+        if (operIsNull) return;
+        float reTime = InitManager.operReTime[operatorCore.operID];
+        if (reTime - Time.deltaTime > 0)
+        {
+            recoverText.text = reTime.ToString("f1");
+            InitManager.operReTime[operatorCore.operID] -= Time.deltaTime;
+        }
+        else if (reTime > 0)
+        {
+            recoverPanel.SetActive(false);
+        }
+        
+    }
 
     public void Refresh(OperatorCore oc_)
     {
+        if (oc_ == null)
+        {
+            operatorCore = null;
+            operIsNull = true;
+            return;
+        }
         operatorCore = oc_;
+        operIsNull = false;
         int id = operatorCore.operID;
         operData od_ = InitManager.allOperDataList[id];
 
@@ -62,13 +84,18 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
                 numText.text = "X" + num;
                 break;
         }
+
+        if (InitManager.operReTime[id] > 0) recoverPanel.SetActive(true);
+        else recoverPanel.SetActive(false);
     }
 
 
     bool CanPut()
     {
-        // if (reTime > 0) return false;
-        if (operatorCore == null) return false;
+        
+        if (operIsNull) return false;
+        if (recoverPanel.activeSelf) return false;
+        if (InitManager.resourceController.remainPlace < operatorCore.od_.consumPlace) return false;
         return true;
     }
 
@@ -191,10 +218,24 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
         operatorCore.OperInit();
         
         dirDrag_.BackGroundButton.onClick.RemoveListener(PutFailed);
+
+        InitManager.operReTime[operatorCore.operID] = operatorCore.recoverTime.val;
+
+        InitManager.resourceController.CostIncrease(-operatorCore.costNeed);
+        InitManager.resourceController.RemainPlaceIncrease(-operatorCore.od_.consumPlace);
         
         InitManager.operList.Add(operatorCore);
         InitManager.offOperList[operatorCore.operID].RemoveAt(0);
         InitManager.dragSlotController.RefreshDragSlot();
+        
     }
-    
+
+    public void OnClick()
+    {// 点击下方的干员按钮，以场下方式打开左侧UI
+        if (operIsNull) return;
+        OperUIManager.OpenOperUI(UIstate.Down, operatorCore);
+        InitManager.TimeSlow();
+        anim.SetBool("up", true);
+    }
+
 }

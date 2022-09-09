@@ -54,6 +54,7 @@
   <ItemGroup>
      <Compile Include="Assets\框架代码\scriOb\enemyInfo.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\OperatorCore.cs" />
+     <Compile Include="Assets\素材\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\ElementCore.cs" />
      <Compile Include="Assets\框架代码\基础战斗\动画函数\EnemyAnimEvent.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\elitismPutOn.cs" />
@@ -61,7 +62,7 @@
      <Compile Include="Assets\框架代码\关卡控制\拖动\DragSlot.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Hexagonal Rule Tile\HexagonalRuleTile.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Random Tile\Scripts\RandomTile.cs" />
-     <Compile Include="Assets\框架代码\辅助脚本\ChineseTranslation.cs" />
+     <Compile Include="Assets\框架代码\辅助脚本\中文显示\ChineseTranslation.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\GridInformation\Scripts\GridInformation.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Terrain Tile\Scripts\TerrainTile.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Rule Tile\Scripts\RuleTile.cs" />
@@ -71,10 +72,12 @@
      <Compile Include="Assets\框架代码\关卡控制\register\blueDoorRegister.cs" />
      <Compile Include="Assets\框架代码\辅助脚本\destroySelf.cs" />
      <Compile Include="Assets\框架代码\scriOb\skillData.cs" />
+     <Compile Include="Assets\素材\Epic Toon FX\Scripts\ETFXLightFade.cs" />
      <Compile Include="Assets\素材\地图方块\门\redDoorButtonController.cs" />
      <Compile Include="Assets\框架代码\scriOb\operData.cs" />
      <Compile Include="Assets\框架代码\scriOb\levelData.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Isometric Rule Tile\IsometricRuleTile.cs" />
+     <Compile Include="Assets\框架代码\辅助脚本\运动轨迹\parabola.cs" />
      <Compile Include="Assets\框架代码\静态函数\Interpreter.cs" />
      <Compile Include="Assets\素材\地图方块\门\redDoorUI.cs" />
      <Compile Include="Assets\testController.cs" />
@@ -86,6 +89,7 @@
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Animated Tile\Scripts\AnimatedTile.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\PropertyCore.cs" />
      <Compile Include="Assets\框架代码\关卡控制\register\mapRegister.cs" />
+     <Compile Include="Assets\干员\干员模型\达达利亚\Tartaglia.cs" />
      <Compile Include="Assets\框架代码\关卡控制\EnemyWaveController.cs" />
      <Compile Include="Assets\框架代码\辅助脚本\对象池\PoolManager.cs" />
      <Compile Include="Assets\框架代码\基础战斗\索敌范围\SearchAndGive.cs" />
@@ -93,6 +97,7 @@
      <Compile Include="Assets\框架代码\UI相关\OperUI\OperUIManager.cs" />
      <Compile Include="Assets\预制体\OperUI\DragSlot\dirDrag.cs" />
      <Compile Include="Assets\框架代码\UI相关\世界UI\LifeSliderController.cs" />
+     <Compile Include="Assets\素材\Epic Toon FX\Scripts\ETFXRotation.cs" />
      <Compile Include="Assets\框架代码\UI相关\UI辅助\gradualChange.cs" />
      <Compile Include="Assets\框架代码\关卡控制\CameraController.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\OperUIElements.cs" />

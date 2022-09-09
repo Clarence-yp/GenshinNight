@@ -14,8 +14,8 @@ public class redDoorUI : MonoBehaviour
     public GameObject rewardUI;
     public Text costText;
     public Text expText;
-    // public GameObject Canvas1;
-    // public GameObject Canvas2;
+    public GameObject Canvas1;
+    public GameObject Canvas2;
     
     private void Awake()
     {
@@ -29,20 +29,24 @@ public class redDoorUI : MonoBehaviour
     
     public void ChangeRewardUI(int cost, int exp)
     {
+        if (cost <= 0)
+        {
+            rewardUI.SetActive(false);
+        }
         costText.text = "+" + cost;
         expText.text = "+" + exp;
     }
 
-    // public void DisableUI()
-    // {
-    //     Canvas1.SetActive(false);
-    //     Canvas2.SetActive(false);
-    // }
-    //
-    // public void EnableUI()
-    // {
-    //     Canvas1.SetActive(true);
-    //     Canvas2.SetActive(true);
-    // }
+    public void DisableUI()
+    {
+        Canvas1.SetActive(false);
+        Canvas2.SetActive(false);
+    }
+    
+    public void EnableUI()
+    {
+        Canvas1.SetActive(true);
+        Canvas2.SetActive(true);
+    }
     
 }
