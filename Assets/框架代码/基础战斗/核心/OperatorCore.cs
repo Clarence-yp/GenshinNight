@@ -54,9 +54,9 @@ public class OperatorCore : BattleCore
 
     protected override void Start_BattleCore_Down()
     {
+        
         OperInit();
         ac_.ChangeDefaultColorImmediately();
-        
 
         Start_OperatorCore_Down();
 
@@ -87,7 +87,7 @@ public class OperatorCore : BattleCore
         // 根据当前朝向设定默认朝向
         if (anim.transform.localScale.x > 0) defaultTurn = ac_.TurnRight;
         else defaultTurn = ac_.TurnLeft;
-        
+
         // 让Anim开始播放动画
         anim.SetBool("start", true);
         
@@ -207,7 +207,7 @@ public class OperatorCore : BattleCore
         newRange.transform.localPosition=Vector3.zero;
         newRange.transform.rotation = rol;
         atkRange = newRange.GetComponent<SearchAndGive>();
-        
+
         // 初始化当前阻挡数
         block = maxBlock;
     }

@@ -16,7 +16,7 @@ public class InitManager : MonoBehaviour
     // 本场战斗还未布置的所有干员，按角色划分，二级队列为多数量干员（箱子等）准备
     public static List<List<OperatorCore>> offOperList = new List<List<OperatorCore>>();
     // operReTime[i]=t表示id为i的干员目前的再部署时间为t，反应到DragSlot上
-    public static List<float> operReTime = new List<float>();
+    public static float[] operReTime = new float[20];
     
     // 本场战斗会出现的所有敌人，按波次切分
     public static List<List<EnemyCore>> allEnemyList = new List<List<EnemyCore>>();
@@ -124,7 +124,6 @@ public class InitManager : MonoBehaviour
     {
         allOperDataList.Add(od_);
         allOperNumList.Add(num);
-        operReTime.Add(0);
     }
 
     public static void Register(EnemyCore ec_)

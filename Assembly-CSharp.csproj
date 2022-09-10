@@ -92,7 +92,7 @@
      <Compile Include="Assets\干员\干员模型\达达利亚\Tartaglia.cs" />
      <Compile Include="Assets\框架代码\关卡控制\EnemyWaveController.cs" />
      <Compile Include="Assets\框架代码\辅助脚本\对象池\PoolManager.cs" />
-     <Compile Include="Assets\框架代码\基础战斗\索敌范围\SearchAndGive.cs" />
+     <Compile Include="Assets\框架代码\基础战斗\索敌\SearchAndGive.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Weighted Random Tile\WeightedRandomTile.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\OperUIManager.cs" />
      <Compile Include="Assets\预制体\OperUI\DragSlot\dirDrag.cs" />
@@ -104,6 +104,8 @@
      <Compile Include="Assets\框架代码\基础战斗\核心\EnemyCore.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\BattleCore.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\OperUIFunc.cs" />
+     <Compile Include="Assets\框架代码\基础战斗\buff\BuffManager.cs" />
+     <Compile Include="Assets\干员\干员模型\克洛丝\Kroos.cs" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Spine\version.txt" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -118,7 +120,8 @@
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
-     <None Include="Assets\干员\干员模型\克洛丝\char_124_kroos.atlas.txt" />
+     <None Include="Assets\干员\干员模型\克洛丝\spine\char_124_kroos.atlas.txt" />
+     <None Include="Assets\干员\新建干员流程.txt" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\rubbish\Addons\Tilemap Readme.txt" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />

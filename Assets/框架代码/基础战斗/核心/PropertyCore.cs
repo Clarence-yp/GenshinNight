@@ -25,7 +25,6 @@ public class PropertyCore : MonoBehaviour
     
     void Start()
     {
-        
         Start_Property_Down();
     }
     
@@ -85,7 +84,7 @@ public enum ValueBuffMode
     Percentage
 }
 
-public class ValueBuffSlot
+public class ValueBuffInner
 {
     public ValueBuffMode mode;
     public float v;
@@ -97,7 +96,9 @@ public class ValueBuffer
 
     public float val { get; private set; }
     public float baseVal { get; private set; }
-    private List<ValueBuffSlot> valueBuffList = new List<ValueBuffSlot>();
+    
+    // 两种模式，固定数值增加，百分比增加（加算），百分比基于基础数值
+    private List<ValueBuffInner> valueBuffList = new List<ValueBuffInner>();
 
     public ValueBuffer()
     {
@@ -141,18 +142,18 @@ public class ValueBuffer
     /// <summary>  
     /// 加入新的数值buff
     /// </summary>
-    public void AddValueBuff(ValueBuffSlot buffSlot)
+    public void AddValueBuff(ValueBuffInner buff)
     {
-        valueBuffList.Add(buffSlot);
+        valueBuffList.Add(buff);
         RefreshValue();
     }
     
     /// <summary>  
     /// 移除已有的数值buff
     /// </summary>
-    public void DelValueBuff(ValueBuffSlot buffSlot)
+    public void DelValueBuff(ValueBuffInner buff)
     {
-        valueBuffList.Remove(buffSlot);
+        valueBuffList.Remove(buff);
         RefreshValue();
     }
 }
@@ -195,4 +196,27 @@ public class SPController
     public float maxTime;       // 技能最大持续时间
 
     
+}
+
+public class DurationValueBuff : DurationBuffSlot
+{
+    private ValueBuffer valueBuffer;
+    private ValueBuffInner buffInner;
+    public DurationValueBuff(ValueBuffer buffer, ValueBuffMode buffMode, float v)
+    {
+        valueBuffer = buffer;
+        buffInner = new ValueBuffInner();
+        buffInner.mode = buffMode;
+        buffInner.v = v;
+    }
+
+    public override void BuffStart()
+    {
+        valueBuffer.AddValueBuff(buffInner);
+    }
+
+    public override void BuffEnd()
+    {
+        valueBuffer.DelValueBuff(buffInner);
+    }
 }

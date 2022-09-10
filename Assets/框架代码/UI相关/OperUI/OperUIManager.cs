@@ -58,7 +58,7 @@ public class OperUIManager : MonoBehaviour
     /// </summary>
     public static void Init()
     {
-        // edgeUIController.Init();
+        edgeUIController.Init();
     }
 
     /// <summary>
@@ -781,6 +781,7 @@ public class EdgeUIController
         Refresh();
     }
 
+    
     private void AutoGetCost()
     {
         costDetaTime += Time.deltaTime;

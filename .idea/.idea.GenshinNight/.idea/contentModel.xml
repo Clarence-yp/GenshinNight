@@ -626,7 +626,10 @@
         <e p="干员" t="Include">
           <e p="干员模型" t="Include">
             <e p="克洛丝" t="Include">
-              <e p="char_124_kroos.atlas.txt" t="Include" />
+              <e p="Kroos.cs" t="Include" />
+              <e p="Spine" t="Include">
+                <e p="char_124_kroos.atlas.txt" t="Include" />
+              </e>
             </e>
             <e p="达达利亚" t="Include">
               <e p="Spine" t="Include">
@@ -635,6 +638,7 @@
               <e p="Tartaglia.cs" t="Include" />
             </e>
           </e>
+          <e p="新建干员流程.txt" t="Include" />
         </e>
         <e p="敌人" t="Include">
           <e p="感染生物" t="Include">
@@ -684,6 +688,9 @@
             </e>
           </e>
           <e p="基础战斗" t="Include">
+            <e p="buff" t="Include">
+              <e p="BuffManager.cs" t="Include" />
+            </e>
             <e p="动画函数" t="Include">
               <e p="EnemyAnimEvent.cs" t="Include" />
               <e p="OperAnimEvent.cs" t="Include" />
@@ -695,7 +702,7 @@
               <e p="OperatorCore.cs" t="Include" />
               <e p="PropertyCore.cs" t="Include" />
             </e>
-            <e p="索敌范围" t="Include">
+            <e p="索敌" t="Include">
               <e p="SearchAndGive.cs" t="Include" />
             </e>
           </e>
