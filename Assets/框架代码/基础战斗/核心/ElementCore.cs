@@ -67,7 +67,7 @@ public class ElementCore : PropertyCore
         
         // 元素抗性
         if (elementSlot.eleType != ElementType.Physics) 
-            baseDamage *= (1 - elementResistance.val / 100);
+            baseDamage *= (1 - elementResistance.val);
         GetDamage(baseDamage, mode);
     }
 

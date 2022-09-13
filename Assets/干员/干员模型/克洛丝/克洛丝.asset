@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c3c45b4a547140bca8625c627546d, type: 3}
   m_Name: "\u514B\u6D1B\u4E1D"
   m_EditorClassIdentifier: 
-  type: 0
-  skillType: 0
+  type: 5
+  skillType: 1
   Name: "\u514B\u6D1B\u4E1D"
-  EnName: 
+  EnName: Kroos
   elementType: 5
   is3D: 0
   aimingMode: 1
@@ -23,7 +23,6 @@ MonoBehaviour:
   banLowGround: 0
   banHighGround: 0
   imageInQueue: {fileID: 21300000, guid: fcc9aecbd165c3d48b5dc0cb876ee0c5, type: 3}
-  spineDefault: {fileID: 0}
   operUIImage1: {fileID: 21300000, guid: 2f8a71f4401043c4bb81d639977be5d7, type: 3}
   operUIImage2: {fileID: 21300000, guid: d7ef376419b48cb4689b68d45de3bc94, type: 3}
   operPrefab: {fileID: 3649933124402443453, guid: e007ebee670467a42bc0303694903ac2, type: 3}
@@ -43,20 +42,20 @@ MonoBehaviour:
   End_Not3Star: {fileID: 0}
   End_Fail: {fileID: 0}
   Touch: {fileID: 0}
-  atk: 0
-  def: 0
-  magicDef: 0
-  life: 100
-  maxBlock: 0
-  maxAtkInterval: 0
+  atk: 1
+  def: 100
+  magicDef: 10
+  life: 1000
+  maxBlock: 1
+  maxAtkInterval: 1.5
   cost: 0
   consumPlace: 0
   reTime: 0
   maxLevel: 000000000000000000000000
   elementalMastery: 0
-  elementalDamage: 0
+  elementalDamage: 1
   elementalResistance: 0
-  spRecharge: 0
+  spRecharge: 1
   Description:
   - 
   - 
@@ -141,29 +140,29 @@ MonoBehaviour:
   - {fileID: 6645886670027540070, guid: d83d20e73992eec4bb801bc1c55b54d4, type: 3}
   - {fileID: 6645886670027540070, guid: d83d20e73992eec4bb801bc1c55b54d4, type: 3}
   atkRangeImage:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 9ec8bf82b29f3f848bea2dad7a0ff6fe, type: 3}
+  - {fileID: 21300000, guid: 7edd7817dc3b85a42ad4ce38c63fa8ac, type: 3}
+  - {fileID: 21300000, guid: 7edd7817dc3b85a42ad4ce38c63fa8ac, type: 3}
   illustratedBookImage: {fileID: 0}
   profession: 0
   star: 0
   skillImage:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  skillName0: 
+  - {fileID: 21300000, guid: 25129256298d8b14caa805457f059dd0, type: 3}
+  - {fileID: 21300000, guid: b35071e425efa9644861203241482011, type: 3}
+  - {fileID: 21300000, guid: 5dbd1043a5519154f9f2c31d8d85c008, type: 3}
+  skillName0: "\u653B\u51FB\u529B\u5F3A\u5316\xB7\u03B1\u578B"
   description0:
+  - "\u653B\u51FB\u529B+10%"
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  initSP0: 00000000000000000000000000000000000000000000000000000000
-  maxSP0: 00000000000000000000000000000000000000000000000000000000
+  initSP0: 01000000000000000000000000000000000000000000000000000000
+  maxSP0: 05000000000000000000000000000000000000000000000000000000
   duration0:
-  - 0
+  - 10
   - 0
   - 0
   - 0
@@ -174,19 +173,19 @@ MonoBehaviour:
   costNeed0: 000000000000000000000000000000000000000000000000
   skill0_recoverType: 0
   skill0_releaseType: 0
-  skillName1: 
+  skillName1: "\u8FC5\u6377\u6253\u51FB-\u03B1\u578B"
   description1:
+  - "\u653B\u51FB\u901F\u5EA6+200"
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  initSP1: 00000000000000000000000000000000000000000000000000000000
-  maxSP1: 00000000000000000000000000000000000000000000000000000000
+  initSP1: 05000000000000000000000000000000000000000000000000000000
+  maxSP1: 05000000000000000000000000000000000000000000000000000000
   duration1:
-  - 0
+  - 10
   - 0
   - 0
   - 0
@@ -197,7 +196,7 @@ MonoBehaviour:
   costNeed1: 000000000000000000000000000000000000000000000000
   skill1_recoverType: 0
   skill1_releaseType: 0
-  skillName2: 
+  skillName2: "\u4E8C\u8FDE\u5C04\xB7\u81EA\u52A8"
   description2:
   - 
   - 

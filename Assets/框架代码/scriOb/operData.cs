@@ -37,7 +37,6 @@ public class operData : ScriptableObject
     
     [Header("干员各种立绘和图片")]
     public Sprite imageInQueue;
-    public GameObject spineDefault;
     public Sprite operUIImage1;
     public Sprite operUIImage2;
 
@@ -77,13 +76,13 @@ public class operData : ScriptableObject
     public float atk;//攻击
     public float def;//防御
     public float magicDef;//法抗
-    public float life;//生命
-    public int maxBlock;//最大阻挡数
+    public float life = 100;//生命
+    public int maxBlock = 1;//最大阻挡数
     public float maxAtkInterval;// 最小攻击间隔
     
     [Header("放置与撤退")]
     public int cost;//放置费用
-    public int consumPlace;//消耗可放置人数
+    public int consumPlace = 1;//消耗可放置人数
     public float reTime;//再部署时间
     
     [Header("各精英阶段的最大等级")]
@@ -91,9 +90,9 @@ public class operData : ScriptableObject
 
     [Header("元素属性")] 
     public float elementalMastery;
-    public float elementalDamage;
+    public float elementalDamage = 1;
     public float elementalResistance;
-    public float spRecharge;
+    public float spRecharge = 1;
     
     
     [Header("干员特性与详细天赋")]

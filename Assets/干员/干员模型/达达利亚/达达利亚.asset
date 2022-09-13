@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c3c45b4a547140bca8625c627546d, type: 3}
   m_Name: "\u8FBE\u8FBE\u5229\u4E9A"
   m_EditorClassIdentifier: 
-  type: 1
+  type: 5
   skillType: 0
   Name: "\u8FBE\u8FBE\u5229\u4E9A"
   EnName: 
@@ -23,7 +23,6 @@ MonoBehaviour:
   banLowGround: 0
   banHighGround: 0
   imageInQueue: {fileID: 21300000, guid: 4108bcfeeb8160e40bd762692f588242, type: 3}
-  spineDefault: {fileID: 0}
   operUIImage1: {fileID: 21300000, guid: 0ba884868b9eebe4ba63a0db412b6e42, type: 3}
   operUIImage2: {fileID: 21300000, guid: 0ba884868b9eebe4ba63a0db412b6e42, type: 3}
   operPrefab: {fileID: 407436062082884715, guid: bc9af281e58d6fb44b6ad82a5db02409, type: 3}
@@ -54,9 +53,9 @@ MonoBehaviour:
   reTime: 10
   maxLevel: 32000000500000005a000000
   elementalMastery: 0
-  elementalDamage: 0
+  elementalDamage: 1
   elementalResistance: 0
-  spRecharge: 0
+  spRecharge: 1
   Description:
   - "\u653B\u51FB\u6709\u51E0\u7387\u7ED9\u654C\u4EBA\u9644\u52A0\u65AD\u6D41\u6548\u679C"
   - "\u653B\u51FB\u6709\u51E0\u7387\u7ED9\u654C\u4EBA\u9644\u52A0\u65AD\u6D41\u6548\u679C"

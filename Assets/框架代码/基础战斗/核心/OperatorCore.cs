@@ -14,10 +14,10 @@ public class OperatorCore : BattleCore
     [HideInInspector] public int level;         // 干员等级
     [HideInInspector] public int eliteLevel;    // 干员精英化等级
     [HideInInspector] public int[] skillLevel = new int[3];    // 干员技能等级[0:6]
-    [HideInInspector] public int costNeed;      // 干员当前部署费用
+    [HideInInspector] public ValueBuffer costNeed = new ValueBuffer();      // 干员当前部署费用
     [HideInInspector] public int operID;        // 在InitManager的offOperList里的编号
     [HideInInspector] public ValueBuffer recoverTime = new ValueBuffer(0);   // 干员再部署时间
-    [HideInInspector] public int skillNum;      // 该干员选择的技能编号
+    [HideInInspector] public int skillNum;      // 该干员选择的技能编号[0,2]
 
     public bool prePutOn;           // 一开始就在场上的
     
@@ -59,6 +59,7 @@ public class OperatorCore : BattleCore
         ac_.ChangeDefaultColorImmediately();
 
         Start_OperatorCore_Down();
+        
 
         if (prePutOn) return;
         gameObject.SetActive(false);
@@ -70,7 +71,7 @@ public class OperatorCore : BattleCore
     {
         Fight();
         CheckBlock();
-        
+
         ac_.Update();
         Update_OperatorCore_Down();
     }
@@ -91,6 +92,23 @@ public class OperatorCore : BattleCore
         // 让Anim开始播放动画
         anim.SetBool("start", true);
         
+        // 根据选择的技能设置spController
+        int lel = skillLevel[skillNum];
+        switch (skillNum)
+        {
+            case 0:
+                sp_.Init(od_.initSP0[lel], od_.maxSP0[lel], od_.duration0[lel],
+                    od_.skill0_recoverType, od_.spRecharge);
+                break;
+            case 1:
+                sp_.Init(od_.initSP1[lel], od_.maxSP1[lel], od_.duration1[lel],
+                    od_.skill1_recoverType, od_.spRecharge);
+                break;
+            case 2:
+                sp_.Init(od_.initSP2[lel], od_.maxSP2[lel], od_.duration2[lel],
+                    od_.skill2_recoverType, od_.spRecharge);
+                break;
+        }
     }
 
     private void InitCalculation()
@@ -99,26 +117,34 @@ public class OperatorCore : BattleCore
         def_.ChangeBaseValue(od_.def);
         magicDef_.ChangeBaseValue(od_.magicDef);
         life_.InitBaseLife(od_.life);
-        maxBlock = od_.maxBlock;
-        minAtkInterval = od_.maxAtkInterval;
+        maxBlock.ChangeBaseValue(od_.maxBlock);
+        atkSpeedController = new AtkSpeedController(this, anim, 0, od_.maxAtkInterval);
 
         elementMastery.ChangeBaseValue(od_.elementalMastery);
         elementDamage.ChangeBaseValue(od_.elementalDamage);
         elementResistance.ChangeBaseValue(od_.elementalResistance);
-        sp_.spRecharge.ChangeBaseValue(od_.spRecharge);
         recoverTime.ChangeBaseValue(od_.reTime);
-
-        costNeed = od_.cost;
+        
+        costNeed.ChangeBaseValue(od_.cost);
     }
 
     
     private void Fight()
     {
+        var staInfo = anim.GetCurrentAnimatorStateInfo(0);
+        if (staInfo.IsName("Fight"))
+        {
+            if (!fighting) NorAtkStartCool();
+            fighting = true;
+        }
+        else fighting = false;
+        
         if (!tarIsNull)
         {
             if (CanAtk())
             {
                 anim.SetBool("fight", true);
+
                 // 根据目标位置转变干员朝向
                 Vector2 detaPos = BaseFunc.xz(transform.position) - BaseFunc.xz(target.transform.position);
                 if (detaPos.x < 0) ac_.TurnRight();
@@ -159,7 +185,7 @@ public class OperatorCore : BattleCore
         EnemyCore ec_ = (EnemyCore)bc_;
         if (alreadyBlockSet.ContainsKey(ec_) && alreadyBlockSet[ec_])
         {
-            block += ec_.maxBlock;
+            block += (int) ec_.maxBlock.val;
             alreadyBlockSet[ec_] = false;
             ec_.UnBlocked();
         }
@@ -172,10 +198,10 @@ public class OperatorCore : BattleCore
             EnemyCore ec_ = (EnemyCore)i;
             if (alreadyBlockSet.ContainsKey(ec_) && alreadyBlockSet[ec_]) continue;
             
-            if (ec_.maxBlock <= block)
+            if (ec_.maxBlock.val <= block)
             {
                 ec_.BeBlocked();
-                block -= ec_.maxBlock;
+                block -= (int) ec_.maxBlock.val;
                 alreadyBlockSet[ec_] = true;
             }
         }
@@ -209,7 +235,7 @@ public class OperatorCore : BattleCore
         atkRange = newRange.GetComponent<SearchAndGive>();
 
         // 初始化当前阻挡数
-        block = maxBlock;
+        block = (int) maxBlock.val;
     }
     
     /// <summary>
@@ -226,7 +252,12 @@ public class OperatorCore : BattleCore
     public void Retreat()
     {
         DieAction?.Invoke(this);
-        costNeed = costNeed + od_.cost / 2 >= od_.cost * 2 ? od_.cost * 2 : costNeed + od_.cost / 2;
+        if (costNeed.val + costNeed.baseVal / 2 <= costNeed.baseVal * 2)
+        {
+            ValueBuffInner costBuff = new ValueBuffInner(ValueBuffMode.Percentage, 0.5f);
+            costNeed.AddValueBuff(costBuff);
+        }
+        // costNeed = costNeed + od_.cost / 2 >= od_.cost * 2 ? od_.cost * 2 : costNeed + od_.cost / 2;
 
         OperUIManager.CloseOperUI();
         if (!prePutOn)
@@ -246,7 +277,12 @@ public class OperatorCore : BattleCore
     {// 死亡撤退函数
         anim.transform.parent = null;
         transform.position = new Vector3(999, 999, 999);
-        costNeed = costNeed + od_.cost / 2 > od_.cost * 2 ? od_.cost * 2 : costNeed + od_.cost / 2;
+        if (costNeed.val + costNeed.baseVal / 2 <= costNeed.baseVal * 2)
+        {
+            ValueBuffInner costBuff = new ValueBuffInner(ValueBuffMode.Percentage, 0.5f);
+            costNeed.AddValueBuff(costBuff);
+        }
+        // costNeed = costNeed + od_.cost / 2 > od_.cost * 2 ? od_.cost * 2 : costNeed + od_.cost / 2;
         
         OperUIManager.CloseOperUI();
         if (!prePutOn)
@@ -274,7 +310,6 @@ public class OperatorCore : BattleCore
     
     public virtual void OnAttack()
     {
-        NorAtkStartCool();
         Battle(this, target, 1, DamageMode.Physical);
     }
 
@@ -286,15 +321,14 @@ public class OperatorCore : BattleCore
         gameObject.SetActive(false);
     }
 
-
     
-
-    public virtual void Skill1() { }
+    public virtual void SkillStart_1() { }
+    public virtual void SkillStart_2() { }
+    public virtual void SkillStart_3() { }
     
-    public virtual void Skill2() { }
-    
-    public virtual void Skill3() { }
-
+    public virtual void SkillAtk_1() { }
+    public virtual void SkillAtk_2() { }
+    public virtual void SkillAtk_3() { }
 }
 
 public class SpineAnimController

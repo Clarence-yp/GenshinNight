@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u730E\u72D7"
   m_EditorClassIdentifier: 
   Name: "\u730E\u72D7"
-  atk: 190
+  atk: 0
   def: 0
   magicDef: 20
   life: 820

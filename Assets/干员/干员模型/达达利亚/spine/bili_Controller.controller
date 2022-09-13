@@ -350,7 +350,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack
+  m_Name: Fight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1950,7 +1950,7 @@ AnimatorStateMachine:
     m_Position: {x: 1050, y: 400, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 865285462311463316}
-    m_Position: {x: 1035.048, y: 296.4541, z: 0}
+    m_Position: {x: 1040, y: 300, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 4109270381960788244}
     m_Position: {x: 1050, y: 530, z: 0}
@@ -2529,7 +2529,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skill_3_Loop
+  m_Name: Fight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -2881,7 +2881,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skill_2_Loop
+  m_Name: Fight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

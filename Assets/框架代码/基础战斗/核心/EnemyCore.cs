@@ -50,7 +50,7 @@ public class EnemyCore : BattleCore
         Move();
         Fight();
         GetPriority();
-        
+
         Update_EnemyCore_Down();
     }
     
@@ -62,8 +62,8 @@ public class EnemyCore : BattleCore
         def_.ChangeBaseValue(ei_.def);
         magicDef_.ChangeBaseValue(ei_.magicDef);
         life_.InitBaseLife(ei_.life);
-        maxBlock = ei_.consumeBlock;
-        minAtkInterval = ei_.minAtkInterval;
+        maxBlock.ChangeBaseValue(ei_.consumeBlock);
+        atkSpeedController = new AtkSpeedController(this, anim, 0, ei_.minAtkInterval);
     }
 
     private void Move()
@@ -71,7 +71,6 @@ public class EnemyCore : BattleCore
         if (cannotMove > 0)
         {   // 如果当前无法move
             anim.SetBool("move", false);
-            ac_.ChangeAnimSpeed(1);
             return;
         }
         
@@ -103,9 +102,18 @@ public class EnemyCore : BattleCore
 
     private void Fight()
     {
+        var staInfo = anim.GetCurrentAnimatorStateInfo(0);
+        if (staInfo.IsName("Fight"))
+        {
+            if (!fighting) NorAtkStartCool();
+            fighting = true;
+        }
+        else fighting = false;
+        
         if (!tarIsNull && CanAtk())
         {
             anim.SetBool("fight", true);
+            
             // 根据目标位置转变敌人朝向
             Vector2 detaPos = BaseFunc.xz(transform.position) - BaseFunc.xz(target.transform.position);
             if (detaPos.x < 0) ac_.TurnRight();
@@ -210,7 +218,6 @@ public class EnemyCore : BattleCore
 
     public void OnAttack()
     {
-        NorAtkStartCool();
         Battle(this, target, 1, DamageMode.Physical);
     }
 

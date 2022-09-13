@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEditor;
 
 public class OperUIFunc : MonoBehaviour
 {
@@ -19,7 +20,25 @@ public class OperUIFunc : MonoBehaviour
     /// </summary>
     public void Skill()
     {
+        SPController sp_ = OperUIManager.showingOper.sp_;
+        if (sp_.sp < sp_.maxSp) return;
         
+        int skillNum = OperUIManager.showingOper.skillNum;
+        switch (skillNum)
+        {
+            case 0:
+                OperUIManager.showingOper.SkillStart_1();
+                break;
+            case 1:
+                OperUIManager.showingOper.SkillStart_2();
+                break;
+            case 2:
+                OperUIManager.showingOper.SkillStart_3();
+                break;
+        }
+        
+        sp_.ReleaseSkill();
+        OperUIManager.CloseOperUI();
     }
 
     /// <summary>
@@ -37,14 +56,12 @@ public class OperUIFunc : MonoBehaviour
         InitManager.resourceController.CostIncrease(-od_.elitismCost[oc_.eliteLevel]);
         InitManager.resourceController.ExpIncrease(-od_.elitismExp[oc_.eliteLevel]);
         
-
         oc_.atk_.AddBaseValue(od_.elitismAtk[oc_.eliteLevel]);
         oc_.def_.AddBaseValue(od_.elitismDef[oc_.eliteLevel]);
         oc_.magicDef_.AddBaseValue(od_.elitismMagicDef[oc_.eliteLevel]);
         oc_.life_.AddBaseValue(od_.elitismLife[oc_.eliteLevel]);
-        oc_.maxBlock += od_.elitismBlock[oc_.eliteLevel];
-        
-        
+        oc_.maxBlock.AddBaseValue(od_.elitismBlock[oc_.eliteLevel]);
+
         oc_.eliteLevel++;
         oc_.ChangeAtkRange();
         
@@ -128,13 +145,33 @@ public class OperUIFunc : MonoBehaviour
 
 
     /// <summary>
-    /// 技能选择按钮
+    /// 技能选择按钮，同事重置spController
     /// </summary>
     public void SkillChoose()
     {
         int skillID = OperUIManager.skillUIController.showSkillNum;
         OperatorCore oc_ = OperUIManager.showingOper;
+        operData od_ = oc_.od_;
         oc_.skillNum = skillID;
+        
+        // 根据选择的技能设置spController，站场上选择清空所有sp
+        int lel = oc_.skillLevel[oc_.skillNum];
+        switch (oc_.skillNum)
+        {
+            case 0:
+                oc_.sp_.Init(0, od_.maxSP0[lel], od_.duration0[lel],
+                    od_.skill0_recoverType, od_.spRecharge);
+                break;
+            case 1:
+                oc_.sp_.Init(0, od_.maxSP1[lel], od_.duration1[lel],
+                    od_.skill1_recoverType, od_.spRecharge);
+                break;
+            case 2:
+                oc_.sp_.Init(0, od_.maxSP2[lel], od_.duration2[lel],
+                    od_.skill2_recoverType, od_.spRecharge);
+                break;
+        }
+        
         OperUIManager.Refresh();
     }
     

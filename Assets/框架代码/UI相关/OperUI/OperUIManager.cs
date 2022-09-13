@@ -5,6 +5,10 @@ using System.Globalization;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
+using Slider = UnityEngine.UI.Slider;
 
 public class OperUIManager : MonoBehaviour
 {
@@ -158,12 +162,19 @@ public class RightUIController
             colorSliderFill.color = greenSliderColor;
             colorSlider.value = sp_.sp / sp_.maxSp;
             if (sp_.sp < sp_.maxSp)
-                spText.text = sp_.sp + "/" + sp_.maxSp;
+            {
+                colorSlider.gameObject.SetActive(true);
+                spText.text = sp_.sp.ToString("f0") + "/" + sp_.maxSp;
+            }
             else
+            {
+                colorSlider.gameObject.SetActive(false);
                 spText.text = "READY";
+            }
         }
         else
         {   // 在技能持续时间内
+            colorSlider.gameObject.SetActive(true);
             colorSliderFill.color = yellowSliderColor;
             colorSlider.value = sp_.remainingTime / sp_.maxTime;
             spText.text = "DURING";
@@ -394,7 +405,7 @@ public class LevelUIController
         atkText.text = oc_.atk_.val.ToString(CultureInfo.InvariantCulture);
         defText.text = oc_.def_.val.ToString(CultureInfo.InvariantCulture);
         magicDefText.text = oc_.magicDef_.val.ToString(CultureInfo.InvariantCulture);
-        blockText.text = oc_.maxBlock.ToString(CultureInfo.InvariantCulture);
+        blockText.text = ((int)oc_.maxBlock.val).ToString(CultureInfo.InvariantCulture);
         
         lifeText.text = oc_.life_.life + "/" + oc_.life_.val;
         lifeSlider.value = oc_.life_.life / oc_.life_.val;
@@ -421,11 +432,18 @@ public class SkillUIController
     private Text skill_3_ButtonText;
     private Image detailedValuesButtonImage;
     private Image detailedTalentButtonImage;
+    
+    private Text atkDetailText;
+    private Text defDetailText;
+    private Text magicDefDetailText;
+    private Text blockDetailText;
+    private Text lifeDetailText;
     private Text elementalMasteryText;
     private Text elementalDamageText;
     private Text elementalResistanceText;
     private Text spRechargeText;
-    private Text currentBlockText;
+    private Text costDetailText;
+    private Text reTimeDetailText;
     private Text atkSpeedText;
     private Text minAtkInterval;
     private Text talent1;
@@ -481,11 +499,18 @@ public class SkillUIController
         skill_3_ButtonText = OperUIElements.skill_3_ButtonText;
         detailedValuesButtonImage = OperUIElements.detailedValuesButtonImage;
         detailedTalentButtonImage = OperUIElements.detailedTalentButtonImage;
+        
+        atkDetailText = OperUIElements.atkDetailText;
+        defDetailText = OperUIElements.defDetailText;
+        magicDefDetailText = OperUIElements.magicDefDetailText;
+        blockDetailText = OperUIElements.blockDetailText;
+        lifeDetailText = OperUIElements.lifeDetailText;
         elementalMasteryText = OperUIElements.elementalMasteryText;
         elementalDamageText = OperUIElements.elementalDamageText;
         elementalResistanceText = OperUIElements.elementalResistanceText;
         spRechargeText = OperUIElements.spRechargeText;
-        currentBlockText = OperUIElements.currentBlockText;
+        costDetailText = OperUIElements.costDetailText;
+        reTimeDetailText = OperUIElements.reTimeDetailText;
         atkSpeedText = OperUIElements.atkSpeedText;
         minAtkInterval = OperUIElements.minAtkInterval;
         talent1 = OperUIElements.talent1;
@@ -635,7 +660,45 @@ public class SkillUIController
             _ => "??!!"
         };
     }
+
+    string GreenString(string s)
+    {
+        return "<color=\"#00FF00\">" + s + "</color>";
+    }
     
+    string RedString(string s)
+    {
+        return "<color=\"#FF0000\">" + s + "</color>";
+    }
+
+    string ToDetailString(float baseVal, float val, int places, bool incRed = false, bool percentage = false)
+    {
+        int tmp = (int) Math.Pow(10, places);
+        float deta = val - baseVal;
+        string percent = percentage ? "%" : "";
+        baseVal = (float) ((int) (baseVal * tmp)) / (float) tmp;
+        deta = (float) ((int) (deta * tmp)) / (float) tmp;
+        if (percentage)
+        {
+            baseVal *= 100;
+            deta *= 100;
+        }
+        if (Mathf.Abs(deta) < 1e-3) return baseVal.ToString(CultureInfo.InvariantCulture) + percent;
+        
+        bool isGreen = (deta > 0) ^ incRed;
+        string symbol = deta > 0 ? "+" : "";
+        if (isGreen)
+            return baseVal.ToString(CultureInfo.InvariantCulture) + percent +
+                   GreenString(symbol + deta.ToString(CultureInfo.InvariantCulture) + percent);
+        else
+            return baseVal.ToString(CultureInfo.InvariantCulture) + percent +
+                   RedString(symbol + deta.ToString(CultureInfo.InvariantCulture) + percent);
+    }
+
+    string ToDetailString(ValueBuffer buffer, int places = 0, bool incRed = false, bool percentage = false)
+    {
+        return ToDetailString(buffer.baseVal, buffer.val, places, incRed, percentage);
+    }
     
     private void RefreshContents()
     {
@@ -655,13 +718,26 @@ public class SkillUIController
         SetSkillButtonColorBySkillNum();
 
         // 刷新详细数据与详细天赋
-        elementalMasteryText.text = oc_.elementMastery.val.ToString("f0");
-        elementalDamageText.text = oc_.elementDamage.val * 100 + "%";
-        elementalResistanceText.text = oc_.elementResistance.val * 100 + "%";
-        spRechargeText.text = oc_.sp_.spRecharge.val * 100 + "%";
-        currentBlockText.text = (oc_.maxBlock - oc_.block).ToString();
-        atkSpeedText.text = (oc_.atkSpeed * 100).ToString("f0");
-        minAtkInterval.text = oc_.minAtkInterval.ToString("f1");
+        atkDetailText.text = ToDetailString(oc_.atk_);
+        defDetailText.text = ToDetailString(oc_.def_);
+        magicDefDetailText.text = ToDetailString(oc_.magicDef_);
+        blockDetailText.text = ToDetailString(oc_.maxBlock);
+        lifeDetailText.text = ToDetailString(oc_.life_);
+
+        elementalMasteryText.text = ToDetailString(oc_.elementMastery);
+        elementalDamageText.text = ToDetailString(oc_.elementDamage, 2, false, true);
+        elementalResistanceText.text = ToDetailString(oc_.elementResistance, 2, false, true);
+        spRechargeText.text = ToDetailString(oc_.sp_.spRecharge, 2, false, true);
+
+        costDetailText.text = ToDetailString(oc_.costNeed, 0, true);
+        reTimeDetailText.text = ToDetailString(oc_.recoverTime, 0, true);
+
+        int atkSpeed = (int) oc_.atkSpeedController.atkSpeed.val;
+        atkSpeedText.text = atkSpeed == 0 ? "0" :
+            atkSpeed > 0 ? GreenString(atkSpeed.ToString()) : RedString(atkSpeed.ToString());
+        minAtkInterval.text = ToDetailString(oc_.atkSpeedController.baseInterval,
+            oc_.atkSpeedController.minAtkInterval, 2, true);
+        
         talent1.text = od_.talent1[oc_.eliteLevel];
         talent2.text = od_.talent2[oc_.eliteLevel];
         

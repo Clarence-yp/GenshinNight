@@ -23,8 +23,6 @@ public class Tartaglia : OperatorCore
         Vector3 pos = transform.position;
         pos += new Vector3(ac_.dirRight ? 0.6f : -0.6f, 0.5f, 0.35f);
         par.Init(pos, tarBattleCore, 12f, norAttack);
-        
-        NorAtkStartCool();
     }
 
     private void norAttack()

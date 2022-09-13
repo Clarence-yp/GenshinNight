@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -68,7 +69,7 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
 
         operImage.sprite = od_.imageInQueue;
         elementImage.sprite = SpriteElement.GetElementSprite(od_.elementType);
-        costText.text = operatorCore.costNeed.ToString();
+        costText.text = operatorCore.costNeed.val.ToString(CultureInfo.InvariantCulture);
 
         int num = InitManager.offOperList[id].Count;
         switch (num)
@@ -221,7 +222,7 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
 
         InitManager.operReTime[operatorCore.operID] = operatorCore.recoverTime.val;
 
-        InitManager.resourceController.CostIncrease(-operatorCore.costNeed);
+        InitManager.resourceController.CostIncrease(-operatorCore.costNeed.val);
         InitManager.resourceController.RemainPlaceIncrease(-operatorCore.od_.consumPlace);
         
         InitManager.operList.Add(operatorCore);

@@ -73,7 +73,17 @@ public class OperUIElements : MonoBehaviour
     public Image detailedTalentButtonImage_p;
     public static Image detailedTalentButtonImage;
 
-    public Text elementalMasteryText_p;     // 详细数值/天赋部分
+    public Text atkDetailText_p;                // 详细数值/天赋部分
+    public static Text atkDetailText;
+    public Text defDetailText_p;
+    public static Text defDetailText;
+    public Text magicDefDetailText_p;
+    public static Text magicDefDetailText;
+    public Text blockDetailText_p;
+    public static Text blockDetailText;
+    public Text lifeDetailText_p;
+    public static Text lifeDetailText;
+    public Text elementalMasteryText_p;     
     public static Text elementalMasteryText;
     public Text elementalDamageText_p;
     public static Text elementalDamageText;
@@ -81,8 +91,10 @@ public class OperUIElements : MonoBehaviour
     public static Text elementalResistanceText;
     public Text spRechargeText_p;
     public static Text spRechargeText;
-    public Text currentBlockText_p;
-    public static Text currentBlockText;
+    public Text costDetailText_p;
+    public static Text costDetailText;
+    public Text reTimeDetailText_p;
+    public static Text reTimeDetailText;
     public Text atkSpeedText_p;
     public static Text atkSpeedText;
     public Text minAtkInterval_p;
@@ -211,11 +223,17 @@ public class OperUIElements : MonoBehaviour
         detailedValuesButtonImage = detailedValuesButtonImage_p;
         detailedTalentButtonImage = detailedTalentButtonImage_p;
 
+        atkDetailText = atkDetailText_p;
+        defDetailText = defDetailText_p;
+        magicDefDetailText = magicDefDetailText_p;
+        blockDetailText = blockDetailText_p;
+        lifeDetailText = lifeDetailText_p;
         elementalMasteryText = elementalMasteryText_p;
         elementalDamageText = elementalDamageText_p;
         elementalResistanceText = elementalResistanceText_p;
         spRechargeText = spRechargeText_p;
-        currentBlockText = currentBlockText_p;
+        costDetailText = costDetailText_p;
+        reTimeDetailText = reTimeDetailText_p;
         atkSpeedText = atkSpeedText_p;
         minAtkInterval = minAtkInterval_p;
         talent1 = talent1_p;

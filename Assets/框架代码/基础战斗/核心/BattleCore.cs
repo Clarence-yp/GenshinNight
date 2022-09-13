@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleCore : ElementCore
 {
@@ -11,12 +12,12 @@ public class BattleCore : ElementCore
     [HideInInspector] public float tarPriority = 0;         // 在别的BattleCore队列中排序的参照，由外部维护
     public bool dieNow = false;     //调试变量，立即杀死自身
     
-    private float norAtkInterval = 0;       // 到下一次攻击还需要的时间
-
+    protected float norAtkInterval = 0;       // 到下一次攻击还需要的时间
+    public bool fighting;
+    
     // 进阶数据
-    [HideInInspector] public float atkSpeed = 0;              // 攻击速度加成
-    [HideInInspector] public float minAtkInterval;     // 最小攻击间隔
-    [HideInInspector] public int maxBlock = 0;                // 最大阻挡数（敌人为消耗阻挡数）
+    [HideInInspector] public AtkSpeedController atkSpeedController;
+    [HideInInspector] public ValueBuffer maxBlock = new ValueBuffer(0); // 最大阻挡数（敌人为消耗阻挡数）
     [HideInInspector] public bool dying;
     
     
@@ -42,11 +43,11 @@ public class BattleCore : ElementCore
     {
         ChooseTarget();
         CheckDie();
+        atkSpeedController.Update();
         norAtkInterval = norAtkInterval - Time.deltaTime <= 0 ? 0 : norAtkInterval - Time.deltaTime;
 
         if (dieNow) // 测试用，后期删掉
             GetDamage(1e9f, DamageMode.Magic);
-        
         
         Update_BattleCore_Down();
     }
@@ -143,7 +144,12 @@ public class BattleCore : ElementCore
     /// </summary>
     public void NorAtkStartCool()
     {
-        norAtkInterval = minAtkInterval;
+        norAtkInterval = atkSpeedController.minAtkInterval;
+    }
+    
+    public void ClearAtkInterval()
+    {
+        norAtkInterval = 0;
     }
     
     /// <summary>  
@@ -166,4 +172,83 @@ public enum AimingMode : byte
     enemyFirst
 }
 
+public class AtkSpeedController
+{
+    private Animator anim;
+    public BattleCore bc_;
+    public ValueBuffer atkSpeed;        // 攻击速度加成，100表示最小攻击间隔减小一半
+    public float minAtkInterval;        // 最小攻击间隔
+    public float baseInterval;          // 基础攻击间隔
+    
+    private float fightAnimTime;
 
+    public AtkSpeedController(BattleCore bc, Animator animator, float aspeed, float interval)
+    {
+        bc_ = bc;
+        anim = animator;
+        atkSpeed = new ValueBuffer(aspeed);
+        ChangeBaseInterval(interval);
+    }
+
+    public void Update()
+    {
+        if (atkSpeed.val == 0 || bc_.fighting == false) return;
+        var staInfo = anim.GetCurrentAnimatorStateInfo(0);
+        fightAnimTime = staInfo.length;
+        if (!staInfo.IsName("Fight")) return;
+        if (fightAnimTime - minAtkInterval < 0.008f) return;
+
+        float nspeed = (fightAnimTime / minAtkInterval) + 0.005f;
+        anim.speed = nspeed;
+    }
+    
+    public void ChangeBaseInterval(float interval)
+    {
+        baseInterval = interval;
+        RefreshInterval();
+    }
+
+    public void RefreshInterval()
+    {
+        float tmp = 1 / (1 + atkSpeed.val / 100);
+        minAtkInterval = baseInterval * tmp;
+        if (atkSpeed.val == 0) anim.speed = 1;
+    }
+}
+
+public class DurationAtkSpeedBuff : DurationBuffSlot
+{
+    private AtkSpeedController atkSpeedController;
+    private float atkSpeed;
+    private ValueBuffInner buffInner;
+    private float baseInterval;
+    
+    private float p_baseInterval;
+
+    public DurationAtkSpeedBuff(AtkSpeedController controller, float speed, float durTime,
+        float interval = -1)
+    {
+        atkSpeedController = controller;
+        atkSpeed = speed;
+        buffInner = new ValueBuffInner(ValueBuffMode.Fixed, atkSpeed);
+        during = durTime;
+        baseInterval = interval;
+
+        p_baseInterval = atkSpeedController.baseInterval;
+    }
+
+    public override void BuffStart()
+    {
+        atkSpeedController.atkSpeed.AddValueBuff(buffInner);
+        atkSpeedController.RefreshInterval();
+        atkSpeedController.bc_.ClearAtkInterval();
+        if (baseInterval > 0) atkSpeedController.ChangeBaseInterval(baseInterval);
+    }
+
+    public override void BuffEnd()
+    {
+        atkSpeedController.atkSpeed.DelValueBuff(buffInner);
+        atkSpeedController.RefreshInterval();
+        if (baseInterval > 0) atkSpeedController.ChangeBaseInterval(p_baseInterval);
+    }
+}

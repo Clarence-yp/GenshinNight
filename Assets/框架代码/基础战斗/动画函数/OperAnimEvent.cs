@@ -29,17 +29,17 @@ public class OperAnimEvent : MonoBehaviour
 
     public void skill1()
     {
-        oc_.Skill1();
+        oc_.SkillAtk_1();
     }
     
     public void skill2()
     {
-        oc_.Skill2();
+        oc_.SkillAtk_2();
     }
     
     public void skill3()
     {
-        oc_.Skill3();
+        oc_.SkillAtk_3();
     }
     
 }

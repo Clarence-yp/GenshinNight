@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Spine;
 
 public class PropertyCore : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class PropertyCore : MonoBehaviour
     
     void Update()
     {
-        
+        sp_.Update();
         Update_Property_Down();
     }
     
@@ -88,6 +89,15 @@ public class ValueBuffInner
 {
     public ValueBuffMode mode;
     public float v;
+
+    public ValueBuffInner() { }
+
+    public ValueBuffInner(ValueBuffMode m, float vv)
+    {
+        mode = m;
+        v = vv;
+    }
+    
 }
 
 public class ValueBuffer
@@ -194,7 +204,40 @@ public class SPController
     public bool during;         // 技能是否开启
     public float remainingTime; // 技能剩余持续时间
     public float maxTime;       // 技能最大持续时间
+    private recoverType reType;  // 技力恢复模式
 
+    public void Init(float ssp, float maxxSp, float maxxTime, recoverType type, float recharge)
+    {
+        sp = ssp;
+        maxSp = maxxSp;
+        maxTime = maxxTime;
+        reType = type;
+        spRecharge.ChangeBaseValue(recharge);
+    }
+
+    public void Update()
+    {
+        if (during)
+        {
+            if (remainingTime <= 0) during = false;
+            else remainingTime -= Time.deltaTime;
+        }
+        else
+        {
+            if (reType == recoverType.auto)
+            {
+                sp = sp + Time.deltaTime > maxSp ? maxSp : sp + Time.deltaTime * spRecharge.val;
+            }
+        }
+        
+    }
+
+    public void ReleaseSkill()
+    {
+        during = true;
+        sp = 0;
+        remainingTime = maxTime;
+    }
     
 }
 
@@ -202,12 +245,13 @@ public class DurationValueBuff : DurationBuffSlot
 {
     private ValueBuffer valueBuffer;
     private ValueBuffInner buffInner;
-    public DurationValueBuff(ValueBuffer buffer, ValueBuffMode buffMode, float v)
+    public DurationValueBuff(ValueBuffer buffer, ValueBuffMode buffMode, float v, float durTime)
     {
         valueBuffer = buffer;
         buffInner = new ValueBuffInner();
         buffInner.mode = buffMode;
         buffInner.v = v;
+        during = durTime;
     }
 
     public override void BuffStart()

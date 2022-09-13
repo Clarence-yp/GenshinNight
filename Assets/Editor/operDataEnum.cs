@@ -25,7 +25,6 @@ public class operDataEnum : Editor
     
     //"立绘图片"1中变量
     private SerializedProperty imageInQueue;
-    private SerializedProperty spineDefault;
     private SerializedProperty operUIImage1;
     private SerializedProperty operUIImage2;
     private SerializedProperty illustratedBookImage;
@@ -132,7 +131,6 @@ public class operDataEnum : Editor
         
         //"立绘图片"1中变量
         imageInQueue = od_.FindProperty("imageInQueue");
-        spineDefault = od_.FindProperty("spineDefault");
         operUIImage1 = od_.FindProperty("operUIImage1");
         operUIImage2 = od_.FindProperty("operUIImage2");
         illustratedBookImage = od_.FindProperty("illustratedBookImage");
@@ -240,7 +238,6 @@ public class operDataEnum : Editor
         else if(type.enumValueIndex == 1)
         {
             EditorGUILayout.PropertyField(imageInQueue);
-            EditorGUILayout.PropertyField(spineDefault);
             EditorGUILayout.PropertyField(operUIImage1);
             EditorGUILayout.PropertyField(operUIImage2);
             EditorGUILayout.PropertyField(illustratedBookImage);

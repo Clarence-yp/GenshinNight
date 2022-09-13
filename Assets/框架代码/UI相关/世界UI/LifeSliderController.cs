@@ -13,6 +13,10 @@ public class LifeSliderController : MonoBehaviour
     public Slider grayLifeSlider;
     public Slider blueLifeSlider;
     public Slider skillSlider;
+    public Image skillSliderFill;
+
+    private Color32 spSkillColor = new Color32(200, 255, 0, 160);
+    private Color32 duringSkillColor = new Color32(248, 183, 8, 160);
     
 
     private void Awake()
@@ -31,8 +35,22 @@ public class LifeSliderController : MonoBehaviour
     void Refresh()
     {
         blueLifeSlider.value = bc_.life_.life / bc_.life_.val;
-        skillSlider.value = bc_.sp_.sp / bc_.sp_.maxSp;
         grayLifeSlider.value = Math.Max(grayLifeSlider.value, blueLifeSlider.value);
+
+        SPController sp_ = bc_.sp_;
+        if (sp_.during)
+        {
+            skillSliderFill.color = duringSkillColor;
+            skillSlider.value = sp_.remainingTime / sp_.maxTime;
+        }
+        else
+        {
+            skillSliderFill.color = spSkillColor;
+            skillSlider.value = sp_.sp / sp_.maxSp;
+        }
+        
+        
+        
     }
     
 }
