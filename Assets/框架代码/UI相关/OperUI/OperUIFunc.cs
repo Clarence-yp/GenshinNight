@@ -210,6 +210,21 @@ public class OperUIFunc : MonoBehaviour
         oc_.skillLevel[skillID]++;
         OperUIManager.skillUIController.Refresh();
     }
-    
+
+    /// <summary>
+    /// 按下加速按钮
+    /// </summary>
+    public void GlobalSpeedChange()
+    {
+        InitManager.TimeDoubleSpeed(!InitManager.globalDoubleSpeed);
+    }
+
+    /// <summary>
+    /// 按下暂停按钮
+    /// </summary>
+    public void GlobalPause()
+    {
+        InitManager.TimePause(!InitManager.globalPause);
+    }
     
 }

@@ -834,6 +834,10 @@ public class EdgeUIController
     public Text waveText;
     public Text levelHPText;
 
+    public Image globalSpeedImage;
+    public Image globalPauseImage;
+    public Image settingImage;
+
     private float costDetaTime;
     
     public EdgeUIController()
@@ -844,6 +848,9 @@ public class EdgeUIController
         remainPlaceText = OperUIElements.remainPlaceText;
         waveText = OperUIElements.waveText;
         levelHPText = OperUIElements.levelHPText;
+        globalSpeedImage = OperUIElements.globalSpeedImage;
+        globalPauseImage = OperUIElements.globalPauseImage;
+        settingImage = OperUIElements.settingImage;
     }
 
     public void Init()
@@ -877,6 +884,14 @@ public class EdgeUIController
         waveText.text = (InitManager.enemyWaveController.wave + 1) + "/" +
                         InitManager.enemyWaveController.maxWave;
         levelHPText.text = InitManager.resourceController.HP.ToString();
+
+
+        globalPauseImage.sprite = InitManager.globalPause
+            ? SpriteElement.instance.continueSprite
+            : SpriteElement.instance.pauseSprite;
+        globalSpeedImage.sprite=InitManager.globalDoubleSpeed
+            ? SpriteElement.instance.speed2x_Sprite
+            : SpriteElement.instance.speed1x_Sprite;
     }
 
 

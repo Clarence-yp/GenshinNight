@@ -105,14 +105,19 @@ public class EnemyCore : BattleCore
         var staInfo = anim.GetCurrentAnimatorStateInfo(0);
         if (staInfo.IsName("Fight"))
         {
-            if (!fighting) NorAtkStartCool();
             fighting = true;
+        }
+        else if (nxtAtkImmediately)
+        {
+            ClearAtkInterval();
+            nxtAtkImmediately = false;
         }
         else fighting = false;
         
         if (!tarIsNull && CanAtk())
         {
             anim.SetBool("fight", true);
+            NorAtkStartCool();
             
             // 根据目标位置转变敌人朝向
             Vector2 detaPos = BaseFunc.xz(transform.position) - BaseFunc.xz(target.transform.position);

@@ -134,8 +134,12 @@ public class OperatorCore : BattleCore
         var staInfo = anim.GetCurrentAnimatorStateInfo(0);
         if (staInfo.IsName("Fight"))
         {
-            if (!fighting) NorAtkStartCool();
             fighting = true;
+        }
+        else if (nxtAtkImmediately)
+        {
+            ClearAtkInterval();
+            nxtAtkImmediately = false;
         }
         else fighting = false;
         
@@ -144,7 +148,8 @@ public class OperatorCore : BattleCore
             if (CanAtk())
             {
                 anim.SetBool("fight", true);
-
+                NorAtkStartCool();
+                
                 // 根据目标位置转变干员朝向
                 Vector2 detaPos = BaseFunc.xz(transform.position) - BaseFunc.xz(target.transform.position);
                 if (detaPos.x < 0) ac_.TurnRight();

@@ -41,7 +41,11 @@ public class InitManager : MonoBehaviour
     
     // 关卡资源控制器
     public static ResourceController resourceController = new ResourceController();
-
+    
+    // 当前关卡速度
+    public static bool globalTimeSlow = false;
+    public static bool globalDoubleSpeed = false;
+    public static bool globalPause = false;
 
     private void Awake()
     {
@@ -151,7 +155,8 @@ public class InitManager : MonoBehaviour
 
     public static void TimeSlow()
     {
-        Time.timeScale = 0.1f;
+        globalTimeSlow = true;
+        RefreshTimeScale();
         DisableAllRedDoorUI();
     }
     
@@ -170,11 +175,30 @@ public class InitManager : MonoBehaviour
     }
     public static void TimeRecover()
     {
-        Time.timeScale = 1;
+        globalTimeSlow = false;
+        RefreshTimeScale();
         cameraController_.ChangeTar(cameraController_.basePos, cameraController_.baseRol);
         dragSlotController.DownAnims();
         EnableAllRedDoorUI();
     }
+
+    public static void TimeDoubleSpeed(bool doubleSpeed)
+    {
+        globalDoubleSpeed = doubleSpeed;
+        RefreshTimeScale();
+    }
+
+    public static void TimePause(bool pause)
+    {
+        globalPause = pause;
+        RefreshTimeScale();
+    }
+
+    private static void RefreshTimeScale()
+    {
+        Time.timeScale = globalPause ? 0 : globalTimeSlow ? 0.1f : globalDoubleSpeed ? 2 : 1;
+    }
+    
 
     private static void DisableAllRedDoorUI()
     {

@@ -17,11 +17,19 @@ public class SpriteElement : MonoBehaviour
     public Sprite dendroSprite;
     public Sprite hydroSprite;
     public Sprite pyroSprite;
-    public Sprite cryoSprite;    
+    public Sprite cryoSprite;
+
+    [Header("EdgeUI相关")] 
+    public Sprite speed1x_Sprite;
+    public Sprite speed2x_Sprite;
+    public Sprite pauseSprite;
+    public Sprite continueSprite;
     
     
     [Header("干员放置相关")]
     public GameObject atkRangeImage; // 干员的攻击范围展示条纹图片
+    
+    
     
     
     

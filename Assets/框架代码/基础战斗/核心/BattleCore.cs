@@ -12,7 +12,8 @@ public class BattleCore : ElementCore
     [HideInInspector] public float tarPriority = 0;         // 在别的BattleCore队列中排序的参照，由外部维护
     public bool dieNow = false;     //调试变量，立即杀死自身
     
-    protected float norAtkInterval = 0;       // 到下一次攻击还需要的时间
+    protected float norAtkInterval = 0;         // 到下一次攻击还需要的时间
+    public bool nxtAtkImmediately = false;      // 下一次退出攻击状态时，立刻清空冷却并进入攻击状态
     public bool fighting;
     
     // 进阶数据
@@ -241,7 +242,7 @@ public class DurationAtkSpeedBuff : DurationBuffSlot
     {
         atkSpeedController.atkSpeed.AddValueBuff(buffInner);
         atkSpeedController.RefreshInterval();
-        atkSpeedController.bc_.ClearAtkInterval();
+        atkSpeedController.bc_.nxtAtkImmediately = true;
         if (baseInterval > 0) atkSpeedController.ChangeBaseInterval(baseInterval);
     }
 
@@ -249,6 +250,7 @@ public class DurationAtkSpeedBuff : DurationBuffSlot
     {
         atkSpeedController.atkSpeed.DelValueBuff(buffInner);
         atkSpeedController.RefreshInterval();
+        // atkSpeedController.bc_.nxtAtkImmediately = true;
         if (baseInterval > 0) atkSpeedController.ChangeBaseInterval(p_baseInterval);
     }
 }

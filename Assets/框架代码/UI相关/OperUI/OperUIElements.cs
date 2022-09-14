@@ -171,6 +171,12 @@ public class OperUIElements : MonoBehaviour
     public static Text waveText;
     public Text levelHPText_p;
     public static Text levelHPText;
+    public Image globalSpeedImage_p;
+    public static Image globalSpeedImage;
+    public Image globalPauseImage_p;
+    public static Image globalPauseImage;
+    public Image settingImage_p;
+    public static Image settingImage;
     
 
     private void Awake()
@@ -274,6 +280,9 @@ public class OperUIElements : MonoBehaviour
         remainPlaceText = remainPlaceText_p;
         waveText = waveText_p;
         levelHPText = levelHPText_p;
+        globalSpeedImage = globalSpeedImage_p;
+        globalPauseImage = globalPauseImage_p;
+        settingImage = settingImage_p;
     }
     
 }
