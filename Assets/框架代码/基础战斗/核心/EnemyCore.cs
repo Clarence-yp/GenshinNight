@@ -108,11 +108,6 @@ public class EnemyCore : BattleCore
         {
             fighting = true;
         }
-        else if (nxtAtkImmediately)
-        {
-            ClearAtkInterval();
-            nxtAtkImmediately = false;
-        }
         else fighting = false;
         
         if (!tarIsNull && CanAtk())

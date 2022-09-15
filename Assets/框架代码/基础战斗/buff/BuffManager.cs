@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuffManager : MonoBehaviour
 {
@@ -80,6 +81,11 @@ public abstract class DurationBuffSlot : BuffSlot
 {
     protected float during;
 
+    public DurationBuffSlot(float t)
+    {
+        during = t;
+    }
+
     public override void BuffUpdate()
     {
         during -= Time.deltaTime;
@@ -88,5 +94,20 @@ public abstract class DurationBuffSlot : BuffSlot
     public override bool BuffEndCondition()
     {
         return during <= 0;
+    }
+}
+
+public abstract class SkillBuffSlot : BuffSlot
+{
+    protected SPController sp_;
+
+    public SkillBuffSlot(SPController ssp_)
+    {
+        sp_ = ssp_;
+    }
+
+    public override bool BuffEndCondition()
+    {
+        return !sp_.during || !sp_.bc_.gameObject.activeSelf;
     }
 }

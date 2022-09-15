@@ -168,15 +168,15 @@ public class OperUIFunc : MonoBehaviour
         switch (oc_.skillNum)
         {
             case 0:
-                oc_.sp_.Init(0, od_.maxSP0[lel], od_.duration0[lel],
+                oc_.sp_.Init(oc_, 0, od_.maxSP0[lel], od_.duration0[lel],
                     od_.skill0_recoverType, od_.spRecharge);
                 break;
             case 1:
-                oc_.sp_.Init(0, od_.maxSP1[lel], od_.duration1[lel],
+                oc_.sp_.Init(oc_, 0, od_.maxSP1[lel], od_.duration1[lel],
                     od_.skill1_recoverType, od_.spRecharge);
                 break;
             case 2:
-                oc_.sp_.Init(0, od_.maxSP2[lel], od_.duration2[lel],
+                oc_.sp_.Init(oc_, 0, od_.maxSP2[lel], od_.duration2[lel],
                     od_.skill2_recoverType, od_.spRecharge);
                 break;
         }

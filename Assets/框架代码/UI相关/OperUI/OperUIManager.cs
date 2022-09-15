@@ -374,15 +374,15 @@ public class LevelUIController
         if (oc_.eliteLevel == 0)
         {
             elitismImage.sprite = SpriteElement.instance.elitismSprite0;
-            elitismCostText.text = od_.elitismCost[0].ToString();
-            elitismExpText.text = od_.elitismCost[0].ToString();
+            elitismCostText.text = od_.elitismCost[0] < 1e5 ? od_.elitismCost[0].ToString() : "无效";
+            elitismExpText.text = od_.elitismExp[0] < 1e5 ? od_.elitismExp[0].ToString() : "无效";
             operImage.sprite = od_.operUIImage1;
         }
         else if (oc_.eliteLevel == 1)
         {
             elitismImage.sprite = SpriteElement.instance.elitismSprite1;
-            elitismCostText.text = od_.elitismCost[1].ToString();
-            elitismExpText.text = od_.elitismCost[1].ToString();
+            elitismCostText.text = od_.elitismCost[1] < 1e5 ? od_.elitismCost[1].ToString() : "无效";
+            elitismExpText.text = od_.elitismExp[1] < 1e5 ? od_.elitismExp[1].ToString() : "无效";
             operImage.sprite = od_.operUIImage1;
         }
         else if (oc_.eliteLevel == 2)
@@ -599,6 +599,7 @@ public class SkillUIController
         skill_2_ButtonImage.color = buttonUnChooseColor;
         skill_3_ButtonImage.color = buttonUnChooseColor;
 
+        int eliteLevel = OperUIManager.showingOper.eliteLevel;
         switch (skillUISta)
         {
             case SkillUISta.detailedValue:
@@ -611,14 +612,33 @@ public class SkillUIController
                 break;
             case SkillUISta.skill1:
                 skillObject.SetActive(true);
+                skillLockObject.SetActive(false);
                 skill_1_ButtonImage.color = buttonChooseColor;
                 break;
             case SkillUISta.skill2:
-                skillObject.SetActive(true);
+                if (eliteLevel < 1)
+                {
+                    skillObject.SetActive(false);
+                    skillLockObject.SetActive(true);
+                }
+                else
+                {
+                    skillObject.SetActive(true);
+                    skillLockObject.SetActive(false);
+                }
                 skill_2_ButtonImage.color = buttonChooseColor;
                 break;
             case SkillUISta.skill3:
-                skillObject.SetActive(true);
+                if (eliteLevel < 2)
+                {
+                    skillObject.SetActive(false);
+                    skillLockObject.SetActive(true);
+                }
+                else
+                {
+                    skillObject.SetActive(true);
+                    skillLockObject.SetActive(false);
+                }
                 skill_3_ButtonImage.color = buttonChooseColor;
                 break;
             default:
@@ -737,9 +757,9 @@ public class SkillUIController
             atkSpeed > 0 ? GreenString(atkSpeed.ToString()) : RedString(atkSpeed.ToString());
         minAtkInterval.text = ToDetailString(oc_.atkSpeedController.baseInterval,
             oc_.atkSpeedController.minAtkInterval, 2, true);
-        
-        talent1.text = od_.talent1[oc_.eliteLevel];
-        talent2.text = od_.talent2[oc_.eliteLevel];
+
+        talent1.text = oc_.GetTalentDescription(1);
+        talent2.text = oc_.GetTalentDescription(2);
         
         // 刷新技能图标
         skillImage.sprite = od_.skillImage[showSkillNum];
@@ -768,7 +788,7 @@ public class SkillUIController
                 durationText.text = od_.duration0[skillLevel].ToString("f0");
                 beginSpText.text = od_.initSP0[skillLevel].ToString();
                 maxSpText.text = od_.maxSP0[skillLevel].ToString();
-                skillDescriptionText.text = od_.description0[skillLevel];
+                skillDescriptionText.text = oc_.GetSkillDescription(0);
                 break;
             case 1:
                 skillCostText.text = od_.costNeed1[Math.Min(skillLevel, 5)].ToString();
@@ -780,7 +800,7 @@ public class SkillUIController
                 durationText.text = od_.duration1[skillLevel].ToString("f0");
                 beginSpText.text = od_.initSP1[skillLevel].ToString();
                 maxSpText.text = od_.maxSP1[skillLevel].ToString();
-                skillDescriptionText.text = od_.description1[skillLevel];
+                skillDescriptionText.text = oc_.GetSkillDescription(1);
                 break;
             case 2:
                 skillCostText.text = od_.costNeed2[Math.Min(skillLevel, 5)].ToString();
@@ -792,7 +812,7 @@ public class SkillUIController
                 durationText.text = od_.duration2[skillLevel].ToString("f0");
                 beginSpText.text = od_.initSP2[skillLevel].ToString();
                 maxSpText.text = od_.maxSP2[skillLevel].ToString();
-                skillDescriptionText.text = od_.description2[skillLevel];
+                skillDescriptionText.text = oc_.GetSkillDescription(2);
                 break;
         }
 

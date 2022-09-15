@@ -197,6 +197,8 @@ public class LifeController : ValueBuffer
 
 public class SPController
 {
+    public BattleCore bc_;
+    
     public float sp;
     public float maxSp;
     public ValueBuffer spRecharge = new ValueBuffer(1);
@@ -206,8 +208,10 @@ public class SPController
     public float maxTime;       // 技能最大持续时间
     private recoverType reType;  // 技力恢复模式
 
-    public void Init(float ssp, float maxxSp, float maxxTime, recoverType type, float recharge)
+    public void Init(BattleCore bc__, float ssp, float maxxSp, float maxxTime,
+        recoverType type, float recharge)
     {
+        bc_ = bc__;
         sp = ssp;
         maxSp = maxxSp;
         maxTime = maxxTime;
@@ -245,13 +249,12 @@ public class DurationValueBuff : DurationBuffSlot
 {
     private ValueBuffer valueBuffer;
     private ValueBuffInner buffInner;
-    public DurationValueBuff(ValueBuffer buffer, ValueBuffMode buffMode, float v, float durTime)
+    public DurationValueBuff(ValueBuffer buffer, ValueBuffMode buffMode, float v, float durTime) : base(durTime)
     {
         valueBuffer = buffer;
         buffInner = new ValueBuffInner();
         buffInner.mode = buffMode;
         buffInner.v = v;
-        during = durTime;
     }
 
     public override void BuffStart()
@@ -263,4 +266,29 @@ public class DurationValueBuff : DurationBuffSlot
     {
         valueBuffer.DelValueBuff(buffInner);
     }
+}
+
+public class SkillValueBuff : SkillBuffSlot
+{
+    private ValueBuffer valueBuffer;
+    private ValueBuffInner buffInner;
+    public SkillValueBuff(ValueBuffer buffer, ValueBuffMode buffMode, float v, SPController sp) : base(sp)
+    {
+        valueBuffer = buffer;
+        buffInner = new ValueBuffInner();
+        buffInner.mode = buffMode;
+        buffInner.v = v;
+    }
+
+    public override void BuffStart()
+    {
+        valueBuffer.AddValueBuff(buffInner);
+    }
+
+    public override void BuffEnd()
+    {
+        valueBuffer.DelValueBuff(buffInner);
+    }
+
+    public override void BuffUpdate() { }
 }

@@ -64,22 +64,36 @@ MonoBehaviour:
   aimingMode: 0
   tarPriority: 0
   dieNow: 0
-  atkSpeed: 0
-  minAtkInterval: 0
-  maxBlock: 0
+  nxtAtkImmediately: 0
+  fighting: 0
   dying: 0
   blockList: []
   od_: {fileID: 11400000, guid: 471e676b1655a4b4399fb74a831c9bbd, type: 2}
   level: 0
   eliteLevel: 0
   skillLevel: 000000000000000000000000
-  costNeed: 0
   operID: 0
   skillNum: 0
   prePutOn: 0
   animObject: {fileID: 0}
   anim: {fileID: 0}
   atkRange: {fileID: 0}
+  atkIncreasePercentage:
+  - 0.1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  atkSpeedIncrease:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!1 &3649933125311570890
 GameObject:
   m_ObjectHideFlags: 0

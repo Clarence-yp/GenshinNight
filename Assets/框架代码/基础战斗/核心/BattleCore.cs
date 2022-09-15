@@ -12,9 +12,9 @@ public class BattleCore : ElementCore
     [HideInInspector] public float tarPriority = 0;         // 在别的BattleCore队列中排序的参照，由外部维护
     public bool dieNow = false;     //调试变量，立即杀死自身
     
-    protected float norAtkInterval = 0;         // 到下一次攻击还需要的时间
-    public bool nxtAtkImmediately = false;      // 下一次退出攻击状态时，立刻清空冷却并进入攻击状态
-    public bool fighting;
+    public float norAtkInterval = 0;         // 到下一次攻击还需要的时间
+    // [HideInInspector] public bool nxtAtkImmediately = false;      // 下一次退出攻击状态时，立刻清空冷却并进入攻击状态
+    [HideInInspector] public bool fighting;
     
     // 进阶数据
     [HideInInspector] public AtkSpeedController atkSpeedController;
@@ -148,12 +148,7 @@ public class BattleCore : ElementCore
     {
         norAtkInterval = atkSpeedController.minAtkInterval;
     }
-    
-    public void ClearAtkInterval()
-    {
-        norAtkInterval = 0;
-    }
-    
+
     /// <summary>  
     /// 表示该Core是否可以进行普攻
     /// </summary>
@@ -176,7 +171,7 @@ public enum AimingMode : byte
 
 public class AtkSpeedController
 {
-    private Animator anim;
+    public Animator anim;
     public BattleCore bc_;
     public ValueBuffer atkSpeed;        // 攻击速度加成，100表示最小攻击间隔减小一半
     public float minAtkInterval;        // 最小攻击间隔
@@ -218,7 +213,7 @@ public class AtkSpeedController
     }
 }
 
-public class DurationAtkSpeedBuff : DurationBuffSlot
+public class SkillAtkSpeedBuff : SkillBuffSlot
 {
     private AtkSpeedController atkSpeedController;
     private float atkSpeed;
@@ -227,13 +222,12 @@ public class DurationAtkSpeedBuff : DurationBuffSlot
     
     private float p_baseInterval;
 
-    public DurationAtkSpeedBuff(AtkSpeedController controller, float speed, float durTime,
-        float interval = -1)
+    public SkillAtkSpeedBuff(AtkSpeedController controller, float speed, SPController sp,
+        float interval = -1) : base(sp)
     {
         atkSpeedController = controller;
         atkSpeed = speed;
         buffInner = new ValueBuffInner(ValueBuffMode.Fixed, atkSpeed);
-        during = durTime;
         baseInterval = interval;
 
         p_baseInterval = atkSpeedController.baseInterval;
@@ -243,7 +237,7 @@ public class DurationAtkSpeedBuff : DurationBuffSlot
     {
         atkSpeedController.atkSpeed.AddValueBuff(buffInner);
         atkSpeedController.RefreshInterval();
-        atkSpeedController.bc_.nxtAtkImmediately = true;
+        ReSetIntervalTime();
         if (baseInterval > 0) atkSpeedController.ChangeBaseInterval(baseInterval);
     }
 
@@ -251,7 +245,29 @@ public class DurationAtkSpeedBuff : DurationBuffSlot
     {
         atkSpeedController.atkSpeed.DelValueBuff(buffInner);
         atkSpeedController.RefreshInterval();
-        // atkSpeedController.bc_.nxtAtkImmediately = true;
+        ReSetIntervalTime();
         if (baseInterval > 0) atkSpeedController.ChangeBaseInterval(p_baseInterval);
     }
+    
+    public override void BuffUpdate() { }
+
+    private void ReSetIntervalTime()
+    {
+        Animator anim = atkSpeedController.anim;
+        BattleCore bc_ = atkSpeedController.bc_;
+        
+        var staInfo = anim.GetCurrentAnimatorStateInfo(0);
+        if (!staInfo.IsName("Fight"))
+        {
+            bc_.norAtkInterval = 0;
+            return;
+        }
+        
+        float fightAnimTime = staInfo.length;
+        if (fightAnimTime - atkSpeedController.minAtkInterval < 0.008f) return;
+        float nspeed = (fightAnimTime / atkSpeedController.minAtkInterval) + 0.005f;
+        float conTime = (staInfo.normalizedTime - (int) staInfo.normalizedTime) * fightAnimTime / nspeed;
+        bc_.norAtkInterval = atkSpeedController.minAtkInterval - conTime;
+    }
+    
 }

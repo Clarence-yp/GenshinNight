@@ -34,6 +34,9 @@ public class OperatorCore : BattleCore
     public int block { get; private set; }      // 当前剩余可用阻挡数
     private Dictionary<EnemyCore, bool> alreadyBlockSet = new Dictionary<EnemyCore, bool>();
 
+    // 入场委托函数（一般为被动与天赋）
+    [HideInInspector] public Action PutOnAction;
+    
     private void Awake()
     {
         animObject = transform.Find("anim").gameObject;
@@ -50,7 +53,11 @@ public class OperatorCore : BattleCore
         aimingMode = od_.aimingMode;
         InitCalculation();      // 初始化battleCalculation
         ChangeAtkRange();       // 生成atkRange
+        
+        Awake_OperatorCore_Down();
     }
+
+    protected virtual void Awake_OperatorCore_Down() {}
 
     protected override void Start_BattleCore_Down()
     {
@@ -103,15 +110,15 @@ public class OperatorCore : BattleCore
         switch (skillNum)
         {
             case 0:
-                sp_.Init(od_.initSP0[lel], od_.maxSP0[lel], od_.duration0[lel],
+                sp_.Init(this, od_.initSP0[lel], od_.maxSP0[lel], od_.duration0[lel],
                     od_.skill0_recoverType, od_.spRecharge);
                 break;
             case 1:
-                sp_.Init(od_.initSP1[lel], od_.maxSP1[lel], od_.duration1[lel],
+                sp_.Init(this, od_.initSP1[lel], od_.maxSP1[lel], od_.duration1[lel],
                     od_.skill1_recoverType, od_.spRecharge);
                 break;
             case 2:
-                sp_.Init(od_.initSP2[lel], od_.maxSP2[lel], od_.duration2[lel],
+                sp_.Init(this, od_.initSP2[lel], od_.maxSP2[lel], od_.duration2[lel],
                     od_.skill2_recoverType, od_.spRecharge);
                 break;
         }
@@ -141,11 +148,6 @@ public class OperatorCore : BattleCore
         if (staInfo.IsName("Fight"))
         {
             fighting = true;
-        }
-        else if (nxtAtkImmediately)
-        {
-            ClearAtkInterval();
-            nxtAtkImmediately = false;
         }
         else fighting = false;
         
@@ -345,6 +347,17 @@ public class OperatorCore : BattleCore
     public virtual void SkillAtk_1() { }
     public virtual void SkillAtk_2() { }
     public virtual void SkillAtk_3() { }
+
+    public virtual string GetTalentDescription(int talentID)
+    {
+        return talentID == 1 ? od_.talent1[eliteLevel] : od_.talent2[eliteLevel];
+    }
+    
+    public virtual string GetSkillDescription(int SkillID)
+    {
+        return SkillID == 0 ? od_.description0[skillLevel[0]] :
+            SkillID == 1 ? od_.description1[skillLevel[1]] : od_.description2[skillLevel[2]];
+    }
 }
 
 public class SpineAnimController

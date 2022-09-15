@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class Kroos : OperatorCore
 {
-    protected override void Start_OperatorCore_Down()
-    {
-        
-    }
+    private float[] atkIncreasePercentage = {0.1f, 0.15f, 0.2f, 0.3f, 0.35f, 0.4f, 0.5f};
 
+
+    // [Header("技能3")] 
+    // public float[] atkSpeedIncrease = new float[7];
 
     public override void SkillStart_1()
     {
-        float during = od_.duration0[skillLevel[0]];
-        DurationValueBuff valueBuff = new DurationValueBuff(atk_, ValueBuffMode.Percentage, 0.1f,
-            during);
-        BuffManager.AddBuff(valueBuff);
+        // int lel = skillLevel[0];
+        // float during = od_.duration0[lel];
+        // SkillValueBuff valueBuff = new SkillValueBuff(atk_, ValueBuffMode.Percentage,
+        //     atkIncreasePercentage[lel], sp_);
+        // BuffManager.AddBuff(valueBuff);
+
+        SkillAtkSpeedBuff speedBuff = new SkillAtkSpeedBuff(atkSpeedController, 200, sp_);
+        BuffManager.AddBuff(speedBuff);
+
     }
 
     public override void SkillStart_2()
     {
-        float during = od_.duration0[skillLevel[0]];
-        DurationAtkSpeedBuff atkSpeedBuff = new DurationAtkSpeedBuff(atkSpeedController, 200,
-            during);
-        BuffManager.AddBuff(atkSpeedBuff);
+        
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c3c45b4a547140bca8625c627546d, type: 3}
   m_Name: "\u514B\u6D1B\u4E1D"
   m_EditorClassIdentifier: 
-  type: 0
+  type: 3
   skillType: 1
   Name: "\u514B\u6D1B\u4E1D"
   EnName: Kroos
@@ -51,15 +51,15 @@ MonoBehaviour:
   cost: 0
   consumPlace: 0
   reTime: 0
-  maxLevel: 000000000000000000000000
+  maxLevel: 320000003700000000000000
   elementalMastery: 0
   elementalDamage: 1
   elementalResistance: 0
   spRecharge: 1
   Description:
-  - 
-  - 
-  - 
+  - "\u514B\u6D1B\u4E1D\u65E0\u6CD5\u7CBE\u4E8C\uFF0C\u4E14\u6700\u5927\u7B49\u7EA7\u4E0A\u9650\u4E3A55\u7EA7\u3002\u4F46\u5355\u4F4D\u7B49\u7EA7\u63D0\u5347\u7684\u5C5E\u6027\u66F4\u591A"
+  - "\u514B\u6D1B\u4E1D\u65E0\u6CD5\u7CBE\u4E8C\uFF0C\u4E14\u6700\u5927\u7B49\u7EA7\u4E0A\u9650\u4E3A55\u7EA7\u3002\u4F46\u5355\u4F4D\u7B49\u7EA7\u63D0\u5347\u7684\u5C5E\u6027\u66F4\u591A"
+  - "\u514B\u6D1B\u4E1D\u65E0\u6CD5\u7CBE\u4E8C\uFF0C\u4E14\u6700\u5927\u7B49\u7EA7\u4E0A\u9650\u4E3A55\u7EA7\u3002\u4F46\u5355\u4F4D\u7B49\u7EA7\u63D0\u5347\u7684\u5C5E\u6027\u66F4\u591A"
   talent1:
   - 
   - 
@@ -93,8 +93,8 @@ MonoBehaviour:
   - 0
   - 0
   elitismBlock: 0000000000000000
-  elitismExp: 0000000000000000
-  elitismCost: 0000000000000000
+  elitismExp: 0a00000000e1f505
+  elitismCost: 0a00000000e1f505
   trustAtk: 0
   trustDef: 0
   trustLife: 0
