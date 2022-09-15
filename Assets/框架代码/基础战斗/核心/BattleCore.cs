@@ -63,6 +63,7 @@ public class BattleCore : ElementCore
             if (DieAction != null)
             {
                 DieAction(this);
+                DieAction = null;
             }
             DieBegin();
         }

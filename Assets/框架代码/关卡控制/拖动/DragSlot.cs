@@ -10,8 +10,8 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     [HideInInspector] public OperatorCore operatorCore;       // 干员预制体，关卡内不释放
     [HideInInspector] public bool operIsNull = true;
     private Transform operatorAnim;         // 干员预制体下的动画子物体
-    private dirDrag dirDrag_;               
-
+    private dirDrag dirDrag_;
+    private operData od_;
 
     public RectTransform rectTransform;
         
@@ -65,7 +65,7 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
         operatorCore = oc_;
         operIsNull = false;
         int id = operatorCore.operID;
-        operData od_ = InitManager.allOperDataList[id];
+        od_ = InitManager.allOperDataList[id];
 
         operImage.sprite = od_.imageInQueue;
         elementImage.sprite = SpriteElement.GetElementSprite(od_.elementType);
@@ -106,8 +106,8 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
         pos.y = 0;
         TileSlot tileSlot = InitManager.GetMap(pos);
         if (tileSlot == null) return pos;
-        
-        if (Interpreter.canPut(tileSlot.type))
+
+        if (Interpreter.canPut(tileSlot.type, od_.banLowGround, od_.banHighGround))
             pos = BaseFunc.x0z(BaseFunc.FixCoordinate(pos));
         
         if (Interpreter.isHigh(InitManager.GetMap(pos).type))
@@ -157,7 +157,8 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
         if (!CanPut()) return;
 
         if (InitManager.GetMap(operatorAnim.position) != null &&
-            Interpreter.canPut(InitManager.GetMap(operatorAnim.position).type))
+            Interpreter.canPut(InitManager.GetMap(operatorAnim.position).type
+                , od_.banLowGround, od_.banHighGround))
         {
             OperUIManager.rightUIController.DragPanelPos(operatorAnim.position);
             dirDrag_.BackGroundButton.onClick.AddListener(PutFailed);

@@ -26,6 +26,7 @@ public class EnemyCore : BattleCore
     private void Awake()
     {
         InitManager.Register(this);
+        transform.position = BaseFunc.x0z(pointList[0]);
     }
 
     protected override void Start_BattleCore_Down()
@@ -261,7 +262,7 @@ public class Spfa
         Vector2 ds = new Vector2();
 
         preS = BaseFunc.FixCoordinate(S);
-        if (InitManager.GetMap(preS).type == platformType.box)
+        if (InitManager.GetMap(preS).type == TileType.box)
         {
             q.Enqueue(preS);
             dis.Add(preS, 0);

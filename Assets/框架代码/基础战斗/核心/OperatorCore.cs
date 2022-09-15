@@ -54,7 +54,6 @@ public class OperatorCore : BattleCore
 
     protected override void Start_BattleCore_Down()
     {
-        
         OperInit();
         ac_.ChangeDefaultColorImmediately();
 
@@ -81,7 +80,6 @@ public class OperatorCore : BattleCore
     public void OperInit()
     {// 在每次登场时的初始化函数，用于初始化本OperatorCore
         
-        
         // 重设生命值
         life_.RecoverCompletely();
         
@@ -91,6 +89,14 @@ public class OperatorCore : BattleCore
 
         // 让Anim开始播放动画
         anim.SetBool("start", true);
+        
+        // 改变脚下tile的类型
+        TileSlot tile = InitManager.GetMap(transform.position);
+        if (tile != null)
+        {
+            OperPut_TileType_Buff tileBuff = new OperPut_TileType_Buff(this, tile); 
+            BuffManager.AddBuff(tileBuff);
+        }
         
         // 根据选择的技能设置spController
         int lel = skillLevel[skillNum];
@@ -256,7 +262,12 @@ public class OperatorCore : BattleCore
     /// </summary>
     public void Retreat()
     {
-        DieAction?.Invoke(this);
+        if (DieAction != null)
+        {
+            DieAction(this);
+            DieAction = null;
+        }
+        
         if (costNeed.val + costNeed.baseVal / 2 <= costNeed.baseVal * 2)
         {
             ValueBuffInner costBuff = new ValueBuffInner(ValueBuffMode.Percentage, 0.5f);

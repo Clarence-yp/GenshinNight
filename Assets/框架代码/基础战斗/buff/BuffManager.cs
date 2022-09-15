@@ -45,7 +45,7 @@ public class BuffManager : MonoBehaviour
 
     public static void Init()
     {
-        buffList.Clear();
+        // buffList.Clear();
     }
 
 

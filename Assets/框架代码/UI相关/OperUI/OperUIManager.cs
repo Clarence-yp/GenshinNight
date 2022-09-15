@@ -877,6 +877,9 @@ public class EdgeUIController
 
     private void Refresh()
     {
+        if (OperUIManager.showing) settingImage.gameObject.SetActive(false);
+        else settingImage.gameObject.SetActive(true);
+
         expText.text = InitManager.resourceController.exp.ToString("f0");
         costText.text = InitManager.resourceController.cost.ToString("f0");
         costSlider.value = costDetaTime;

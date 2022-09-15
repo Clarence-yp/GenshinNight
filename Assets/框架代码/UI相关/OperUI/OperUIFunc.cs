@@ -53,6 +53,8 @@ public class OperUIFunc : MonoBehaviour
         if (oc_.level < od_.maxLevel[oc_.eliteLevel]) return;
         if (InitManager.resourceController.cost < od_.elitismCost[oc_.eliteLevel]) return;
         if (InitManager.resourceController.exp < od_.elitismExp[oc_.eliteLevel]) return;
+
+        oc_.level = 0;
         InitManager.resourceController.CostIncrease(-od_.elitismCost[oc_.eliteLevel]);
         InitManager.resourceController.ExpIncrease(-od_.elitismExp[oc_.eliteLevel]);
         
@@ -95,7 +97,14 @@ public class OperUIFunc : MonoBehaviour
     /// </summary>
     public void Immediately()
     {
-        
+        OperatorCore oc_ = OperUIManager.showingOper;
+        float reTime = InitManager.operReTime[oc_.operID];
+        if (InitManager.resourceController.cost < reTime)
+        {
+            return;
+        }
+        InitManager.resourceController.CostIncrease(-reTime);
+        InitManager.operReTime[oc_.operID] = 1e-5f;
     }
 
     /// <summary>
