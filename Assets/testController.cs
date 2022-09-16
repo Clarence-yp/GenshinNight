@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class testController : MonoBehaviour
 {
     public operData dadaliya;
     public operData kroos;
-    
+
     private void Awake()
     {
         InitManager.Register(dadaliya, 1);
@@ -25,6 +26,6 @@ public class testController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -623,28 +623,30 @@
           <e p="version.txt" t="Include" />
         </e>
         <e p="testController.cs" t="Include" />
-        <e p="干员" t="Include">
-          <e p="干员模型" t="Include">
-            <e p="克洛丝" t="Include">
-              <e p="Kroos.cs" t="Include" />
-              <e p="Spine" t="Include">
-                <e p="char_124_kroos.atlas.txt" t="Include" />
+        <e p="干员与敌人" t="Include">
+          <e p="干员" t="Include">
+            <e p="干员模型" t="Include">
+              <e p="克洛丝" t="Include">
+                <e p="Kroos.cs" t="Include" />
+                <e p="Spine" t="Include">
+                  <e p="char_124_kroos.atlas.txt" t="Include" />
+                </e>
+              </e>
+              <e p="达达利亚" t="Include">
+                <e p="Spine" t="Include">
+                  <e p="bili.atlas.txt" t="Include" />
+                </e>
+                <e p="Tartaglia.cs" t="Include" />
               </e>
             </e>
-            <e p="达达利亚" t="Include">
-              <e p="Spine" t="Include">
-                <e p="bili.atlas.txt" t="Include" />
-              </e>
-              <e p="Tartaglia.cs" t="Include" />
-            </e>
+            <e p="新建干员流程.txt" t="Include" />
           </e>
-          <e p="新建干员流程.txt" t="Include" />
-        </e>
-        <e p="敌人" t="Include">
-          <e p="感染生物" t="Include">
-            <e p="猎狗" t="Include">
-              <e p="Spine" t="Include">
-                <e p="enemy_1000_gopro.atlas.txt" t="Include" />
+          <e p="敌人" t="Include">
+            <e p="感染生物" t="Include">
+              <e p="猎狗" t="Include">
+                <e p="Spine" t="Include">
+                  <e p="enemy_1000_gopro.atlas.txt" t="Include" />
+                </e>
               </e>
             </e>
           </e>

@@ -328,7 +328,7 @@ public class OperatorCore : BattleCore
     
     public virtual void OnAttack()
     {
-        Battle(this, target, 1, DamageMode.Physical);
+        Battle(this, target, atk_.val, DamageMode.Physical);
     }
 
     public void OnDie()

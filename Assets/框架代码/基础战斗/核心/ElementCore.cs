@@ -1,11 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ElementCore : PropertyCore
 {
-    private List<ElementSlot> atcEleList = new List<ElementSlot>(); // 附着元素列表
+    public List<ElementTimer> elementTimerList = new List<ElementTimer>();
+    protected ElementTimer defaultElementTimer;
+    
+    // 附着元素集合
+    private Dictionary<ElementType,float> attachedElement = new Dictionary<ElementType,float>();
     private float eleDecreaseSpeed = 0.3f;                          // 每秒元素自然消失量
     
     // 元素数据
@@ -17,6 +22,7 @@ public class ElementCore : PropertyCore
 
     protected override void Start_Property_Down()
     {
+        defaultElementTimer = new ElementTimer(this);
         Start_ElementCore_Down();
     }
 
@@ -24,51 +30,68 @@ public class ElementCore : PropertyCore
 
     protected override void Update_Property_Down()
     {
+        foreach (var timer in elementTimerList)
+        {
+            timer.Update();
+        }
+        DecreaseAttachedElement();
+
         Update_ElementCore_Down();
     }
     
     protected virtual void Update_ElementCore_Down() {}
 
-    private void FixedUpdate()
-    {
-        for (int i = 0; i < atcEleList.Count; i++)
+    private void DecreaseAttachedElement()
+    {// 元素随时间自然消失
+        for (int i = 0; i < attachedElement.Count; i++)
         {
-            atcEleList[i].eleCount -= eleDecreaseSpeed;
-            if (atcEleList[i].eleCount <= 0)
+            var tmp = attachedElement.ElementAt(i);
+            ElementType type = tmp.Key;
+            if (tmp.Value <= 0)         // 如果该元素已完全消失，移除该元素
             {
-                atcEleList.RemoveAt(i);
+                attachedElement.Remove(type);
                 i--;
+                continue;
             }
+            attachedElement[type] -= Time.deltaTime;
         }
     }
-    
-    
-    /// <summary>  
-    /// 带元素的攻击输出
-    /// </summary>
-    public float CauseDamage(float mul, ElementSlot elementSlot)
-    {
-        float dam = CauseDamage(mul);
-        
-        // 元素伤害
-        if (elementSlot.eleType != ElementType.Physics)
-            dam *= elementDamage.val;
 
-        return dam;
-    }
-    
+
     /// <summary>  
-    /// 受到一次元素伤害
+    /// 计算元素伤害加成下的伤害数值，并判断能否附着元素
     /// </summary>
-    public void GetDamage(float baseDamage, DamageMode mode, ElementSlot elementSlot)
+    public (float, bool) CauseDamageElement(ElementCore tarElementCore, float damage,
+        ElementSlot elementSlot, ElementTimer timer)
     {
-        ///////// 这里处理元素反应相关，后面再实现
+        if (elementSlot.eleType == ElementType.Physics)
+            return (damage, false);
         
-        
+        // 元素伤害加成
+        damage *= elementDamage.val;
+        return (damage, timer.AttachElement(tarElementCore));
+    }
+
+    /// <summary>  
+    /// 受到一次元素伤害，并处理附着元素
+    /// </summary>
+    public void GetDamageElement(ElementCore attacker, float damage, DamageMode mode,
+        ElementSlot elementSlot, bool attached)
+    {
+        if (elementSlot.eleType == ElementType.Physics)
+        {
+            GetDamageProperty(damage, mode);
+            return;
+        }
+
+        if (attached)       // 受到元素附着，将发生反应
+        {
+            AttachedElement(attacker,elementSlot);
+        }
+
         // 元素抗性
-        if (elementSlot.eleType != ElementType.Physics) 
-            baseDamage *= (1 - elementResistance.val);
-        GetDamage(baseDamage, mode);
+        damage *= (1 - elementResistance.val);
+        GetDamageProperty(damage, mode);
     }
 
     private void Overloaded(ElementSlot firElement, ElementSlot sedElement, float mastery)           
@@ -114,16 +137,28 @@ public class ElementCore : PropertyCore
 
 
 
-    private void AddElement()           
-    {
-        // 在附着元素列表里添加元素
-    }
+    private void AttachedElement(ElementCore attacker, ElementSlot elementSlot)           
+    {// 受到元素附着
+        
+        // 如果身上没有任何元素，直接附着即可
+        if (attachedElement.Count == 0)
+        {
+            attachedElement.Add(elementSlot.eleType, elementSlot.eleCount);
+            return;
+        }
+        
+        // 如果身上有相同元素，说明该元素不会与已附着元素中的任一元素反应，直接取最大值即可
+        if (attachedElement.ContainsKey(elementSlot.eleType))
+        {
+            attachedElement[elementSlot.eleType] =
+                Mathf.Max(attachedElement[elementSlot.eleType], elementSlot.eleCount);
+            return;
+        }
+        
+        // 如果身上有其他元素，则遍历已附着的所有元素，分别判断能否发生反应，并触发这些反应
+        
 
-    private void RemoveElement()        
-    {
-        // 从附着元素列表里移除元素
     }
-    
 }
 
 
@@ -132,19 +167,7 @@ public class ElementSlot
     public ElementType eleType;
     public float eleCount;
 
-    public ElementSlot()
-    {
-        eleType = ElementType.Physics;
-        eleCount = 0;
-    }
-    
-    public ElementSlot(ElementType ttype)
-    {
-        eleType = ttype;
-        eleCount = 0;
-    }
-
-    public ElementSlot(ElementType ttype, float count)
+    public ElementSlot(ElementType ttype = ElementType.Physics, float count = 0)
     {
         eleType = ttype;
         eleCount = count;
@@ -216,4 +239,52 @@ public enum ElementType : byte
     Cryo,       // 冰元素
     [EnumLabel("物理")]
     Physics     // 物理
+}
+
+public class ElementTimer
+{
+    private float maxDuring;        // 最大元素附着间隔
+    private ElementCore elc_;
+    
+    private Dictionary<ElementCore, float> elementTimeDict;
+
+
+    public ElementTimer(ElementCore elementCore, float maxDuringTime = 3)
+    {
+        elc_ = elementCore;
+        maxDuring = maxDuringTime;
+        elementTimeDict = new Dictionary<ElementCore, float>();
+
+        elc_.elementTimerList.Add(this);
+    }
+
+    public void Update()
+    {// 每帧更新，需要在ElementCore内注册调用
+
+        for (int i = 0; i < elementTimeDict.Count; i++)
+        {
+            var tmp = elementTimeDict.ElementAt(i);
+            ElementCore elementCore = tmp.Key;
+
+            if (tmp.Value <= 0)         // 如果该ElementCore已完成冷却，则删除
+            {
+                elementTimeDict.Remove(elementCore);
+                i--;
+                continue;
+            }
+
+            elementTimeDict[elementCore] -= Time.deltaTime;
+        }
+    }
+
+    /// <summary>
+    /// 判断目标能否被挂上元素，如果可以，让目标进入元素附着冷却
+    /// </summary>
+    public bool AttachElement(ElementCore elementCore)
+    {
+        if (elementTimeDict.ContainsKey(elementCore)) return false;
+        elementTimeDict.Add(elementCore, maxDuring);
+        return true;
+    }
+    
 }

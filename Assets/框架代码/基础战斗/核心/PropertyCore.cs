@@ -43,9 +43,9 @@ public class PropertyCore : MonoBehaviour
     /// <summary>  
     /// 基础输出伤害
     /// </summary>
-    public float CauseDamage(float mul = 1f)
+    public float CauseDamageProperty(ValueBuffer baseValue, float mul = 1f)
     {
-        float dam = atk_.val * mul;
+        float dam = baseValue.val * mul;
         dam *= causeDamInc_.val < -1 ? 0 : 1 + causeDamInc_.val;
         foreach (var damFunc in causeDamFuncList)
             dam = damFunc(dam);
@@ -53,9 +53,9 @@ public class PropertyCore : MonoBehaviour
     }
 
     /// <summary>  
-    /// 受到一次伤害，计算并改变life_的值
+    /// 受到一次伤害，计算防御和法抗，并改变life_的值
     /// </summary>
-    public void GetDamage(float baseDamage, DamageMode mode = DamageMode.Physical)
+    public void GetDamageProperty(float baseDamage, DamageMode mode = DamageMode.Physical)
     {
         float dam = baseDamage;
         dam *= getDamInc_.val < -1 ? 0 : 1 + getDamInc_.val;

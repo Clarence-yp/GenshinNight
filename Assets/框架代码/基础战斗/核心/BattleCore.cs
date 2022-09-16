@@ -48,7 +48,7 @@ public class BattleCore : ElementCore
         norAtkInterval = norAtkInterval - Time.deltaTime <= 0 ? 0 : norAtkInterval - Time.deltaTime;
 
         if (dieNow) // 测试用，后期删掉
-            GetDamage(1e9f, DamageMode.Magic);
+            GetDamageProperty(1e9f, DamageMode.Magic);
         
         Update_BattleCore_Down();
     }
@@ -124,20 +124,30 @@ public class BattleCore : ElementCore
             }
         }
     }
-    
+
     /// <summary>  
     /// attacker对defender造成一次伤害，结束后更新彼此数值
     /// </summary>
-    public void Battle(BattleCore attacker, BattleCore defender,
-        float multi, DamageMode mode, ElementSlot elementSlot)
+    public void Battle(BattleCore attacker, BattleCore defender,    // 攻击者与被攻击者
+        float damage, DamageMode mode,                              // 造成伤害的基础数值，以及本次伤害类型
+        ElementSlot elementSlot, ElementTimer timer)                // 元素攻击，以及使用的元素计时器
     {
-        float dam = attacker.CauseDamage(multi, elementSlot);
-        defender.GetDamage(dam, mode, elementSlot);
+        var (dam, canAttachElement) = attacker.CauseDamageElement(
+            defender, damage, elementSlot, timer);
+        defender.GetDamageElement(attacker, dam, mode, elementSlot, canAttachElement);
     }
-    
-    public void Battle(BattleCore attacker, BattleCore defender, float multi, DamageMode mode)
+
+    public void Battle(BattleCore attacker, BattleCore defender, float damage, DamageMode mode,
+        ElementSlot elementSlot)
     {
-        Battle(attacker, defender, multi, mode, new ElementSlot());
+        Battle(attacker, defender, damage, mode, elementSlot, defaultElementTimer);
+    }
+
+    public void Battle(BattleCore attacker, BattleCore defender, float damage, 
+        DamageMode mode = DamageMode.Physical)
+    {
+        ElementSlot phy = new ElementSlot();
+        Battle(attacker, defender, damage, mode, phy, defaultElementTimer);
     }
     
     
