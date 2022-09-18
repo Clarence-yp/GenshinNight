@@ -20,7 +20,8 @@ public class BattleCore : ElementCore
     [HideInInspector] public AtkSpeedController atkSpeedController;
     [HideInInspector] public ValueBuffer maxBlock = new ValueBuffer(0); // 最大阻挡数（敌人为消耗阻挡数）
     [HideInInspector] public bool dying;
-    
+    [HideInInspector] public int dizziness;         // 眩晕计数器，>0时表示处于眩晕状态
+    [HideInInspector] public bool frozen;           // 是否处于冻结状态
     
     // BattleCore瞄准的目标
     public BattleCore target { get; private set; } = null;
@@ -45,7 +46,8 @@ public class BattleCore : ElementCore
         ChooseTarget();
         CheckDie();
         atkSpeedController.Update();
-        norAtkInterval = norAtkInterval - Time.deltaTime <= 0 ? 0 : norAtkInterval - Time.deltaTime;
+        if (!frozen)         // 如果处于冻结状态，攻击计时器不再运作
+            norAtkInterval = norAtkInterval - Time.deltaTime <= 0 ? 0 : norAtkInterval - Time.deltaTime;
 
         if (dieNow) // 测试用，后期删掉
             GetDamageProperty(1e9f, DamageMode.Magic);
@@ -124,6 +126,17 @@ public class BattleCore : ElementCore
             }
         }
     }
+    
+    public virtual void GetDizzy()
+    {// 眩晕
+        dizziness++;
+    }
+
+    public virtual void RevokeDizzy()
+    {// 眩晕结束
+        dizziness--;
+        norAtkInterval = 0;
+    }
 
     /// <summary>  
     /// attacker对defender造成一次伤害，结束后更新彼此数值
@@ -179,6 +192,7 @@ public enum AimingMode : byte
 public class AtkSpeedController
 {
     public Animator anim;
+    public SpineAnimController ac_;
     public BattleCore bc_;
     public ValueBuffer atkSpeed;        // 攻击速度加成，100表示最小攻击间隔减小一半
     public float minAtkInterval;        // 最小攻击间隔
@@ -186,10 +200,11 @@ public class AtkSpeedController
     
     private float fightAnimTime;
 
-    public AtkSpeedController(BattleCore bc, Animator animator, float aspeed, float interval)
+    public AtkSpeedController(BattleCore bc, SpineAnimController controller, float aspeed, float interval)
     {
         bc_ = bc;
-        anim = animator;
+        ac_ = controller;
+        anim = ac_.anim;
         atkSpeed = new ValueBuffer(aspeed);
         ChangeBaseInterval(interval);
     }
@@ -203,7 +218,8 @@ public class AtkSpeedController
         if (fightAnimTime - minAtkInterval < 0.008f) return;
 
         float nspeed = (fightAnimTime / minAtkInterval) + 0.005f;
-        anim.speed = nspeed;
+        ac_.atkSpeed = nspeed;
+        ac_.ChangeAnimSpeed();
     }
     
     public void ChangeBaseInterval(float interval)
@@ -216,7 +232,11 @@ public class AtkSpeedController
     {
         float tmp = 1 / (1 + atkSpeed.val / 100);
         minAtkInterval = baseInterval * tmp;
-        if (atkSpeed.val == 0) anim.speed = 1;
+        if (atkSpeed.val == 0)
+        {
+            ac_.atkSpeed = 1;
+            ac_.ChangeAnimSpeed();
+        }
     }
 }
 
@@ -277,4 +297,24 @@ public class SkillAtkSpeedBuff : SkillBuffSlot
         bc_.norAtkInterval = atkSpeedController.minAtkInterval - conTime;
     }
     
+}
+
+public class DurationDizzyBuff : DurationBuffSlot
+{
+    private BattleCore dizzyBC_;
+
+    public DurationDizzyBuff(BattleCore bc_, float durTime) : base(durTime)
+    {
+        dizzyBC_ = bc_;
+    }
+
+    public override void BuffStart()
+    {
+        dizzyBC_.GetDizzy();
+    }
+
+    public override void BuffEnd()
+    {
+        dizzyBC_.RevokeDizzy();
+    }
 }

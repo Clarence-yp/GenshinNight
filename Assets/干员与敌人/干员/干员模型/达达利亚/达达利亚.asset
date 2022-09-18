@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c3c45b4a547140bca8625c627546d, type: 3}
   m_Name: "\u8FBE\u8FBE\u5229\u4E9A"
   m_EditorClassIdentifier: 
-  type: 0
+  type: 3
   skillType: 0
   Name: "\u8FBE\u8FBE\u5229\u4E9A"
   EnName: 
@@ -47,7 +47,7 @@ MonoBehaviour:
   magicDef: 0
   life: 200
   maxBlock: 2
-  maxAtkInterval: 0
+  maxAtkInterval: 3
   cost: 20
   consumPlace: 1
   reTime: 10

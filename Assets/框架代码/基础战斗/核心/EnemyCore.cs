@@ -18,6 +18,7 @@ public class EnemyCore : BattleCore
     private Animator anim;
     private SpineAnimController ac_;
     private EnemyPathController epc_;
+    private int fightingContinue = 0;       // fight激活后延续几帧
 
     private int cannotMove = 0;     // 锁定移动，只有该变量=0时才可以移动
     private int blocked = 0;        // 阻挡该敌人的干员数量
@@ -48,6 +49,7 @@ public class EnemyCore : BattleCore
     {
         ac_.Update();
         epc_.Update();
+        Dizzy();
         Move();
         Fight();
         GetPriority();
@@ -64,7 +66,31 @@ public class EnemyCore : BattleCore
         magicDef_.ChangeBaseValue(ei_.magicDef);
         life_.InitBaseLife(ei_.life);
         maxBlock.ChangeBaseValue(ei_.consumeBlock);
-        atkSpeedController = new AtkSpeedController(this, anim, 0, ei_.minAtkInterval);
+        atkSpeedController = new AtkSpeedController(this, ac_, 0, ei_.minAtkInterval);
+    }
+
+    public override void GetDizzy()
+    {
+        base.GetDizzy();
+        cannotMove++;
+    }
+
+    public override void RevokeDizzy()
+    {
+        base.RevokeDizzy();
+        cannotMove--;
+    }
+    
+    private void Dizzy()
+    {
+        if (dizziness > 0)
+        {
+            anim.SetBool("down", true);
+        }
+        else
+        {
+            anim.SetBool("down", false);
+        }
     }
 
     private void Move()
@@ -85,12 +111,15 @@ public class EnemyCore : BattleCore
         if (BaseFunc.preEqual(transform.position, nxtPoint))
         {   // 如果当前应该去的点位就是脚下
             anim.SetBool("move", false);
-            ac_.ChangeAnimSpeed(1);
+            ac_.slowSpeed = 1;
+            ac_.ChangeAnimSpeed();
             return;
         }
         
         anim.SetBool("move", true);
-        ac_.ChangeAnimSpeed(speedDeta);
+        ac_.slowSpeed = speedDeta;
+        ac_.ChangeAnimSpeed();
+        
         Vector2 tmp = nxtPoint - transform.position;
         if (tmp.x < 0)
             ac_.TurnLeft();
@@ -103,6 +132,7 @@ public class EnemyCore : BattleCore
 
     private void Fight()
     {
+        if (dizziness > 0) return;
         var staInfo = anim.GetCurrentAnimatorStateInfo(0);
         if (staInfo.IsName("Fight"))
         {
@@ -114,11 +144,16 @@ public class EnemyCore : BattleCore
         {
             anim.SetBool("fight", true);
             NorAtkStartCool();
+            fightingContinue = 3;
             
             // 根据目标位置转变敌人朝向
             Vector2 detaPos = BaseFunc.xz(transform.position) - BaseFunc.xz(target.transform.position);
             if (detaPos.x < 0) ac_.TurnRight();
             else ac_.TurnLeft();
+        }
+        else if (fightingContinue > 0)
+        {
+            fightingContinue--;
         }
         else
         {

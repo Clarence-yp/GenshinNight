@@ -25028,33 +25028,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u514B\u6D1B\u4E1D"
       objectReference: {fileID: 0}
+    - target: {fileID: 3649933124402443453, guid: e007ebee670467a42bc0303694903ac2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3649933125311570885, guid: e007ebee670467a42bc0303694903ac2, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6942511964175243974, guid: e007ebee670467a42bc0303694903ac2, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6942511964175243974, guid: e007ebee670467a42bc0303694903ac2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7040572635471216234, guid: e007ebee670467a42bc0303694903ac2, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7040572635471216234, guid: e007ebee670467a42bc0303694903ac2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7060757956536775377, guid: e007ebee670467a42bc0303694903ac2, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 7060757956536775377, guid: e007ebee670467a42bc0303694903ac2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7852554162017406029, guid: e007ebee670467a42bc0303694903ac2, type: 3}
       propertyPath: m_AnchorMax.x

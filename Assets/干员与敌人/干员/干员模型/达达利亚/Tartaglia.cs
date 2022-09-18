@@ -28,6 +28,7 @@ public class Tartaglia : OperatorCore
     private void norAttack()
     {
         Battle(tarBattleCore, atk_.val);
+
     }
     
     

@@ -18,9 +18,11 @@ public class Kroos : OperatorCore
         //     atkIncreasePercentage[lel], sp_);
         // BuffManager.AddBuff(valueBuff);
 
-        SkillAtkSpeedBuff speedBuff = new SkillAtkSpeedBuff(atkSpeedController, 200, sp_);
-        BuffManager.AddBuff(speedBuff);
-
+        // SkillAtkSpeedBuff speedBuff = new SkillAtkSpeedBuff(atkSpeedController, 200, sp_);
+        // BuffManager.AddBuff(speedBuff);
+        
+        DurationDizzyBuff buff = new DurationDizzyBuff(this, 2);
+        BuffManager.AddBuff(buff);
     }
 
     public override void SkillStart_2()

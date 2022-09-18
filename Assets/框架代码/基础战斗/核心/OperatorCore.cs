@@ -25,6 +25,7 @@ public class OperatorCore : BattleCore
     [HideInInspector] public GameObject animObject;
     [HideInInspector] public Animator anim;
     protected SpineAnimController ac_;
+    private int fightingContinue = 0;       // fight激活后延续几帧
 
     // atkRange相关
     [HideInInspector] public SearchAndGive atkRange;      // 当前atkRange的脚本
@@ -75,6 +76,7 @@ public class OperatorCore : BattleCore
     
     protected override void Update_BattleCore_Down()
     {
+        Dizzy();
         Fight();
         CheckBlock();
 
@@ -131,7 +133,7 @@ public class OperatorCore : BattleCore
         magicDef_.ChangeBaseValue(od_.magicDef);
         life_.InitBaseLife(od_.life);
         maxBlock.ChangeBaseValue(od_.maxBlock);
-        atkSpeedController = new AtkSpeedController(this, anim, 0, od_.maxAtkInterval);
+        atkSpeedController = new AtkSpeedController(this, ac_, 0, od_.maxAtkInterval);
 
         elementMastery.ChangeBaseValue(od_.elementalMastery);
         elementDamage.ChangeBaseValue(od_.elementalDamage);
@@ -141,9 +143,21 @@ public class OperatorCore : BattleCore
         costNeed.ChangeBaseValue(od_.cost);
     }
 
+    private void Dizzy()
+    {
+        if (dizziness > 0)
+        {
+            anim.SetBool("down", true);
+        }
+        else
+        {
+            anim.SetBool("down", false);
+        }
+    }
     
     private void Fight()
     {
+        if (dizziness > 0) return;
         var staInfo = anim.GetCurrentAnimatorStateInfo(0);
         if (staInfo.IsName("Fight"))
         {
@@ -156,12 +170,17 @@ public class OperatorCore : BattleCore
             if (CanAtk())
             {
                 anim.SetBool("fight", true);
+                fightingContinue = 3;
                 NorAtkStartCool();
                 
                 // 根据目标位置转变干员朝向
                 Vector2 detaPos = BaseFunc.xz(transform.position) - BaseFunc.xz(target.transform.position);
                 if (detaPos.x < 0) ac_.TurnRight();
                 else ac_.TurnLeft();
+            }
+            else if (fightingContinue > 0)
+            {
+                fightingContinue--;
             }
             else
             {
@@ -365,8 +384,8 @@ public class SpineAnimController
     private const float turnSpeed = 10;
     private const float colorSpeed = 5;
 
+    public Animator anim;
     private BattleCore prtBattleCore;
-    private Animator anim;
     private MeshRenderer meshRenderer;
     
     public bool dirRight { get; private set; }   //模型是否朝右
@@ -379,6 +398,12 @@ public class SpineAnimController
     private Color tarColor = new Color(1, 1, 1, 1);
     private Color nowColor = new Color(1, 1, 1, 1);
     private static readonly Color defaultColor = new Color(1, 1, 1, 1);
+    
+    // anim速度相关
+    public float atkSpeed = 1;      // 攻速相关的anim速度改变
+    public float slowSpeed = 1;     // 减速相关的anim速度改变（敌人）
+
+
 
     public SpineAnimController(Animator animator, BattleCore bc_, float scale)
     {
@@ -425,11 +450,13 @@ public class SpineAnimController
     }
 
     /// <summary>
-    /// 改变动画播放速度为speed
+    /// 根据当前状态决定animspeed
     /// </summary>
-    public void ChangeAnimSpeed(float speed)
+    public void ChangeAnimSpeed()
     {
-        anim.speed = speed;
+        if (prtBattleCore.frozen) anim.speed = 0;
+        else if (prtBattleCore.fighting) anim.speed = atkSpeed;
+        else anim.speed = slowSpeed;
     }
     
     /// <summary>
