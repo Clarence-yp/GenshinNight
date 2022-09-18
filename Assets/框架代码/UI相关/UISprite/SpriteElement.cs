@@ -65,7 +65,7 @@ public class SpriteElement : MonoBehaviour
             case ElementType.Cryo:
                 return instance.cryoSprite;
             default:
-                return instance.geoSprite;
+                return null;
         }
     }
     

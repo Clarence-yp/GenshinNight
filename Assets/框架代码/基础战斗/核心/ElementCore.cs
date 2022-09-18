@@ -2,17 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class ElementCore : PropertyCore
 {
     public List<ElementTimer> elementTimerList = new List<ElementTimer>();
     protected ElementTimer defaultElementTimer;
+    protected ReactionController reactionController;
     
     // 附着元素集合
-    private Dictionary<ElementType,float> attachedElement = new Dictionary<ElementType,float>();
-    private float eleDecreaseSpeed = 0.3f;                          // 每秒元素自然消失量
-    
+    public Dictionary<ElementType, float> attachedElement = new Dictionary<ElementType, float>();
+    // 附着元素自然消失
+    private const float defaultDecreaseSpeed = 0.3f;        // 默认普通元素每秒衰减速率
+    protected float frozen_Inc_DecSpeed = 0.2f;             // 冻元素每秒增加的元素衰减速率
+    public Dictionary<ElementType, float> eleDecreaseSpeed = new Dictionary<ElementType, float>();
+
     // 元素数据
     public ValueBuffer elementMastery = new ValueBuffer(0);    
     public ValueBuffer elementDamage = new ValueBuffer(1); 
@@ -23,6 +28,8 @@ public class ElementCore : PropertyCore
     protected override void Start_Property_Down()
     {
         defaultElementTimer = new ElementTimer(this);
+        reactionController = new ReactionController(this);
+        InitDecreaseSpeed();
         Start_ElementCore_Down();
     }
 
@@ -35,12 +42,29 @@ public class ElementCore : PropertyCore
             timer.Update();
         }
         DecreaseAttachedElement();
-
+        reactionController.Update();
+        
         Update_ElementCore_Down();
     }
     
     protected virtual void Update_ElementCore_Down() {}
 
+
+    private void InitDecreaseSpeed()
+    {
+        eleDecreaseSpeed.Add(ElementType.Anemo, defaultDecreaseSpeed);
+        eleDecreaseSpeed.Add(ElementType.Geo, defaultDecreaseSpeed);
+        eleDecreaseSpeed.Add(ElementType.Electro, defaultDecreaseSpeed);
+        eleDecreaseSpeed.Add(ElementType.Dendro, defaultDecreaseSpeed);
+        eleDecreaseSpeed.Add(ElementType.Hydro, defaultDecreaseSpeed);
+        eleDecreaseSpeed.Add(ElementType.Pyro, defaultDecreaseSpeed);
+        eleDecreaseSpeed.Add(ElementType.Cryo, defaultDecreaseSpeed);
+        
+        eleDecreaseSpeed.Add(ElementType.None, 1e9f);       // 如果空元素不慎附着，将立刻消失
+        eleDecreaseSpeed.Add(ElementType.Frozen, 0.75f);    // 冻元素的基础消耗量略大
+        eleDecreaseSpeed.Add(ElementType.Catalyze, 1e9f);   // 激元素暂时不考虑
+    }
+    
     private void DecreaseAttachedElement()
     {// 元素随时间自然消失
         for (int i = 0; i < attachedElement.Count; i++)
@@ -53,7 +77,11 @@ public class ElementCore : PropertyCore
                 i--;
                 continue;
             }
-            attachedElement[type] -= Time.deltaTime;
+
+            if (type == ElementType.Frozen)     // 如果冻元素存在，则冻元素衰减速率增加
+                eleDecreaseSpeed[ElementType.Frozen] += Time.deltaTime * frozen_Inc_DecSpeed;
+            
+            attachedElement[type] -= Time.deltaTime * eleDecreaseSpeed[type];
         }
     }
 
@@ -61,15 +89,15 @@ public class ElementCore : PropertyCore
     /// <summary>  
     /// 计算元素伤害加成下的伤害数值，并判断能否附着元素
     /// </summary>
-    public (float, bool) CauseDamageElement(ElementCore tarElementCore, float damage,
+    public bool CauseDamageElement(ElementCore tarElementCore, ref float damage,
         ElementSlot elementSlot, ElementTimer timer)
     {
-        if (elementSlot.eleType == ElementType.Physics)
-            return (damage, false);
+        if (elementSlot.eleType == ElementType.None)
+            return false;
         
         // 元素伤害加成
         damage *= elementDamage.val;
-        return (damage, timer.AttachElement(tarElementCore));
+        return timer != null && timer.AttachElement(tarElementCore);
     }
 
     /// <summary>  
@@ -78,7 +106,7 @@ public class ElementCore : PropertyCore
     public void GetDamageElement(ElementCore attacker, float damage, DamageMode mode,
         ElementSlot elementSlot, bool attached)
     {
-        if (elementSlot.eleType == ElementType.Physics)
+        if (elementSlot.eleType == ElementType.None)
         {
             GetDamageProperty(damage, mode);
             return;
@@ -86,7 +114,7 @@ public class ElementCore : PropertyCore
 
         if (attached)       // 受到元素附着，将发生反应
         {
-            AttachedElement(attacker,elementSlot);
+            AttachedElement(attacker, elementSlot, ref damage);
         }
 
         // 元素抗性
@@ -94,71 +122,49 @@ public class ElementCore : PropertyCore
         GetDamageProperty(damage, mode);
     }
 
-    private void Overloaded(ElementSlot firElement, ElementSlot sedElement, float mastery)           
-    {
-        // 超载反应
-    }
 
-    private void Superconduct(ElementSlot firElement, ElementSlot sedElement, float mastery)         
-    {
-        // 超导反应
-    }
-
-    private void ElectroCharged(ElementSlot firElement, ElementSlot sedElement, float mastery)       
-    {
-        // 感电反应
-    }
-
-    private void Swirl(ElementSlot firElement, ElementSlot sedElement, float mastery)                
-    {
-        // 扩散反应
-    }
-    
-    private void Crystallization(ElementSlot firElement, ElementSlot sedElement, float mastery)                
-    {
-        // 结晶反应
-    }
-
-    private float Vaporize(ElementSlot firElement, ElementSlot sedElement,
-        float damage, float mastery)            
-    {
-        // 蒸发反应
-        // return ElementReactionCalculate.Vaporize(firElement, sedElement, damage, mastery);
-        return 0;//占位
-    }
-
-    private float Melt(ElementSlot firElement, ElementSlot sedElement,
-        float damage, float mastery)                
-    {
-        // 融化反应
-        // return ElementReactionCalculate.Melt(firElement, sedElement, damage, mastery);
-        return 0;//占位
-    }
-
-
-
-    private void AttachedElement(ElementCore attacker, ElementSlot elementSlot)           
-    {// 受到元素附着
+    private void AttachedElement(ElementCore attacker, ElementSlot element2, ref float damage)           
+    {// 受到元素附着，返回值为经过元素反应后的伤害值（蒸发融化等）
         
         // 如果身上没有任何元素，直接附着即可
         if (attachedElement.Count == 0)
         {
-            attachedElement.Add(elementSlot.eleType, elementSlot.eleCount);
+            attachedElement.Add(element2.eleType, element2.eleCount);
             return;
         }
         
         // 如果身上有相同元素，说明该元素不会与已附着元素中的任一元素反应，直接取最大值即可
-        if (attachedElement.ContainsKey(elementSlot.eleType))
+        if (attachedElement.ContainsKey(element2.eleType))
         {
-            attachedElement[elementSlot.eleType] =
-                Mathf.Max(attachedElement[elementSlot.eleType], elementSlot.eleCount);
+            attachedElement[element2.eleType] =
+                Mathf.Max(attachedElement[element2.eleType], element2.eleCount);
             return;
         }
         
         // 如果身上有其他元素，则遍历已附着的所有元素，分别判断能否发生反应，并触发这些反应
-        
+        for (int i = 0; i < attachedElement.Count; i++)
+        {
+            var tmp = attachedElement.ElementAt(i);
+            ElementSlot element1 = new ElementSlot(tmp.Key, tmp.Value);
 
+            // 进行元素反应，吃后手攻击者的精通
+            reactionController.Reaction(attacker, element1, element2,
+                attacker.elementMastery.val, ref damage);
+
+            if (element1.eleCount <= 0)         // 如果附着元素已完全消失，移除该元素
+            {
+                attachedElement.Remove(element1.eleType);
+                i--;
+            }
+            if (element2.eleCount <= 0)         // 如果反应元素被全部耗尽，则退出附着
+            {
+                return;
+            }
+        }
+        
+        // 全部反应后若仍有剩余，则直接丢弃，遵循后手不残余原则
     }
+    
 }
 
 
@@ -167,7 +173,7 @@ public class ElementSlot
     public ElementType eleType;
     public float eleCount;
 
-    public ElementSlot(ElementType ttype = ElementType.Physics, float count = 0)
+    public ElementSlot(ElementType ttype = ElementType.None, float count = 0)
     {
         eleType = ttype;
         eleCount = count;
@@ -237,14 +243,20 @@ public enum ElementType : byte
     Pyro,       // 火元素
     [EnumLabel("冰元素")]
     Cryo,       // 冰元素
+    
     [EnumLabel("物理")]
-    Physics     // 物理
+    None,       // 表示没有元素
+    
+    [EnumLabel("冻元素")]
+    Frozen,     // 冻结反应产生的特殊元素
+    [EnumLabel("激元素")]
+    Catalyze,   // 原激化反应产生的特殊元素
 }
 
 public class ElementTimer
 {
     private float maxDuring;        // 最大元素附着间隔
-    private ElementCore elc_;
+    private ElementCore elc_;       // 可能为null，表示无源计时器，此时需要手动调用Update
     
     private Dictionary<ElementCore, float> elementTimeDict;
 
@@ -255,7 +267,7 @@ public class ElementTimer
         maxDuring = maxDuringTime;
         elementTimeDict = new Dictionary<ElementCore, float>();
 
-        elc_.elementTimerList.Add(this);
+        if (elc_ != null) elc_.elementTimerList.Add(this);
     }
 
     public void Update()
@@ -285,6 +297,11 @@ public class ElementTimer
         if (elementTimeDict.ContainsKey(elementCore)) return false;
         elementTimeDict.Add(elementCore, maxDuring);
         return true;
+    }
+
+    public void Clear()
+    {
+        elementTimeDict.Clear();
     }
     
 }

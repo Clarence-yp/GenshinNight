@@ -54,6 +54,7 @@
   <ItemGroup>
      <Compile Include="Assets\框架代码\scriOb\enemyInfo.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\OperatorCore.cs" />
+     <Compile Include="Assets\框架代码\UI相关\世界UI\ElementHeadersController.cs" />
      <Compile Include="Assets\素材\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\ElementCore.cs" />
      <Compile Include="Assets\框架代码\基础战斗\动画函数\EnemyAnimEvent.cs" />
@@ -99,6 +100,7 @@
      <Compile Include="Assets\框架代码\UI相关\OperUI\OperUIManager.cs" />
      <Compile Include="Assets\预制体\OperUI\DragSlot\dirDrag.cs" />
      <Compile Include="Assets\框架代码\UI相关\世界UI\LifeSliderController.cs" />
+     <Compile Include="Assets\框架代码\基础战斗\元素反应\ReactionController.cs" />
      <Compile Include="Assets\素材\Epic Toon FX\Scripts\ETFXRotation.cs" />
      <Compile Include="Assets\框架代码\UI相关\UI辅助\gradualChange.cs" />
      <Compile Include="Assets\框架代码\关卡控制\CameraController.cs" />
@@ -106,6 +108,7 @@
      <Compile Include="Assets\框架代码\基础战斗\核心\EnemyCore.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\BattleCore.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\OperUIFunc.cs" />
+     <Compile Include="Assets\框架代码\基础战斗\元素反应\ReactionTransfer.cs" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Spine\version.txt" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

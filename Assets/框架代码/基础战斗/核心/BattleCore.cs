@@ -128,26 +128,23 @@ public class BattleCore : ElementCore
     /// <summary>  
     /// attacker对defender造成一次伤害，结束后更新彼此数值
     /// </summary>
-    public void Battle(BattleCore attacker, BattleCore defender,    // 攻击者与被攻击者
-        float damage, DamageMode mode,                              // 造成伤害的基础数值，以及本次伤害类型
+    public void Battle(BattleCore tarBC, float damage, DamageMode mode,                              // 造成伤害的基础数值，以及本次伤害类型
         ElementSlot elementSlot, ElementTimer timer)                // 元素攻击，以及使用的元素计时器
     {
-        var (dam, canAttachElement) = attacker.CauseDamageElement(
-            defender, damage, elementSlot, timer);
-        defender.GetDamageElement(attacker, dam, mode, elementSlot, canAttachElement);
+        bool canAttachElement = CauseDamageElement(
+            tarBC, ref damage, elementSlot, timer);
+        tarBC.GetDamageElement(this, damage, mode, elementSlot, canAttachElement);
     }
 
-    public void Battle(BattleCore attacker, BattleCore defender, float damage, DamageMode mode,
-        ElementSlot elementSlot)
+    public void Battle(BattleCore tarBC, float damage, DamageMode mode, ElementSlot elementSlot)
     {
-        Battle(attacker, defender, damage, mode, elementSlot, defaultElementTimer);
+        Battle(tarBC, damage, mode, elementSlot, defaultElementTimer);
     }
 
-    public void Battle(BattleCore attacker, BattleCore defender, float damage, 
-        DamageMode mode = DamageMode.Physical)
+    public void Battle(BattleCore tarBC, float damage, DamageMode mode = DamageMode.Physical)
     {
         ElementSlot phy = new ElementSlot();
-        Battle(attacker, defender, damage, mode, phy, defaultElementTimer);
+        Battle(tarBC, damage, mode, phy, defaultElementTimer);
     }
     
     

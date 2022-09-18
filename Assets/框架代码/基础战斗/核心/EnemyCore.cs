@@ -219,7 +219,7 @@ public class EnemyCore : BattleCore
 
     public void OnAttack()
     {
-        Battle(this, target, atk_.val, DamageMode.Physical);
+        Battle(target, atk_.val, DamageMode.Physical);
     }
 
     public void OnDie()

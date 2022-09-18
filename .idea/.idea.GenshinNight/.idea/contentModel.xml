@@ -674,6 +674,7 @@
               <e p="gradualChange.cs" t="Include" />
             </e>
             <e p="世界UI" t="Include">
+              <e p="ElementHeadersController.cs" t="Include" />
               <e p="LifeSliderController.cs" t="Include" />
             </e>
           </e>
@@ -692,6 +693,10 @@
           <e p="基础战斗" t="Include">
             <e p="buff" t="Include">
               <e p="BuffManager.cs" t="Include" />
+            </e>
+            <e p="元素反应" t="Include">
+              <e p="ReactionController.cs" t="Include" />
+              <e p="ReactionTransfer.cs" t="Include" />
             </e>
             <e p="动画函数" t="Include">
               <e p="EnemyAnimEvent.cs" t="Include" />
