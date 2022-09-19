@@ -29,6 +29,8 @@ public class Tartaglia : OperatorCore
     {
         Battle(tarBattleCore, atk_.val);
 
+        EnemyCore tarEC_ = (EnemyCore) tarBattleCore;
+        tarEC_.ppc_.Push(transform.position, PushAndPullController.mediumForce);
     }
     
     

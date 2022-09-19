@@ -170,7 +170,7 @@ public class OperatorCore : BattleCore
             if (CanAtk())
             {
                 anim.SetBool("fight", true);
-                fightingContinue = 3;
+                fightingContinue = (int) (3 / Time.timeScale);
                 NorAtkStartCool();
                 
                 // 根据目标位置转变干员朝向

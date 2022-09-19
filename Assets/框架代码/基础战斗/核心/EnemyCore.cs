@@ -17,16 +17,19 @@ public class EnemyCore : BattleCore
 
     private Animator anim;
     private SpineAnimController ac_;
-    private EnemyPathController epc_;
+    public EnemyPathController epc_;
     private int fightingContinue = 0;       // fight激活后延续几帧
 
     private int cannotMove = 0;     // 锁定移动，只有该变量=0时才可以移动
     private int blocked = 0;        // 阻挡该敌人的干员数量
     private float speedDeta = 1;    // 移动速度和动画播放速度的改变量
+
+    public PushAndPullController ppc_;
     
     private void Awake()
     {
         InitManager.Register(this);
+        ppc_ = new PushAndPullController(this);
         transform.position = BaseFunc.x0z(pointList[0]);
     }
 
@@ -49,6 +52,8 @@ public class EnemyCore : BattleCore
     {
         ac_.Update();
         epc_.Update();
+        ppc_.Update();
+        
         Dizzy();
         Move();
         Fight();
@@ -144,7 +149,7 @@ public class EnemyCore : BattleCore
         {
             anim.SetBool("fight", true);
             NorAtkStartCool();
-            fightingContinue = 3;
+            fightingContinue = (int) (3 / Time.timeScale);;
             
             // 根据目标位置转变敌人朝向
             Vector2 detaPos = BaseFunc.xz(transform.position) - BaseFunc.xz(target.transform.position);
@@ -544,4 +549,105 @@ public class EnemyPathController
         nxtPoint = BaseFunc.x0z(realPointQueue.Dequeue());;
         return true;
     }
+}
+
+public class PushAndPullController
+{
+    public static float littleForce = 20f;
+    public static float mediumForce = 40f;
+    public static float greatForce = 60f;
+    public static float superGreatForce = 80f;
+    
+    public EnemyCore ec_;
+    public Rigidbody rb_;
+    private float py;
+
+    public PushAndPullController(EnemyCore enemyCore)
+    {
+        ec_ = enemyCore;
+        rb_ = ec_.GetComponent<Rigidbody>();
+        py = ec_.transform.position.y;
+    }
+
+    public void Update()
+    {
+
+    }
+
+
+    public void Push(Vector3 forcePoint, float forceStrength)
+    {
+        Vector3 pos = ec_.transform.position;
+        Vector3 direction = new Vector3(pos.x - forcePoint.x, 0, pos.z - forcePoint.z);
+        float k = Mathf.Sqrt(1.0f / (direction.x * direction.x + direction.z + direction.z));
+        direction.x *= k;
+        direction.z *= k;
+        direction *= forceStrength;
+
+        rb_.AddForce(direction, ForceMode.Impulse);
+        
+        bool willDizzy = forceStrength / rb_.mass >= 10;
+        PushDizzyBuff buff = new PushDizzyBuff(this, willDizzy);
+        BuffManager.AddBuff(buff);
+    }
+    
+}
+
+public class PushDizzyBuff : BuffSlot
+{
+    private PushAndPullController ppc_;
+    private Rigidbody rb_;
+    private EnemyCore ec_;
+    private bool willDizzy;
+    
+    
+    private bool isDie;
+    private int checkDelay;
+
+    public PushDizzyBuff(PushAndPullController pushAndPullController, bool dizzy)
+    {
+        ppc_ = pushAndPullController;
+        rb_ = ppc_.rb_;
+        ec_ = ppc_.ec_;
+        willDizzy = dizzy;
+    }
+
+    public override void BuffStart()
+    {
+        if (willDizzy) ec_.GetDizzy();
+        ec_.DieAction += Die;
+        checkDelay = (int) (4 / Time.timeScale);
+    }
+
+    public override void BuffUpdate() { }
+
+    public override bool BuffEndCondition()
+    {
+        if (isDie) return true;
+        if (checkDelay > 0)
+        {
+            checkDelay--;
+            return false;
+        }
+        return almostZero(rb_.velocity);
+    }
+
+    public override void BuffEnd()
+    {
+        if (willDizzy) ec_.RevokeDizzy();
+        if (isDie) return;
+        ec_.DieAction -= Die;
+        ec_.epc_.ChangeRoute();
+    }
+
+    private void Die(BattleCore bc_)
+    {
+        isDie = true;
+    }
+
+    private bool almostZero(Vector3 a)
+    {
+        return Mathf.Abs(a.x) < 1e-2 && Mathf.Abs(a.y) < 1e-2 && Mathf.Abs(a.z) < 1e-2;
+    }
+    
 }
