@@ -185,7 +185,7 @@ public class EnemyCore : BattleCore
                 lastPoint = nowPoint;
                 enterPos = BaseFunc.xz(transform.position);
             }
-
+            
             if (InitManager.blueDoorPathList[epc_.blueDoorNum].dis.ContainsKey(nowPoint))
             {
                 tarPriority = InitManager.blueDoorPathList[epc_.blueDoorNum].dis[nowPoint];
@@ -403,7 +403,6 @@ public class Spfa
         {
             Vector2 u = q.Dequeue();
             visit[u] = false;
-
             for (int i = 0; i < 4; i++)
             {
                 Vector2 v = new Vector2(u.x + fx[i], u.y + fy[i]);
@@ -577,15 +576,32 @@ public class PushAndPullController
 
     public void Push(Vector3 forcePoint, float forceStrength)
     {
+        // 从力的发出点往外推
         Vector3 pos = ec_.transform.position;
         Vector3 direction = new Vector3(pos.x - forcePoint.x, 0, pos.z - forcePoint.z);
-        float k = Mathf.Sqrt(1.0f / (direction.x * direction.x + direction.z + direction.z));
+        Displacement(direction,forceStrength);
+    }
+    
+    public void Pull(Vector3 forcePoint, float forceStrength)
+    {
+        // 从力的发出点往里拉
+        Vector3 pos = ec_.transform.position;
+        Vector3 direction = new Vector3(forcePoint.x - pos.x, 0, forcePoint.z - pos.z);
+        Displacement(direction,forceStrength);
+    }
+
+    public void Displacement(Vector3 direction, float forceStrength)
+    {
+        // 方向向量归一化
+        float k = Mathf.Sqrt(1.0f / (direction.x * direction.x + direction.z * direction.z));
         direction.x *= k;
         direction.z *= k;
         direction *= forceStrength;
 
+        // 给敌人一个瞬间的力
         rb_.AddForce(direction, ForceMode.Impulse);
         
+        // 让敌人在位移途中眩晕，如果位置距离太短则不用眩晕
         bool willDizzy = forceStrength / rb_.mass >= 10;
         PushDizzyBuff buff = new PushDizzyBuff(this, willDizzy);
         BuffManager.AddBuff(buff);

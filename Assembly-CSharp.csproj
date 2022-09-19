@@ -60,7 +60,7 @@
      <Compile Include="Assets\框架代码\基础战斗\动画函数\EnemyAnimEvent.cs" />
      <Compile Include="Assets\框架代码\基础战斗\buff\BuffManager.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\elitismPutOn.cs" />
-     <Compile Include="Assets\框架代码\UI相关\UISprite\SpriteElement.cs" />
+     <Compile Include="Assets\框架代码\UI相关\UISprite\StoreHouse.cs" />
      <Compile Include="Assets\框架代码\关卡控制\拖动\DragSlot.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Hexagonal Rule Tile\HexagonalRuleTile.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Random Tile\Scripts\RandomTile.cs" />
@@ -109,6 +109,7 @@
      <Compile Include="Assets\框架代码\基础战斗\核心\EnemyCore.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\BattleCore.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\OperUIFunc.cs" />
+     <Compile Include="Assets\干员与敌人\敌人\感染生物\猎狗\hound.cs" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Spine\version.txt" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

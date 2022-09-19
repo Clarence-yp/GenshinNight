@@ -68,7 +68,7 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
         od_ = InitManager.allOperDataList[id];
 
         operImage.sprite = od_.imageInQueue;
-        elementImage.sprite = SpriteElement.GetElementSprite(od_.elementType);
+        elementImage.sprite = StoreHouse.GetElementSprite(od_.elementType);
         costText.text = operatorCore.costNeed.val.ToString(CultureInfo.InvariantCulture);
 
         int num = InitManager.offOperList[id].Count;

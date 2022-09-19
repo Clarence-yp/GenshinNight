@@ -252,9 +252,7 @@ public class DurationValueBuff : DurationBuffSlot
     public DurationValueBuff(ValueBuffer buffer, ValueBuffMode buffMode, float v, float durTime) : base(durTime)
     {
         valueBuffer = buffer;
-        buffInner = new ValueBuffInner();
-        buffInner.mode = buffMode;
-        buffInner.v = v;
+        buffInner = new ValueBuffInner(buffMode, v);
     }
 
     public override void BuffStart()

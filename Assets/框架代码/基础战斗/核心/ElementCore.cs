@@ -23,7 +23,8 @@ public class ElementCore : PropertyCore
     public ValueBuffer elementDamage = new ValueBuffer(1); 
     public ValueBuffer elementResistance = new ValueBuffer(0);
 
-
+    // 反应状态
+    public float superConductTime = 0;        // 表示超导的减防状态还剩余多长时间
 
     protected override void Start_Property_Down()
     {
@@ -42,8 +43,9 @@ public class ElementCore : PropertyCore
             timer.Update();
         }
         DecreaseAttachedElement();
+        UpdateReactionStatus();
         reactionController.Update();
-        
+
         Update_ElementCore_Down();
     }
     
@@ -85,6 +87,10 @@ public class ElementCore : PropertyCore
         }
     }
 
+    void UpdateReactionStatus()
+    {// 更新一些反应状态的持续时间
+        if (superConductTime > 0) superConductTime -= Time.deltaTime;
+    }
 
     /// <summary>  
     /// 计算元素伤害加成下的伤害数值，并判断能否附着元素
@@ -101,9 +107,9 @@ public class ElementCore : PropertyCore
     }
 
     /// <summary>  
-    /// 受到一次元素伤害，并处理附着元素
+    /// 受到一次伤害，并处理附着元素
     /// </summary>
-    public void GetDamageElement(ElementCore attacker, float damage, DamageMode mode,
+    public void GetDamage(ElementCore attacker, float damage, DamageMode mode,
         ElementSlot elementSlot, bool attached)
     {
         if (elementSlot.eleType == ElementType.None)

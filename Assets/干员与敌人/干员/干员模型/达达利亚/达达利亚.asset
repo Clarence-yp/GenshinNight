@@ -47,12 +47,12 @@ MonoBehaviour:
   magicDef: 0
   life: 200
   maxBlock: 2
-  maxAtkInterval: 3
+  maxAtkInterval: 1.5
   cost: 20
   consumPlace: 1
   reTime: 10
   maxLevel: 32000000500000005a000000
-  elementalMastery: 0
+  elementalMastery: 500
   elementalDamage: 1
   elementalResistance: 0
   spRecharge: 1

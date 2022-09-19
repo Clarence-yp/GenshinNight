@@ -27,10 +27,9 @@ public class Tartaglia : OperatorCore
 
     private void norAttack()
     {
-        Battle(tarBattleCore, atk_.val);
-
-        EnemyCore tarEC_ = (EnemyCore) tarBattleCore;
-        tarEC_.ppc_.Push(transform.position, PushAndPullController.mediumForce);
+        ElementSlot electro = new ElementSlot(ElementType.Electro, 2f);
+        
+        Battle(tarBattleCore, atk_.val, DamageMode.Physical, electro, defaultElementTimer);
     }
     
     

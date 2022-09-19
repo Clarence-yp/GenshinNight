@@ -644,6 +644,7 @@
           <e p="敌人" t="Include">
             <e p="感染生物" t="Include">
               <e p="猎狗" t="Include">
+                <e p="hound.cs" t="Include" />
                 <e p="Spine" t="Include">
                   <e p="enemy_1000_gopro.atlas.txt" t="Include" />
                 </e>
@@ -668,7 +669,7 @@
               <e p="OperUIManager.cs" t="Include" />
             </e>
             <e p="UISprite" t="Include">
-              <e p="SpriteElement.cs" t="Include" />
+              <e p="StoreHouse.cs" t="Include" />
             </e>
             <e p="UI辅助" t="Include">
               <e p="gradualChange.cs" t="Include" />

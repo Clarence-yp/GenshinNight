@@ -10,6 +10,10 @@ public class blueDoorRegister : MonoBehaviour
     private void Awake()
     {
         InitManager.Register(spfa_);
+    }
+
+    private void Start()
+    {
         spfa_.RunSpfa(BaseFunc.FixCoordinate(transform.position));
     }
 }

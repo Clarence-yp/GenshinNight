@@ -25,7 +25,7 @@ public class ElementHeadersController : MonoBehaviour
             if (ele.Key == ElementType.None || ele.Key == ElementType.Frozen || ele.Key == ElementType.Catalyze)
                 continue;
             elementImageList[i].gameObject.SetActive(true);
-            elementImageList[i].sprite = SpriteElement.GetElementSprite(ele.Key);
+            elementImageList[i].sprite = StoreHouse.GetElementSprite(ele.Key);
             i++;
         }
 

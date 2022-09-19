@@ -29,4 +29,12 @@ public class Kroos : OperatorCore
     {
         
     }
+
+    public override void OnAttack()
+    {
+        ElementSlot Cryo = new ElementSlot(ElementType.Cryo, 2f);
+        Battle(target, atk_.val, DamageMode.Physical, Cryo, defaultElementTimer);
+    }
+    
+    
 }

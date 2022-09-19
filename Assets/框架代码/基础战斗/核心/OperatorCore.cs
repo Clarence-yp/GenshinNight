@@ -66,9 +66,13 @@ public class OperatorCore : BattleCore
         ac_.ChangeDefaultColorImmediately();
 
         Start_OperatorCore_Down();
-        
 
-        if (prePutOn) return;
+
+        if (prePutOn)
+        {
+            InitManager.operList.Add(this);
+            return;
+        }
         gameObject.SetActive(false);
     }
 
@@ -98,6 +102,9 @@ public class OperatorCore : BattleCore
 
         // 让Anim开始播放动画
         anim.SetBool("start", true);
+        
+        // 在死亡或撤退时将自身从InitManager的OperList中移除
+        DieAction += DelFromOperList;
         
         // 改变脚下tile的类型
         TileSlot tile = InitManager.GetMap(transform.position);
@@ -333,6 +340,10 @@ public class OperatorCore : BattleCore
         ac_.ChangeColor(Color.black);
     }
     
+    private void DelFromOperList(BattleCore bc)
+    {
+        InitManager.operList.Remove(this);
+    }
     
     /// <summary>
     /// 点击干员时调用的函数

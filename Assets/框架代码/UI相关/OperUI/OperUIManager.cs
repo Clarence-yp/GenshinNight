@@ -271,7 +271,7 @@ public class RightUIController
                 pos.y = BaseFunc.highOper_y + 0.01f;
             else pos.y = 0.01f;
             
-            GameObject showing = PoolManager.GetObj(SpriteElement.instance.atkRangeImage);
+            GameObject showing = PoolManager.GetObj(StoreHouse.instance.atkRangeImage);
             showing.transform.position = pos;
             showingRangeImage.Add(showing);
         }
@@ -373,26 +373,26 @@ public class LevelUIController
 
         if (oc_.eliteLevel == 0)
         {
-            elitismImage.sprite = SpriteElement.instance.elitismSprite0;
+            elitismImage.sprite = StoreHouse.instance.elitismSprite0;
             elitismCostText.text = od_.elitismCost[0] < 1e5 ? od_.elitismCost[0].ToString() : "无效";
             elitismExpText.text = od_.elitismExp[0] < 1e5 ? od_.elitismExp[0].ToString() : "无效";
             operImage.sprite = od_.operUIImage1;
         }
         else if (oc_.eliteLevel == 1)
         {
-            elitismImage.sprite = SpriteElement.instance.elitismSprite1;
+            elitismImage.sprite = StoreHouse.instance.elitismSprite1;
             elitismCostText.text = od_.elitismCost[1] < 1e5 ? od_.elitismCost[1].ToString() : "无效";
             elitismExpText.text = od_.elitismExp[1] < 1e5 ? od_.elitismExp[1].ToString() : "无效";
             operImage.sprite = od_.operUIImage1;
         }
         else if (oc_.eliteLevel == 2)
         {
-            elitismImage.sprite = SpriteElement.instance.elitismSprite2;
+            elitismImage.sprite = StoreHouse.instance.elitismSprite2;
             operImage.sprite = od_.operUIImage2;
         }
 
         operNameText.text = od_.Name;
-        elementImage.sprite = SpriteElement.GetElementSprite(od_.elementType);
+        elementImage.sprite = StoreHouse.GetElementSprite(od_.elementType);
         operLevelText.text = oc_.level + "/" + od_.maxLevel[oc_.eliteLevel];
         talentText.text = od_.Description[oc_.eliteLevel];
     }
@@ -910,11 +910,11 @@ public class EdgeUIController
 
 
         globalPauseImage.sprite = InitManager.globalPause
-            ? SpriteElement.instance.continueSprite
-            : SpriteElement.instance.pauseSprite;
+            ? StoreHouse.instance.continueSprite
+            : StoreHouse.instance.pauseSprite;
         globalSpeedImage.sprite=InitManager.globalDoubleSpeed
-            ? SpriteElement.instance.speed2x_Sprite
-            : SpriteElement.instance.speed1x_Sprite;
+            ? StoreHouse.instance.speed2x_Sprite
+            : StoreHouse.instance.speed1x_Sprite;
     }
 
 

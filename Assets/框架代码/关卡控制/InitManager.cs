@@ -152,6 +152,28 @@ public class InitManager : MonoBehaviour
         return mp[pos];
     }
 
+    public static List<OperatorCore> GetNearByOper(Vector3 pos, float r)
+    {
+        List<OperatorCore> tars = new List<OperatorCore>();
+        foreach (var oc_ in operList)
+        {
+            if (Vector2.Distance(BaseFunc.xz(pos), BaseFunc.xz(oc_.transform.position)) <= r)
+                tars.Add(oc_);
+        }
+        return tars;
+    }
+    
+    public static List<EnemyCore> GetNearByEnemy(Vector3 pos, float r)
+    {
+        List<EnemyCore> tars = new List<EnemyCore>();
+        foreach (var ec_ in enemyList)
+        {
+            if (Vector2.Distance(BaseFunc.xz(pos), BaseFunc.xz(ec_.transform.position)) <= r)
+                tars.Add(ec_);
+        }
+        return tars;
+    }
+    
 
     public static void TimeSlow()
     {
