@@ -12,7 +12,8 @@ public class PoolManager : MonoBehaviour
     public static void RecycleObj(GameObject obj)
     {
         obj.SetActive(false);
-         
+        obj.transform.parent = objPrt[obj.name].transform;
+        
         if (pool.ContainsKey(obj.name))
         {
             if (pool[obj.name].Count < maxCount)

@@ -16,7 +16,7 @@ public class EnemyCore : BattleCore
     public List<Vector3> pointList = new List<Vector3>();   //该敌人的路径锚点(x,y,time,sta)
 
     private Animator anim;
-    private SpineAnimController ac_;
+    public SpineAnimController ac_;
     public EnemyPathController epc_;
     private int fightingContinue = 0;       // fight激活后延续几帧
 
@@ -257,7 +257,7 @@ public class EnemyCore : BattleCore
         ac_.ChangeColor(Color.black);
     }
 
-    public void OnAttack()
+    public virtual void OnAttack()
     {
         Battle(target, atk_.val, DamageMode.Physical);
     }
@@ -273,7 +273,16 @@ public class EnemyCore : BattleCore
         Destroy(anim.gameObject);
         Destroy(gameObject);
     }
-    
+
+    public override void FrozenBegin()
+    {
+        cannotMove++;
+    }
+
+    public override void FrozenEnd()
+    {
+        cannotMove--;
+    }
 }
 
 public class Spfa

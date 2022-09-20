@@ -166,6 +166,13 @@
             </e>
             <e p="Tilemap Readme.txt" t="Include" />
           </e>
+          <e p="Epic Toon FX" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ETFXLightFade.cs" t="Include" />
+              <e p="ETFXPitchRandomizer.cs" t="Include" />
+              <e p="ETFXRotation.cs" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="Spine" t="Include">
           <e p="Editor" t="Include">
@@ -732,13 +739,6 @@
           </e>
         </e>
         <e p="素材" t="Include">
-          <e p="Epic Toon FX" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="ETFXLightFade.cs" t="Include" />
-              <e p="ETFXPitchRandomizer.cs" t="Include" />
-              <e p="ETFXRotation.cs" t="Include" />
-            </e>
-          </e>
           <e p="地图方块" t="Include">
             <e p="门" t="Include">
               <e p="redDoorButtonController.cs" t="Include" />

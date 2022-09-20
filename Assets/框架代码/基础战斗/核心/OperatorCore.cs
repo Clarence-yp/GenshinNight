@@ -24,7 +24,7 @@ public class OperatorCore : BattleCore
     // spine动画相关
     [HideInInspector] public GameObject animObject;
     [HideInInspector] public Animator anim;
-    protected SpineAnimController ac_;
+    public SpineAnimController ac_;
     private int fightingContinue = 0;       // fight激活后延续几帧
 
     // atkRange相关
@@ -64,10 +64,10 @@ public class OperatorCore : BattleCore
     {
         OperInit();
         ac_.ChangeDefaultColorImmediately();
+        frozen_Inc_DecSpeed = 0;            // 干员的被冻结时间不会随之延长
+        
 
         Start_OperatorCore_Down();
-
-
         if (prePutOn)
         {
             InitManager.operList.Add(this);

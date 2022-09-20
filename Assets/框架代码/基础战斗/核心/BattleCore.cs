@@ -21,7 +21,7 @@ public class BattleCore : ElementCore
     [HideInInspector] public ValueBuffer maxBlock = new ValueBuffer(0); // 最大阻挡数（敌人为消耗阻挡数）
     [HideInInspector] public bool dying;
     [HideInInspector] public int dizziness;         // 眩晕计数器，>0时表示处于眩晕状态
-    [HideInInspector] public bool frozen;           // 是否处于冻结状态
+    
     
     // BattleCore瞄准的目标
     public BattleCore target { get; private set; } = null;

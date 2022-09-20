@@ -9,13 +9,13 @@ public class ElementCore : PropertyCore
 {
     public List<ElementTimer> elementTimerList = new List<ElementTimer>();
     protected ElementTimer defaultElementTimer;
-    protected ReactionController reactionController;
+    public ReactionController reactionController;
     
     // 附着元素集合
     public Dictionary<ElementType, float> attachedElement = new Dictionary<ElementType, float>();
     // 附着元素自然消失
     private const float defaultDecreaseSpeed = 0.3f;        // 默认普通元素每秒衰减速率
-    protected float frozen_Inc_DecSpeed = 0.2f;             // 冻元素每秒增加的元素衰减速率
+    protected float frozen_Inc_DecSpeed = 0.1f;             // 冻元素每秒增加的元素衰减速率
     public Dictionary<ElementType, float> eleDecreaseSpeed = new Dictionary<ElementType, float>();
 
     // 元素数据
@@ -24,8 +24,10 @@ public class ElementCore : PropertyCore
     public ValueBuffer elementResistance = new ValueBuffer(0);
 
     // 反应状态
-    public float superConductTime = 0;        // 表示超导的减防状态还剩余多长时间
-
+    [HideInInspector] public bool superConducting;          // 当前是否处于超导状态下
+    [HideInInspector] public bool electroCharging;          // 当前是否处于感电状态下
+    [HideInInspector] public bool frozen;                   // 是否处于冻结状态
+    
     protected override void Start_Property_Down()
     {
         defaultElementTimer = new ElementTimer(this);
@@ -43,7 +45,6 @@ public class ElementCore : PropertyCore
             timer.Update();
         }
         DecreaseAttachedElement();
-        UpdateReactionStatus();
         reactionController.Update();
 
         Update_ElementCore_Down();
@@ -86,12 +87,9 @@ public class ElementCore : PropertyCore
             attachedElement[type] -= Time.deltaTime * eleDecreaseSpeed[type];
         }
     }
-
-    void UpdateReactionStatus()
-    {// 更新一些反应状态的持续时间
-        if (superConductTime > 0) superConductTime -= Time.deltaTime;
-    }
-
+    
+    
+    
     /// <summary>  
     /// 计算元素伤害加成下的伤害数值，并判断能否附着元素
     /// </summary>
@@ -168,9 +166,13 @@ public class ElementCore : PropertyCore
             }
         }
         
-        // 全部反应后若仍有剩余，则直接丢弃，遵循后手不残余原则
+        // 全部反应后若仍有剩余，剩余的元素将被附着
+        attachedElement.Add(element2.eleType, element2.eleCount);
     }
     
+    public virtual void FrozenBegin() { }
+    
+    public virtual void FrozenEnd() { }
 }
 
 
@@ -183,53 +185,6 @@ public class ElementSlot
     {
         eleType = ttype;
         eleCount = count;
-    }
-}
-
-public class ElementReactionCalculate
-{
-    // 专门用于计算元素反应伤害数值的类
-    
-    public static float Overloaded(int baseLevel, float elementAmount, float mastery)           
-    {
-        // 超载反应
-        return mastery;
-    }
-
-    public static float Superconduct(int baseLevel, float elementAmount, float mastery)         
-    {
-        // 超导反应
-        return mastery;
-    }
-
-    public static float ElectroCharged(int baseLevel, float elementAmount, float mastery)       
-    {
-        // 感电反应
-        return mastery;
-    }
-
-    public static float Swirl(int baseLevel, float elementAmount, float mastery)                
-    {
-        // 扩散反应
-        return mastery;
-    }
-    
-    public static float Crystallization(int baseLevel, float elementAmount, float mastery)                
-    {
-        // 结晶反应
-        return mastery;
-    }
-
-    public static float Vaporize(float damage, float mastery)            
-    {
-        // 蒸发反应
-        return mastery;
-    }
-
-    public static float Melt(float damage, float mastery)                
-    {
-        // 融化反应
-        return mastery;
     }
 }
 

@@ -9457,8 +9457,9 @@ MonoBehaviour:
   continueSprite: {fileID: 21300000, guid: 2fd79a99cfebbb34f915d4c8490fbf67, type: 3}
   atkRangeImage: {fileID: 2525742118518304647, guid: a60ea7982b69bc142a84608d408de0fa, type: 3}
   overLoadAnim: {fileID: 130848, guid: 3b78dc907b9f64546994ffcb76ed33bf, type: 3}
-  superConductAnim: {fileID: 1212038522573524, guid: 1e75105f570baec4db7bc3cfdd02633e, type: 3}
+  superConductAnim: {fileID: 122924, guid: d4412062babe7c34b9c13fbc4fee4905, type: 3}
   superConductDuration: {fileID: 145256, guid: 4e3237b9fe4dc3744a55a859b86e35ed, type: 3}
+  electroChargedAnim: {fileID: 167134, guid: 0cffb2de900e80b48a464b7bcac8cfc8, type: 3}
 --- !u!4 &907014061
 Transform:
   m_ObjectHideFlags: 0
@@ -24768,7 +24769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1161707832541732871, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.68
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 1161707832541732871, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24776,7 +24777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1161707832541732871, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.13
+      value: 7.85
       objectReference: {fileID: 0}
     - target: {fileID: 1161707832541732871, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: m_LocalRotation.w

@@ -33,7 +33,7 @@ public class StoreHouse : MonoBehaviour
     public GameObject overLoadAnim;
     public GameObject superConductAnim;
     public GameObject superConductDuration;
-
+    public GameObject electroChargedAnim;
 
 
     private void Awake()

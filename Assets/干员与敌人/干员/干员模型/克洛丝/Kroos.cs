@@ -6,6 +6,10 @@ public class Kroos : OperatorCore
 {
     private float[] atkIncreasePercentage = {0.1f, 0.15f, 0.2f, 0.3f, 0.35f, 0.4f, 0.5f};
 
+    protected override void Update_OperatorCore_Down()
+    {
+        
+    }
 
     // [Header("技能3")] 
     // public float[] atkSpeedIncrease = new float[7];
@@ -32,8 +36,8 @@ public class Kroos : OperatorCore
 
     public override void OnAttack()
     {
-        ElementSlot Cryo = new ElementSlot(ElementType.Cryo, 2f);
-        Battle(target, atk_.val, DamageMode.Physical, Cryo, defaultElementTimer);
+        ElementSlot elementSlot = new ElementSlot(ElementType.Electro, 2f);
+        Battle(target, atk_.val, DamageMode.Physical, elementSlot, defaultElementTimer);
     }
     
     

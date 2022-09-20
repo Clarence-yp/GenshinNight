@@ -55,7 +55,7 @@
      <Compile Include="Assets\框架代码\scriOb\enemyInfo.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\OperatorCore.cs" />
      <Compile Include="Assets\框架代码\UI相关\世界UI\ElementHeadersController.cs" />
-     <Compile Include="Assets\素材\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
+     <Compile Include="Assets\rubbish\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\ElementCore.cs" />
      <Compile Include="Assets\框架代码\基础战斗\动画函数\EnemyAnimEvent.cs" />
      <Compile Include="Assets\框架代码\基础战斗\buff\BuffManager.cs" />
@@ -75,7 +75,7 @@
      <Compile Include="Assets\框架代码\辅助脚本\destroySelf.cs" />
      <Compile Include="Assets\框架代码\scriOb\skillData.cs" />
      <Compile Include="Assets\干员与敌人\敌人\感染生物\猎狗\hound.cs" />
-     <Compile Include="Assets\素材\Epic Toon FX\Scripts\ETFXLightFade.cs" />
+     <Compile Include="Assets\rubbish\Epic Toon FX\Scripts\ETFXLightFade.cs" />
      <Compile Include="Assets\素材\地图方块\门\redDoorButtonController.cs" />
      <Compile Include="Assets\框架代码\scriOb\operData.cs" />
      <Compile Include="Assets\框架代码\scriOb\levelData.cs" />
@@ -103,7 +103,7 @@
      <Compile Include="Assets\预制体\OperUI\DragSlot\dirDrag.cs" />
      <Compile Include="Assets\框架代码\UI相关\世界UI\LifeSliderController.cs" />
      <Compile Include="Assets\框架代码\基础战斗\元素反应\ReactionController.cs" />
-     <Compile Include="Assets\素材\Epic Toon FX\Scripts\ETFXRotation.cs" />
+     <Compile Include="Assets\rubbish\Epic Toon FX\Scripts\ETFXRotation.cs" />
      <Compile Include="Assets\框架代码\UI相关\UI辅助\gradualChange.cs" />
      <Compile Include="Assets\框架代码\关卡控制\CameraController.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\OperUIElements.cs" />

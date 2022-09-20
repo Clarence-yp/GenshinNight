@@ -7,13 +7,18 @@ public class ReactionController
     // 元素反应共用的计时器，由ReactionTransfer调用
     public static ElementTimer reactionTimer = new ElementTimer(null);
 
-    private const float OverLoadRadius = 1.2f;
-    private const float SuperConductRadius = 1.2f;
-    private const float SuperConductDuring = 8f;
+    private static float OverLoadRadius = 1.4f;
+    private static float SuperConductRadius = 1.4f;
+    private static float SuperConductDuring = 8f;
+    private static float ElectroChargedInterval = 1f;
+    private static Color32 FrozenColor = new Color32(50, 150, 255, 255);
         
     private ElementCore elc_;
-    
 
+    private float superConductTime = 0;         // 超导的减防状态还剩余多长时间
+    private float electroChargedTime = 0;       // 感电反应冷却时间
+    private float electroChargedMastery;        // 感电反应吃的精通，为最后一个上水雷元素的精通
+    
 
     public ReactionController(ElementCore elementCore)
     {
@@ -22,7 +27,68 @@ public class ReactionController
 
     public void Update()
     {
-       
+        // 超导随时间减少
+        if (superConductTime > 0)
+        {
+            elc_.superConducting = true;
+            superConductTime -= Time.deltaTime;
+        }
+        else
+        {
+            elc_.superConducting = false;
+        }
+        
+        // 判断能否发生感电反应
+        electroChargedTime -= Time.deltaTime;
+        if (elc_.attachedElement.ContainsKey(ElementType.Electro) &&
+            elc_.attachedElement.ContainsKey(ElementType.Hydro) && electroChargedTime <= 0)
+        {
+            electroChargedTime = ElectroChargedInterval;
+            ElectroCharged();
+        }
+        
+        // 判断是否处于冻结中
+        if (elc_.attachedElement.ContainsKey(ElementType.Frozen))
+        {
+            if (!elc_.frozen)
+            {
+                elc_.frozen = true;
+                if (elc_.transform.CompareTag("operator"))
+                {
+                    OperatorCore oc_ = (OperatorCore) elc_;
+                    oc_.ac_.ChangeColor(FrozenColor);
+                    oc_.ac_.ChangeAnimSpeed();
+                }
+                else if (elc_.transform.CompareTag("enemy"))
+                {
+                    EnemyCore ec_ = (EnemyCore) elc_;
+                    ec_.ac_.ChangeColor(FrozenColor);
+                    ec_.ac_.ChangeAnimSpeed();
+                }
+                elc_.FrozenBegin();
+            }
+        }
+        else
+        {
+            if (elc_.frozen)
+            {
+                elc_.frozen = false;
+                if (elc_.transform.CompareTag("operator"))
+                {
+                    OperatorCore oc_ = (OperatorCore) elc_;
+                    oc_.ac_.ChangeDefaultColor();
+                    oc_.ac_.ChangeAnimSpeed();
+                }
+                else if (elc_.transform.CompareTag("enemy"))
+                {
+                    EnemyCore ec_ = (EnemyCore) elc_;
+                    ec_.ac_.ChangeDefaultColor();
+                    ec_.ac_.ChangeAnimSpeed();
+                }
+                elc_.FrozenEnd();
+            }
+        }
+        
     }
     
     
@@ -45,6 +111,7 @@ public class ReactionController
                         Vaporize(element1, element2, ref damage, mastery);
                         break;
                     case ElementType.Cryo:      // 冰
+                    case ElementType.Frozen:    // 冻元素
                         Melt(element1, element2, ref damage, mastery);
                         break;
                     case ElementType.Electro:   // 雷
@@ -65,7 +132,7 @@ public class ReactionController
                         Frozen(element1, element2, mastery);
                         break;
                     case ElementType.Electro:   // 雷
-                        ElectroCharged(element1, element2, mastery);
+                        ElectroCharged_Refresh(mastery);
                         break;
                     case ElementType.Dendro:    // 草
                         // 后面再写
@@ -96,9 +163,10 @@ public class ReactionController
                         Overloaded(attacker, element1, element2, mastery);
                         break;
                     case ElementType.Hydro:     // 水
-                        ElectroCharged(element1, element2, mastery);
+                        ElectroCharged_Refresh(mastery);
                         break;
                     case ElementType.Cryo:      // 冰
+                    case ElementType.Frozen:    // 冻元素
                         SuperConduct(element1, element2, mastery);
                         break;
                     case ElementType.Dendro:    // 草
@@ -172,12 +240,12 @@ public class ReactionController
             {
                 oc_.GetDamage(null, damage, DamageMode.Magic, cryoElement, false);
                 
-                if (oc_.superConductTime <= 0)
+                if (!oc_.superConducting)   // 只有不在超导状态下，新的超导才会增加buff
                 {
                     SuperConductBuff valueBuff = new SuperConductBuff(oc_);
                     BuffManager.AddBuff(valueBuff);
                 }
-                oc_.superConductTime = SuperConductDuring;
+                oc_.reactionController.ResetSuperConductTime();
             }
         }
         else if (elc_.transform.CompareTag("enemy"))
@@ -186,12 +254,12 @@ public class ReactionController
             {
                 ec_.GetDamage(null, damage, DamageMode.Magic, cryoElement, false);
                 
-                if (ec_.superConductTime <= 0)
+                if (!ec_.superConducting)
                 {
                     SuperConductBuff valueBuff = new SuperConductBuff(ec_);
                     BuffManager.AddBuff(valueBuff);
                 }
-                ec_.superConductTime = SuperConductDuring;
+                ec_.reactionController.ResetSuperConductTime();
             }
         }
         
@@ -206,16 +274,51 @@ public class ReactionController
         sedElement.eleCount = 0;
     }
 
-    private void ElectroCharged(ElementSlot firElement, ElementSlot sedElement, float mastery)       
+    private void ElectroCharged_Refresh(float mastery)
+    {// 后手元素过来后，更新感电反应吃的精通
+        electroChargedMastery = mastery;
+    }
+    
+    private void ElectroCharged()       
     {// 感电反应
+        float damage = ElectroChargedDamage(electroChargedMastery);
+        ElementSlot electro = new ElementSlot(ElementType.Electro);
+        elc_.GetDamage(null, damage, DamageMode.Magic, electro, false);
         
+        GameObject electroChargedAnim = PoolManager.GetObj(StoreHouse.instance.electroChargedAnim);
+        electroChargedAnim.transform.parent = elc_.transform;
+        Vector3 pos = new Vector3(0, 0, 0.4f);
+        electroChargedAnim.transform.localPosition = pos;
+        DurationRecycleObj recycleObj = new DurationRecycleObj(electroChargedAnim, 1f
+            , (BattleCore) elc_, true);
+        BuffManager.AddBuff(recycleObj);
+
+        // 水雷1:1消耗，每次反应消耗各0.4元素
+        elc_.attachedElement[ElementType.Electro] -= 0.4f;
+        if (elc_.attachedElement[ElementType.Electro] <= 0)
+            elc_.attachedElement.Remove(ElementType.Electro);
+        elc_.attachedElement[ElementType.Hydro] -= 0.4f;
+        if (elc_.attachedElement[ElementType.Hydro] <= 0)
+            elc_.attachedElement.Remove(ElementType.Hydro);
     }
 
     private void Frozen(ElementSlot firElement, ElementSlot sedElement, float mastery)       
     {// 冻结反应
         
         
-        
+        // 冰水按1:1结算，先手元素扣除后手元素量，后手元素被扣为0，生成2倍于扣除元素的冻元素
+        float frozenCount = 2 * Mathf.Min(firElement.eleCount, sedElement.eleCount);
+        if (elc_.attachedElement.ContainsKey(ElementType.Frozen))
+        {
+            elc_.attachedElement[ElementType.Frozen] = 
+                Mathf.Max(elc_.attachedElement[ElementType.Frozen], frozenCount);
+        }
+        else
+        {
+            elc_.attachedElement.Add(ElementType.Frozen, frozenCount);
+        }
+        firElement.eleCount = Mathf.Max(0, firElement.eleCount - sedElement.eleCount);
+        sedElement.eleCount = 0;
     }
     
     private void Swirl(ElementSlot firElement, ElementSlot sedElement, float mastery)                
@@ -256,22 +359,63 @@ public class ReactionController
         // 返回超导反应的伤害，只与元素精通相关
         return mastery;
     }
+
+    private float ElectroChargedDamage(float mastery)
+    {
+        // 返回感电反应的伤害，只与元素精通相关
+        return mastery;
+    }
+
+
+
+
+
+
+
+
+
+    public void ResetSuperConductTime()
+    {
+        superConductTime = SuperConductDuring;
+        elc_.superConducting = true;
+    }
 }
 
 public class DurationRecycleObj : DurationBuffSlot
 {
     private GameObject obj;
+    private bool havePrt;
+    private BattleCore bc_;
+    private bool isDie;
 
-    public DurationRecycleObj(GameObject obj_, float durTime) : base(durTime)
+    public DurationRecycleObj(GameObject obj_, float durTime
+        , BattleCore prt = null, bool havePrt_ = false) : base(durTime)
     {
         obj = obj_;
+        bc_ = prt;
+        havePrt = havePrt_;
+        isDie = false;
     }
 
-    public override void BuffStart() { }
+    public override void BuffStart()
+    {
+        if (havePrt) bc_.DieAction += Die;
+    }
+
+    public override bool BuffEndCondition()
+    {
+        return during <= 0 || isDie;
+    }
 
     public override void BuffEnd()
     {
+        if (havePrt) bc_.DieAction -= Die;
         PoolManager.RecycleObj(obj);
+    }
+
+    private void Die(BattleCore bc_)
+    {
+        isDie = true;
     }
 }
 
@@ -284,11 +428,14 @@ public class SuperConductBuff : BuffSlot
     private ElementCore elc_;
     private GameObject obj;
 
+    private bool isDie;
+
     public SuperConductBuff(ElementCore elementCore)
     {
         elc_ = elementCore;
         valueBuffer = elc_.def_;
         buffInner = new ValueBuffInner(ValueBuffMode.Percentage, -0.4f);
+        isDie = false;
     }
 
     public override void BuffStart()
@@ -298,18 +445,27 @@ public class SuperConductBuff : BuffSlot
         obj.transform.parent = elc_.transform;
         obj.transform.localPosition = localPos;
         obj.transform.eulerAngles = localRol;
+
+        ((BattleCore) elc_).DieAction += Die;
     }
 
     public override void BuffUpdate() { }
 
     public override bool BuffEndCondition()
     {
-        return elc_.superConductTime <= 0;
+        return !elc_.superConducting || isDie;
     }
 
     public override void BuffEnd()
     {
+        ((BattleCore) elc_).DieAction -= Die;
         valueBuffer.DelValueBuff(buffInner);
         PoolManager.RecycleObj(obj);
     }
+
+    private void Die(BattleCore bc_)
+    {
+        isDie = true;
+    }
+    
 }
