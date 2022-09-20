@@ -174,7 +174,7 @@ public class ReactionController
                 
                 if (oc_.superConductTime <= 0)
                 {
-                    SuperConductDefBuff valueBuff = new SuperConductDefBuff(oc_);
+                    SuperConductBuff valueBuff = new SuperConductBuff(oc_);
                     BuffManager.AddBuff(valueBuff);
                 }
                 oc_.superConductTime = SuperConductDuring;
@@ -188,7 +188,7 @@ public class ReactionController
                 
                 if (ec_.superConductTime <= 0)
                 {
-                    SuperConductDefBuff valueBuff = new SuperConductDefBuff(ec_);
+                    SuperConductBuff valueBuff = new SuperConductBuff(ec_);
                     BuffManager.AddBuff(valueBuff);
                 }
                 ec_.superConductTime = SuperConductDuring;
@@ -275,13 +275,16 @@ public class DurationRecycleObj : DurationBuffSlot
     }
 }
 
-public class SuperConductDefBuff : BuffSlot
+public class SuperConductBuff : BuffSlot
 {
+    private static Vector3 localPos = new Vector3(0, 0, 0.5f);
+    private static Vector3 localRol = new Vector3(-30, 0, 0);
     private ValueBuffer valueBuffer;
     private ValueBuffInner buffInner;
     private ElementCore elc_;
+    private GameObject obj;
 
-    public SuperConductDefBuff(ElementCore elementCore)
+    public SuperConductBuff(ElementCore elementCore)
     {
         elc_ = elementCore;
         valueBuffer = elc_.def_;
@@ -291,6 +294,10 @@ public class SuperConductDefBuff : BuffSlot
     public override void BuffStart()
     {
         valueBuffer.AddValueBuff(buffInner);
+        obj = PoolManager.GetObj(StoreHouse.instance.superConductDuration);
+        obj.transform.parent = elc_.transform;
+        obj.transform.localPosition = localPos;
+        obj.transform.eulerAngles = localRol;
     }
 
     public override void BuffUpdate() { }
@@ -303,5 +310,6 @@ public class SuperConductDefBuff : BuffSlot
     public override void BuffEnd()
     {
         valueBuffer.DelValueBuff(buffInner);
+        PoolManager.RecycleObj(obj);
     }
 }

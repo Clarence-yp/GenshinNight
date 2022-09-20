@@ -32,8 +32,10 @@ public class StoreHouse : MonoBehaviour
     [Header("元素反应相关")] 
     public GameObject overLoadAnim;
     public GameObject superConductAnim;
-    
-    
+    public GameObject superConductDuration;
+
+
+
     private void Awake()
     {
         if (instance != null)

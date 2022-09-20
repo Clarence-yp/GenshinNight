@@ -9458,6 +9458,7 @@ MonoBehaviour:
   atkRangeImage: {fileID: 2525742118518304647, guid: a60ea7982b69bc142a84608d408de0fa, type: 3}
   overLoadAnim: {fileID: 130848, guid: 3b78dc907b9f64546994ffcb76ed33bf, type: 3}
   superConductAnim: {fileID: 1212038522573524, guid: 1e75105f570baec4db7bc3cfdd02633e, type: 3}
+  superConductDuration: {fileID: 145256, guid: 4e3237b9fe4dc3744a55a859b86e35ed, type: 3}
 --- !u!4 &907014061
 Transform:
   m_ObjectHideFlags: 0
