@@ -39,6 +39,11 @@ public class StoreHouse : MonoBehaviour
     public GameObject superConductAnim;
     public GameObject superConductDuration;
     public GameObject electroChargedAnim;
+    public GameObject swirlPyroAnim;
+    public GameObject swirlHydroAnim;
+    public GameObject swirlElectroAnim;
+    public GameObject swirlCryoAnim;
+    
     
     public static Color32 OverLoadTextColor = new Color32(233, 54, 64, 255);
     public static Color32 SuperConductTextColor = new Color32(221, 196, 255, 255);
@@ -46,8 +51,9 @@ public class StoreHouse : MonoBehaviour
     public static Color32 FrozenColor = new Color32(52, 192, 255, 255);
     public static Color32 VaporizeColor = new Color32(255, 150, 100, 255);
     public static Color32 MeltColor = new Color32(255, 150, 150, 255);
-    
-    
+    public static Color32 SwirlColor = new Color32(50, 255, 200, 255);
+    public static Color32 CrystallizationColor = new Color32(255, 180, 0, 255);
+
 
     public static Color32 AnemoDamageColor = new Color32(0, 255, 200, 255);
     public static Color32 GeoDamageColor = new Color32(255, 200, 0, 255);
@@ -92,6 +98,25 @@ public class StoreHouse : MonoBehaviour
                 return null;
         }
     }
+
+    public static GameObject GetSwirlAnim(ElementType type)
+    {
+        switch (type)
+        {
+            case ElementType.Electro:
+                return instance.swirlElectroAnim;
+            case ElementType.Hydro:
+                return instance.swirlHydroAnim;
+            case ElementType.Pyro:
+                return instance.swirlPyroAnim;
+            case ElementType.Cryo:
+                return instance.swirlCryoAnim;
+            default:
+                return null;
+        }
+    }
+    
+    
     
     public static Color GetElementDamageColor(ElementType type)
     {
@@ -115,5 +140,5 @@ public class StoreHouse : MonoBehaviour
                 return Color.white;
         }
     }
-    
+
 }

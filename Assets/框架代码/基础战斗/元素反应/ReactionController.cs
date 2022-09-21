@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ReactionController
 {
     // 元素反应共用的计时器，由ReactionTransfer调用，主要用于扩散挂元素
-    public static ElementTimer reactionTimer = new ElementTimer(null);
+    public static ElementTimer reactionTimer = new ElementTimer(null, 0.1f);
 
     private static float OverLoadRadius = 1.5f;
     private static float SuperConductRadius = 1.5f;
@@ -346,6 +346,41 @@ public class ReactionController
     private void Swirl(ElementSlot firElement, ElementSlot sedElement, float mastery)                
     {// 扩散反应
         
+        Vector3 center = elc_.transform.position;
+        ElementSlot swirlElement = new ElementSlot(firElement.eleType, sedElement.eleCount);
+        
+        if (elc_.transform.CompareTag("operator"))
+        {// 对干员造成一次扩散元素攻击，元素附着量为风元素量，精通为0
+            List<OperatorCore> tars = InitManager.GetNearByOper(center, OverLoadRadius);
+            foreach (var oc_ in tars)
+            {// 对范围内所有干员进行攻击和元素附着
+                oc_.GetDamage(elc_, SwirlDamage(mastery), DamageMode.Magic
+                    , swirlElement, true, true);
+            }
+        }
+        else if(elc_.transform.CompareTag("enemy"))
+        {// 对敌人造成超载反应，以本体（稍微偏向发出点）为圆心产生一次爆炸，对所有敌人造成小力击退效果
+            List<EnemyCore> tars = InitManager.GetNearByEnemy(center, OverLoadRadius);
+            foreach (var ec_ in tars)
+            {// 对范围内的所有敌人进行攻击和元素附着
+                ec_.GetDamage(elc_, SwirlDamage(mastery), DamageMode.Magic
+                    , swirlElement, true, true);
+            }
+        }
+        
+        // 播放扩散动画
+        GameObject swirlAnimPrototype = StoreHouse.GetSwirlAnim(swirlElement.eleType);
+        GameObject swirlAnim = PoolManager.GetObj(swirlAnimPrototype);
+        swirlAnim.transform.position = elc_.transform.position;
+        DurationRecycleObj recycleObj = new DurationRecycleObj(swirlAnim, 2f);
+        BuffManager.AddBuff(recycleObj);
+        
+        // 展示反应文本
+        ShowReactionText(center, "扩散", StoreHouse.SwirlColor);
+        
+        // 风元素始终为被克制元素，只能已0.5倍消耗先手元素，且自身立刻消失
+        firElement.eleCount = Mathf.Max(0, firElement.eleCount - 0.5f * sedElement.eleCount);
+        sedElement.eleCount = 0;
     }
     
     private void Crystallization(ElementSlot firElement, ElementSlot sedElement, 
@@ -435,8 +470,12 @@ public class ReactionController
         // 返回感电反应的伤害，只与元素精通相关
         return mastery;
     }
-    
 
+    private float SwirlDamage(float mastery)
+    {
+        // 返回扩散反应的伤害
+        return mastery;
+    }
     
     
 

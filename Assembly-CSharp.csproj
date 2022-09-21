@@ -58,6 +58,7 @@
      <Compile Include="Assets\rubbish\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\ElementCore.cs" />
      <Compile Include="Assets\框架代码\基础战斗\动画函数\EnemyAnimEvent.cs" />
+     <Compile Include="Assets\预制体\OperUI\伤害数字\ColorfulDamageNum.cs" />
      <Compile Include="Assets\框架代码\基础战斗\buff\BuffManager.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\elitismPutOn.cs" />
      <Compile Include="Assets\框架代码\UI相关\UISprite\StoreHouse.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\框架代码\辅助脚本\中文显示\ChineseTranslation.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\GridInformation\Scripts\GridInformation.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Terrain Tile\Scripts\TerrainTile.cs" />
+     <Compile Include="Assets\框架代码\UI相关\世界UI\WorldCanvas.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Rule Tile\Scripts\RuleTile.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Pipeline Tile\Scripts\PipelineTile.cs" />
      <Compile Include="Assets\框架代码\gameManager.cs" />
@@ -110,8 +112,6 @@
      <Compile Include="Assets\框架代码\基础战斗\核心\EnemyCore.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\BattleCore.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\OperUIFunc.cs" />
-     <Compile Include="Assets\预制体\OperUI\伤害数字\ColorfulDamageNum.cs" />
-     <Compile Include="Assets\框架代码\UI相关\世界UI\WorldCanvas.cs" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Spine\version.txt" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

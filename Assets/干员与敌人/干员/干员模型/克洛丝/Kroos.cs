@@ -52,7 +52,7 @@ public class Kroos : OperatorCore
 
     private void NorAttack()
     {
-        ElementSlot elementSlot = new ElementSlot(ElementType.Pyro, 2f);
+        ElementSlot elementSlot = new ElementSlot(ElementType.Anemo, 2f);
         Battle(target, atk_.val, DamageMode.Physical, elementSlot, defaultElementTimer);
     }
     
