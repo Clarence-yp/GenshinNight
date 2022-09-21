@@ -42,7 +42,7 @@ MonoBehaviour:
   End_Not3Star: {fileID: 0}
   End_Fail: {fileID: 0}
   Touch: {fileID: 0}
-  atk: 1
+  atk: 100
   def: 100
   magicDef: 10
   life: 1000

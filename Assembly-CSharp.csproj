@@ -110,6 +110,8 @@
      <Compile Include="Assets\框架代码\基础战斗\核心\EnemyCore.cs" />
      <Compile Include="Assets\框架代码\基础战斗\核心\BattleCore.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\OperUIFunc.cs" />
+     <Compile Include="Assets\预制体\OperUI\伤害数字\ColorfulDamageNum.cs" />
+     <Compile Include="Assets\框架代码\UI相关\世界UI\WorldCanvas.cs" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Spine\version.txt" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

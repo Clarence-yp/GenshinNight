@@ -59,6 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab002c256f3ca5459291790edb27ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  superConducting: 0
+  electroCharging: 0
+  frozen: 0
   operatorList: []
   enemyList: []
   aimingMode: 0
@@ -67,6 +70,7 @@ MonoBehaviour:
   norAtkInterval: 0
   fighting: 0
   dying: 0
+  dizziness: 0
   blockList: []
   od_: {fileID: 11400000, guid: 471e676b1655a4b4399fb74a831c9bbd, type: 2}
   level: 0
@@ -78,6 +82,7 @@ MonoBehaviour:
   animObject: {fileID: 0}
   anim: {fileID: 0}
   atkRange: {fileID: 0}
+  norArrow: {fileID: 8307805351159478916, guid: 20ad7eaba7e761b448c7b77997e1b331, type: 3}
 --- !u!1 &3649933125311570890
 GameObject:
   m_ObjectHideFlags: 0

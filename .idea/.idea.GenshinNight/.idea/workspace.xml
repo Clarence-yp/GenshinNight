@@ -8,930 +8,225 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GenshinNight/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GenshinNight/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GenshinNight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GenshinNight/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/frontCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/干员与敌人/frontCanvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/克洛丝/Kroos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/克洛丝/Kroos.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/达达利亚/Tartaglia.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/达达利亚/Tartaglia.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/克洛丝/克洛丝.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/克洛丝/克洛丝.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/克洛丝/克洛丝.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/克洛丝/克洛丝.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/达达利亚/攻击素材.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/达达利亚/攻击素材/箭的颜色.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/达达利亚/攻击素材/箭的颜色.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/达达利亚/攻击素材/达达利亚的箭.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/达达利亚/攻击素材/达达利亚的箭.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/敌人/感染生物/猎狗/hound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/干员与敌人/敌人/感染生物/猎狗/hound.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/干员与敌人/敌人/感染生物/猎狗/猎狗.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/干员与敌人/敌人/感染生物/猎狗/猎狗.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/框架代码/UI相关/UISprite/StoreHouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/UI相关/UISprite/StoreHouse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/框架代码/UI相关/世界UI/ElementHeadersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/UI相关/世界UI/ElementHeadersController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/框架代码/基础战斗/元素反应/ReactionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/基础战斗/元素反应/ReactionController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/BattleCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/BattleCore.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/ElementCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/ElementCore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/EnemyCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/EnemyCore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/OperatorCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/OperatorCore.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/ETFX - Readme.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/ETFX - Readme.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/circle_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/circle_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/circle_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/circle_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/circlestretchy_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/circlestretchy_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/cloud_2x2_default_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/cloud_2x2_default_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/cloud_2x2_soft_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/cloud_2x2_soft_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/cloud_2x2_soft_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/cloud_2x2_soft_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/cloud_magic_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/cloud_magic_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow1_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow1_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow1_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow1_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow2_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow2_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow3_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow3_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow4_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow4_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow5_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow5_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow6_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/glow6_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/gradient_circle_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/gradient_circle_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/gradient_edges_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/gradient_edges_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/gradient_horizontal_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/gradient_horizontal_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/gradient_vertical_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/gradient_vertical_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/lightray1_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/lightray1_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/lightray2_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/lightray2_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/lightray3_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/lightray3_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/line_sharp_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/line_sharp_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/ring_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/ring_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/ring_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/ring_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/ring_nofade_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/ring_nofade_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/solid_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/solid_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/sparkle2_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/sparkle2_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/sparkle_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/sparkle_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/sparkle_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/sparkle_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/triangle_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/triangle_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/triangle_curve_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/triangle_curve_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/triangle_soft_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/triangle_soft_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/wave3_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Basics/wave3_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Bubbles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Bubbles/bubble_half_clear_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Bubbles/bubble_half_clear_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Bubbles/bubble_half_thick_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Bubbles/bubble_half_thick_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Bubbles/bubble_round2_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Bubbles/bubble_round2_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Bubbles/bubble_round3_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Bubbles/bubble_round3_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Bubbles/bubble_soap_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Bubbles/bubble_soap_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Cards.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Cards/cardglow06_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Cards/cardglow06_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Cards/cardglow07_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Cards/cardglow07_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Decals.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Decals/decal_atlas_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Decals/decal_atlas_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Decals/decal_gibs_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Decals/decal_gibs_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Decals/decal_scorch_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Decals/decal_scorch_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_angry.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_angry.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_bigsmile.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_bigsmile.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_clenchteeth.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_clenchteeth.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_clenchteeth2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_clenchteeth2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cool.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cool.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cry.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cry.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cute.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_cute.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_derp.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_derp.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_disappoint.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_disappoint.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_drool.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_drool.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_happy.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_happy.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_heart.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_heart.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_kiss.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_kiss.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_laughcry.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_laughcry.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_laughsweatdrop.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_laughsweatdrop.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_poop.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_poop.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sad.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sad.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_shocked.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_shocked.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick3.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_sick3.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_silly.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_silly.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_tearyeyes.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 1/em_tearyeyes.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_OwO.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_OwO.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_OwOEyebrow.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_OwOEyebrow.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_UwU.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_UwU.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_XD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_XD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_angryscream.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_angryscream.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_blush.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_blush.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_crazy.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_crazy.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_cute.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_cute.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_dead.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_dead.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_deadtired.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_deadtired.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_derpgasp.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_derpgasp.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_evil.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_evil.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_expressionless.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_expressionless.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_injured.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_injured.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_kissyface.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_kissyface.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_mad.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_mad.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_nauseous.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_nauseous.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_pleading.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_pleading.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sadcry.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sadcry.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_scared.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_scared.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillyhappy.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillyhappy.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillysmile.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillysmile.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillywink.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sillywink.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sinister.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sinister.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sleep.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_sleep.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_starstruck.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_starstruck.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_thumbsdown.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_thumbsdown.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_thumbsup.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_thumbsup.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_yawn.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/Part 2/em_yawn.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/em_text_ah_zz.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/em_text_ah_zz.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/em_text_haha.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Emojis/em_text_haha.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Explosions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Explosions/explosion_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Explosions/explosion_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Explosions/explosion_spritesheet_3x3_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Explosions/explosion_spritesheet_3x3_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Explosions/nova_3x3_spritesheet_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Explosions/nova_3x3_spritesheet_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Explosions/nova_6x3_spritesheet_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Explosions/nova_6x3_spritesheet_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/candle_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/candle_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/candle_blurry_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/candle_blurry_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/candle_soft2_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/candle_soft2_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/candle_soft_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/candle_soft_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/fire_ground_3x3_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/fire_ground_3x3_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/fire_soft_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/fire_soft_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/fire_soft_blank_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/fire_soft_blank_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/fire_soft_blank_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/fire_soft_blank_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/fire_soft_spiky_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Fire/fire_soft_spiky_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Hearts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Hearts/heart2_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Hearts/heart2_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Hearts/heart2broken_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Hearts/heart2broken_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Hearts/heart2broken_blue_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Hearts/heart2broken_blue_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Hearts/heart_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Hearts/heart_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Lightning.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Lightning/lightning1_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Lightning/lightning1_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Lightning/lightning2_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Lightning/lightning2_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Lightning/lightning_spritesheet_3x1_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Lightning/lightning_spritesheet_3x1_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Lightning/lightning_spritesheet_3x3_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Lightning/lightning_spritesheet_3x3_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/splat01_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/splat01_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/splat01_animated_3x3_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/splat01_animated_3x3_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/splat02_animated_3x3_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/splat02_animated_3x3_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/splat03_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/splat03_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/water_3x3.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/water_3x3.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/water_soft_3x3.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Liquid/water_soft_3x3.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/aura_slam_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/aura_slam_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/aura_soft01_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/aura_soft01_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/aura_vertical_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/aura_vertical_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/magic_blast_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/magic_blast_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/magic_line_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/magic_line_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/magic_orb2_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/magic_orb2_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/magic_orb_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/magic_orb_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/magic_runecircle_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/magic_runecircle_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/shield_magic_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Magic/shield_magic_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_circular_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_circular_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_glow_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_glow_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_glow_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_glow_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_ring_spiky_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_ring_spiky_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_ring_twisty_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_ring_twisty_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_soft_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_soft_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_stripes_blue_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_stripes_blue_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_stripes_green_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_stripes_green_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_stripes_purple_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_stripes_purple_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_stripes_red_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_stripes_red_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_stripes_yellow_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Portals/portal_stripes_yellow_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Skulls.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Skulls/skull2_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Skulls/skull2_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Skulls/skull3_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Skulls/skull3_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Skulls/skull4_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Skulls/skull4_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Skulls/skull_evil_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Skulls/skull_evil_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Skulls/skull_love_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Skulls/skull_love_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Stars.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Stars/star_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Stars/star_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Stars/star_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Stars/star_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Stars/star_outline_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Stars/star_outline_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Stars/star_outlined_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Stars/star_outlined_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Stars/star_outlined_colored_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Stars/star_outlined_colored_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash01_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash01_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash01_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash01_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash02_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash02_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash02_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash02_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash03_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash03_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash03_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash03_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash_circle01_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash_circle01_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash_circle01_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash_circle01_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash_circle02_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Sword/slash_circle02_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/crack.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/crack.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/flash_white.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/flash_white.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/ka-pow.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/ka-pow.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/numbers_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/numbers_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/pow.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/pow.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/sharp_blue.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/sharp_blue.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/sharp_red.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/sharp_red.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/sharp_white.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/sharp_white.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/sharp_yellow.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/sharp_yellow.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/smack.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/smack.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/zzzap.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Text/zzzap.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/aura_punch_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/aura_punch_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/coins_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/coins_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/confetti_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/confetti_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/evil_spirit2_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/evil_spirit2_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/evil_spirit3_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/evil_spirit3_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/evil_spirit_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/evil_spirit_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/feather_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/feather_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/grab1_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/grab1_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/grab2_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/grab2_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/healing_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/healing_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/ice_spikes_ADD.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/ice_spikes_ADD.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/leaf_3x3_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/leaf_3x3_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/moneybills_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/moneybills_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/notes_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/notes_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/snowflake_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/snowflake_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/talkbubble_4x4_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/talkbubble_4x4_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/talkbubble_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/talkbubble_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/wave_AB.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Materials/Misc/Unsorted/wave_AB.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_AuraVertical.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_AuraVertical.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_AuraVerticalCentered.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_AuraVerticalCentered.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_CirclePlane.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_CirclePlane.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_CirclePlane2.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_CirclePlane2.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_CirclePlaneHalf.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_CirclePlaneHalf.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_MagicWall.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_MagicWall.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_Shield.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/ETFX_Shield.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/Materials/Material #30.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/Materials/Material #30.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/Materials/No Name.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/Materials/No Name.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/Materials/sphereshield.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/Materials/sphereshield.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/Materials/verticalglow02.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/Materials/verticalglow02.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/Materials/verticalgradient2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/Materials/verticalgradient2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/aura_flat.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/aura_flat.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/aura_inward.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/aura_inward.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/aura_straight.FBX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Models/aura_straight.FBX.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Scripts/ETFXLightFade.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Scripts/ETFXLightFade.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Scripts/ETFXPitchRandomizer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Scripts/ETFXPitchRandomizer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Scripts/ETFXRotation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Scripts/ETFXRotation.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/OwO.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/OwO.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/OwOEyebrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/OwOEyebrow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/UwU.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/UwU.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/XD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/XD.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/angry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/angry.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/angryscream.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/angryscream.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/bigsmile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/bigsmile.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/blush.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/blush.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/clenchteeth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/clenchteeth.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/clenchteeth2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/clenchteeth2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/cool.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/cool.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/crazy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/crazy.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/cry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/cry.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/cute.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/cute.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/dead.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/dead.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/deadtired.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/deadtired.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/derp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/derp.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/derpgasp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/derpgasp.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/disappoint.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/disappoint.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/disappoint2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/disappoint2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/drool.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/drool.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/evil.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/evil.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/expressionless.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/expressionless.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/happy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/happy.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/heart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/heart.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/injured.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/injured.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/kiss.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/kiss.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/kissyface.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/kissyface.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/laugh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/laugh.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/laughcry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/laughcry.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/laughsweatdrop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/laughsweatdrop.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/mad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/mad.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/nauseous.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/nauseous.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/pleading.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/pleading.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/poop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/poop.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sad.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sadcry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sadcry.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/scared.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/scared.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/shocked.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/shocked.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sick.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sick.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sick2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sick2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sick3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sick3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/silly.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/silly.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sillyhappy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sillyhappy.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sillysmile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sillysmile.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sillywink.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sillywink.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sinister.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sinister.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sleep.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/sleep.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/starstruck.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/starstruck.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/tearyeyes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/tearyeyes.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/thumbsdown.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/thumbsdown.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/thumbsup.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/thumbsup.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/yawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Emojis/yawn.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/blam.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/blam.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/boom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/boom.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/clunk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/clunk.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/crack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/crack.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/crash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/crash.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/crit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/crit.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/critical.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/critical.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/flash_white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/flash_white.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/hit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/hit.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/ka-pow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/ka-pow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/kick.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/kick.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/ko.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/ko.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/poof.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/poof.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/pow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/pow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/punch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/punch.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/sharp_blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/sharp_blue.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/sharp_green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/sharp_green.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/sharp_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/sharp_red.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/sharp_white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/sharp_white.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/sharp_yellow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/sharp_yellow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/smack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/smack.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/whammm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/whammm.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/zzzap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/Text/zzzap.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/aura_punch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/aura_punch.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/aura_soft01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/aura_soft01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/bubble_half_clear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/bubble_half_clear.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/bubble_half_thick.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/bubble_half_thick.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/bubble_round2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/bubble_round2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/bubble_round3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/bubble_round3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/bubble_soap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/bubble_soap.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/candle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/candle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/candle_blurry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/candle_blurry.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/candle_soft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/candle_soft.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/candle_soft2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/candle_soft2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cardglow06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cardglow06.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cardglow07.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cardglow07.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/circle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/circle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/circle_blurred.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/circle_blurred.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/circle_outlined.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/circle_outlined.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/circle_soft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/circle_soft.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/circlestretchy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/circlestretchy.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_hard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_hard.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_hard_softshadow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_hard_softshadow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_hardshadow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_hardshadow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_outlined.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_outlined.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_soft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_soft.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_soft_translucent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_2x2_soft_translucent.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_magic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_magic.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_magic_fluffy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_magic_fluffy.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_magic_softshadow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/cloud_magic_softshadow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/coins.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/coins.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/coins_outline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/coins_outline.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/confetti.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/confetti.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/confetti_outlined.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/confetti_outlined.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/decal_atlas.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/decal_atlas.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/decal_gibs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/decal_gibs.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/decal_scorch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/decal_scorch.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/evil_spirit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/evil_spirit.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/evil_spirit2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/evil_spirit2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/evil_spirit3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/evil_spirit3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/explosion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/explosion.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/explosion_spritesheet_3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/explosion_spritesheet_3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/explosion_spritesheet_outlined_3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/explosion_spritesheet_outlined_3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/explosion_spritesheet_softshadow_3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/explosion_spritesheet_softshadow_3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/feather.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/feather.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/feather_outlined.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/feather_outlined.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_ground3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_ground3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_ground_soft3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_ground_soft3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_ground_softer3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_ground_softer3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_soft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_soft.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_soft_blank.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_soft_blank.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_soft_spiky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/fire_soft_spiky.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow5.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/glow6.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/grab1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/grab1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/grab2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/grab2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_circle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_circle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_edges.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_edges.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_horizontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_horizontal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_vertical.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_vertical.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_vertical2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_vertical2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_vertical_spiky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/gradient_vertical_spiky.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/healing.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/healing.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/heart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/heart.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/heart2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/heart2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/heart2broken.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/heart2broken.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/heart2broken_blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/heart2broken_blue.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/ice_spikes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/ice_spikes.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/leaf_3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/leaf_3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightning1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightning1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightning2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightning2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightning_improved_3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightning_improved_3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightning_spritesheet_3x1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightning_spritesheet_3x1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightning_spritesheet_3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightning_spritesheet_3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightray1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightray1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightray2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightray2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightray3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/lightray3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/line_sharp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/line_sharp.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_blast.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_blast.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_line.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_line.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_line_sharp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_line_sharp.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_orb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_orb.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_orb2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_orb2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_runecircle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/magic_runecircle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/moneybills.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/moneybills.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/moneybillsv2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/moneybillsv2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/notes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/notes.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/nova_3x3_spritesheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/nova_3x3_spritesheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/nova_6x3_spritesheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/nova_6x3_spritesheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/numbers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/numbers.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_circular.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_circular.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_glow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_glow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_ring_spiky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_ring_spiky.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_ring_twisty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_ring_twisty.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_soft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_soft.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_stripes_blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_stripes_blue.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_stripes_green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_stripes_green.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_stripes_purple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_stripes_purple.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_stripes_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_stripes_red.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_stripes_yellow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/portal_stripes_yellow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/ring.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/ring.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/shield_magic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/shield_magic.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull5.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull_evil.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull_evil.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull_love.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/skull_love.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash02.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash03.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash_circle01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash_circle01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash_circle01_soft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash_circle01_soft.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash_circle02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/slash_circle02.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/snowflake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/snowflake.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/sparkle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/sparkle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/sparkle2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/sparkle2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/splat01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/splat01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/splat01_animated_3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/splat01_animated_3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/splat02_animated_3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/splat02_animated_3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/splat03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/splat03.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/star.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/star.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/star_outline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/star_outline.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/star_outlined.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/star_outlined.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/star_outlined_colored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/star_outlined_colored.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/talkbubble.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/talkbubble.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/talkbubble_4x4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/talkbubble_4x4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/text_ah_zz.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/text_ah_zz.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/text_haha.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/text_haha.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/triangle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/triangle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/triangle_curve.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/triangle_curve.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/triangle_soft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/triangle_soft.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/water_3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/water_3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/water_soft_3x3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/water_soft_3x3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/wave.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/wave.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/wave3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/wave3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/wave4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/Textures/wave4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/击中.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/击中/物理击中.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/击中/物理击中/物理击中.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/击中/物理击中/物理击中.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/爆炸.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/爆炸/击中爆炸.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/爆炸/击中爆炸/大.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/爆炸/击中爆炸/大.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/爆炸/击中爆炸/大（蓝色）.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/爆炸/击中爆炸/大（蓝色）.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/爆炸/击中爆炸/小.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/爆炸/击中爆炸/小.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/爆炸/击中爆炸/小（蓝色）.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/Epic Toon FX/动画/爆炸/击中爆炸/小（蓝色）.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/元素反应动画/超导动画.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/素材/元素反应动画/超导动画.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/素材/元素反应动画/超导动画.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/素材/元素反应动画/超导动画.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/素材/元素反应动画/感电动画.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/素材/元素反应动画/感电动画.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/31/317ebbf69fcec15a687fd0bbb67707e9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/40/40c1db67705307f7a56803d7b2d3f20e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/50/505edd8e44b27f91b6b7ca787719171c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/9b/9bca8b9f3a3d8021a6e5524b6aae4bfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/cd/cdbb322ae62610d56e3ca7e65d980608" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/00/0020277e8b718094b1a63f9a11ef24eb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/04/046925d4423f91a8c81b5dbf5cc39c70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/04/048ebad15e9f12535f9f3ae463ffd84e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/08/08b10bc0ba12b9480ed94f1b7c3b4368" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/08/08ea2673bb1877e95a246c3413d10bfa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/09/0934b59c369ecb4673c78aa42f5c2ca4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/09/09d96d1c3da77922c218727b43354942" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/0b/0bb8de7d998f8032aa2bd08ef6e21991" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/0d/0dd9ce2b5714960e41243f062b054dde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/0e/0eb974729737d332dd7b3e7ccbd2c9e3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/0e/0ebeadc5d00c5be92c09d8b2e910f569" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/10/107a166ae9f76f52cded685921f38e3f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/11/1154e967f301c71a67f6b63280c0432a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/11/11c4206ba96bbff2d569302074287580" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/13/139fa1c42b21c180943e704a9e3e2777" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/13/13ae318fad09966bd53c69b8a49733a2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/13/13ba00f0c2c39cc9aac4e51ef762e260" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/14/1410d669a8bb21781f2d365ecdad1384" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/14/145ad235fc90599d32878510613e544f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/16/1620697723c49bd11a6791cf8c26f12a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/18/18afc40e1654bb08aad71a3e97ee6b2d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/19/195957232da17672bccf47c4dda088e7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/1a/1a14717843230224fe43ba4f7f5b6d04" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/1e/1e974fed57770549097089b0ffdd6799" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/20/205e8caeae0c879cc3becd0ed2e23d92" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/20/2091745c10012cc8074aeb2202da3394" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/20/2094a0ccc91b49673a829f92431aef3a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/21/21b99f6427b0b59ac19c6691ddaaa04d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/22/22b444ded8bfa5a1577e5af11077b2e9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/24/24720088c0906285341888c232addce3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/26/26464e83fd3b30e92fa43a559b8b02a3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/26/2698d484d9ec1df763be34ef0db6edb4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/26/26d950e94b0cd8ef09c55270c850ca28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/28/283a978d35dc516e8310907bd1ee92bc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/28/2876e924c900bf88700d972d5ac616f4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/2c/2cd5089041930afae82f951c6e837cf7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/31/31166c571bf0a671c3f3bb15358daf3a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/31/31f5347ed0062776689a9c077597f582" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/37/37e53372bede59ebbb11489216441369" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/38/386e14a79b4aef846890954cd73e0745" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3a/3a7e31e88e26425b49021d6df8c44cd6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3c/3c3202e209bd6e9c8fa3f861ad1f3ce6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3d/3def11f06582614a401710b535f7b947" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3e/3e97b3b41766084e6ca4d56345139ad0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3f/3f1f7f3b712dde8062232a6f4c48945c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3f/3f4e8c059a0b3547213d86bf0f81cc3a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3f/3f979946bc551b33a91f9d80aa00bdd0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3f/3fe282241238e5ab26841e6efb38d2cd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/43/43a991f9f6251b7e3bf1bc5509388b51" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/45/452637c39023a33569fca957e0277820" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/45/45e8a0fd7797e68935874d53411da213" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/47/471e266f7e5a5d7ea1057ba1d6f1a76a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/47/473bdf7267092111fa1385540c25b30d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/47/47c0f5a1176b370d1a0059ec98f92938" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/48/48d6da68a69207f2fe879940f89e46dd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/49/496dc7b65648c17e0f58245423792e36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/4d/4d31decef45801e84a56f112799a166d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/4d/4d45f808080fbafe115990c494931ac0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/50/50cac6056f984cb3bfa94b3b5c638962" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/51/514ac3ec2785740022675de8d24e7243" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/52/520a0b69a3261ca17423352f6a2e255d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/52/52bd9ce25c977a2b84ffdc06301f0925" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/53/53db3d5976d7682c83a4566965926659" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/55/55c71c3c26e542e1de5b28e258d55f37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/56/569b0f08dec02945f16a6224b9b2a1b7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/58/58b207c64f45f31c801867108ac7e815" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/59/5981b464556f64d8cbaf7182a7ba54c9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/59/5997f3d26956b25ec98a2deb71ffe259" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/5a/5a72f68abaa1265006b2f7c113e90715" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/5b/5bbf4f7637b6f2db04f16aee7876a266" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/5b/5be097c521915b8c5c9aaff96d19ed4c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/5e/5eef7c583468ba155c5d94d0c5ef1763" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/60/603af8005fc88dd07bc64a3f7661ec95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/61/6173ba2ed184ee9b03f521b068224d85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/64/6436fe5a611776263fdb4df8720ab039" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/67/676d3f2b90b45128fd75eaededf92b12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/68/6805baf3d8e92153de5ba6953fa5e505" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/68/68b2d335dd1a204369f3cc116b3f8014" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/6b/6b4a9e1706385395a1a839092299a079" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/6c/6c3a650acabd7cd4c36861d21cdfdcec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/6d/6d8c5ce657186738bf7b0138ed5febf7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/6d/6dfbe410106fdb6d8384c3fcba515755" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/70/704b9a62cec539b6022df472e98b2478" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/71/71554a5ca618225c4171278c2eef8e7e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/71/71b83f123a48cdd9556b10b8d02654e4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/71/71ea4c3d246632ea8247188c2273f9cb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/72/7265fb81e5b1cf3bab5471713c1a1063" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/75/7543fb0790ad75a1a5c987936e0facd8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/75/75941a02fd5b59d41148e7cf2df72d3e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/76/766673056efe93b8306f942b207d9672" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/7a/7a1386254b59e40ffca3fb41afab5693" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/85/85c9d1f749d9f48f8896e0ad4c169a77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/86/8668336f8df7a6a2d8c7fba5b602a08a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/86/86d7f1e99e1efaed3ab0df8b92e41803" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/87/87012c0da9ad4b439bba9f3453f76f25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/88/88ce8a3b4d9761dba5ec5475a3d3ed84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/88/88d880f44e39afc4e867bf71c00319d3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8a/8a09472db0eff68fd876f8b1a270b2f4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8a/8ae81cd15d7b69dc7a6918fcee099afe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8d/8d7d06f0db172ec1b6f8a9b07be5f718" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8f/8ffd2758dc628f056d44e822fa193584" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/90/90c90a80fb8127383fe1ac72fdddd7ed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/91/9155239db42c7da88679c6477b41dd67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/91/91da8e669874ed75c103b4a16062fb94" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/92/92c334e908eef935b9e2507ecba1862e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/93/93d70e6d34f5174e00d3cf94298370c6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/93/93fce191ebfd6793bfc2be7cdfa8112b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/96/96c6a0497ad287ee16062cd2bd45c35f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/96/96c82f4e717c6df908a6744b070b1c1e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/98/985b564b8e6002072ec66d5f85f721f9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/98/98a275410c7208d79512ff7460b98e11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/99/995852b7ad21ead9d746c83e1dcb7d23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/9c/9cb348d45ec4955953d70fc2e800e744" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/9d/9d53fd768818cda2420f768b4fcfa9ff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a0/a025554cc79aed6d74291cbf2219e074" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a2/a289d29e8ae4a660048efd61476e876f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a5/a535d69d327bcf365bd094ccd39ef46d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a5/a55cd2a6b4ebb11fe18ccf964ec4ee85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a8/a820763dd05fa0be0128235e8c26faeb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/aa/aad26fef5c44dc8d40246a9d6a9c6a85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ab/abc27e2751ab46212c1ea14892ac965a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ab/abd8059109d7958289c4936d9338d0cb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ac/ac2464fab0339402050e5d7faf6e0066" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ac/ac948b4eaef512265659e216306d7d81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ad/ad8c1374c122295a6d36b2784822a239" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ae/ae0d9df9b1ccf04cdf8904177b2a122d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/b0/b0a8cebb783c6014e1b0b054566b3870" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/b8/b8255e0ceb148ca384c3961b09c05097" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/bb/bb7c92a468a921e3917b7c82c88c5c0f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/bc/bccf170e91c57214e37e09bcd5589c32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/bd/bd89352b42667be83d34ce45ab874b7f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/be/be7238b183134a89f0a26ffcef90eb17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c0/c0e7e9c42af7c5a0720c8457d6100340" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c2/c2d001283740698623acab8cf2c6177c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c3/c360789418bfb16a81e89ad140920a8a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c4/c47da21e18370ce3cc141e2a01b5941f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c5/c515b8e9f4acc5f22b2d57acacae4901" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c5/c53af387bc764abd7788b2d69b983372" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c6/c629c7253a14bc95508995c92fa03450" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c6/c644c909472a5072699c013ade0d596a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c8/c812de5f73b925fe08c0b98e74632d46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c8/c87e8d9f65d4c943fbc8402411e37784" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/c9/c9c255788d17b5c16709557e1f42f2a8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d0/d0ab485b7b31a4026c94f3452093fb84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d2/d2b0c8a32e1274421d7d8bc66676f43e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d3/d304fff5dab8b19275f9972487113470" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d5/d55a8c49dc163dfb0b0d5ffb916fe40d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/d9/d9d8cb0056feda98b9287de85fb5bb2f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/da/da55108837e7792c2813de55ab6c1d56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/da/dacae071fd90cd41cfd3c9f88429b521" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/db/db54438a447c19c0365979f0ef914ae0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/de/de13d02466592042c793754e3f203a0c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/de/de5c3122aeac5696cbd444e22f1cbc65" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/de/dea2d31607d7b10f4fb458ba0c0364c1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/de/debe0669b5f7619bbc70775639ec3106" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/de/defb0951760856d4253b218f401bb64b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e2/e258fe166e5a47f2a16384bf967387f4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e4/e4a63bbb21f20cc0ef1516ec52bd6118" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e5/e5094566f26adff8f0ef1f64feb475df" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e5/e59566d1f8b7d517b216f47f24ba163c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e6/e658b7f6f7bc00f5f80401129dab83c6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e7/e79f3200f2b95fdef15cee65773f53d0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e7/e7fd33584235263584a3d4b3353e04a1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/eb/ebb31bd3a2d5be9d00781cc13f3840bc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ed/edfd8cf30c9eeea1cb1f05592d8fd26c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ef/eff545408f7b112fbf6c7dc34b273193" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f0/f0ae66634521c79287f4ea8c5e77f2f8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f1/f1bdc149bfe33239657a3224ea7d4d4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f3/f3f4961db4d28d62373faf40631fa957" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f4/f4c6265537587b9937c38f4307842a20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f5/f5319f0427162498c3e08920b2c33bad" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f5/f536c2eb8d743c6ee85a558bbf9daa35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f7/f780fd6e68df007b1b1a00c51f77c8a7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f8/f87ba347ee3612d81b4d8672dc4865ef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f9/f9f96dccaa513e3fa4cb63e1b4372e62" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/fa/fa534aafb88b19996d7a74ac869a9ea2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/fa/fa9f1865296a37e94ec3a3b8af12aa3d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/fb/fb4624e2b4cf8123536fb7f90e84fde9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/fb/fbed5792812ab361897fcea3513a6fa9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/fd/fde66742ba393c647d051eca060bdb67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ff/ff5736c5a8c08bf420e683418cf0edcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ff/ff75a28fa2105de60171ea5d329a6ab2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ff/ffb766345c4dc9b540ed487e184f628a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/4d/4d2a36d9faf65734f0bbefb3ee623532.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/4d/4d2a36d9faf65734f0bbefb3ee623532.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/14/14d4319691127cf40beab95f1403bd46.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/14/14d4319691127cf40beab95f1403bd46.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/5d/5dce5cca972f1c4f351113fa8e5e72a8.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/5d/5dce5cca972f1c4f351113fa8e5e72a8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/6a/6a72e2823553bcfb53c041f75cf386fb.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/6a/6a72e2823553bcfb53c041f75cf386fb.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/cb/cb519d47b587f77c48fd851d9214e6fd.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/cb/cb519d47b587f77c48fd851d9214e6fd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/02/02ed682f28efe9806172c9c4e0bd39a5.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/02/02ed682f28efe9806172c9c4e0bd39a5.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
@@ -941,7 +236,10 @@
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe6.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe7.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe8.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -959,34 +257,34 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/拖动/DragSlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/世界UI/LifeSliderController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/register/mapRegister.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/EnemyWaveController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/框架代码/gameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/素材/地图方块/门/redDoorButtonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/operDataEnum.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/框架代码/基础战斗/元素反应/ReactionController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/框架代码/基础战斗/动画函数/OperAnimEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/UI辅助/gradualChange.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/干员与敌人/敌人/感染生物/猎狗/hound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/elitismPutOn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/UISprite/StoreHouse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/InitManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIFunc.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/框架代码/静态函数/Interpreter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/框架代码/基础战斗/动画函数/EnemyAnimEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/世界UI/WorldCanvas.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/testController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/基础战斗/元素反应/ReactionTransfer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIElements.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/拖动/DragSlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/register/mapRegister.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/EnemyWaveController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/gameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/基础战斗/元素反应/ReactionController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/基础战斗/动画函数/OperAnimEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/UI相关/UI辅助/gradualChange.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/预制体/OperUI/伤害数字/ColorfulDamageNum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/静态函数/Interpreter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/框架代码/基础战斗/动画函数/EnemyAnimEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/框架代码/关卡控制/register/blueDoorRegister.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/框架代码/静态函数/BaseFunc.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/poolElement.cs" />
       <option value="$PROJECT_DIR$/Assets/预制体/DragSlot/dirDrag.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/MainCanvasElements.cs" />
@@ -999,7 +297,6 @@
       <option value="$PROJECT_DIR$/Assets/框架代码/scriOb/enemyInfo.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/抛物线/parabola.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/运动轨迹/panMove.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/运动轨迹/parabola.cs" />
       <option value="$PROJECT_DIR$/Assets/素材/地图方块/门/redDoorUI.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/EnemyWaveController.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/ManagerBase.cs" />
@@ -1020,22 +317,25 @@
       <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/动画函数/OperAnimEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/索敌/SearchAndGive.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/元素反应/ReactionTransfer.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/世界UI/ElementHeadersController.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/拖动/DragSlot.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/InitManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/PropertyCore.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/关卡控制/register/blueDoorRegister.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/UISprite/StoreHouse.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/BattleCore.cs" />
-      <option value="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/达达利亚/Tartaglia.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/OperatorCore.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/ElementCore.cs" />
       <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/EnemyCore.cs" />
-      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/元素反应/ReactionController.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/世界UI/ElementHeadersController.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/OperUI/OperUIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/世界UI/WorldCanvas.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/对象池/PoolManager.cs" />
       <option value="$PROJECT_DIR$/Assets/干员与敌人/敌人/感染生物/猎狗/hound.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/PropertyCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/预制体/OperUI/伤害数字/ColorfulDamageNum.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/ElementCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/UI相关/UISprite/StoreHouse.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/元素反应/ReactionController.cs" />
+      <option value="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/达达利亚/Tartaglia.cs" />
       <option value="$PROJECT_DIR$/Assets/干员与敌人/干员/干员模型/克洛丝/Kroos.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/基础战斗/核心/BattleCore.cs" />
+      <option value="$PROJECT_DIR$/Assets/框架代码/辅助脚本/运动轨迹/parabola.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2CLJ4eYzcxbZZMpkEZvMiXfmI5c" />
@@ -1128,6 +428,7 @@
       <workItem from="1663556399602" duration="7691000" />
       <workItem from="1663575868727" duration="10281000" />
       <workItem from="1663643379292" duration="8971000" />
+      <workItem from="1663726509556" duration="12390000" />
     </task>
     <servers />
   </component>

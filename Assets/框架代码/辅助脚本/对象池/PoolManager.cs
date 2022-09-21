@@ -12,8 +12,8 @@ public class PoolManager : MonoBehaviour
     public static void RecycleObj(GameObject obj)
     {
         obj.SetActive(false);
-        obj.transform.parent = objPrt[obj.name].transform;
-        
+        obj.transform.SetParent(objPrt[obj.name].transform);
+
         if (pool.ContainsKey(obj.name))
         {
             if (pool[obj.name].Count < maxCount)
@@ -44,7 +44,7 @@ public class PoolManager : MonoBehaviour
                 result = pool[perfab.name][0];
                 result.SetActive(true);
                 pool[perfab.name].Remove(result);
-                result.transform.parent = objPrt[perfab.name].transform;
+                result.transform.SetParent(objPrt[perfab.name].transform);
                 return result;
             }
         }
@@ -53,7 +53,7 @@ public class PoolManager : MonoBehaviour
         result.name = perfab.name;
         RecycleObj(result);
         GetObj(result);
-        result.transform.parent = objPrt[perfab.name].transform;
+        result.transform.SetParent(objPrt[perfab.name].transform);
         return result;
     }
     

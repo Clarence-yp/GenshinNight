@@ -13,6 +13,7 @@ using Slider = UnityEngine.UI.Slider;
 public class OperUIManager : MonoBehaviour
 {
     public static OperUIManager instance;
+    public static Canvas WorldCanvas;
 
     public static OperatorCore showingOper;     // 正在展示的干员
     public static bool showing;                 // 正在展示

@@ -12,7 +12,7 @@ public class BattleCore : ElementCore
     [HideInInspector] public float tarPriority = 0;         // 在别的BattleCore队列中排序的参照，由外部维护
     public bool dieNow = false;     //调试变量，立即杀死自身
     
-    public float norAtkInterval = 0;         // 到下一次攻击还需要的时间
+    [HideInInspector] public float norAtkInterval = 0;         // 到下一次攻击还需要的时间
     // [HideInInspector] public bool nxtAtkImmediately = false;      // 下一次退出攻击状态时，立刻清空冷却并进入攻击状态
     [HideInInspector] public bool fighting;
     

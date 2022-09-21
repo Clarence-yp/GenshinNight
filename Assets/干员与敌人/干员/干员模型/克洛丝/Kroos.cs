@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Kroos : OperatorCore
 {
+    [Header("克洛丝的普攻箭")] 
+    public GameObject norArrow;
+    private BattleCore tarBattleCore;
+    
     private float[] atkIncreasePercentage = {0.1f, 0.15f, 0.2f, 0.3f, 0.35f, 0.4f, 0.5f};
 
     protected override void Update_OperatorCore_Down()
@@ -33,10 +37,22 @@ public class Kroos : OperatorCore
     {
         
     }
-
+    
+    
     public override void OnAttack()
     {
-        ElementSlot elementSlot = new ElementSlot(ElementType.Electro, 2f);
+        var arrow = PoolManager.GetObj(norArrow);
+        parabola par = arrow.GetComponent<parabola>();
+
+        tarBattleCore = target;
+        Vector3 pos = transform.position;
+        pos += new Vector3(ac_.dirRight ? 0.6f : -0.6f, 0.5f, 0.35f);
+        par.Init(pos, tarBattleCore, 12f, NorAttack);
+    }
+
+    private void NorAttack()
+    {
+        ElementSlot elementSlot = new ElementSlot(ElementType.Pyro, 2f);
         Battle(target, atk_.val, DamageMode.Physical, elementSlot, defaultElementTimer);
     }
     

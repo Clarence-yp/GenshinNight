@@ -684,6 +684,7 @@
             <e p="世界UI" t="Include">
               <e p="ElementHeadersController.cs" t="Include" />
               <e p="LifeSliderController.cs" t="Include" />
+              <e p="WorldCanvas.cs" t="Include" />
             </e>
           </e>
           <e p="关卡控制" t="Include">
@@ -750,6 +751,9 @@
           <e p="OperUI" t="Include">
             <e p="DragSlot" t="Include">
               <e p="dirDrag.cs" t="Include" />
+            </e>
+            <e p="伤害数字" t="Include">
+              <e p="ColorfulDamageNum.cs" t="Include" />
             </e>
           </e>
         </e>

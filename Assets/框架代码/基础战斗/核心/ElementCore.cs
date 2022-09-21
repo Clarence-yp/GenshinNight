@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ElementCore : PropertyCore
 {
@@ -106,28 +107,46 @@ public class ElementCore : PropertyCore
 
     /// <summary>  
     /// 受到一次伤害，并处理附着元素
+    /// isBig==true，则展示大伤害
+    /// haveText==true，isBig==false，则展示小伤害
+    /// haveText==false，isBig==false，不展示伤害
     /// </summary>
     public void GetDamage(ElementCore attacker, float damage, DamageMode mode,
-        ElementSlot elementSlot, bool attached)
+        ElementSlot elementSlot, bool attached, bool haveText = false, bool isBig = false)
     {
         if (elementSlot.eleType == ElementType.None)
         {
             GetDamageProperty(damage, mode);
-            return;
         }
-
-        if (attached)       // 受到元素附着，将发生反应
+        else
         {
-            AttachedElement(attacker, elementSlot, ref damage);
+            if (attached)       // 受到元素附着，将发生反应
+            {
+                AttachedElement(attacker, elementSlot, ref damage, ref isBig);
+            }
+
+            // 元素抗性
+            damage *= (1 - elementResistance.val);
+            GetDamageProperty(damage, mode);
         }
 
-        // 元素抗性
-        damage *= (1 - elementResistance.val);
-        GetDamageProperty(damage, mode);
+        // 显示伤害数字
+        if (!haveText && !isBig) return;
+        GameObject damageText;
+        if (isBig) damageText = PoolManager.GetObj(StoreHouse.instance.bigDamageText);
+        else damageText = PoolManager.GetObj(StoreHouse.instance.smallDamageText);
+        Text text = damageText.GetComponent<Text>();
+        damageText.transform.SetParent(OperUIManager.WorldCanvas.transform);
+
+        text.text = damage.ToString("f0");
+        text.color = StoreHouse.GetElementDamageColor(elementSlot.eleType);
+        Vector3 center = transform.position;
+        text.transform.position = center;
     }
 
 
-    private void AttachedElement(ElementCore attacker, ElementSlot element2, ref float damage)           
+    private void AttachedElement(ElementCore attacker, ElementSlot element2,
+        ref float damage, ref bool isBig)           
     {// 受到元素附着，返回值为经过元素反应后的伤害值（蒸发融化等）
         
         // 如果身上没有任何元素，直接附着即可
@@ -153,7 +172,7 @@ public class ElementCore : PropertyCore
 
             // 进行元素反应，吃后手攻击者的精通
             reactionController.Reaction(attacker, element1, element2,
-                attacker.elementMastery.val, ref damage);
+                attacker.elementMastery.val, ref damage, ref isBig);
 
             if (element1.eleCount <= 0)         // 如果附着元素已完全消失，移除该元素
             {
