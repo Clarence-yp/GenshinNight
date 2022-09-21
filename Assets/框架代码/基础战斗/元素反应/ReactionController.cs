@@ -355,7 +355,7 @@ public class ReactionController
             foreach (var oc_ in tars)
             {// 对范围内所有干员进行攻击和元素附着
                 oc_.GetDamage(elc_, SwirlDamage(mastery), DamageMode.Magic
-                    , swirlElement, true, true);
+                    , swirlElement, true, true, false, true);
             }
         }
         else if(elc_.transform.CompareTag("enemy"))
@@ -364,7 +364,7 @@ public class ReactionController
             foreach (var ec_ in tars)
             {// 对范围内的所有敌人进行攻击和元素附着
                 ec_.GetDamage(elc_, SwirlDamage(mastery), DamageMode.Magic
-                    , swirlElement, true, true);
+                    , swirlElement, true, true, false, true);
             }
         }
         

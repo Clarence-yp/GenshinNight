@@ -110,9 +110,10 @@ public class ElementCore : PropertyCore
     /// isBig==true，则展示大伤害
     /// haveText==true，isBig==false，则展示小伤害
     /// haveText==false，isBig==false，不展示伤害
+    /// swirl==true，表示为扩散伤害，反应精通为0
     /// </summary>
-    public void GetDamage(ElementCore attacker, float damage, DamageMode mode,
-        ElementSlot elementSlot, bool attached, bool haveText = false, bool isBig = false)
+    public void GetDamage(ElementCore attacker, float damage, DamageMode mode, ElementSlot elementSlot,
+        bool attached, bool haveText = false, bool isBig = false, bool swirl = false)
     {
         if (elementSlot.eleType == ElementType.None)
         {
@@ -122,7 +123,7 @@ public class ElementCore : PropertyCore
         {
             if (attached)       // 受到元素附着，将发生反应
             {
-                AttachedElement(attacker, elementSlot, ref damage, ref isBig);
+                AttachedElement(attacker, elementSlot, ref damage, ref isBig, swirl);
             }
 
             // 元素抗性
@@ -146,7 +147,7 @@ public class ElementCore : PropertyCore
 
 
     private void AttachedElement(ElementCore attacker, ElementSlot element2,
-        ref float damage, ref bool isBig)           
+        ref float damage, ref bool isBig, bool swirl)           
     {// 受到元素附着，返回值为经过元素反应后的伤害值（蒸发融化等）
         
         // 如果身上没有任何元素，直接附着即可
@@ -170,10 +171,18 @@ public class ElementCore : PropertyCore
             var tmp = attachedElement.ElementAt(i);
             ElementSlot element1 = new ElementSlot(tmp.Key, tmp.Value);
 
-            // 进行元素反应，吃后手攻击者的精通
-            reactionController.Reaction(attacker, element1, element2,
-                attacker.elementMastery.val, ref damage, ref isBig);
-
+            // 进行元素反应
+            if (swirl)
+            {// 如果是扩散过来的元素，反应精通为0
+                reactionController.Reaction(attacker, element1, element2, 
+                    0, ref damage, ref isBig);
+            }
+            else
+            {// 吃后手攻击者的精通
+                reactionController.Reaction(attacker, element1, element2,
+                    attacker.elementMastery.val, ref damage, ref isBig);
+            }
+            
             if (element1.eleCount <= 0)         // 如果附着元素已完全消失，移除该元素
             {
                 attachedElement.Remove(element1.eleType);
