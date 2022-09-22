@@ -13,6 +13,9 @@ public class PropertyCore : MonoBehaviour
     public LifeController life_ = new LifeController();
     public SPController sp_ = new SPController();
     
+    // 附着在身上的护盾列表
+    public List<NormalShield> shieldList = new List<NormalShield>();
+    
 
     // 造成伤害增加buff，val值表示百分比增加幅度（不可小于-1）
     private ValueBuffer causeDamInc_ = new ValueBuffer(0);
@@ -53,9 +56,9 @@ public class PropertyCore : MonoBehaviour
     }
 
     /// <summary>  
-    /// 受到一次伤害，计算防御和法抗，并改变life_的值
+    /// 计算受到防御和法抗后的伤害值
     /// </summary>
-    public void GetDamageProperty(float baseDamage, DamageMode mode = DamageMode.Physical)
+    public float GetDamageProperty(float baseDamage, DamageMode mode = DamageMode.Physical)
     {
         float dam = baseDamage;
         dam *= getDamInc_.val < -1 ? 0 : 1 + getDamInc_.val;
@@ -66,8 +69,8 @@ public class PropertyCore : MonoBehaviour
             dam = dam - def_.val < 0 ? 0 : dam - def_.val;
         else if (mode == DamageMode.Magic)
             dam = dam * (1 - (magicDef_.val / 100));
-        
-        life_.GetDamage(dam);
+
+        return dam;
     }
     
     

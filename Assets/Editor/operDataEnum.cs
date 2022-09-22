@@ -62,6 +62,7 @@ public class operDataEnum : Editor
     private SerializedProperty  elementalDamage;
     private SerializedProperty  elementalResistance;
     private SerializedProperty  spRecharge;
+    private SerializedProperty  shieldStrength;
     private SerializedProperty  Description;
     private SerializedProperty  talent1;
     private SerializedProperty  talent2;
@@ -168,6 +169,7 @@ public class operDataEnum : Editor
         elementalDamage = od_.FindProperty("elementalDamage");
         elementalResistance = od_.FindProperty("elementalResistance");
         spRecharge = od_.FindProperty("spRecharge");
+        shieldStrength = od_.FindProperty("shieldStrength");
         Description = od_.FindProperty("Description");
         talent1 = od_.FindProperty("talent1");
         talent2 = od_.FindProperty("talent2");
@@ -279,6 +281,7 @@ public class operDataEnum : Editor
             EditorGUILayout.PropertyField(elementalDamage);
             EditorGUILayout.PropertyField(elementalResistance);
             EditorGUILayout.PropertyField(spRecharge);
+            EditorGUILayout.PropertyField(shieldStrength);    
             EditorGUILayout.PropertyField(Description);
             EditorGUILayout.PropertyField(talent1);
             EditorGUILayout.PropertyField(talent2);

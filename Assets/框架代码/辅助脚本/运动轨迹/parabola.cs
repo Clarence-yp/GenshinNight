@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class parabola : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class parabola : MonoBehaviour
     private const float min_distance = 0.15f;
     private float distance;
     private Vector3 tarPos;
+    private Vector3 preTarPos;
     private float py;
 
     public void Init(Vector3 pos, BattleCore targetBattleCore, float speed_ = 5, Action reach = null)
@@ -36,8 +38,16 @@ public class parabola : MonoBehaviour
     void Update()
     {
         if (!isNull)
+        {
+            preTarPos = tarPos;
             tarPos = tarTrans.position;
-        
+            if (Vector3.Distance(preTarPos, tarPos) > 2)
+            {
+                isNull = true;
+                tarPos = preTarPos;
+            }
+        }
+
         // 朝向目标, 以计算运动
         transform.LookAt(tarPos);
         // 根据距离衰减 角度
@@ -59,9 +69,12 @@ public class parabola : MonoBehaviour
 
     private void Arrive()
     {
-        reachFunc?.Invoke();
+        if (!isNull)
+        {
+            reachFunc?.Invoke();
+            tarBattleCore.DieAction -= TarNull;
+        }
         reachFunc = null;
-        tarBattleCore.DieAction -= TarNull;
         PoolManager.RecycleObj(gameObject);
     }
     

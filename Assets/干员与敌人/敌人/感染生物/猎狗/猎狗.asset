@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: "\u730E\u72D7"
   m_EditorClassIdentifier: 
   Name: "\u730E\u72D7"
-  atk: 0
+  atk: 100
   def: 10
   magicDef: 20
-  life: 3000
+  life: 500
   consumeBlock: 1
   minAtkInterval: 1.5
   talentDescription: "\u65E0"

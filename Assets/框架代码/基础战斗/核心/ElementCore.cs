@@ -23,6 +23,7 @@ public class ElementCore : PropertyCore
     public ValueBuffer elementMastery = new ValueBuffer(0);    
     public ValueBuffer elementDamage = new ValueBuffer(1); 
     public ValueBuffer elementResistance = new ValueBuffer(0);
+    public ValueBuffer shieldStrength = new ValueBuffer(0);     // 0.1表示护盾量增加10%
 
     // 反应状态
     [HideInInspector] public bool superConducting;          // 当前是否处于超导状态下
@@ -115,11 +116,7 @@ public class ElementCore : PropertyCore
     public void GetDamage(ElementCore attacker, float damage, DamageMode mode, ElementSlot elementSlot,
         bool attached, bool haveText = false, bool isBig = false, bool swirl = false)
     {
-        if (elementSlot.eleType == ElementType.None)
-        {
-            GetDamageProperty(damage, mode);
-        }
-        else
+        if (elementSlot.eleType != ElementType.None) 
         {
             if (attached)       // 受到元素附着，将发生反应
             {
@@ -128,8 +125,20 @@ public class ElementCore : PropertyCore
 
             // 元素抗性
             damage *= (1 - elementResistance.val);
-            GetDamageProperty(damage, mode);
         }
+        
+        damage = GetDamageProperty(damage, mode);   // 计算防御和法抗
+
+        // 身上所有的护盾先吃一遍伤害，最终受到的伤害由护盾挡下伤害后剩余最少的那个决定
+        float finalDamage = damage;
+        for (int i = 0; i < shieldList.Count; i++)
+        {
+            var shield = shieldList[i];
+            finalDamage = Mathf.Min(finalDamage, shield.GetDamage(damage, elementSlot.eleType));
+            if (!shield.isActiveAndEnabled) i--;
+        }
+        
+        life_.GetDamage(finalDamage);               // 最终受到的伤害
 
         // 显示伤害数字
         if (!haveText && !isBig) return;
@@ -139,7 +148,7 @@ public class ElementCore : PropertyCore
         Text text = damageText.GetComponent<Text>();
         damageText.transform.SetParent(OperUIManager.WorldCanvas.transform);
 
-        text.text = damage.ToString("f0");
+        text.text = finalDamage.ToString("f0");
         text.color = StoreHouse.GetElementDamageColor(elementSlot.eleType);
         Vector3 center = transform.position;
         text.transform.position = center;
@@ -150,10 +159,11 @@ public class ElementCore : PropertyCore
         ref float damage, ref bool isBig, bool swirl)           
     {// 受到元素附着，返回值为经过元素反应后的伤害值（蒸发融化等）
         
-        // 如果身上没有任何元素，直接附着即可
+        // 如果身上没有任何元素，且元素不是风岩，直接附着即可
         if (attachedElement.Count == 0)
         {
-            attachedElement.Add(element2.eleType, element2.eleCount);
+            if (element2.eleType != ElementType.Anemo && element2.eleType != ElementType.Geo)
+                attachedElement.Add(element2.eleType, element2.eleCount);
             return;
         }
         
@@ -194,8 +204,9 @@ public class ElementCore : PropertyCore
             }
         }
         
-        // 全部反应后若仍有剩余，剩余的元素将被附着
-        attachedElement.Add(element2.eleType, element2.eleCount);
+        // 全部反应后若仍有剩余，且剩余元素不是风岩，剩余的元素将被附着
+        if (element2.eleType != ElementType.Anemo && element2.eleType != ElementType.Geo)
+            attachedElement.Add(element2.eleType, element2.eleCount);
     }
     
     public virtual void FrozenBegin() { }

@@ -27,7 +27,7 @@ public class Tartaglia : OperatorCore
 
     private void norAttack()
     {
-        ElementSlot elementSlot = new ElementSlot(ElementType.Hydro, 4f);
+        ElementSlot elementSlot = new ElementSlot(ElementType.Cryo, 4f);
         
         Battle(tarBattleCore, atk_.val, DamageMode.Physical, elementSlot, defaultElementTimer);
     }

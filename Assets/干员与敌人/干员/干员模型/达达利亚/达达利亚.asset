@@ -42,10 +42,10 @@ MonoBehaviour:
   End_Not3Star: {fileID: 0}
   End_Fail: {fileID: 0}
   Touch: {fileID: 0}
-  atk: 100
+  atk: 0
   def: 0
   magicDef: 0
-  life: 200
+  life: 300
   maxBlock: 2
   maxAtkInterval: 1.5
   cost: 20
@@ -56,6 +56,7 @@ MonoBehaviour:
   elementalDamage: 1
   elementalResistance: 0
   spRecharge: 1
+  shieldStrength: 0
   Description:
   - "\u653B\u51FB\u6709\u51E0\u7387\u7ED9\u654C\u4EBA\u9644\u52A0\u65AD\u6D41\u6548\u679C"
   - "\u653B\u51FB\u6709\u51E0\u7387\u7ED9\u654C\u4EBA\u9644\u52A0\u65AD\u6D41\u6548\u679C"

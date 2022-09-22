@@ -443,6 +443,7 @@ public class SkillUIController
     private Text elementalDamageText;
     private Text elementalResistanceText;
     private Text spRechargeText;
+    private Text shieldStrengthText;
     private Text costDetailText;
     private Text reTimeDetailText;
     private Text atkSpeedText;
@@ -510,6 +511,7 @@ public class SkillUIController
         elementalDamageText = OperUIElements.elementalDamageText;
         elementalResistanceText = OperUIElements.elementalResistanceText;
         spRechargeText = OperUIElements.spRechargeText;
+        shieldStrengthText = OperUIElements.shieldStrengthText;
         costDetailText = OperUIElements.costDetailText;
         reTimeDetailText = OperUIElements.reTimeDetailText;
         atkSpeedText = OperUIElements.atkSpeedText;
@@ -749,7 +751,8 @@ public class SkillUIController
         elementalDamageText.text = ToDetailString(oc_.elementDamage, 2, false, true);
         elementalResistanceText.text = ToDetailString(oc_.elementResistance, 2, false, true);
         spRechargeText.text = ToDetailString(oc_.sp_.spRecharge, 2, false, true);
-
+        shieldStrengthText.text = ToDetailString(oc_.shieldStrength, 2, false, true);
+        
         costDetailText.text = ToDetailString(oc_.costNeed, 0, true);
         reTimeDetailText.text = ToDetailString(oc_.recoverTime, 0, true);
 

@@ -43,6 +43,10 @@ public class StoreHouse : MonoBehaviour
     public GameObject swirlHydroAnim;
     public GameObject swirlElectroAnim;
     public GameObject swirlCryoAnim;
+    public GameObject crystallizationPyroShield;
+    public GameObject crystallizationHydroShield;
+    public GameObject crystallizationElectroShield;
+    public GameObject crystallizationCryoShield;
     
     
     public static Color32 OverLoadTextColor = new Color32(233, 54, 64, 255);
@@ -116,6 +120,22 @@ public class StoreHouse : MonoBehaviour
         }
     }
     
+    public static GameObject GetCrystallizationShield(ElementType type)
+    {
+        switch (type)
+        {
+            case ElementType.Electro:
+                return instance.crystallizationElectroShield;
+            case ElementType.Hydro:
+                return instance.crystallizationHydroShield;
+            case ElementType.Pyro:
+                return instance.crystallizationPyroShield;
+            case ElementType.Cryo:
+                return instance.crystallizationCryoShield;
+            default:
+                return null;
+        }
+    }
     
     
     public static Color GetElementDamageColor(ElementType type)

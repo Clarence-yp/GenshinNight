@@ -711,6 +711,9 @@
               <e p="EnemyAnimEvent.cs" t="Include" />
               <e p="OperAnimEvent.cs" t="Include" />
             </e>
+            <e p="护盾" t="Include">
+              <e p="NormalShield.cs" t="Include" />
+            </e>
             <e p="核心" t="Include">
               <e p="BattleCore.cs" t="Include" />
               <e p="ElementCore.cs" t="Include" />

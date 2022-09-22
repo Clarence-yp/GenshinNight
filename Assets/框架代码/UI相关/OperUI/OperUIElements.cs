@@ -91,6 +91,8 @@ public class OperUIElements : MonoBehaviour
     public static Text elementalResistanceText;
     public Text spRechargeText_p;
     public static Text spRechargeText;
+    public Text shieldStrengthText_p;
+    public static Text shieldStrengthText;
     public Text costDetailText_p;
     public static Text costDetailText;
     public Text reTimeDetailText_p;
@@ -238,6 +240,7 @@ public class OperUIElements : MonoBehaviour
         elementalDamageText = elementalDamageText_p;
         elementalResistanceText = elementalResistanceText_p;
         spRechargeText = spRechargeText_p;
+        shieldStrengthText = shieldStrengthText_p;
         costDetailText = costDetailText_p;
         reTimeDetailText = reTimeDetailText_p;
         atkSpeedText = atkSpeedText_p;

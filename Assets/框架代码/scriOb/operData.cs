@@ -93,7 +93,7 @@ public class operData : ScriptableObject
     public float elementalDamage = 1;
     public float elementalResistance;
     public float spRecharge = 1;
-    
+    public float shieldStrength;
     
     [Header("干员特性与详细天赋")]
     [TextArea] public string[] Description = new string[3];

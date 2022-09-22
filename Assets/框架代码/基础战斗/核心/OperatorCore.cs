@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.NetworkInformation;
 using Spine;
 using UnityEditor;
@@ -65,7 +66,7 @@ public class OperatorCore : BattleCore
         OperInit();
         ac_.ChangeDefaultColorImmediately();
         frozen_Inc_DecSpeed = 0;            // 干员的被冻结时间不会随之延长
-        
+
 
         Start_OperatorCore_Down();
         if (prePutOn)
@@ -96,6 +97,10 @@ public class OperatorCore : BattleCore
         // 重设生命值
         life_.RecoverCompletely();
         
+        // 初始化元素附着相关
+        attachedElement.Clear();
+        reactionController.Init();
+        
         // 根据当前朝向设定默认朝向
         if (anim.transform.localScale.x > 0) defaultTurn = ac_.TurnRight;
         else defaultTurn = ac_.TurnLeft;
@@ -103,8 +108,13 @@ public class OperatorCore : BattleCore
         // 让Anim开始播放动画
         anim.SetBool("start", true);
         
-        // 在死亡或撤退时将自身从InitManager的OperList中移除
-        DieAction += DelFromOperList;
+        // 初始化死亡调用函数
+        DieAction += DelFromOperList;       // 将自身从InitManager的OperList中移除
+        DieAction += DelAllBlockedEnemy;    // 释放阻挡的所有敌人
+        
+        // 初始化阻挡相关
+        block = (int) maxBlock.val;
+        blockList.Clear();
         
         // 改变脚下tile的类型
         TileSlot tile = InitManager.GetMap(transform.position);
@@ -146,6 +156,7 @@ public class OperatorCore : BattleCore
         elementDamage.ChangeBaseValue(od_.elementalDamage);
         elementResistance.ChangeBaseValue(od_.elementalResistance);
         recoverTime.ChangeBaseValue(od_.reTime);
+        shieldStrength.ChangeBaseValue(od_.shieldStrength);
         
         costNeed.ChangeBaseValue(od_.cost);
     }
@@ -230,6 +241,23 @@ public class OperatorCore : BattleCore
         }
     }
 
+    // 释放所有被自己阻挡的敌人，自身阻挡数更新为最大阻挡数
+    private void DelAllBlockedEnemy(BattleCore bc_)
+    {
+        for (int i = 0; i < alreadyBlockSet.Count; i++)
+        {
+            var tmp = alreadyBlockSet.ElementAt(i);
+            EnemyCore ec_ = tmp.Key;
+            if (alreadyBlockSet.ContainsKey(ec_) && alreadyBlockSet[ec_])
+            {
+                alreadyBlockSet[ec_] = false;
+                ec_.UnBlocked();
+            }
+        }
+
+        block = (int) maxBlock.val;
+    }
+
     void CheckBlock()
     {
         foreach (var i in blockList)
@@ -274,7 +302,7 @@ public class OperatorCore : BattleCore
         atkRange = newRange.GetComponent<SearchAndGive>();
 
         // 初始化当前阻挡数
-        block = (int) maxBlock.val;
+        DelAllBlockedEnemy(null);
     }
     
     /// <summary>

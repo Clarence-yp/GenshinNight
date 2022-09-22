@@ -27,6 +27,12 @@ public class ReactionController
         elc_ = elementCore;
     }
 
+    public void Init()      // 清空自身的状态
+    {
+        superConductTime = 0;
+        electroChargedTime = 0;
+    }
+
     public void Update()
     {
         // 超导随时间减少
@@ -223,15 +229,10 @@ public class ReactionController
                 ec_.ppc_.Push(center, PushAndPullController.littleForce);
             }
         }
-
-        // 播放超载动画
-        GameObject overLoadAnim = PoolManager.GetObj(StoreHouse.instance.overLoadAnim);
-        overLoadAnim.transform.position = elc_.transform.position;
-        DurationRecycleObj recycleObj = new DurationRecycleObj(overLoadAnim, 2f);
-        BuffManager.AddBuff(recycleObj);
         
-        // 展示反应文本
-        ShowReactionText(center, "超载", StoreHouse.OverLoadTextColor);
+        // 展示反应动画和文本
+        ShowReactionAnimAndText(center, "超载", StoreHouse.OverLoadTextColor,
+            true, StoreHouse.instance.overLoadAnim);
         
         // 雷火按1:1结算，先手元素扣除后手元素量，后手元素被扣为0
         firElement.eleCount = Mathf.Max(0, firElement.eleCount - sedElement.eleCount);
@@ -276,14 +277,9 @@ public class ReactionController
             }
         }
         
-        // 播放超导动画
-        GameObject superConductAnim = PoolManager.GetObj(StoreHouse.instance.superConductAnim);
-        superConductAnim.transform.position = center;
-        DurationRecycleObj recycleObj = new DurationRecycleObj(superConductAnim, 2f);
-        BuffManager.AddBuff(recycleObj);
-        
-        // 展示反应文本
-        ShowReactionText(center, "超导", StoreHouse.SuperConductTextColor);
+        // 展示反应动画和文本
+        ShowReactionAnimAndText(center, "超导", StoreHouse.SuperConductTextColor,
+            true, StoreHouse.instance.superConductAnim);
 
         // 冰雷按1:1结算，先手元素扣除后手元素量，后手元素被扣为0
         firElement.eleCount = Mathf.Max(0, firElement.eleCount - sedElement.eleCount);
@@ -295,7 +291,7 @@ public class ReactionController
         electroChargedMastery = mastery;
     }
     
-    private void ElectroCharged()       
+    private void ElectroCharged() 
     {// 感电反应
         float damage = ElectroChargedDamage(electroChargedMastery);
         ElementSlot electro = new ElementSlot(ElementType.Electro);
@@ -311,7 +307,7 @@ public class ReactionController
         BuffManager.AddBuff(recycleObj);
         
         // 展示反应文本
-        ShowReactionText(elc_.transform.position, "感电", StoreHouse.ElectroChargedColor);
+        ShowReactionAnimAndText(elc_.transform.position, "感电", StoreHouse.ElectroChargedColor);
 
         // 水雷1:1消耗，每次反应消耗各0.4元素
         elc_.attachedElement[ElementType.Electro] -= 0.4f;
@@ -322,11 +318,11 @@ public class ReactionController
             elc_.attachedElement.Remove(ElementType.Hydro);
     }
 
-    private void Frozen(ElementSlot firElement, ElementSlot sedElement, float mastery)       
+    private void Frozen(ElementSlot firElement, ElementSlot sedElement, float mastery) 
     {// 冻结反应
         
         // 展示反应文本
-        ShowReactionText(elc_.transform.position, "冻结", StoreHouse.FrozenColor);
+        ShowReactionAnimAndText(elc_.transform.position, "冻结", StoreHouse.FrozenColor);
         
         // 冰水按1:1结算，先手元素扣除后手元素量，后手元素被扣为0，生成2倍于扣除元素的冻元素
         float frozenCount = 2 * Mathf.Min(firElement.eleCount, sedElement.eleCount);
@@ -343,7 +339,7 @@ public class ReactionController
         sedElement.eleCount = 0;
     }
     
-    private void Swirl(ElementSlot firElement, ElementSlot sedElement, float mastery)                
+    private void Swirl(ElementSlot firElement, ElementSlot sedElement, float mastery) 
     {// 扩散反应
         
         Vector3 center = elc_.transform.position;
@@ -368,15 +364,9 @@ public class ReactionController
             }
         }
         
-        // 播放扩散动画
-        GameObject swirlAnimPrototype = StoreHouse.GetSwirlAnim(swirlElement.eleType);
-        GameObject swirlAnim = PoolManager.GetObj(swirlAnimPrototype);
-        swirlAnim.transform.position = elc_.transform.position;
-        DurationRecycleObj recycleObj = new DurationRecycleObj(swirlAnim, 2f);
-        BuffManager.AddBuff(recycleObj);
-        
-        // 展示反应文本
-        ShowReactionText(center, "扩散", StoreHouse.SwirlColor);
+        // 展示反应动画和文本
+        ShowReactionAnimAndText(center, "扩散", StoreHouse.SwirlColor,
+            true, StoreHouse.GetSwirlAnim(swirlElement.eleType));
         
         // 风元素始终为被克制元素，只能已0.5倍消耗先手元素，且自身立刻消失
         firElement.eleCount = Mathf.Max(0, firElement.eleCount - 0.5f * sedElement.eleCount);
@@ -387,10 +377,20 @@ public class ReactionController
         ElementCore attacker, float mastery)
     {// 结晶反应
         
+        GameObject shield = PoolManager.GetObj(StoreHouse.GetCrystallizationShield(firElement.eleType));
+        NormalShield normalShield = shield.GetComponent<NormalShield>();
+        normalShield.Init((BattleCore) attacker, CrystallizationLife(mastery), firElement.eleType);
+        
+        // 展示反应文本
+        ShowReactionAnimAndText(elc_.transform.position, "结晶", StoreHouse.CrystallizationColor);
+        
+        // 岩元素始终为被克制元素，只能已0.5倍消耗先手元素，且自身立刻消失
+        firElement.eleCount = Mathf.Max(0, firElement.eleCount - 0.5f * sedElement.eleCount);
+        sedElement.eleCount = 0;        
     }
 
     private void Vaporize(ElementSlot firElement, ElementSlot sedElement,
-        ref float damage, float mastery)            
+        ref float damage, float mastery)     
     {// 蒸发反应
         if (sedElement.eleType == ElementType.Hydro)
         {// 水打火，基础系数为2
@@ -410,7 +410,7 @@ public class ReactionController
         }
         
         // 展示反应文本
-        ShowReactionText(elc_.transform.position, "蒸发", StoreHouse.VaporizeColor);
+        ShowReactionAnimAndText(elc_.transform.position, "蒸发", StoreHouse.VaporizeColor);
     }
 
     private void Melt(ElementSlot firElement, ElementSlot sedElement,
@@ -435,13 +435,23 @@ public class ReactionController
         }
         
         // 展示反应文本
-        ShowReactionText(elc_.transform.position, "融化", StoreHouse.MeltColor);
+        ShowReactionAnimAndText(elc_.transform.position, "融化", StoreHouse.MeltColor);
     }
 
 
 
-    private void ShowReactionText(Vector3 center, string reactionName, Color textColor)
+    private void ShowReactionAnimAndText(Vector3 center, string reactionName, Color textColor,
+        bool haveAnim = false, GameObject reactionAnim = null)
     {
+        if (haveAnim)
+        {
+            GameObject Anim = PoolManager.GetObj(reactionAnim);
+            Anim.transform.position = center;
+            DurationRecycleObj recycleObj = new DurationRecycleObj(Anim, 2f);
+            BuffManager.AddBuff(recycleObj);
+        }
+        
+
         GameObject obj = PoolManager.GetObj(StoreHouse.instance.reactionShowText);
         obj.transform.SetParent(OperUIManager.WorldCanvas.transform);
         Text text = obj.GetComponent<Text>();
@@ -477,7 +487,11 @@ public class ReactionController
         return mastery;
     }
     
-    
+    private float CrystallizationLife(float mastery)
+    {
+        // 返回结晶反应盾的厚度
+        return mastery;
+    }
 
 
 
