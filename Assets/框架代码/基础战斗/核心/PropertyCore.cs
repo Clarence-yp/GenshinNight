@@ -209,16 +209,18 @@ public class SPController
     public bool during;         // 技能是否开启
     public float remainingTime; // 技能剩余持续时间
     public float maxTime;       // 技能最大持续时间
-    private recoverType reType;  // 技力恢复模式
+    public recoverType reType;  // 技力恢复模式
+    public releaseType outType;    // 技能释放模式
 
     public void Init(BattleCore bc__, float ssp, float maxxSp, float maxxTime,
-        recoverType type, float recharge)
+        recoverType type1, releaseType type2, float recharge)
     {
         bc_ = bc__;
         sp = ssp;
         maxSp = maxxSp;
         maxTime = maxxTime;
-        reType = type;
+        reType = type1;
+        outType = type2;
         spRecharge.ChangeBaseValue(recharge);
     }
 
@@ -233,12 +235,32 @@ public class SPController
         {
             if (reType == recoverType.auto)
             {
-                sp = sp + Time.deltaTime > maxSp ? maxSp : sp + Time.deltaTime * spRecharge.val;
+                float getSP = Time.deltaTime * spRecharge.val;
+                sp = sp + getSP > maxSp ? maxSp : sp + getSP;
             }
         }
         
     }
 
+    public void GetSp_Atk(float getSP = 1)
+    {
+        if (during || reType!=recoverType.atk) return;
+        getSP *= spRecharge.val;
+        sp = sp + getSP > maxSp ? maxSp : sp + getSP;
+    }
+    
+    public void GetSp_BeAtk(float getSP = 1)
+    {
+        if (during || reType!=recoverType.beAtk) return;
+        getSP *= spRecharge.val;
+        sp = sp + getSP > maxSp ? maxSp : sp + getSP;
+    }
+
+    public bool CanReleaseSkill()
+    {
+        return sp >= maxSp;
+    }
+    
     public void ReleaseSkill()
     {
         during = true;

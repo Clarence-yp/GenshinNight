@@ -141,12 +141,14 @@ public class BattleCore : ElementCore
     /// <summary>  
     /// 自身对tarBC造成一次伤害，结束后更新彼此数值
     /// </summary>
-    public void Battle(BattleCore tarBC, float damage, DamageMode mode,                              // 造成伤害的基础数值，以及本次伤害类型
-        ElementSlot elementSlot, ElementTimer timer)                // 元素攻击，以及使用的元素计时器
+    public void Battle(BattleCore tarBC, float damage, DamageMode mode, // 造成伤害的基础数值，以及本次伤害类型
+        ElementSlot elementSlot, ElementTimer timer,    // 元素攻击，以及使用的元素计时器
+        bool haveText = false, bool isBig = false)      // 显示攻击数字                    
     {
         bool canAttachElement = CauseDamageElement(
             tarBC, ref damage, elementSlot, timer);
-        tarBC.GetDamage(this, damage, mode, elementSlot, canAttachElement);
+        tarBC.GetDamage(this, damage, mode, elementSlot,
+            canAttachElement, haveText, isBig);
     }
 
     public void Battle(BattleCore tarBC, float damage, DamageMode mode, ElementSlot elementSlot)

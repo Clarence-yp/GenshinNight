@@ -6,7 +6,7 @@ public class Tartaglia : OperatorCore
 {
     [Header("达达利亚的普攻箭")] 
     public GameObject norArrow;
-
+    public GameObject norHitAnim;
     private BattleCore tarBattleCore;
 
     protected override void Start_OperatorCore_Down()
@@ -25,10 +25,17 @@ public class Tartaglia : OperatorCore
         par.Init(pos, tarBattleCore, 12f, norAttack);
     }
 
-    private void norAttack()
+    private void norAttack(float multi)
     {
-        ElementSlot elementSlot = new ElementSlot(ElementType.Cryo, 4f);
+        GameObject hitAnim = PoolManager.GetObj(norHitAnim);
+        hitAnim.transform.parent = target.transform;
+        Vector3 pos = new Vector3(0, 0, 0.3f);
+        hitAnim.transform.localPosition = pos;
+        DurationRecycleObj recycleObj = new DurationRecycleObj(hitAnim, 1f, target, true);
+        BuffManager.AddBuff(recycleObj);
         
+        
+        ElementSlot elementSlot = new ElementSlot(ElementType.Cryo, 4f);
         Battle(tarBattleCore, atk_.val, DamageMode.Physical, elementSlot, defaultElementTimer);
     }
     

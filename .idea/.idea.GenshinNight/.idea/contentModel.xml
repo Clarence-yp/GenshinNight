@@ -739,6 +739,7 @@
           </e>
           <e p="静态函数" t="Include">
             <e p="BaseFunc.cs" t="Include" />
+            <e p="ColorfulText.cs" t="Include" />
             <e p="Interpreter.cs" t="Include" />
           </e>
         </e>

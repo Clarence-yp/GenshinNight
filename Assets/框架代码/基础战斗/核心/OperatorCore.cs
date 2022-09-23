@@ -130,15 +130,15 @@ public class OperatorCore : BattleCore
         {
             case 0:
                 sp_.Init(this, od_.initSP0[lel], od_.maxSP0[lel], od_.duration0[lel],
-                    od_.skill0_recoverType, od_.spRecharge);
+                    od_.skill0_recoverType, od_.skill0_releaseType, od_.spRecharge);
                 break;
             case 1:
                 sp_.Init(this, od_.initSP1[lel], od_.maxSP1[lel], od_.duration1[lel],
-                    od_.skill1_recoverType, od_.spRecharge);
+                    od_.skill1_recoverType, od_.skill1_releaseType, od_.spRecharge);
                 break;
             case 2:
                 sp_.Init(this, od_.initSP2[lel], od_.maxSP2[lel], od_.duration2[lel],
-                    od_.skill2_recoverType, od_.spRecharge);
+                    od_.skill2_recoverType, od_.skill2_releaseType, od_.spRecharge);
                 break;
         }
     }

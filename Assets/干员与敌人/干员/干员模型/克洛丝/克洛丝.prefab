@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab002c256f3ca5459291790edb27ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shieldList: []
   superConducting: 0
   electroCharging: 0
   frozen: 0
@@ -82,7 +83,9 @@ MonoBehaviour:
   animObject: {fileID: 0}
   anim: {fileID: 0}
   atkRange: {fileID: 0}
-  norArrow: {fileID: 8307805351159478916, guid: 20ad7eaba7e761b448c7b77997e1b331, type: 3}
+  norArrow: {fileID: 135146, guid: f23b2b44b81086d4087283f2a385752e, type: 3}
+  pyroArrow: {fileID: 135146, guid: d3a29ad30d2c88b47a85da51daf312bc, type: 3}
+  norHitAnim: {fileID: 1883296549405982, guid: e5eed3a2af8c6f84bbd442b45f0f883e, type: 3}
 --- !u!1 &3649933125311570890
 GameObject:
   m_ObjectHideFlags: 0

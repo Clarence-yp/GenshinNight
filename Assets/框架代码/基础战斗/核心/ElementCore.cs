@@ -15,7 +15,7 @@ public class ElementCore : PropertyCore
     // 附着元素集合
     public Dictionary<ElementType, float> attachedElement = new Dictionary<ElementType, float>();
     // 附着元素自然消失
-    private const float defaultDecreaseSpeed = 0.3f;        // 默认普通元素每秒衰减速率
+    private const float defaultDecreaseSpeed = 0.25f;       // 默认普通元素每秒衰减速率
     protected float frozen_Inc_DecSpeed = 0.1f;             // 冻元素每秒增加的元素衰减速率
     public Dictionary<ElementType, float> eleDecreaseSpeed = new Dictionary<ElementType, float>();
 
@@ -66,7 +66,7 @@ public class ElementCore : PropertyCore
         eleDecreaseSpeed.Add(ElementType.Cryo, defaultDecreaseSpeed);
         
         eleDecreaseSpeed.Add(ElementType.None, 1e9f);       // 如果空元素不慎附着，将立刻消失
-        eleDecreaseSpeed.Add(ElementType.Frozen, 0.75f);    // 冻元素的基础消耗量略大
+        eleDecreaseSpeed.Add(ElementType.Frozen, 0.7f);    // 冻元素的基础消耗量略大
         eleDecreaseSpeed.Add(ElementType.Catalyze, 1e9f);   // 激元素暂时不考虑
     }
     

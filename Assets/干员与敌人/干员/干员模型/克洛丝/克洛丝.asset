@@ -42,12 +42,12 @@ MonoBehaviour:
   End_Not3Star: {fileID: 0}
   End_Fail: {fileID: 0}
   Touch: {fileID: 0}
-  atk: 0
+  atk: 100
   def: 100
   magicDef: 10
   life: 1000
   maxBlock: 1
-  maxAtkInterval: 1.5
+  maxAtkInterval: 1
   cost: 0
   consumPlace: 0
   reTime: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 25129256298d8b14caa805457f059dd0, type: 3}
   - {fileID: 21300000, guid: b35071e425efa9644861203241482011, type: 3}
   - {fileID: 21300000, guid: 5dbd1043a5519154f9f2c31d8d85c008, type: 3}
-  skillName0: "\u653B\u51FB\u529B\u5F3A\u5316\xB7\u03B1\u578B"
+  skillName0: "\u4E8C\u8FDE\u5C04\xB7\u81EA\u52A8"
   description0:
   - "\u653B\u51FB\u529B+10%"
   - 
@@ -160,10 +160,10 @@ MonoBehaviour:
   - 
   - 
   - 
-  initSP0: 01000000000000000000000000000000000000000000000000000000
-  maxSP0: 05000000000000000000000000000000000000000000000000000000
+  initSP0: 00000000000000000000000000000000000000000000000000000000
+  maxSP0: 05000000050000000500000004000000040000000400000004000000
   duration0:
-  - 10
+  - 0
   - 0
   - 0
   - 0
@@ -172,9 +172,9 @@ MonoBehaviour:
   - 0
   expNeed0: 000000000000000000000000000000000000000000000000
   costNeed0: 000000000000000000000000000000000000000000000000
-  skill0_recoverType: 0
-  skill0_releaseType: 0
-  skillName1: "\u8FC5\u6377\u6253\u51FB-\u03B1\u578B"
+  skill0_recoverType: 1
+  skill0_releaseType: 3
+  skillName1: "\u706B\u5143\u7D20\u5C04\u51FB"
   description1:
   - "\u653B\u51FB\u901F\u5EA6+200"
   - 
@@ -183,10 +183,10 @@ MonoBehaviour:
   - 
   - 
   - 
-  initSP1: 05000000000000000000000000000000000000000000000000000000
-  maxSP1: 05000000000000000000000000000000000000000000000000000000
+  initSP1: 00000000000000000000000000000000000000000000000000000000
+  maxSP1: 09000000090000000800000008000000080000000700000007000000
   duration1:
-  - 10
+  - 0
   - 0
   - 0
   - 0
@@ -195,8 +195,8 @@ MonoBehaviour:
   - 0
   expNeed1: 000000000000000000000000000000000000000000000000
   costNeed1: 000000000000000000000000000000000000000000000000
-  skill1_recoverType: 0
-  skill1_releaseType: 0
+  skill1_recoverType: 1
+  skill1_releaseType: 3
   skillName2: "\u4E8C\u8FDE\u5C04\xB7\u81EA\u52A8"
   description2:
   - 

@@ -11,7 +11,8 @@ public class parabola : MonoBehaviour
     private Transform tarTrans;
     private bool isNull;
     private float speed = 5f;
-    private Action reachFunc;
+    private float multi;
+    private Action<float> reachFunc;
 
     private const float min_distance = 0.15f;
     private float distance;
@@ -19,12 +20,14 @@ public class parabola : MonoBehaviour
     private Vector3 preTarPos;
     private float py;
 
-    public void Init(Vector3 pos, BattleCore targetBattleCore, float speed_ = 5, Action reach = null)
+    public void Init(Vector3 pos, BattleCore targetBattleCore, float speed_ = 5,
+        Action<float> reach = null, float Multi = 1)
     {
         transform.position = pos;
         tarBattleCore = targetBattleCore;
         tarTrans = tarBattleCore.transform;
         speed = speed_;
+        multi = Multi;
         reachFunc = reach;
 
         tarPos = tarTrans.position;
@@ -41,7 +44,7 @@ public class parabola : MonoBehaviour
         {
             preTarPos = tarPos;
             tarPos = tarTrans.position;
-            if (Vector3.Distance(preTarPos, tarPos) > 2)
+            if (Vector3.Distance(tarPos, Vector3.zero) > 200) 
             {
                 isNull = true;
                 tarPos = preTarPos;
@@ -71,7 +74,7 @@ public class parabola : MonoBehaviour
     {
         if (!isNull)
         {
-            reachFunc?.Invoke();
+            reachFunc?.Invoke(multi);
             tarBattleCore.DieAction -= TarNull;
         }
         reachFunc = null;
