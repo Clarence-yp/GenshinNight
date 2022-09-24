@@ -154,6 +154,12 @@ public class ElementCore : PropertyCore
         text.transform.position = center;
     }
 
+    public void GetDamage(float damage, DamageMode mode)
+    {
+        ElementSlot none = new ElementSlot();
+        GetDamage(null, damage, mode, none, false);
+    }
+
 
     private void AttachedElement(ElementCore attacker, ElementSlot element2,
         ref float damage, ref bool isBig, bool swirl)           

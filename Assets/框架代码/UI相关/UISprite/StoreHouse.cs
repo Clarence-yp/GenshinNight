@@ -67,6 +67,10 @@ public class StoreHouse : MonoBehaviour
     public static Color32 PyroDamageColor = new Color32(255, 50, 50, 255);
     public static Color32 CryoDamageColor = new Color32(175, 255, 255, 255);
 
+    [Header("buff持续相关")] 
+    public GameObject underGroundLight;
+
+
 
     private void Awake()
     {

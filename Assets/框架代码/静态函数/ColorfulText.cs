@@ -6,6 +6,12 @@ public class ColorfulText
 {
     public static string normalBlue="#87CEFA";
     public static string PyroRed = "#FF3232";
+    public static string GeoYellow = "#FFC800";
+    public static string ElectroPurple = "#C832FF";
+    public static string DendroGreen = "#00AF00";
+    public static string HydroBlue = "#00A0FF";
+    public static string CryoWhite = "#AFFFFF";
+    public static string AnemoGreen = "#00FFC8";
 
 
     public static string ChangeToPercentage(float x)

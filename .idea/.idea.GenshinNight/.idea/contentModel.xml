@@ -173,6 +173,37 @@
               <e p="ETFXRotation.cs" t="Include" />
             </e>
           </e>
+          <e p="剑光特效包" t="Include">
+            <e p="1" t="Include">
+              <e p="Demo scene" t="Include">
+                <e p="CameraHolder.cs" t="Include" />
+                <e p="HDRP and URP.txt" t="Include" />
+                <e p="Readme.txt" t="Include" />
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="Add_CenterGlow.shader" t="Include" />
+                <e p="Add_Fresnel.shader" t="Include" />
+                <e p="Blend_CenterGlow.shader" t="Include" />
+                <e p="Blend_TwoSides.shader" t="Include" />
+                <e p="BlendDistort.shader" t="Include" />
+                <e p="DissolveNoise.shader" t="Include" />
+                <e p="Distortion.shader" t="Include" />
+                <e p="Explosion.shader" t="Include" />
+                <e p="Ice.shader" t="Include" />
+                <e p="Lightning.shader" t="Include" />
+                <e p="Scroll.shader" t="Include" />
+                <e p="SwordSlash.shader" t="Include" />
+              </e>
+            </e>
+            <e p="2" t="Include">
+              <e p="Shader" t="Include">
+                <e p="Rz_Distortion.shader" t="Include" />
+                <e p="Rz_Slash.shader" t="Include" />
+                <e p="Rz_SlashNonDistortion.shader" t="Include" />
+                <e p="Rz_SlashStretch.shader" t="Include" />
+              </e>
+            </e>
+          </e>
         </e>
         <e p="Spine" t="Include">
           <e p="Editor" t="Include">
@@ -639,6 +670,24 @@
                   <e p="char_124_kroos.atlas.txt" t="Include" />
                 </e>
               </e>
+              <e p="史都华德" t="Include">
+                <e p="Spine" t="Include">
+                  <e p="char_210_stward.atlas.txt" t="Include" />
+                </e>
+                <e p="Steward.cs" t="Include" />
+              </e>
+              <e p="玫兰莎" t="Include">
+                <e p="Melantha.cs" t="Include" />
+                <e p="Spine" t="Include">
+                  <e p="char_208_melan.atlas.txt" t="Include" />
+                </e>
+              </e>
+              <e p="米格鲁" t="Include">
+                <e p="Beagle.cs" t="Include" />
+                <e p="Spine" t="Include">
+                  <e p="char_122_beagle.atlas.txt" t="Include" />
+                </e>
+              </e>
               <e p="达达利亚" t="Include">
                 <e p="Spine" t="Include">
                   <e p="bili.atlas.txt" t="Include" />
@@ -748,6 +797,13 @@
             <e p="门" t="Include">
               <e p="redDoorButtonController.cs" t="Include" />
               <e p="redDoorUI.cs" t="Include" />
+            </e>
+          </e>
+          <e p="通用动画" t="Include">
+            <e p="剑光特效" t="Include">
+              <e p="拔刀斩" t="Include">
+                <e p="slash.cs" t="Include" />
+              </e>
             </e>
           </e>
         </e>

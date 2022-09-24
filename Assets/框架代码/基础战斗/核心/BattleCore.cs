@@ -50,7 +50,7 @@ public class BattleCore : ElementCore
             norAtkInterval = norAtkInterval - Time.deltaTime <= 0 ? 0 : norAtkInterval - Time.deltaTime;
 
         if (dieNow) // 测试用，后期删掉
-            GetDamageProperty(1e9f, DamageMode.Magic);
+            GetDamage(1e9f, DamageMode.Magic);
         
         Update_BattleCore_Down();
     }

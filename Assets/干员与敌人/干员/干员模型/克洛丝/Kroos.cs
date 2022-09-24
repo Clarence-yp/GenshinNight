@@ -99,7 +99,7 @@ public class Kroos : OperatorCore
         DurationRecycleObj recycleObj = new DurationRecycleObj(hitAnim, 1f, target, true);
         BuffManager.AddBuff(recycleObj);
         
-        ElementSlot elementSlot = new ElementSlot(ElementType.Pyro, 1f);
+        ElementSlot elementSlot = new ElementSlot(ElementType.Pyro, 2f);
         bool haveText = multi > 1;
         Battle(target, atk_.val * multi, DamageMode.Physical, elementSlot,
             defaultElementTimer, haveText);
@@ -121,7 +121,12 @@ public class Kroos : OperatorCore
                    ColorfulText.ChangeToColorfulPercentage(skill2Atk[lel], ColorfulText.normalBlue)
                    + "的" +
                    ColorfulText.GetColorfulText("火元素物理", ColorfulText.PyroRed)
-                   + "伤害。\n本次攻击必定触发天赋的暴击效果";
+                   + "伤害\n"+
+                   ColorfulText.GetColorfulText("2", ColorfulText.normalBlue)
+                   + "单位火元素附着量，"+
+                   ColorfulText.GetColorfulText("3", ColorfulText.normalBlue)
+                   +"秒独立元素附着计时器\n"
+                   +"本次攻击必定触发天赋的暴击效果";
         }
     }
 

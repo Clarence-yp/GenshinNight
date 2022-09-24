@@ -29,7 +29,7 @@ public class OperatorCore : BattleCore
     private int fightingContinue = 0;       // fight激活后延续几帧
 
     // atkRange相关
-    [HideInInspector] public SearchAndGive atkRange;      // 当前atkRange的脚本
+    [HideInInspector] public SearchAndGive atkRange;        // 当前atkRange的脚本
     private Action defaultTurn;         // 干员朝默认方向旋转的函数
     
     // 阻挡相关
@@ -93,7 +93,7 @@ public class OperatorCore : BattleCore
 
     public void OperInit()
     {// 在每次登场时的初始化函数，用于初始化本OperatorCore
-        
+
         // 重设生命值
         life_.RecoverCompletely();
         

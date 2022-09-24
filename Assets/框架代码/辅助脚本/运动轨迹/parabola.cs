@@ -17,7 +17,6 @@ public class parabola : MonoBehaviour
     private const float min_distance = 0.15f;
     private float distance;
     private Vector3 tarPos;
-    private Vector3 preTarPos;
     private float py;
 
     public void Init(Vector3 pos, BattleCore targetBattleCore, float speed_ = 5,
@@ -33,22 +32,26 @@ public class parabola : MonoBehaviour
         tarPos = tarTrans.position;
         distance = Vector3.Distance(transform.position, tarPos);
         py = transform.position.y;
-        
-        isNull = false;
-        tarBattleCore.DieAction += TarNull;
+
+        if (targetBattleCore.dying)
+        {
+            reachFunc = null;
+            PoolManager.RecycleObj(gameObject);
+        }
+        else
+        {
+            isNull = false;
+            tarBattleCore.DieAction += TarNull;
+        }
     }
 
     void Update()
     {
         if (!isNull)
         {
-            preTarPos = tarPos;
             tarPos = tarTrans.position;
-            if (Vector3.Distance(tarPos, Vector3.zero) > 200) 
-            {
-                isNull = true;
-                tarPos = preTarPos;
-            }
+            // if (Vector3.Distance(tarPos, Vector3.zero) > 200) 
+            //     isNull = true;
         }
 
         // 朝向目标, 以计算运动

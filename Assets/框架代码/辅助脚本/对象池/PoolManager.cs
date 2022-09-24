@@ -58,3 +58,45 @@ public class PoolManager : MonoBehaviour
     }
     
 }
+
+public class SkillRecycleObj : BuffSlot
+{
+    private BattleCore bc_;
+    private SPController sp_;
+    private GameObject obj;
+    private bool isDie;
+    
+    public SkillRecycleObj(GameObject object_,BattleCore battleCore)
+    {
+        obj = object_;
+        bc_ = battleCore;
+        sp_ = bc_.sp_;
+        
+        bc_.DieAction += Die;
+    }
+
+    public override void BuffStart() { }
+
+    public override void BuffUpdate() { }
+
+    public override bool BuffEndCondition()
+    {
+        return !sp_.during || isDie;
+    }
+
+    public override void BuffEnd()
+    {
+        if (!isDie)
+        {
+            bc_.DieAction -= Die;
+        }
+        
+        PoolManager.RecycleObj(obj);
+    }
+
+    private void Die(BattleCore battleCore)
+    {
+        isDie = true;
+    }
+    
+}

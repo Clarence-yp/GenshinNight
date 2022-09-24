@@ -4951,7 +4951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1161707832541733115, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1524081269495171558, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5007,19 +5007,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6425702234625677476, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6425702234625677476, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6441647557142107167, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 6441647557142107167, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6499115399943159857, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5071,7 +5071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7427314340855862123, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: appearTime
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7427314340855862123, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
       propertyPath: pointList.Array.size
@@ -10257,6 +10257,7 @@ MonoBehaviour:
   crystallizationHydroShield: {fileID: 1135644536747142, guid: 1f746d5c052d2c849a40511dd3797364, type: 3}
   crystallizationElectroShield: {fileID: 1135644536747142, guid: 2b1d530dd98fa8f4099d18c73737dc4d, type: 3}
   crystallizationCryoShield: {fileID: 1135644536747142, guid: eb9d570883af1954fba46ee4fee15b2d, type: 3}
+  underGroundLight: {fileID: 194664, guid: e2e0b751ae42dd24f89489c7199f7c75, type: 3}
 --- !u!4 &907014061
 Transform:
   m_ObjectHideFlags: 0
@@ -21917,6 +21918,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dadaliya: {fileID: 11400000, guid: be7173dac5267314eae606baccb149cd, type: 2}
   kroos: {fileID: 11400000, guid: 471e676b1655a4b4399fb74a831c9bbd, type: 2}
+  steward: {fileID: 11400000, guid: f94b1d200eaf004479c188ce35f47e42, type: 2}
+  beagle: {fileID: 11400000, guid: 10506fda761a0db4293d6a2c4ecab20e, type: 2}
+  melantha: {fileID: 11400000, guid: adafa53500fce284090bf1a9dbe383c4, type: 2}
 --- !u!4 &1912709864
 Transform:
   m_ObjectHideFlags: 0
@@ -25413,33 +25417,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u8FBE\u8FBE\u5229\u4E9A"
       objectReference: {fileID: 0}
+    - target: {fileID: 407436062082884715, guid: bc9af281e58d6fb44b6ad82a5db02409, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 407436063783036270, guid: bc9af281e58d6fb44b6ad82a5db02409, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4660324369388080577, guid: bc9af281e58d6fb44b6ad82a5db02409, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 4660324369388080577, guid: bc9af281e58d6fb44b6ad82a5db02409, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4676203313446961530, guid: bc9af281e58d6fb44b6ad82a5db02409, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4676203313446961530, guid: bc9af281e58d6fb44b6ad82a5db02409, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4686229024317023702, guid: bc9af281e58d6fb44b6ad82a5db02409, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4686229024317023702, guid: bc9af281e58d6fb44b6ad82a5db02409, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5168407642968191803, guid: bc9af281e58d6fb44b6ad82a5db02409, type: 3}
       propertyPath: prePutOn

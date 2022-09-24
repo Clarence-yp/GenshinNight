@@ -8,12 +8,17 @@ public class testController : MonoBehaviour
 {
     public operData dadaliya;
     public operData kroos;
+    public operData steward;
+    public operData beagle;
+    public operData melantha;
 
     private void Awake()
     {
         InitManager.Register(dadaliya, 1);
-        InitManager.Register(dadaliya, 1);
         InitManager.Register(kroos, 1);
+        // InitManager.Register(steward, 1);
+        InitManager.Register(beagle, 1);
+        InitManager.Register(melantha, 1);
     }
 
     void Start()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c3c45b4a547140bca8625c627546d, type: 3}
   m_Name: "\u514B\u6D1B\u4E1D"
   m_EditorClassIdentifier: 
-  type: 3
+  type: 5
   skillType: 1
   Name: "\u514B\u6D1B\u4E1D"
   EnName: Kroos
@@ -42,7 +42,7 @@ MonoBehaviour:
   End_Not3Star: {fileID: 0}
   End_Fail: {fileID: 0}
   Touch: {fileID: 0}
-  atk: 100
+  atk: 10
   def: 100
   magicDef: 10
   life: 1000
@@ -148,8 +148,8 @@ MonoBehaviour:
   profession: 0
   star: 0
   skillImage:
-  - {fileID: 21300000, guid: 25129256298d8b14caa805457f059dd0, type: 3}
-  - {fileID: 21300000, guid: b35071e425efa9644861203241482011, type: 3}
+  - {fileID: 21300000, guid: 5dbd1043a5519154f9f2c31d8d85c008, type: 3}
+  - {fileID: 21300000, guid: 856197a8204bb0a41b5f49cb2731887c, type: 3}
   - {fileID: 21300000, guid: 5dbd1043a5519154f9f2c31d8d85c008, type: 3}
   skillName0: "\u4E8C\u8FDE\u5C04\xB7\u81EA\u52A8"
   description0:
@@ -183,7 +183,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  initSP1: 00000000000000000000000000000000000000000000000000000000
+  initSP1: 08000000070000000700000007000000070000000700000007000000
   maxSP1: 09000000090000000800000008000000080000000700000007000000
   duration1:
   - 0

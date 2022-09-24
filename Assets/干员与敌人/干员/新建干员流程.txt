@@ -1,25 +1,31 @@
 1.准备spine文件，以及立绘等资源。spine文件的Material要设置成Spine/Skeleton Tint
 
-2.将spine拖入scene中，选择最下面的SpineMecanim
+2.将spine拖入scene中，选择最下面的SkeletonMecanim
 
 3.将生成的spine动画命名为anim
 
 4.新建一个空物体，命名为干员名称（以下简称本体），并把tag改为operator
 
-5.将anim拖入到本体下，位置设置为(0,0,-0,2)，旋转设置为(60,0,0)，缩放设置为(0.3,0.3,0.3)
+5.给本体增加一个box碰撞体，参数center设置为(0,0.5,0)，size设置为(0.9,0.9,0.9)，并勾选trigger
 
-6.新建一个C#脚本，命名为干员英文名，继承OperatorCore，删除Start和Update
+6.将anim拖入到本体下，位置设置为(0,0,-0.2)，旋转设置为(60,0,0)，缩放设置为(0.3,0.3,0.3)
 
-7.将干员脚本拖到本体上
+7.新建一个C#脚本，命名为干员英文名，继承OperatorCore，删除Start和Update
 
-8.新建一个operData，命名为干员名称，将其拖拽到干员脚本里
+8.将干员脚本拖到本体上
 
-9.点击anim，设置Animator，变量必须都有，可以参考以前的anim（注意，所有需要受攻速影响的sta必须命名为Fight）
+9.新建一个operData，命名为干员名称，将其拖拽到干员脚本里
 
-10.将“OperAnimEvent”脚本拖到anim上
+10.点击anim，设置Animator，变量必须都有，可以参考以前的anim（注意，所有需要受攻速影响的sta必须命名为Fight）
 
-11.将“干员Canvas”预制体拖到本体下
+11.将“OperAnimEvent”脚本拖到anim上
 
-12.将“干员Canvas”下的“点击Button”，将其中的OnClick设置为干员脚本中的OnClick
+12.将“frontCanvas”预制体拖到本体下
 
-13.填充operData，干员脚本等内容
+13.将“frontCanvas”下的“点击Button”，将其中的OnClick设置为干员脚本中的OnClick
+
+14.将本体拖拽为预制体，并把该预制体拖到operData里
+
+15.在operData中设置攻击范围、瞄准模式
+
+16.在operData中完善立绘等信息

@@ -1,0 +1,226 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0c3c45b4a547140bca8625c627546d, type: 3}
+  m_Name: "\u7C73\u683C\u9C81"
+  m_EditorClassIdentifier: 
+  type: 1
+  skillType: 1
+  Name: "\u7C73\u683C\u9C81"
+  EnName: 
+  elementType: 1
+  is3D: 0
+  aimingMode: 1
+  canAtkDrone: 0
+  banLowGround: 0
+  banHighGround: 1
+  imageInQueue: {fileID: 21300000, guid: 7092060e8e411a747a4a310a6ecb9136, type: 3}
+  operUIImage1: {fileID: 21300000, guid: e6adc7876d7702140b4db686962ea4e0, type: 3}
+  operUIImage2: {fileID: 21300000, guid: e6adc7876d7702140b4db686962ea4e0, type: 3}
+  operPrefab: {fileID: 445414149424886812, guid: baeafee86d354244ba4344eeb09858bd, type: 3}
+  Report: {fileID: 0}
+  LevelUP: {fileID: 0}
+  ElitismUP:
+  - {fileID: 0}
+  - {fileID: 0}
+  Join: []
+  Leave: {fileID: 0}
+  Begin: {fileID: 0}
+  Selected: []
+  Deploy: []
+  Fighting: []
+  End_4Star: {fileID: 0}
+  End_3Star: {fileID: 0}
+  End_Not3Star: {fileID: 0}
+  End_Fail: {fileID: 0}
+  Touch: {fileID: 0}
+  atk: 20
+  def: 50
+  magicDef: 0
+  life: 1000
+  maxBlock: 3
+  maxAtkInterval: 0
+  cost: 0
+  consumPlace: 1
+  reTime: 0
+  maxLevel: 000000000000000000000000
+  elementalMastery: 500
+  elementalDamage: 1
+  elementalResistance: 0
+  spRecharge: 1
+  shieldStrength: 0
+  Description:
+  - 
+  - 
+  - 
+  talent1:
+  - 
+  - 
+  - 
+  talent2:
+  - 
+  - 
+  - 
+  growingAtk:
+  - 0
+  - 0
+  - 0
+  growingDef:
+  - 0
+  - 0
+  - 0
+  growingLife:
+  - 0
+  - 0
+  - 0
+  elitismAtk:
+  - 0
+  - 0
+  elitismDef:
+  - 0
+  - 0
+  elitismLife:
+  - 0
+  - 0
+  elitismMagicDef:
+  - 0
+  - 0
+  elitismBlock: 0000000000000000
+  elitismExp: 0000000000000000
+  elitismCost: 0000000000000000
+  trustAtk: 0
+  trustDef: 0
+  trustLife: 0
+  trustMagicDef: 0
+  potentialAtk:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  potentialDef:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  potentialLife:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  potentialMagicDef:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  potentialCost: 000000000000000000000000000000000000000000000000
+  potentialReTime:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  atkRange:
+  - {fileID: 6645886670027540070, guid: d32ebb57acceb4d48b9703b62ea0a57f, type: 3}
+  - {fileID: 6645886670027540070, guid: d32ebb57acceb4d48b9703b62ea0a57f, type: 3}
+  - {fileID: 6645886670027540070, guid: d32ebb57acceb4d48b9703b62ea0a57f, type: 3}
+  atkRangeImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  illustratedBookImage: {fileID: 0}
+  profession: 0
+  star: 0
+  skillImage:
+  - {fileID: 21300000, guid: ffb6da17121afbb41a9472ae36117316, type: 3}
+  - {fileID: 21300000, guid: 4c53b97200c4bab4d9fb74f5ab6cace0, type: 3}
+  - {fileID: 0}
+  skillName0: "\u9632\u5FA1\u529B\u63D0\u5347"
+  description0:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  initSP0: 00000000000000000000000000000000000000000000000000000000
+  maxSP0: 320000002d00000028000000230000001e0000001c00000019000000
+  duration0:
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  - 30
+  expNeed0: 000000000000000000000000000000000000000000000000
+  costNeed0: 000000000000000000000000000000000000000000000000
+  skill0_recoverType: 0
+  skill0_releaseType: 0
+  skillName1: "\u5CA9\u5143\u7D20\u9644\u9B54"
+  description1:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  initSP1: 0a0000000c0000000e00000010000000120000001400000016000000
+  maxSP1: 140000003a0000003700000034000000310000002c00000028000000
+  duration1:
+  - 30
+  - 30
+  - 35
+  - 35
+  - 35
+  - 40
+  - 40
+  expNeed1: 000000000000000000000000000000000000000000000000
+  costNeed1: 000000000000000000000000000000000000000000000000
+  skill1_recoverType: 0
+  skill1_releaseType: 0
+  skillName2: 
+  description2:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  initSP2: 00000000000000000000000000000000000000000000000000000000
+  maxSP2: 00000000000000000000000000000000000000000000000000000000
+  duration2:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  expNeed2: 000000000000000000000000000000000000000000000000
+  costNeed2: 000000000000000000000000000000000000000000000000
+  skill2_recoverType: 0
+  skill2_releaseType: 0
+  elitism: 0
+  level: 0
+  trust: 0
+  potential: 0
