@@ -36,6 +36,7 @@ public class EnemyCore : BattleCore
     protected override void Start_BattleCore_Down()
     {
         anim = transform.Find("anim").GetComponent<Animator>();
+        animTransform = anim.transform;
         ac_ = new SpineAnimController(anim, this, 0.3f);
         epc_ = new EnemyPathController(this, pointList);
         

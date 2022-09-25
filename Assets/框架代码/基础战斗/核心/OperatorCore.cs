@@ -43,6 +43,7 @@ public class OperatorCore : BattleCore
     {
         animObject = transform.Find("anim").gameObject;
         anim = animObject.GetComponent<Animator>();
+        animTransform = anim.transform;
         ac_ = new SpineAnimController(anim, this, 0.3f);
         
         // 这里是注册所有干员atkRange信息

@@ -22,16 +22,16 @@ public class Tartaglia : OperatorCore
         tarBattleCore = target;
         Vector3 pos = transform.position;
         pos += new Vector3(ac_.dirRight ? 0.6f : -0.6f, 0.5f, 0.35f);
-        par.Init(pos, tarBattleCore, 12f, norAttack);
+        par.Init(pos, this, tarBattleCore, 12f, norAttack);
     }
 
-    private void norAttack(float multi)
+    private void norAttack(float multi, BattleCore tarBC)
     {
         GameObject hitAnim = PoolManager.GetObj(norHitAnim);
-        hitAnim.transform.parent = target.transform;
+        hitAnim.transform.parent = tarBC.transform;
         Vector3 pos = new Vector3(0, 0, 0.3f);
         hitAnim.transform.localPosition = pos;
-        DurationRecycleObj recycleObj = new DurationRecycleObj(hitAnim, 1f, target, true);
+        DurationRecycleObj recycleObj = new DurationRecycleObj(hitAnim, 1f, tarBC, true);
         BuffManager.AddBuff(recycleObj);
         
         

@@ -8,22 +8,24 @@ using UnityEngine.Rendering;
 public class parabola : MonoBehaviour
 {
     private BattleCore tarBattleCore;
+    private BattleCore attacker;
     private Transform tarTrans;
     private bool isNull;
     private float speed = 5f;
     private float multi;
-    private Action<float> reachFunc;
+    private Action<float, BattleCore> reachFunc;
 
-    private const float min_distance = 0.15f;
+    private const float min_distance = 0.1f;
     private float distance;
     private Vector3 tarPos;
     private float py;
 
-    public void Init(Vector3 pos, BattleCore targetBattleCore, float speed_ = 5,
-        Action<float> reach = null, float Multi = 1)
+    public void Init(Vector3 pos, BattleCore attacker_, BattleCore targetBattleCore, float speed_ = 5,
+        Action<float, BattleCore> reach = null, float Multi = 1)
     {
         transform.position = pos;
         tarBattleCore = targetBattleCore;
+        attacker = attacker_;
         tarTrans = tarBattleCore.transform;
         speed = speed_;
         multi = Multi;
@@ -77,7 +79,7 @@ public class parabola : MonoBehaviour
     {
         if (!isNull)
         {
-            reachFunc?.Invoke(multi);
+            if (attacker.gameObject.activeSelf) reachFunc?.Invoke(multi, tarBattleCore);
             tarBattleCore.DieAction -= TarNull;
         }
         reachFunc = null;

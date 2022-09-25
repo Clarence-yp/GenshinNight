@@ -22,6 +22,8 @@ public class BattleCore : ElementCore
     [HideInInspector] public bool dying;
     [HideInInspector] public int dizziness;         // 眩晕计数器，>0时表示处于眩晕状态
     
+    // 显示在场上的，动画/物体位置
+    [HideInInspector] public Transform animTransform;
     
     // BattleCore瞄准的目标
     public BattleCore target { get; private set; } = null;

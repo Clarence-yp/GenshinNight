@@ -212,6 +212,7 @@ MonoBehaviour:
   fighting: 0
   dying: 0
   dizziness: 0
+  animTransform: {fileID: 0}
   blockList: []
   od_: {fileID: 11400000, guid: f94b1d200eaf004479c188ce35f47e42, type: 2}
   level: 0
@@ -223,6 +224,9 @@ MonoBehaviour:
   animObject: {fileID: 0}
   anim: {fileID: 0}
   atkRange: {fileID: 0}
+  norArrow: {fileID: 135146, guid: 28554174b733b0f43bd649682cc8fb3d, type: 3}
+  magicHitAnim: {fileID: 193442, guid: 6888ee6e63396094a8ee3fbe68a79d12, type: 3}
+  iceFog: {fileID: 138890, guid: d64af0db23fbf0c47aa77b7ce503c630, type: 3}
 --- !u!1001 &7547903280793889878
 PrefabInstance:
   m_ObjectHideFlags: 0

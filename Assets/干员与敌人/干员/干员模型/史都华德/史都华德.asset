@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c3c45b4a547140bca8625c627546d, type: 3}
   m_Name: "\u53F2\u90FD\u534E\u5FB7"
   m_EditorClassIdentifier: 
-  type: 0
+  type: 5
   skillType: 0
   Name: "\u53F2\u90FD\u534E\u5FB7"
   EnName: 
@@ -22,9 +22,9 @@ MonoBehaviour:
   canAtkDrone: 0
   banLowGround: 0
   banHighGround: 0
-  imageInQueue: {fileID: 0}
-  operUIImage1: {fileID: 0}
-  operUIImage2: {fileID: 0}
+  imageInQueue: {fileID: 21300000, guid: 6319f49c910d99747a690d205898e7fd, type: 3}
+  operUIImage1: {fileID: 21300000, guid: b82fca4ce5fcd95469df7756b9415825, type: 3}
+  operUIImage2: {fileID: 21300000, guid: b82fca4ce5fcd95469df7756b9415825, type: 3}
   operPrefab: {fileID: 7547903281441832326, guid: 3635de4a4e333024f8269b28f9faacc3, type: 3}
   Report: {fileID: 0}
   LevelUP: {fileID: 0}
@@ -42,12 +42,12 @@ MonoBehaviour:
   End_Not3Star: {fileID: 0}
   End_Fail: {fileID: 0}
   Touch: {fileID: 0}
-  atk: 0
+  atk: 100
   def: 0
   magicDef: 0
   life: 100
   maxBlock: 1
-  maxAtkInterval: 0
+  maxAtkInterval: 2
   cost: 0
   consumPlace: 1
   reTime: 0
@@ -148,10 +148,10 @@ MonoBehaviour:
   profession: 0
   star: 0
   skillImage:
+  - {fileID: 21300000, guid: 0a5dac78244af144182c10d4ae2f8a30, type: 3}
+  - {fileID: 21300000, guid: 5931dc4f598bb38498b8d1e96617af23, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  skillName0: 
+  skillName0: "\u5F3A\u529B\u51FB"
   description0:
   - 
   - 
@@ -161,7 +161,7 @@ MonoBehaviour:
   - 
   - 
   initSP0: 00000000000000000000000000000000000000000000000000000000
-  maxSP0: 00000000000000000000000000000000000000000000000000000000
+  maxSP0: 02000000020000000200000002000000020000000200000002000000
   duration0:
   - 0
   - 0
@@ -172,9 +172,9 @@ MonoBehaviour:
   - 0
   expNeed0: 000000000000000000000000000000000000000000000000
   costNeed0: 000000000000000000000000000000000000000000000000
-  skill0_recoverType: 0
-  skill0_releaseType: 0
-  skillName1: 
+  skill0_recoverType: 1
+  skill0_releaseType: 3
+  skillName1: "\u51B0\u96FE\u5F25\u6F2B"
   description1:
   - 
   - 
@@ -183,16 +183,16 @@ MonoBehaviour:
   - 
   - 
   - 
-  initSP1: 00000000000000000000000000000000000000000000000000000000
-  maxSP1: 00000000000000000000000000000000000000000000000000000000
+  initSP1: 05000000050000000500000005000000050000000500000005000000
+  maxSP1: 05000000050000000500000005000000050000000500000005000000
   duration1:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 0.85
+  - 0.85
+  - 0.85
+  - 0.85
+  - 0.85
+  - 0.85
+  - 0.85
   expNeed1: 000000000000000000000000000000000000000000000000
   costNeed1: 000000000000000000000000000000000000000000000000
   skill1_recoverType: 0

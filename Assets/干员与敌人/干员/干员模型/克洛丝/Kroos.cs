@@ -63,7 +63,7 @@ public class Kroos : OperatorCore
         
     }
 
-    private void Archery(float multi, GameObject proArrow, Action<float> endAttack)
+    private void Archery(float multi, GameObject proArrow, Action<float, BattleCore> endAttack)
     {// 射一支箭出去，攻击倍率为multi
         
         var arrow = PoolManager.GetObj(proArrow);
@@ -72,36 +72,36 @@ public class Kroos : OperatorCore
         tarBattleCore = target;
         Vector3 pos = transform.position;
         pos += new Vector3(ac_.dirRight ? 0.6f : -0.6f, 0.5f, 0.35f);
-        par.Init(pos, tarBattleCore, 12f, endAttack, multi);
+        par.Init(pos, this, tarBattleCore, 12f, endAttack, multi);
     }
 
-    private void NorAttack(float multi)
+    private void NorAttack(float multi, BattleCore tarBC)
     {
         GameObject hitAnim = PoolManager.GetObj(norHitAnim);
-        hitAnim.transform.parent = target.transform;
+        hitAnim.transform.parent = tarBC.transform;
         Vector3 pos = new Vector3(0, 0, 0.3f);
         hitAnim.transform.localPosition = pos;
-        DurationRecycleObj recycleObj = new DurationRecycleObj(hitAnim, 1f, target, true);
+        DurationRecycleObj recycleObj = new DurationRecycleObj(hitAnim, 1f, tarBC, true);
         BuffManager.AddBuff(recycleObj);
         
         ElementSlot elementSlot = new ElementSlot();
         bool haveText = multi > 1;
-        Battle(target, atk_.val * multi, DamageMode.Physical, elementSlot,
+        Battle(tarBC, atk_.val * multi, DamageMode.Physical, elementSlot,
             defaultElementTimer, haveText);
     }
     
-    private void PyroAttack(float multi)
+    private void PyroAttack(float multi, BattleCore tarBC)
     {
         GameObject hitAnim = PoolManager.GetObj(norHitAnim);
-        hitAnim.transform.parent = target.transform;
+        hitAnim.transform.parent = tarBC.transform;
         Vector3 pos = new Vector3(0, 0, 0.3f);
         hitAnim.transform.localPosition = pos;
-        DurationRecycleObj recycleObj = new DurationRecycleObj(hitAnim, 1f, target, true);
+        DurationRecycleObj recycleObj = new DurationRecycleObj(hitAnim, 1f, tarBC, true);
         BuffManager.AddBuff(recycleObj);
         
         ElementSlot elementSlot = new ElementSlot(ElementType.Pyro, 2f);
         bool haveText = multi > 1;
-        Battle(target, atk_.val * multi, DamageMode.Physical, elementSlot,
+        Battle(tarBC, atk_.val * multi, DamageMode.Physical, elementSlot,
             defaultElementTimer, haveText);
     }
 

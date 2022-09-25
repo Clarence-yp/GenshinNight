@@ -784,6 +784,7 @@
             </e>
             <e p="运动轨迹" t="Include">
               <e p="parabola.cs" t="Include" />
+              <e p="TrackMove.cs" t="Include" />
             </e>
           </e>
           <e p="静态函数" t="Include">
