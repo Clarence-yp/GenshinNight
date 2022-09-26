@@ -22,7 +22,7 @@ public class EnemyCore : BattleCore
 
     private int cannotMove = 0;     // 锁定移动，只有该变量=0时才可以移动
     private int blocked = 0;        // 阻挡该敌人的干员数量
-    private float speedDeta = 1;    // 移动速度和动画播放速度的改变量
+    public ValueBuffer speedDeta = new ValueBuffer(1);    // 移动速度和动画播放速度的改变量
 
     public PushAndPullController ppc_;
     
@@ -123,7 +123,7 @@ public class EnemyCore : BattleCore
         }
         
         anim.SetBool("move", true);
-        ac_.slowSpeed = speedDeta;
+        ac_.slowSpeed = speedDeta.val;
         ac_.ChangeAnimSpeed();
         
         Vector2 tmp = nxtPoint - transform.position;
@@ -133,7 +133,7 @@ public class EnemyCore : BattleCore
             ac_.TurnRight();
         
         transform.position = Vector3.MoveTowards(transform.position, nxtPoint,
-            ei_.speed * speedDeta * Time.deltaTime);
+            ei_.speed * speedDeta.val * Time.deltaTime);
     }
 
     private void Fight()
@@ -676,4 +676,30 @@ public class PushDizzyBuff : BuffSlot
         return Mathf.Abs(a.x) < 1e-2 && Mathf.Abs(a.y) < 1e-2 && Mathf.Abs(a.z) < 1e-2;
     }
     
+}
+
+public class EnemySlowDurationBuff : BattleCoreDurationBuff
+{
+    private EnemyCore ec_;
+    private float slowRate;
+    private ValueBuffInner buffInner; 
+
+    public EnemySlowDurationBuff(EnemyCore enemyCore, float slowRate_, float during) : base(enemyCore, during)
+    {
+        ec_ = enemyCore;
+        slowRate = slowRate_;
+    }
+
+    public override void BuffStart()
+    {
+        base.BuffStart();
+        buffInner = new ValueBuffInner(ValueBuffMode.Multi, slowRate);
+        ec_.speedDeta.AddValueBuff(buffInner);
+    }
+
+    public override void BuffEnd()
+    {
+        base.BuffEnd();
+        ec_.speedDeta.DelValueBuff(buffInner);
+    }
 }

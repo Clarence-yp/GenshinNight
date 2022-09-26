@@ -97,6 +97,47 @@ public abstract class DurationBuffSlot : BuffSlot
     }
 }
 
+public abstract class BattleCoreDurationBuff : BuffSlot
+{
+    protected float during;
+    protected BattleCore bc_;
+
+    protected bool isDie;
+    
+    public BattleCoreDurationBuff(BattleCore battleCore, float t)
+    {
+        bc_ = battleCore;
+        during = t;
+
+        isDie = bc_.dying;
+    }
+
+    public override void BuffStart()
+    {
+        if (!isDie) bc_.DieAction += Die;
+    }
+
+    public override void BuffUpdate()
+    {
+        during -= Time.deltaTime;
+    }
+
+    public override bool BuffEndCondition()
+    {
+        return during <= 0 || isDie;
+    }
+
+    public override void BuffEnd()
+    {
+        if(!isDie) bc_.DieAction -= Die;
+    }
+    
+    private void Die(BattleCore battleCore)
+    {
+        isDie = true;
+    }
+}
+
 public abstract class SkillBuffSlot : BuffSlot
 {
     protected SPController sp_;

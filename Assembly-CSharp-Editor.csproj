@@ -55,9 +55,6 @@
      <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Coordinate Brush\Scripts\Editor\CoordinateBrush.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Rule Tile\Scripts\Editor\CustomRuleTileMenu.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Rule Tile\Scripts\Editor\RuleTileEditor.cs" />
-     <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Tint Brush\Scripts\Editor\TintBrush.cs" />
-     <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Hexagonal Rule Tile\Editor\HexagonalRuleTileEditor.cs" />
-     <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Line Brush\Scripts\Editor\LineBrush.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\GameObject Brush\Scripts\Editor\GameObjectBrush.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Prefab Brush\Scripts\Editor\PrefabBrush.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Random Brush\Scripts\Editor\RandomBrush.cs" />
@@ -65,8 +62,11 @@
      <Compile Include="Assets\Editor\MeshRendererEditor.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Rule Override Tile\Scripts\Editor\RuleOverrideTileEditor.cs" />
      <Compile Include="Assets\Editor\operDataEnum.cs" />
-     <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Tint Brush Smooth\Scripts\Editor\TintBrushSmooth.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Group Brush\Scripts\Editor\GroupBrush.cs" />
+     <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Tint Brush Smooth\Scripts\Editor\TintBrushSmooth.cs" />
+     <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Tint Brush\Scripts\Editor\TintBrush.cs" />
+     <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Hexagonal Rule Tile\Editor\HexagonalRuleTileEditor.cs" />
+     <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Line Brush\Scripts\Editor\LineBrush.cs" />
  <Reference Include="UnityEngine">
  <HintPath>E:/unity/2020.3.15f2c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 using Spine;
 
 public class PropertyCore : MonoBehaviour
@@ -85,7 +86,8 @@ public enum DamageMode
 public enum ValueBuffMode
 {
     Fixed,
-    Percentage
+    Percentage,
+    Multi
 }
 
 public class ValueBuffInner
@@ -131,6 +133,12 @@ public class ValueBuffer
                 val += buffSlot.v;
             else if(buffSlot.mode == ValueBuffMode.Percentage)
                 val += buffSlot.v * baseVal;
+        }
+        
+        // Multi 为最终乘算
+        foreach (var buffSlot in valueBuffList.Where(buffSlot => buffSlot.mode == ValueBuffMode.Multi))
+        {
+            val *= buffSlot.v;
         }
     }
     
@@ -222,6 +230,8 @@ public class SPController
         reType = type1;
         outType = type2;
         spRecharge.ChangeBaseValue(recharge);
+        during = false;
+        remainingTime = 0;
     }
 
     public void Update()

@@ -247,18 +247,18 @@ public class AtkSpeedController
 public class SkillAtkSpeedBuff : SkillBuffSlot
 {
     private AtkSpeedController atkSpeedController;
-    private float atkSpeed;
+    private float atkSpeedInc;
     private ValueBuffInner buffInner;
     private float baseInterval;
     
     private float p_baseInterval;
 
-    public SkillAtkSpeedBuff(AtkSpeedController controller, float speed, SPController sp,
+    public SkillAtkSpeedBuff(AtkSpeedController controller, float atkSpeedInc_, SPController sp,
         float interval = -1) : base(sp)
     {
         atkSpeedController = controller;
-        atkSpeed = speed;
-        buffInner = new ValueBuffInner(ValueBuffMode.Fixed, atkSpeed);
+        atkSpeedInc = atkSpeedInc_;
+        buffInner = new ValueBuffInner(ValueBuffMode.Fixed, atkSpeedInc);
         baseInterval = interval;
 
         p_baseInterval = atkSpeedController.baseInterval;

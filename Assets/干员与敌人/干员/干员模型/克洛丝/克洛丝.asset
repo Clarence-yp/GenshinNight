@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c3c45b4a547140bca8625c627546d, type: 3}
   m_Name: "\u514B\u6D1B\u4E1D"
   m_EditorClassIdentifier: 
-  type: 5
+  type: 0
   skillType: 1
   Name: "\u514B\u6D1B\u4E1D"
   EnName: Kroos
@@ -137,7 +137,7 @@ MonoBehaviour:
   - 0
   - 0
   atkRange:
-  - {fileID: 6645886670027540070, guid: 519f9df20952ce04881a6ddc8faaad46, type: 3}
+  - {fileID: 6645886670027540070, guid: 732ddefb86d34b443881c13151c1937a, type: 3}
   - {fileID: 6645886670027540070, guid: d83d20e73992eec4bb801bc1c55b54d4, type: 3}
   - {fileID: 6645886670027540070, guid: d83d20e73992eec4bb801bc1c55b54d4, type: 3}
   atkRangeImage:

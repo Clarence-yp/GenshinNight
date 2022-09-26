@@ -30,7 +30,6 @@ public class DragSlot : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
         rectTransform = GetComponent<RectTransform>();
         anim = GetComponent<Animator>();
         InitManager.dragSlotController.Register(this);
-        
     }
 
     void Start()

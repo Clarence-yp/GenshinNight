@@ -676,6 +676,12 @@
                 </e>
                 <e p="Steward.cs" t="Include" />
               </e>
+              <e p="梓兰" t="Include">
+                <e p="Orchid.cs" t="Include" />
+                <e p="Spine" t="Include">
+                  <e p="char_278_orchid.atlas.txt" t="Include" />
+                </e>
+              </e>
               <e p="玫兰莎" t="Include">
                 <e p="Melantha.cs" t="Include" />
                 <e p="Spine" t="Include">

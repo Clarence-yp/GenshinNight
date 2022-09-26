@@ -61,7 +61,7 @@ public class InitManager : MonoBehaviour
     public static void Init()
     {
         // 生成本关的所有干员预制体
-        allOperDataList.Sort((x, y) => x.cost.CompareTo(y.cost));
+        allOperDataList.Sort((x, y) => -x.cost.CompareTo(y.cost));
         for (int i = 0; i < allOperDataList.Count; i++)
         {
             offOperList.Add(new List<OperatorCore>());
@@ -274,6 +274,7 @@ public class DragSlotController
             }
             else
             {
+                // Debug.Log(dragSlotList[i].transform.position+" "+j + ": " + InitManager.offOperList[j][0]);
                 dragSlotList[i].gameObject.SetActive(true);
                 dragSlotList[i].Refresh(InitManager.offOperList[j][0]);
             }

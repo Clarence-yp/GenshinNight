@@ -31,6 +31,10 @@ public class ColorfulText
         return GetColorfulText(x.ToString("f0") + "%", color);
     }
     
-    
+    public static string ChangeToColorfulPercentage(float x)
+    {
+        x *= 100;
+        return GetColorfulText(x.ToString("f0") + "%", normalBlue);
+    }
     
 }
