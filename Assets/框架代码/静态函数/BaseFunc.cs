@@ -12,6 +12,11 @@ public static class BaseFunc
     {
         return new Vector2(vec.x, vec.z);
     }
+
+    public static float xz_Distance(Vector3 a, Vector3 b)
+    {
+        return Vector2.Distance(xz(a), xz(b));
+    }
     
     public static float FixCoordinate(float x)
     {

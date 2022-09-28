@@ -10,8 +10,7 @@ public class Kroos : OperatorCore
     public GameObject norArrow;
     public GameObject pyroArrow;
     public GameObject norHitAnim;
-    private BattleCore tarBattleCore;
-    
+
     private float[] skill1Atk = {1.05f, 1.1f, 1.2f, 1.25f, 1.3f, 1.4f, 1.5f};
     private float[] skill2Atk = {1.8f, 2f, 2.2f, 2.4f, 2.6f, 2.8f, 3f};
     private float[] talent1Probability = {0.1f, 0.2f, 0.2f};
@@ -63,19 +62,18 @@ public class Kroos : OperatorCore
         
     }
 
-    private void Archery(float multi, GameObject proArrow, Action<float, BattleCore> endAttack)
+    private void Archery(float multi, GameObject proArrow, Action<float, BattleCore, parabola> endAttack)
     {// 射一支箭出去，攻击倍率为multi
         
         var arrow = PoolManager.GetObj(proArrow);
         parabola par = arrow.GetComponent<parabola>();
-
-        tarBattleCore = target;
+        
         Vector3 pos = transform.position;
         pos += new Vector3(ac_.dirRight ? 0.6f : -0.6f, 0.5f, 0.35f);
-        par.Init(pos, this, tarBattleCore, 12f, endAttack, multi);
+        par.Init(pos, this, target, 12f, endAttack, multi);
     }
 
-    private void NorAttack(float multi, BattleCore tarBC)
+    private void NorAttack(float multi, BattleCore tarBC, parabola par)
     {
         GameObject hitAnim = PoolManager.GetObj(norHitAnim);
         hitAnim.transform.parent = tarBC.transform;
@@ -90,7 +88,7 @@ public class Kroos : OperatorCore
             defaultElementTimer, haveText);
     }
     
-    private void PyroAttack(float multi, BattleCore tarBC)
+    private void PyroAttack(float multi, BattleCore tarBC, parabola par)
     {
         GameObject hitAnim = PoolManager.GetObj(norHitAnim);
         hitAnim.transform.parent = tarBC.transform;

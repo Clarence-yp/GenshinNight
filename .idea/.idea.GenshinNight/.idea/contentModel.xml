@@ -688,6 +688,12 @@
                   <e p="char_208_melan.atlas.txt" t="Include" />
                 </e>
               </e>
+              <e p="空爆" t="Include">
+                <e p="Catapult.cs" t="Include" />
+                <e p="Spine" t="Include">
+                  <e p="char_282_catap.atlas.txt" t="Include" />
+                </e>
+              </e>
               <e p="米格鲁" t="Include">
                 <e p="Beagle.cs" t="Include" />
                 <e p="Spine" t="Include">

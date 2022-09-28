@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 440818}
   - component: {fileID: 19862414}
   - component: {fileID: 19947540}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\u5730\u4E0B\u5192\u5149"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4819,7 +4819,7 @@ GameObject:
   - component: {fileID: 4986080358973736}
   - component: {fileID: 198177701882218414}
   - component: {fileID: 199002634204894332}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MagicDust
   m_TagString: Untagged
   m_Icon: {fileID: 0}

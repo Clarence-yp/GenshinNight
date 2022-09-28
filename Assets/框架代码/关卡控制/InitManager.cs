@@ -152,25 +152,35 @@ public class InitManager : MonoBehaviour
         return mp[pos];
     }
 
-    public static List<OperatorCore> GetNearByOper(Vector3 pos, float r)
+    public static List<OperatorCore> GetNearByOper(Vector3 center, float r)
     {
         List<OperatorCore> tars = new List<OperatorCore>();
         foreach (var oc_ in operList)
         {
-            if (Vector2.Distance(BaseFunc.xz(pos), BaseFunc.xz(oc_.transform.position)) <= r)
+            if (BaseFunc.xz_Distance(center, oc_.transform.position) <= r) 
                 tars.Add(oc_);
         }
+        // 按照距圆心的距离长度排序
+        tars.Sort((a, b) =>
+            BaseFunc.xz_Distance(center, a.transform.position).CompareTo(
+                BaseFunc.xz_Distance(center, b.transform.position))
+        );
         return tars;
     }
     
-    public static List<EnemyCore> GetNearByEnemy(Vector3 pos, float r)
+    public static List<EnemyCore> GetNearByEnemy(Vector3 center, float r)
     {
         List<EnemyCore> tars = new List<EnemyCore>();
         foreach (var ec_ in enemyList)
         {
-            if (Vector2.Distance(BaseFunc.xz(pos), BaseFunc.xz(ec_.transform.position)) <= r)
+            if (BaseFunc.xz_Distance(center, ec_.transform.position) <= r)
                 tars.Add(ec_);
         }
+        // 按照距圆心的距离长度排序
+        tars.Sort((a, b) =>
+            BaseFunc.xz_Distance(center, a.transform.position).CompareTo(
+                BaseFunc.xz_Distance(center, b.transform.position))
+        );
         return tars;
     }
     

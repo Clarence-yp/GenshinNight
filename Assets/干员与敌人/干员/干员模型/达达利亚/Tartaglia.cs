@@ -25,7 +25,7 @@ public class Tartaglia : OperatorCore
         par.Init(pos, this, tarBattleCore, 12f, norAttack);
     }
 
-    private void norAttack(float multi, BattleCore tarBC)
+    private void norAttack(float multi, BattleCore tarBC, parabola par)
     {
         GameObject hitAnim = PoolManager.GetObj(norHitAnim);
         hitAnim.transform.parent = tarBC.transform;

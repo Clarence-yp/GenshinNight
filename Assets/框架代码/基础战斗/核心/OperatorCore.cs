@@ -99,6 +99,7 @@ public class OperatorCore : BattleCore
         life_.RecoverCompletely();
         
         // 初始化元素附着相关
+        foreach (var timer in elementTimerList) timer.Clear();
         attachedElement.Clear();
         reactionController.Init();
         

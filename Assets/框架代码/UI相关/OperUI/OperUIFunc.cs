@@ -154,7 +154,7 @@ public class OperUIFunc : MonoBehaviour
 
 
     /// <summary>
-    /// 技能选择按钮，同事重置spController
+    /// 技能选择按钮，同时重置spController
     /// </summary>
     public void SkillChoose()
     {

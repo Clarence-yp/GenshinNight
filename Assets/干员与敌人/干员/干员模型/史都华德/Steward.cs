@@ -106,7 +106,7 @@ public class Steward : OperatorCore
         }
     }
 
-    private void Archery(float multi, Action<float, BattleCore> endAttack)
+    private void Archery(float multi, Action<float, BattleCore, TrackMove> endAttack)
     {// 射一支箭出去，攻击倍率为multi
         
         var arrow = PoolManager.GetObj(norArrow);
@@ -149,7 +149,7 @@ public class Steward : OperatorCore
         return pos;
     }
     
-    private void NorAttack(float multi, BattleCore tarBC)
+    private void NorAttack(float multi, BattleCore tarBC, TrackMove tm)
     {
         GameObject hitAnim = PoolManager.GetObj(magicHitAnim);
         hitAnim.transform.parent = tarBC.transform;

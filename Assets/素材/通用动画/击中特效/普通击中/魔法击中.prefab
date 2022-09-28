@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 402642}
   - component: {fileID: 19823924}
   - component: {fileID: 19967586}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4813,7 +4813,7 @@ GameObject:
   - component: {fileID: 445190}
   - component: {fileID: 19807950}
   - component: {fileID: 19955612}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: CentralOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9642,7 +9642,7 @@ GameObject:
   - component: {fileID: 401252}
   - component: {fileID: 19897700}
   - component: {fileID: 19956404}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14426,7 +14426,7 @@ GameObject:
   - component: {fileID: 494684}
   - component: {fileID: 19817766}
   - component: {fileID: 19990618}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: StarDust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19228,7 +19228,7 @@ GameObject:
   - component: {fileID: 485290}
   - component: {fileID: 19878148}
   - component: {fileID: 19979200}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Nova
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23995,7 +23995,7 @@ GameObject:
   - component: {fileID: 19853034}
   - component: {fileID: 19988488}
   - component: {fileID: 8261688}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: "\u9B54\u6CD5\u51FB\u4E2D"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -58,7 +58,7 @@ public class Melantha : OperatorCore
     {
         var tars = InitManager.GetNearByEnemy(skill2Center, skill2_r);
         float multi = elecAtkMulti[skillLevel[1]];
-        ElementSlot elementSlot = new ElementSlot(ElementType.Electro, 1f);
+        ElementSlot elementSlot = new ElementSlot(ElementType.Electro, 2f);
 
         foreach (var ec_ in tars)
         {

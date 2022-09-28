@@ -12,6 +12,7 @@ public class testController : MonoBehaviour
     public operData beagle;
     public operData melantha;
     public operData orchid;
+    public operData catapult;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class testController : MonoBehaviour
         InitManager.Register(beagle, 1);
         InitManager.Register(melantha, 1);
         InitManager.Register(orchid, 1);
+        InitManager.Register(catapult, 1);
     }
 
     void Start()

@@ -56,7 +56,7 @@ public class Orchid : OperatorCore
     }
     
     private void Archery(BattleCore tarBC, float multi, GameObject proArrow, 
-        Action<float, BattleCore> endAttack)
+        Action<float, BattleCore, TrackMove> endAttack)
     {// 射一支箭出去，攻击倍率为multi
         
         var arrow = PoolManager.GetObj(proArrow);
@@ -67,7 +67,7 @@ public class Orchid : OperatorCore
         tm.Init(pos, this, tarBC, 12f, endAttack, multi);
     }
     
-    private void NorAttack(float multi, BattleCore tarBC)
+    private void NorAttack(float multi, BattleCore tarBC, TrackMove tm)
     {
         GameObject hitAnim = PoolManager.GetObj(magicHitAnim);
         hitAnim.transform.parent = tarBC.transform;
@@ -85,7 +85,7 @@ public class Orchid : OperatorCore
             defaultElementTimer, false);
     }
 
-    private void HydroAttack(float multi, BattleCore tarBC)
+    private void HydroAttack(float multi, BattleCore tarBC, TrackMove tm)
     {
         GameObject hitAnim = PoolManager.GetObj(magicHitAnim);
         hitAnim.transform.parent = tarBC.transform;

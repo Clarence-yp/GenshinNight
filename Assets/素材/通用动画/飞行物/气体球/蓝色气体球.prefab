@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4978354966054470}
   - component: {fileID: 198648172651779362}
   - component: {fileID: 199792380991297204}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: SmokeTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4748,7 +4748,7 @@ GameObject:
   - component: {fileID: 199343498223053338}
   - component: {fileID: 82445749962233750}
   - component: {fileID: 4270751706033297659}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: "\u84DD\u8272\u6C14\u4F53\u7403"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9612,7 +9612,7 @@ GameObject:
   - component: {fileID: 4749060020131872}
   - component: {fileID: 198063134596826858}
   - component: {fileID: 199340564421833496}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: SparkTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14455,7 +14455,7 @@ GameObject:
   - component: {fileID: 4253871860302310}
   - component: {fileID: 198602644405545360}
   - component: {fileID: 199415412633167752}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: WhiteGlobe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

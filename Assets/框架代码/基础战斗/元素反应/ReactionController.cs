@@ -505,7 +505,7 @@ public class ReactionController
 
 public class DurationRecycleObj : DurationBuffSlot
 {
-    private GameObject obj;
+    protected GameObject obj;
     private bool havePrt;
     private BattleCore bc_;
     private bool isDie;

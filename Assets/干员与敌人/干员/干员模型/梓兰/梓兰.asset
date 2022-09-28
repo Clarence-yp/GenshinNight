@@ -52,7 +52,7 @@ MonoBehaviour:
   consumPlace: 1
   reTime: 0
   maxLevel: 000000000000000000000000
-  elementalMastery: 0
+  elementalMastery: 200
   elementalDamage: 1
   elementalResistance: 0
   spRecharge: 1

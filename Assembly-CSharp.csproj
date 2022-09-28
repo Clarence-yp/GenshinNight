@@ -93,6 +93,7 @@
      <Compile Include="Assets\框架代码\UI相关\UISprite\StoreHouse.cs" />
      <Compile Include="Assets\框架代码\关卡控制\拖动\DragSlot.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Hexagonal Rule Tile\HexagonalRuleTile.cs" />
+     <Compile Include="Assets\干员与敌人\干员\干员模型\空爆\Catapult.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Rule Tile\Scripts\RuleTile.cs" />
      <Compile Include="Assets\框架代码\基础战斗\动画函数\OperAnimEvent.cs" />
      <Compile Include="Assets\框架代码\关卡控制\register\blueDoorRegister.cs" />

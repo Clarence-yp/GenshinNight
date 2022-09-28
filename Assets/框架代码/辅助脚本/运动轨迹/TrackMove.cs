@@ -11,14 +11,14 @@ public class TrackMove : MonoBehaviour
     private bool isNull;
     private float speed = 5f;
     private float multi;
-    private Action<float, BattleCore> reachFunc;
+    private Action<float, BattleCore, TrackMove> reachFunc;
     
     private const float min_distance = 0.1f;
     private float distance;
     private Vector3 tarPos;
     
     public void Init(Vector3 pos, BattleCore attacker_, BattleCore targetBattleCore, float speed_ = 5,
-        Action<float, BattleCore> reach = null, float Multi = 1)
+        Action<float, BattleCore, TrackMove> reach = null, float Multi = 1)
     {
         transform.position = pos;
         tarBattleCore = targetBattleCore;
@@ -70,7 +70,7 @@ public class TrackMove : MonoBehaviour
     {
         if (!isNull)
         {
-            if (attacker.gameObject.activeSelf) reachFunc?.Invoke(multi, tarBattleCore);
+            if (attacker.gameObject.activeSelf) reachFunc?.Invoke(multi, tarBattleCore, this);
             tarBattleCore.DieAction -= TarNull;
         }
         reachFunc = null;
