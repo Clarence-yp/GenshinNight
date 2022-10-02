@@ -21,7 +21,7 @@ public class Catapult : OperatorCore
     public override void SkillStart_1()
     {
         float rangeInc = boomRangeIncrease[skillLevel[0]];
-        SkillValueBuff valueBuff = new SkillValueBuff(boomRange, ValueBuffMode.Percentage, rangeInc, sp_);
+        SkillValueBuff valueBuff = new SkillValueBuff(boomRange, ValueBuffMode.Percentage, rangeInc, this);
         BuffManager.AddBuff(valueBuff);
         
         GameObject light = PoolManager.GetObj(StoreHouse.instance.underGroundLight);
@@ -70,7 +70,6 @@ public class Catapult : OperatorCore
         rangeDic.Remove(par);
         Vector3 scale = hitAnim.transform.localScale;
         scale *= range;
-        Debug.Log(scale);
         Scale_DurationRecycleObj recycleObj = new Scale_DurationRecycleObj(hitAnim, scale, 1f);
         BuffManager.AddBuff(recycleObj);
 

@@ -98,6 +98,7 @@
      <Compile Include="Assets\框架代码\基础战斗\动画函数\OperAnimEvent.cs" />
      <Compile Include="Assets\框架代码\关卡控制\register\blueDoorRegister.cs" />
      <Compile Include="Assets\框架代码\辅助脚本\destroySelf.cs" />
+     <Compile Include="Assets\干员与敌人\干员\干员模型\达达利亚\tartagliaAnimEvent.cs" />
      <Compile Include="Assets\rubbish\剑光特效包\1\Demo scene\CameraHolder.cs" />
      <Compile Include="Assets\框架代码\scriOb\operData.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Isometric Rule Tile\IsometricRuleTile.cs" />
@@ -157,6 +158,7 @@
      <None Include="Assets\rubbish\剑光特效包\1\Shaders\BlendDistort.shader" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\rubbish\剑光特效包\1\Shaders\Scroll.shader" />
+     <None Include="Assets\干员与敌人\干员\干员模型\达达利亚\spine2\bili.atlas.txt" />
      <None Include="Assets\rubbish\剑光特效包\2\Shader\Rz_Distortion.shader" />
      <None Include="Assets\干员与敌人\干员\干员模型\空爆\spine\char_282_catap.atlas.txt" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />

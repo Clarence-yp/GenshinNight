@@ -22,6 +22,7 @@ public class LifeSliderController : MonoBehaviour
     private void Awake()
     {
         bc_ = transform.parent.GetComponent<BattleCore>();
+        bc_.frontCanvas = GetComponent<Canvas>();
     }
 
     void Update()
@@ -36,7 +37,7 @@ public class LifeSliderController : MonoBehaviour
     {
         blueLifeSlider.value = bc_.life_.life / bc_.life_.val;
         grayLifeSlider.value = Math.Max(grayLifeSlider.value, blueLifeSlider.value);
-
+        
         SPController sp_ = bc_.sp_;
         if (sp_.during)
         {

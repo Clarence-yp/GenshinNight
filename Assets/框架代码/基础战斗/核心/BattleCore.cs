@@ -24,6 +24,9 @@ public class BattleCore : ElementCore
     
     // 显示在场上的，动画/物体位置
     [HideInInspector] public Transform animTransform;
+
+    // 血条canvas
+    [HideInInspector] public Canvas frontCanvas;
     
     // BattleCore瞄准的目标
     public BattleCore target { get; private set; } = null;
@@ -36,15 +39,14 @@ public class BattleCore : ElementCore
     [HideInInspector] public List<BattleCore> blockList = new List<BattleCore>();
 
 
-    protected override void Start_ElementCore_Down()
+    protected override void Start_Core()
     {
-        Start_BattleCore_Down();
+        base.Start_Core();
     }
-
-    protected virtual void Start_BattleCore_Down() {}
-
-    protected override void Update_ElementCore_Down()
+    
+    protected override void Update_Core()
     {
+        base.Update_Core();
         ChooseTarget();
         CheckDie();
         atkSpeedController.Update();
@@ -53,11 +55,8 @@ public class BattleCore : ElementCore
 
         if (dieNow) // 测试用，后期删掉
             GetDamage(1e9f, DamageMode.Magic);
-        
-        Update_BattleCore_Down();
     }
-
-    protected virtual void Update_BattleCore_Down() {}
+    
     
     private void CheckDie()
     {
@@ -253,8 +252,8 @@ public class SkillAtkSpeedBuff : SkillBuffSlot
     
     private float p_baseInterval;
 
-    public SkillAtkSpeedBuff(AtkSpeedController controller, float atkSpeedInc_, SPController sp,
-        float interval = -1) : base(sp)
+    public SkillAtkSpeedBuff(AtkSpeedController controller, float atkSpeedInc_, BattleCore bc,
+        float interval = -1) : base(bc)
     {
         atkSpeedController = controller;
         atkSpeedInc = atkSpeedInc_;

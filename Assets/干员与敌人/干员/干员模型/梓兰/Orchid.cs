@@ -19,11 +19,11 @@ public class Orchid : OperatorCore
     public override void SkillStart_1()
     {
         float atkInc = AtkIncrease[skillLevel[0]];
-        SkillValueBuff atkBuff = new SkillValueBuff(atk_, ValueBuffMode.Percentage, atkInc, sp_);
+        SkillValueBuff atkBuff = new SkillValueBuff(atk_, ValueBuffMode.Percentage, atkInc, this);
         BuffManager.AddBuff(atkBuff);
         
         float atkSpeedInc = AtkSpeedIncrease[skillLevel[0]];
-        SkillAtkSpeedBuff atkSpeedBuff = new SkillAtkSpeedBuff(atkSpeedController, atkSpeedInc, sp_);
+        SkillAtkSpeedBuff atkSpeedBuff = new SkillAtkSpeedBuff(atkSpeedController, atkSpeedInc, this);
         BuffManager.AddBuff(atkSpeedBuff);
         
         GameObject light = PoolManager.GetObj(StoreHouse.instance.underGroundLight);

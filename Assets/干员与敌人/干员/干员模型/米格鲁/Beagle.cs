@@ -10,7 +10,7 @@ public class Beagle : OperatorCore
     public override void SkillStart_1()
     {
         float defInc = DefIncrease[skillLevel[0]];
-        SkillValueBuff valueBuff = new SkillValueBuff(def_, ValueBuffMode.Percentage, defInc, sp_);
+        SkillValueBuff valueBuff = new SkillValueBuff(def_, ValueBuffMode.Percentage, defInc, this);
         BuffManager.AddBuff(valueBuff);
 
         GameObject light = PoolManager.GetObj(StoreHouse.instance.underGroundLight);

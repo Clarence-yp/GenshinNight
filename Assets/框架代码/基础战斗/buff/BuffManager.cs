@@ -141,14 +141,35 @@ public abstract class BattleCoreDurationBuff : BuffSlot
 public abstract class SkillBuffSlot : BuffSlot
 {
     protected SPController sp_;
+    protected BattleCore bc_;
+    protected bool isDie;
 
-    public SkillBuffSlot(SPController ssp_)
+    public SkillBuffSlot(BattleCore bcc_)
     {
-        sp_ = ssp_;
+        bc_ = bcc_;
+        sp_ = bcc_.sp_;
+        if (bc_.dying || !bc_.gameObject.activeSelf) isDie = true;
+        else isDie = false;
+    }
+
+    public override void BuffStart()
+    {
+        bc_.DieAction += Die;
     }
 
     public override bool BuffEndCondition()
     {
-        return !sp_.during || !sp_.bc_.gameObject.activeSelf;
+        return !sp_.during || isDie;
+    }
+
+    public override void BuffEnd()
+    {
+        bc_.DieAction -= Die;
+    }
+
+
+    private void Die(BattleCore tmp)
+    {
+        isDie = true;
     }
 }

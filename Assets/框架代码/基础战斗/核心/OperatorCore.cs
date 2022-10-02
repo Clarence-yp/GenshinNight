@@ -39,8 +39,9 @@ public class OperatorCore : BattleCore
     // 入场委托函数（一般为被动与天赋）
     [HideInInspector] public Action PutOnAction;
     
-    private void Awake()
+    protected override void Awake_Core()
     {
+        base.Awake_Core();
         animObject = transform.Find("anim").gameObject;
         anim = animObject.GetComponent<Animator>();
         animTransform = anim.transform;
@@ -56,20 +57,18 @@ public class OperatorCore : BattleCore
         aimingMode = od_.aimingMode;
         InitCalculation();      // 初始化battleCalculation
         ChangeAtkRange();       // 生成atkRange
-        
-        Awake_OperatorCore_Down();
     }
+    
 
-    protected virtual void Awake_OperatorCore_Down() {}
-
-    protected override void Start_BattleCore_Down()
+    protected override void Start_Core()
     {
+        base.Start_Core();
+        
         OperInit();
         ac_.ChangeDefaultColorImmediately();
         frozen_Inc_DecSpeed = 0;            // 干员的被冻结时间不会随之延长
 
-
-        Start_OperatorCore_Down();
+        
         if (prePutOn)
         {
             InitManager.operList.Add(this);
@@ -78,19 +77,16 @@ public class OperatorCore : BattleCore
         gameObject.SetActive(false);
     }
 
-    protected virtual void Start_OperatorCore_Down() {}
-    
-    protected override void Update_BattleCore_Down()
+    protected override void Update_Core()
     {
+        base.Update_Core();
+        
         Dizzy();
         Fight();
         CheckBlock();
 
         ac_.Update();
-        Update_OperatorCore_Down();
     }
-    
-    protected virtual void Update_OperatorCore_Down() {}
 
     public void OperInit()
     {// 在每次登场时的初始化函数，用于初始化本OperatorCore

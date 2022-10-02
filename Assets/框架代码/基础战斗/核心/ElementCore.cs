@@ -29,30 +29,25 @@ public class ElementCore : PropertyCore
     [HideInInspector] public bool superConducting;          // 当前是否处于超导状态下
     [HideInInspector] public bool electroCharging;          // 当前是否处于感电状态下
     [HideInInspector] public bool frozen;                   // 是否处于冻结状态
-    
-    protected override void Start_Property_Down()
+
+    protected override void Start_Core()
     {
+        base.Start_Core();
         defaultElementTimer = new ElementTimer(this);
         reactionController = new ReactionController(this);
         InitDecreaseSpeed();
-        Start_ElementCore_Down();
     }
 
-    protected virtual void Start_ElementCore_Down() {}
-
-    protected override void Update_Property_Down()
+    protected override void Update_Core()
     {
+        base.Update_Core();
         foreach (var timer in elementTimerList)
         {
             timer.Update();
         }
         DecreaseAttachedElement();
         reactionController.Update();
-
-        Update_ElementCore_Down();
     }
-    
-    protected virtual void Update_ElementCore_Down() {}
 
 
     private void InitDecreaseSpeed()

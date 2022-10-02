@@ -26,22 +26,28 @@ public class PropertyCore : MonoBehaviour
     private ValueBuffer getDamInc_ = new ValueBuffer(0);
     // 受到伤害改变委托列表，由其他类注册，前委托的输出会作为后委托的输入
     private List<Func<float, float>> getDamFuncList = new List<Func<float, float>>();
-    
-    
-    void Start()
+
+    private void Awake()
     {
-        Start_Property_Down();
+        Awake_Core();
     }
     
-    protected virtual void Start_Property_Down(){}
+    protected virtual void Awake_Core(){}
+
+    void Start()
+    {
+        Start_Core();
+    }
+    
+    protected virtual void Start_Core(){}
     
     void Update()
     {
         sp_.Update();
-        Update_Property_Down();
+        Update_Core();
     }
     
-    protected virtual void Update_Property_Down(){}
+    protected virtual void Update_Core(){}
     
     
     /// <summary>  
@@ -305,7 +311,7 @@ public class SkillValueBuff : SkillBuffSlot
 {
     private ValueBuffer valueBuffer;
     private ValueBuffInner buffInner;
-    public SkillValueBuff(ValueBuffer buffer, ValueBuffMode buffMode, float v, SPController sp) : base(sp)
+    public SkillValueBuff(ValueBuffer buffer, ValueBuffMode buffMode, float v, BattleCore bc) : base(bc)
     {
         valueBuffer = buffer;
         buffInner = new ValueBuffInner();

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class hound : EnemyCore
 {
-    protected override void Start_EnemyCore_Down()
+    protected override void Start_Core()
     {
+        base.Start_Core();
         // ElementType type = ElementType.Pyro;
         // GameObject shield = PoolManager.GetObj(StoreHouse.GetCrystallizationShield(type));
         // NormalShield normalShield = shield.GetComponent<NormalShield>();
@@ -13,15 +14,16 @@ public class hound : EnemyCore
 
     }
 
-    protected override void Update_EnemyCore_Down()
+    protected override void Update_Core()
     {
+        base.Update_Core();
         // ElementSlot elementSlot = new ElementSlot(ElementType.Hydro, 8f);
         // Battle(this, 0, DamageMode.Physical, elementSlot, defaultElementTimer);
     }
     
     public override void OnAttack()
     {
-        ElementSlot elementSlot = new ElementSlot(ElementType.Hydro, 2f);
+        ElementSlot elementSlot = new ElementSlot(ElementType.None, 2f);
         Battle(target, atk_.val, DamageMode.Physical, elementSlot, defaultElementTimer);
     }
     

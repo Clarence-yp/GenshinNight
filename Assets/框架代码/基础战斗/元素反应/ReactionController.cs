@@ -341,9 +341,11 @@ public class ReactionController
     
     private void Swirl(ElementSlot firElement, ElementSlot sedElement, float mastery) 
     {// 扩散反应
-        
+
         Vector3 center = elc_.transform.position;
-        ElementSlot swirlElement = new ElementSlot(firElement.eleType, sedElement.eleCount);
+        ElementSlot swirlElement = new ElementSlot(
+            firElement.eleType == ElementType.Frozen ? ElementType.Cryo : firElement.eleType
+            , sedElement.eleCount);
         
         if (elc_.transform.CompareTag("operator"))
         {// 对干员造成一次扩散元素攻击，元素附着量为风元素量，精通为0
@@ -355,7 +357,7 @@ public class ReactionController
             }
         }
         else if(elc_.transform.CompareTag("enemy"))
-        {// 对敌人造成超载反应，以本体（稍微偏向发出点）为圆心产生一次爆炸，对所有敌人造成小力击退效果
+        {// 对干员造成一次扩散元素攻击，元素附着量为风元素量，精通为0
             List<EnemyCore> tars = InitManager.GetNearByEnemy(center, OverLoadRadius);
             foreach (var ec_ in tars)
             {// 对范围内的所有敌人进行攻击和元素附着

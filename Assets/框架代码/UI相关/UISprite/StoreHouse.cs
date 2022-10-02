@@ -118,8 +118,10 @@ public class StoreHouse : MonoBehaviour
             case ElementType.Pyro:
                 return instance.swirlPyroAnim;
             case ElementType.Cryo:
+            case ElementType.Frozen:
                 return instance.swirlCryoAnim;
             default:
+                Debug.Log(type);
                 return null;
         }
     }

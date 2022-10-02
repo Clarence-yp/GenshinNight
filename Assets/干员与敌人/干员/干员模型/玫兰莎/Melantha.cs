@@ -15,7 +15,7 @@ public class Melantha : OperatorCore
     public override void SkillStart_1()
     {
         float atkInc = AtkIncrease[skillLevel[0]];
-        SkillValueBuff valueBuff = new SkillValueBuff(atk_, ValueBuffMode.Percentage, atkInc, sp_);
+        SkillValueBuff valueBuff = new SkillValueBuff(atk_, ValueBuffMode.Percentage, atkInc, this);
         BuffManager.AddBuff(valueBuff);
 
         GameObject light = PoolManager.GetObj(StoreHouse.instance.underGroundLight);

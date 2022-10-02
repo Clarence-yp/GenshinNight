@@ -26,15 +26,18 @@ public class EnemyCore : BattleCore
 
     public PushAndPullController ppc_;
     
-    private void Awake()
+    protected override void Awake_Core()
     {
+        base.Awake_Core();
         InitManager.Register(this);
         ppc_ = new PushAndPullController(this);
         transform.position = BaseFunc.x0z(pointList[0]);
     }
 
-    protected override void Start_BattleCore_Down()
+    protected override void Start_Core()
     {
+        base.Start_Core();
+        
         anim = transform.Find("anim").GetComponent<Animator>();
         animTransform = anim.transform;
         ac_ = new SpineAnimController(anim, this, 0.3f);
@@ -42,15 +45,15 @@ public class EnemyCore : BattleCore
         
         // 初始化battleCalculation
         InitCalculation();
-
-        Start_EnemyCore_Down();
+        
         gameObject.SetActive(false);        // 敌人开始是处于关闭状态
     }
-
-    protected virtual void Start_EnemyCore_Down() {}
     
-    protected override void Update_BattleCore_Down()
+    
+    protected override void Update_Core()
     {
+        base.Update_Core();
+        
         ac_.Update();
         epc_.Update();
         ppc_.Update();
@@ -59,11 +62,7 @@ public class EnemyCore : BattleCore
         Move();
         Fight();
         GetPriority();
-
-        Update_EnemyCore_Down();
     }
-    
-    protected virtual void Update_EnemyCore_Down() {}
 
     private void InitCalculation()
     {

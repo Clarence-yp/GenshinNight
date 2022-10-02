@@ -5,6 +5,7 @@ using UnityEngine;
 public class ColorfulText
 {
     public static string normalBlue="#87CEFA";
+    public static string normalRed = "#FF6464";
     public static string PyroRed = "#FF3232";
     public static string GeoYellow = "#FFC800";
     public static string ElectroPurple = "#C832FF";
