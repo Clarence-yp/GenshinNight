@@ -43,6 +43,10 @@ public class EnemyCore : BattleCore
         ac_ = new SpineAnimController(anim, this, 0.3f);
         epc_ = new EnemyPathController(this, pointList);
         
+        // 设置敌人重量和瞄准信息
+        GetComponent<Rigidbody>().mass = ei_.mass;
+        aimingMode = ei_.aimingMode;
+        
         // 初始化battleCalculation
         InitCalculation();
         
@@ -100,7 +104,7 @@ public class EnemyCore : BattleCore
 
     private void Move()
     {
-        if (cannotMove > 0)
+        if (cannotMove > 0 || fighting)
         {   // 如果当前无法move
             anim.SetBool("move", false);
             return;
@@ -131,6 +135,7 @@ public class EnemyCore : BattleCore
         else if (tmp.x > 0)
             ac_.TurnRight();
         
+        
         transform.position = Vector3.MoveTowards(transform.position, nxtPoint,
             ei_.speed * speedDeta.val * Time.deltaTime);
     }
@@ -142,6 +147,10 @@ public class EnemyCore : BattleCore
         if (staInfo.IsName("Fight"))
         {
             fighting = true;
+            // 根据目标位置转变敌人朝向
+            Vector2 detaPos = BaseFunc.xz(transform.position) - BaseFunc.xz(target.transform.position);
+            if (detaPos.x < 0) ac_.TurnRight();
+            else ac_.TurnLeft();
         }
         else fighting = false;
         
@@ -150,11 +159,6 @@ public class EnemyCore : BattleCore
             anim.SetBool("fight", true);
             NorAtkStartCool();
             fightingContinue = (int) (3 / Time.timeScale);;
-            
-            // 根据目标位置转变敌人朝向
-            Vector2 detaPos = BaseFunc.xz(transform.position) - BaseFunc.xz(target.transform.position);
-            if (detaPos.x < 0) ac_.TurnRight();
-            else ac_.TurnLeft();
         }
         else if (fightingContinue > 0)
         {

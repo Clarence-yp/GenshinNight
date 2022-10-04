@@ -8,6 +8,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Editor" t="Include">
+          <e p="enemyInfoEnum.cs" t="Include" />
           <e p="MeshRendererEditor.cs" t="Include" />
           <e p="operDataEnum.cs" t="Include" />
         </e>
@@ -664,40 +665,42 @@
         <e p="干员与敌人" t="Include">
           <e p="干员" t="Include">
             <e p="干员模型" t="Include">
-              <e p="克洛丝" t="Include">
-                <e p="Kroos.cs" t="Include" />
-                <e p="Spine" t="Include">
-                  <e p="char_124_kroos.atlas.txt" t="Include" />
+              <e p="基础干员" t="Include">
+                <e p="克洛丝" t="Include">
+                  <e p="Kroos.cs" t="Include" />
+                  <e p="Spine" t="Include">
+                    <e p="char_124_kroos.atlas.txt" t="Include" />
+                  </e>
                 </e>
-              </e>
-              <e p="史都华德" t="Include">
-                <e p="Spine" t="Include">
-                  <e p="char_210_stward.atlas.txt" t="Include" />
+                <e p="史都华德" t="Include">
+                  <e p="Spine" t="Include">
+                    <e p="char_210_stward.atlas.txt" t="Include" />
+                  </e>
+                  <e p="Steward.cs" t="Include" />
                 </e>
-                <e p="Steward.cs" t="Include" />
-              </e>
-              <e p="梓兰" t="Include">
-                <e p="Orchid.cs" t="Include" />
-                <e p="Spine" t="Include">
-                  <e p="char_278_orchid.atlas.txt" t="Include" />
+                <e p="梓兰" t="Include">
+                  <e p="Orchid.cs" t="Include" />
+                  <e p="Spine" t="Include">
+                    <e p="char_278_orchid.atlas.txt" t="Include" />
+                  </e>
                 </e>
-              </e>
-              <e p="玫兰莎" t="Include">
-                <e p="Melantha.cs" t="Include" />
-                <e p="Spine" t="Include">
-                  <e p="char_208_melan.atlas.txt" t="Include" />
+                <e p="玫兰莎" t="Include">
+                  <e p="Melantha.cs" t="Include" />
+                  <e p="Spine" t="Include">
+                    <e p="char_208_melan.atlas.txt" t="Include" />
+                  </e>
                 </e>
-              </e>
-              <e p="空爆" t="Include">
-                <e p="Catapult.cs" t="Include" />
-                <e p="Spine" t="Include">
-                  <e p="char_282_catap.atlas.txt" t="Include" />
+                <e p="空爆" t="Include">
+                  <e p="Catapult.cs" t="Include" />
+                  <e p="Spine" t="Include">
+                    <e p="char_282_catap.atlas.txt" t="Include" />
+                  </e>
                 </e>
-              </e>
-              <e p="米格鲁" t="Include">
-                <e p="Beagle.cs" t="Include" />
-                <e p="Spine" t="Include">
-                  <e p="char_122_beagle.atlas.txt" t="Include" />
+                <e p="米格鲁" t="Include">
+                  <e p="Beagle.cs" t="Include" />
+                  <e p="Spine" t="Include">
+                    <e p="char_122_beagle.atlas.txt" t="Include" />
+                  </e>
                 </e>
               </e>
               <e p="达达利亚" t="Include">
@@ -714,6 +717,46 @@
             <e p="新建干员流程.txt" t="Include" />
           </e>
           <e p="敌人" t="Include">
+            <e p="射手" t="Include">
+              <e p="普通射手" t="Include">
+                <e p="a物理射手" t="Include">
+                  <e p="Spine" t="Include">
+                    <e p="enemy_1003_ncbow.atlas.txt" t="Include" />
+                  </e>
+                </e>
+                <e p="CrossBowMan.cs" t="Include" />
+                <e p="冰元素射手" t="Include">
+                  <e p="Spine" t="Include">
+                    <e p="enemy_1003_ncbow.atlas.txt" t="Include" />
+                  </e>
+                </e>
+                <e p="岩元素射手" t="Include">
+                  <e p="Spine" t="Include">
+                    <e p="enemy_1003_ncbow.atlas.txt" t="Include" />
+                  </e>
+                </e>
+                <e p="水元素射手" t="Include">
+                  <e p="Spine" t="Include">
+                    <e p="enemy_1003_ncbow.atlas.txt" t="Include" />
+                  </e>
+                </e>
+                <e p="火元素射手" t="Include">
+                  <e p="Spine" t="Include">
+                    <e p="enemy_1003_ncbow.atlas.txt" t="Include" />
+                  </e>
+                </e>
+                <e p="雷元素射手" t="Include">
+                  <e p="Spine" t="Include">
+                    <e p="enemy_1003_ncbow.atlas.txt" t="Include" />
+                  </e>
+                </e>
+                <e p="风元素射手" t="Include">
+                  <e p="Spine" t="Include">
+                    <e p="enemy_1003_ncbow.atlas.txt" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
             <e p="感染生物" t="Include">
               <e p="猎狗" t="Include">
                 <e p="hound.cs" t="Include" />
@@ -722,6 +765,7 @@
                 </e>
               </e>
             </e>
+            <e p="新建敌人流程.txt" t="Include" />
           </e>
         </e>
         <e p="框架代码" t="Include">

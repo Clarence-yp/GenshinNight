@@ -57,6 +57,7 @@
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Rule Tile\Scripts\Editor\RuleTileEditor.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\GameObject Brush\Scripts\Editor\GameObjectBrush.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Prefab Brush\Scripts\Editor\PrefabBrush.cs" />
+     <Compile Include="Assets\Editor\enemyInfoEnum.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Brushes\Random Brush\Scripts\Editor\RandomBrush.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Isometric Rule Tile\Editor\IsometricRuleTileEditor.cs" />
      <Compile Include="Assets\Editor\MeshRendererEditor.cs" />

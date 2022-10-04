@@ -214,13 +214,14 @@ public class AtkSpeedController
 
     public void Update()
     {
-        if (atkSpeed.val == 0 || bc_.fighting == false) return;
+        if (atkSpeed.val == 0 || bc_.fighting == false || bc_.frozen) return;
         var staInfo = anim.GetCurrentAnimatorStateInfo(0);
         fightAnimTime = staInfo.length;
         if (!staInfo.IsName("Fight")) return;
         if (fightAnimTime - minAtkInterval < 0.008f) return;
-
+        
         float nspeed = (fightAnimTime / minAtkInterval) + 0.005f;
+        if (nspeed > 10) return;    // 相当重要
         ac_.atkSpeed = nspeed;
         ac_.ChangeAnimSpeed();
     }

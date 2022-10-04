@@ -1175,13 +1175,6 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
-    functionName: Skill3_Begin
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 0.2333
     functionName: skill3
     data: 
@@ -1493,9 +1486,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0.999
+  m_TransitionDuration: 0.09244573
+  m_TransitionOffset: 0.0066033043
+  m_ExitTime: 0.929664
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

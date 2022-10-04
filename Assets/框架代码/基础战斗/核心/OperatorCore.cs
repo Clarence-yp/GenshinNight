@@ -491,7 +491,7 @@ public class SpineAnimController
     /// </summary>
     public void ChangeAnimSpeed()
     {
-        if (prtBattleCore.frozen) anim.speed = 0;
+        if (prtBattleCore.frozen) anim.speed = 1e-6f;
         else if (prtBattleCore.fighting) anim.speed = atkSpeed;
         else anim.speed = slowSpeed;
     }
@@ -510,6 +510,7 @@ public class SpineAnimController
     /// </summary>
     public void TurnRight()
     {
+        
         dirRight = true;
         tarScale = rightScale;
     }

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 711e856df5cc6a64fbd12d1819b750a1, type: 3}
+  m_Name: "\u51B0\u5143\u7D20\u5C04\u624B"
+  m_EditorClassIdentifier: 
+  type: 1
+  Name: "\u51B0\u5143\u7D20\u5C04\u624B"
+  atk: 0
+  def: 0
+  magicDef: 0
+  life: 10000
+  consumeBlock: 1
+  minAtkInterval: 3
+  talentDescription: 
+  elementType: 6
+  elementalMastery: 0
+  elementalDamage: 1
+  elementalResistance: 0
+  spRecharge: 1
+  shieldStrength: 0
+  aimingMode: 0
+  dropCost: 0
+  dropExp: 0
+  consumeHP: 1
+  speed: 1
+  mass: 14
+  isDrone: 0
+  headImage: {fileID: 0}
+  enemyPrefab: {fileID: 83646656809682465, guid: 675b49bfe041ffa4dbe11d638d9dddd6, type: 3}
+  skillName: 
+  skill_recoverType: 0
+  skill_releaseType: 0
+  initSP: 0
+  maxSP: 0
+  duration: 0
+  skillDescription: 

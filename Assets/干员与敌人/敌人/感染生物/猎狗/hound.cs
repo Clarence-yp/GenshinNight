@@ -23,7 +23,7 @@ public class hound : EnemyCore
     
     public override void OnAttack()
     {
-        ElementSlot elementSlot = new ElementSlot(ElementType.None, 2f);
+        ElementSlot elementSlot = new ElementSlot();
         Battle(target, atk_.val, DamageMode.Physical, elementSlot, defaultElementTimer);
     }
     

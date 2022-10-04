@@ -320,7 +320,6 @@ public class ReactionController
 
     private void Frozen(ElementSlot firElement, ElementSlot sedElement, float mastery) 
     {// 冻结反应
-        
         // 展示反应文本
         ShowReactionAnimAndText(elc_.transform.position, "冻结", StoreHouse.FrozenColor);
         

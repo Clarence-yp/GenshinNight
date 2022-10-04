@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -7,16 +8,27 @@ public class Tartaglia : OperatorCore
 {
     [Header("达达利亚的特效")] 
     public GameObject norArrow;
+    public GameObject hydroArrow;
     public GameObject norHitAnim;
+    public GameObject aimHitAnim;
     public GameObject underWater;
     public GameObject gatherOnBow;
     public GameObject hydroBomb;
-    
+    public GameObject riptideImage;
+    public GameObject riptideFlashAnim;
+    public GameObject riptideSlashAnim;
+    public GameObject riptideBurstAnim;
+
+    private ElementTimer noCoolDownTimer;
     private ElementTimer riptideTimer;
 
+    // 断流
+    
+    
     // 技能1
     private float[] skill1_Multi = {1.5f, 1.7f, 1.9f, 2.1f, 2.4f, 2.7f, 3f};
     private float[] riptideFlash_Multi = {0.8f, 0.9f, 1f, 1.1f, 1.2f, 1.3f, 1.5f};
+    
     
     // 技能2
     private float[] skill2_Multi = {1f, 1.1f, 1.2f, 1.3f, 1.4f, 1.5f, 1.6f, 1.7f};
@@ -28,7 +40,7 @@ public class Tartaglia : OperatorCore
     private float[] skill3_Multi = {2f, 2.3f, 2.6f, 2.9f, 3.2f, 3.6f, 4f};
     private float[] skill3_atkSpeedIncrease = {-30, -30, -30, -30, -30, -30, -30};
     
-    private float riptideBurst = 0.7f;
+    private float riptideBurst_Multi = 0.7f;
     
     public Vector3 skill3_tarPos;
     private float skill3_radius = 1.2f;
@@ -37,6 +49,7 @@ public class Tartaglia : OperatorCore
     protected override void Awake_Core()
     {
         base.Awake_Core();
+        noCoolDownTimer = new ElementTimer(this, -1);
         riptideTimer = new ElementTimer(this, 2f);
     }
 
@@ -95,12 +108,27 @@ public class Tartaglia : OperatorCore
 
     public override void OnAttack()
     {
-        var arrow = PoolManager.GetObj(norArrow);
+        if (skillNum == 0 && sp_.outType == releaseType.atk && sp_.CanReleaseSkill())
+        {
+            Archery(skill1_Multi[skillLevel[0]], hydroArrow, hydroAttack);
+            sp_.ReleaseSkill();
+        }
+        else
+        {
+            sp_.GetSp_Atk();
+            Archery(1f, norArrow, norAttack);
+        }
+    }
+    
+    private void Archery(float multi, GameObject proArrow, Action<float, BattleCore, parabola> endAttack)
+    {// 射一支箭出去，攻击倍率为multi
+        
+        var arrow = PoolManager.GetObj(proArrow);
         parabola par = arrow.GetComponent<parabola>();
         
         Vector3 pos = transform.position;
         pos += new Vector3(ac_.dirRight ? 0.6f : -0.6f, 0.5f, 0.35f);
-        par.Init(pos, this, target, 12f, norAttack);
+        par.Init(pos, this, target, 12f, endAttack, multi);
     }
 
     private void norAttack(float multi, BattleCore tarBC, parabola par)
@@ -112,9 +140,21 @@ public class Tartaglia : OperatorCore
         DurationRecycleObj recycleObj = new DurationRecycleObj(hitAnim, 1f, tarBC, true);
         BuffManager.AddBuff(recycleObj);
         
-        
-        ElementSlot elementSlot = new ElementSlot(ElementType.Cryo, 4f);
-        Battle(tarBC, atk_.val, DamageMode.Physical, elementSlot, defaultElementTimer);
+        Battle(tarBC, atk_.val, DamageMode.Physical);
+    }
+    
+    private void hydroAttack(float multi, BattleCore tarBC, parabola par)
+    {
+        GameObject hitAnim = PoolManager.GetObj(aimHitAnim);
+        hitAnim.transform.SetParent(tarBC.frontCanvas.transform);
+        Vector3 pos = tarBC.transform.position;
+        pos.z += 0.3f;
+        hitAnim.transform.position = pos;
+        DurationRecycleObj recycleObj = new DurationRecycleObj(hitAnim, 1f, tarBC, true);
+        BuffManager.AddBuff(recycleObj);
+
+        ElementSlot elementSlot = new ElementSlot(ElementType.Hydro, 2f);
+        Battle(tarBC, atk_.val, DamageMode.Physical, elementSlot, noCoolDownTimer);
     }
 
 
@@ -213,7 +253,7 @@ public class Tartaglia : OperatorCore
                    "\n" +
                    ColorfulText.GetColorfulText("断流破", ColorfulText.normalBlue) +
                    "：在目标周围造成" +
-                   ColorfulText.ChangeToColorfulPercentage(riptideBurst) +
+                   ColorfulText.ChangeToColorfulPercentage(riptideBurst_Multi) +
                    "攻击力的" +
                    ColorfulText.GetColorfulText("水元素物理", ColorfulText.HydroBlue) +
                    "伤害";

@@ -29,6 +29,7 @@
 
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Spine {
 
@@ -1004,6 +1005,7 @@ namespace Spine {
 			else
 				frameIndex = Animation.BinarySearch(frames, time) - 1;
 
+			if (frameIndex < 0) frameIndex = 0;
 			SetAttachment(skeleton, slot, attachmentNames[frameIndex]);
 		}
 

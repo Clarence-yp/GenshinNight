@@ -15,7 +15,7 @@ public class ElementCore : PropertyCore
     // 附着元素集合
     public Dictionary<ElementType, float> attachedElement = new Dictionary<ElementType, float>();
     // 附着元素自然消失
-    private const float defaultDecreaseSpeed = 0.25f;       // 默认普通元素每秒衰减速率
+    private const float defaultDecreaseSpeed = 0.2f;       // 默认普通元素每秒衰减速率
     protected float frozen_Inc_DecSpeed = 0.1f;             // 冻元素每秒增加的元素衰减速率
     public Dictionary<ElementType, float> eleDecreaseSpeed = new Dictionary<ElementType, float>();
 
@@ -295,6 +295,7 @@ public class ElementTimer
     /// </summary>
     public bool AttachElement(ElementCore elementCore)
     {
+        if (maxDuring < 0) return true;
         if (elementTimeDict.ContainsKey(elementCore)) return false;
         elementTimeDict.Add(elementCore, maxDuring);
         return true;
