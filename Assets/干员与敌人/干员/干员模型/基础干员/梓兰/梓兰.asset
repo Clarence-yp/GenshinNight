@@ -45,7 +45,7 @@ MonoBehaviour:
   atk: 100
   def: 0
   magicDef: 0
-  life: 100
+  life: 1000
   maxBlock: 1
   maxAtkInterval: 2
   cost: 0

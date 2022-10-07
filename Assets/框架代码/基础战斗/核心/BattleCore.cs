@@ -62,6 +62,7 @@ public class BattleCore : ElementCore
     {
         if (life_.life <= 0 && !dying)
         {
+            // Debug.Log(dying);
             dying = true;
             if (DieAction != null)
             {
@@ -148,6 +149,15 @@ public class BattleCore : ElementCore
     {
         bool canAttachElement = CauseDamageElement(
             tarBC, ref damage, elementSlot, timer);
+        tarBC.GetDamage(this, damage, mode, elementSlot,
+            canAttachElement, haveText, isBig);
+    }
+    
+    public void Battle(BattleCore tarBC, float damage, DamageMode mode, // 造成伤害的基础数值，以及本次伤害类型
+        ElementSlot elementSlot, bool canAttachElement,    // 元素攻击，以及使用的元素计时器
+        bool haveText = false, bool isBig = false)      // 显示攻击数字                    
+    {
+        CauseDamageElement(tarBC, ref damage, elementSlot);
         tarBC.GetDamage(this, damage, mode, elementSlot,
             canAttachElement, haveText, isBig);
     }

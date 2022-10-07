@@ -23,6 +23,7 @@ public class Tartaglia : OperatorCore
     private ElementTimer riptideTimer;
 
     // 断流
+    public Dictionary<EnemyCore, TartagliaRiptideSlot> RiptideDic = new Dictionary<EnemyCore, TartagliaRiptideSlot>();
     
     
     // 技能1
@@ -51,6 +52,12 @@ public class Tartaglia : OperatorCore
         base.Awake_Core();
         noCoolDownTimer = new ElementTimer(this, -1);
         riptideTimer = new ElementTimer(this, 2f);
+        
+    }
+
+    protected override void Start_Core()
+    {
+        base.Start_Core();
     }
 
     public override void SkillStart_3()
@@ -258,6 +265,34 @@ public class Tartaglia : OperatorCore
                    ColorfulText.GetColorfulText("水元素物理", ColorfulText.HydroBlue) +
                    "伤害";
         }
+    }
+}
+
+public class TartagliaRiptideSlot
+{
+    public GameObject riptide;
+    public float remainTime;
+}
+
+public class RiptideRecycle : PrtRecycleObj
+{
+    private Tartaglia tartaglia;
+    private EnemyCore target;
+
+    public RiptideRecycle(Tartaglia tarta, GameObject riptideObj, BattleCore Prt) : base(riptideObj, Prt)
+    {
+        tartaglia = tarta;
+        target = (EnemyCore) Prt;
+    }
+
+    public override void BuffStart() { }
+
+    public override void BuffUpdate() { }
+
+    public override bool BuffEndCondition()
+    {
+        bool contain = tartaglia.RiptideDic.ContainsKey(target);
+        return !contain || base.BuffEndCondition();
     }
 }
 

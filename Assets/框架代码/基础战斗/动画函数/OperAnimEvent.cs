@@ -24,7 +24,7 @@ public class OperAnimEvent : MonoBehaviour
 
     public void OnDie()
     {
-        if (oc_.dizziness > 0) return;
+        if (oc_.dizziness > 0 || !oc_.dying) return;
         oc_.OnDie();
     }
 

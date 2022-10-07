@@ -11,6 +11,8 @@ public class PoolManager : MonoBehaviour
     
     public static void RecycleObj(GameObject obj)
     {
+        if (obj == null) return;
+        
         obj.SetActive(false);
         obj.transform.SetParent(objPrt[obj.name].transform);
 
@@ -59,20 +61,51 @@ public class PoolManager : MonoBehaviour
     
 }
 
-public class SkillRecycleObj : BuffSlot
+public abstract class PrtRecycleObj : BuffSlot
 {
-    private BattleCore bc_;
-    private SPController sp_;
-    private GameObject obj;
-    private bool isDie;
+    protected BattleCore bc_;
+    protected GameObject obj;
+    protected bool isDie;
     
-    public SkillRecycleObj(GameObject object_,BattleCore battleCore)
+    public PrtRecycleObj(GameObject object_,BattleCore Prt)
     {
         obj = object_;
-        bc_ = battleCore;
+        bc_ = Prt;
+
+        if (bc_.dying)
+        {
+            Die(bc_);
+        }
+        else bc_.DieAction += Die;
+    }
+
+    public override bool BuffEndCondition()
+    {
+        return isDie;
+    }
+    
+    public override void BuffEnd()
+    {
+        if (!isDie)
+        {
+            bc_.DieAction -= Die;
+        }
+        PoolManager.RecycleObj(obj);
+    }
+
+    private void Die(BattleCore battleCore)
+    {
+        isDie = true;
+    }
+}
+
+public class SkillRecycleObj : PrtRecycleObj
+{
+    private SPController sp_;
+
+    public SkillRecycleObj(GameObject object_, BattleCore battleCore) : base(object_, battleCore)
+    {
         sp_ = bc_.sp_;
-        
-        bc_.DieAction += Die;
     }
 
     public override void BuffStart() { }
@@ -81,22 +114,6 @@ public class SkillRecycleObj : BuffSlot
 
     public override bool BuffEndCondition()
     {
-        return !sp_.during || isDie;
+        return !sp_.during || base.BuffEndCondition();
     }
-
-    public override void BuffEnd()
-    {
-        if (!isDie)
-        {
-            bc_.DieAction -= Die;
-        }
-        
-        PoolManager.RecycleObj(obj);
-    }
-
-    private void Die(BattleCore battleCore)
-    {
-        isDie = true;
-    }
-    
 }

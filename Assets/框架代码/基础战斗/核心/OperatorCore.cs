@@ -35,6 +35,9 @@ public class OperatorCore : BattleCore
     // 阻挡相关
     public int block { get; private set; }      // 当前剩余可用阻挡数
     private Dictionary<EnemyCore, bool> alreadyBlockSet = new Dictionary<EnemyCore, bool>();
+    
+    // 眩晕相关
+    private GameObject dizzyStarts;
 
     // 入场委托函数（一般为被动与天赋）
     [HideInInspector] public Action PutOnAction;
@@ -113,6 +116,9 @@ public class OperatorCore : BattleCore
         // 初始化阻挡相关
         block = (int) maxBlock.val;
         blockList.Clear();
+        
+        // 初始化被攻击优先级
+        tarPriority = InitManager.GetAndAddOperPriority();
         
         // 改变脚下tile的类型
         TileSlot tile = InitManager.GetMap(transform.position);
@@ -370,7 +376,22 @@ public class OperatorCore : BattleCore
     {
         InitManager.operList.Remove(this);
     }
-    
+
+    public override void GetDizzy()
+    {
+        base.GetDizzy();
+        Vector3 pos = new Vector3(0, 0, 1);
+        dizzyStarts = PoolManager.GetObj(StoreHouse.instance.dizzyStarts);
+        dizzyStarts.transform.SetParent(transform);
+        dizzyStarts.transform.localPosition = pos;
+    }
+
+    public override void RevokeDizzy()
+    {
+        base.RevokeDizzy();
+        PoolManager.RecycleObj(dizzyStarts);
+    }
+
     /// <summary>
     /// 点击干员时调用的函数
     /// </summary>

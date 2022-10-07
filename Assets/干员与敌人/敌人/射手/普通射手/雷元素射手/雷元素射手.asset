@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   Name: "\u96F7\u5143\u7D20\u5C04\u624B"
-  atk: 0
+  atk: 100
   def: 0
   magicDef: 0
-  life: 100
+  life: 2000
   consumeBlock: 1
-  minAtkInterval: 3
+  minAtkInterval: 3.1
   talentDescription: 
   elementType: 2
-  elementalMastery: 0
+  elementalMastery: 100
   elementalDamage: 1
   elementalResistance: 0
   spRecharge: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
   dropExp: 0
   consumeHP: 1
   speed: 1
-  mass: 14
+  mass: 1
   isDrone: 0
   headImage: {fileID: 0}
   enemyPrefab: {fileID: 3564635656784992921, guid: 36cfa55b21fa61241a9f5de4552abc2d, type: 3}

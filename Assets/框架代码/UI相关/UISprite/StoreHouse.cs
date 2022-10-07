@@ -67,9 +67,9 @@ public class StoreHouse : MonoBehaviour
     public static Color32 PyroDamageColor = new Color32(255, 50, 50, 255);
     public static Color32 CryoDamageColor = new Color32(175, 255, 255, 255);
 
-    [Header("buff持续相关")] 
+    [Header("状态相关")] 
     public GameObject underGroundLight;
-
+    public GameObject dizzyStarts;
 
 
     private void Awake()
@@ -137,6 +137,7 @@ public class StoreHouse : MonoBehaviour
             case ElementType.Pyro:
                 return instance.crystallizationPyroShield;
             case ElementType.Cryo:
+            case ElementType.Frozen:
                 return instance.crystallizationCryoShield;
             default:
                 return null;

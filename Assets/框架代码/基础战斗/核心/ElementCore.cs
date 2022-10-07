@@ -91,7 +91,7 @@ public class ElementCore : PropertyCore
     /// 计算元素伤害加成下的伤害数值，并判断能否附着元素
     /// </summary>
     public bool CauseDamageElement(ElementCore tarElementCore, ref float damage,
-        ElementSlot elementSlot, ElementTimer timer)
+        ElementSlot elementSlot, ElementTimer timer = null)
     {
         if (elementSlot.eleType == ElementType.None)
             return false;
@@ -269,6 +269,7 @@ public class ElementTimer
         elementTimeDict = new Dictionary<ElementCore, float>();
 
         if (elc_ != null) elc_.elementTimerList.Add(this);
+        
     }
 
     public void Update()
@@ -278,15 +279,14 @@ public class ElementTimer
         {
             var tmp = elementTimeDict.ElementAt(i);
             ElementCore elementCore = tmp.Key;
+            elementTimeDict[elementCore] -= Time.deltaTime;
 
-            if (tmp.Value <= 0)         // 如果该ElementCore已完成冷却，则删除
+            if (elementTimeDict[elementCore] <= 0)         // 如果该ElementCore已完成冷却，则删除
             {
                 elementTimeDict.Remove(elementCore);
                 i--;
-                continue;
             }
 
-            elementTimeDict[elementCore] -= Time.deltaTime;
         }
     }
 
@@ -297,7 +297,7 @@ public class ElementTimer
     {
         if (maxDuring < 0) return true;
         if (elementTimeDict.ContainsKey(elementCore)) return false;
-        elementTimeDict.Add(elementCore, maxDuring);
+        elementTimeDict.Add(elementCore, maxDuring - Time.deltaTime);
         return true;
     }
 

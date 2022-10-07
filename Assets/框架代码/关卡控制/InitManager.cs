@@ -17,6 +17,8 @@ public class InitManager : MonoBehaviour
     public static List<List<OperatorCore>> offOperList = new List<List<OperatorCore>>();
     // operReTime[i]=t表示id为i的干员目前的再部署时间为t，反应到DragSlot上
     public static float[] operReTime = new float[20];
+    // 统一的干员优先级
+    public static int operPriority;
     
     // 本场战斗会出现的所有敌人，按波次切分
     public static List<List<EnemyCore>> allEnemyList = new List<List<EnemyCore>>();
@@ -82,7 +84,7 @@ public class InitManager : MonoBehaviour
         // 初始化关卡资源控制器
         resourceController.Init(1000, 1000, 10, 1000);
 
-
+        operPriority = 0;
     }
     
     public static void Clear()
@@ -100,8 +102,15 @@ public class InitManager : MonoBehaviour
         startPointList.Clear();
         // dragSlotController.dragSlotList.Clear();
         totEnemyNum = 0;
+        operPriority = 0;
     }
-    
+
+    public static int GetAndAddOperPriority(int add = 1)
+    {
+        int tmp = operPriority;
+        operPriority += add;
+        return tmp;
+    }
 
     public static void Register(Vector3 mpPos, TileSlot slot)
     {

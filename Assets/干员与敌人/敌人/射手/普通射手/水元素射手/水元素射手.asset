@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711e856df5cc6a64fbd12d1819b750a1, type: 3}
   m_Name: "\u6C34\u5143\u7D20\u5C04\u624B"
   m_EditorClassIdentifier: 
-  type: 1
+  type: 0
   Name: "\u6C34\u5143\u7D20\u5C04\u624B"
-  atk: 0
+  atk: 100
   def: 0
   magicDef: 0
-  life: 10000
+  life: 2000
   consumeBlock: 1
-  minAtkInterval: 3
+  minAtkInterval: 3.1
   talentDescription: 
   elementType: 4
-  elementalMastery: 0
+  elementalMastery: 100
   elementalDamage: 1
   elementalResistance: 0
   spRecharge: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
   dropExp: 0
   consumeHP: 1
   speed: 1
-  mass: 14
+  mass: 1
   isDrone: 0
   headImage: {fileID: 0}
   enemyPrefab: {fileID: 1931204289553497792, guid: ae3003d004ffb464799202f86d638bb3, type: 3}

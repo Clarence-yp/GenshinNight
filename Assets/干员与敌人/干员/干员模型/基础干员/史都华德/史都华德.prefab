@@ -164,9 +164,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7547903281441832325}
   - component: {fileID: 7547903281441832324}
+  - component: {fileID: 4629110430898770197}
   m_Layer: 0
   m_Name: "\u53F2\u90FD\u534E\u5FB7"
-  m_TagString: Untagged
+  m_TagString: operator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,6 +214,7 @@ MonoBehaviour:
   dying: 0
   dizziness: 0
   animTransform: {fileID: 0}
+  frontCanvas: {fileID: 0}
   blockList: []
   od_: {fileID: 11400000, guid: f94b1d200eaf004479c188ce35f47e42, type: 2}
   level: 0
@@ -227,6 +229,19 @@ MonoBehaviour:
   norArrow: {fileID: 135146, guid: 28554174b733b0f43bd649682cc8fb3d, type: 3}
   magicHitAnim: {fileID: 193442, guid: 6888ee6e63396094a8ee3fbe68a79d12, type: 3}
   iceFog: {fileID: 138890, guid: d64af0db23fbf0c47aa77b7ce503c630, type: 3}
+--- !u!65 &4629110430898770197
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7547903281441832326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.9, z: 0.9}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &7547903280793889878
 PrefabInstance:
   m_ObjectHideFlags: 0

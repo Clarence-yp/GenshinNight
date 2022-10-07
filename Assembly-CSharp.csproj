@@ -129,10 +129,12 @@
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\rubbish\剑光特效包\1\Demo scene\HDRP and URP.txt" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\干员与敌人\敌人\战士\重装战士\重装防御者\spine\enemy_1006_shield.atlas.txt" />
      <None Include="Assets\干员与敌人\敌人\射手\普通射手\雷元素射手\spine\enemy_1003_ncbow.atlas.txt" />
      <None Include="Assets\干员与敌人\干员\干员模型\达达利亚\spine\bili.atlas.txt" />
      <None Include="Assets\rubbish\剑光特效包\1\Shaders\DissolveNoise.shader" />
      <None Include="Assets\干员与敌人\敌人\射手\普通射手\风元素射手\spine\enemy_1003_ncbow.atlas.txt" />
+     <None Include="Assets\干员与敌人\干员\干员模型\达达利亚\spine3\bili.atlas.txt" />
      <None Include="Assets\干员与敌人\敌人\新建敌人流程.txt" />
      <None Include="Assets\rubbish\剑光特效包\2\Shader\Rz_SlashNonDistortion.shader" />
      <None Include="Assets\rubbish\剑光特效包\1\Shaders\Add_Fresnel.shader" />

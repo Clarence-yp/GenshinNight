@@ -15,6 +15,8 @@ public class Kroos : OperatorCore
     private float[] skill2Atk = {1.8f, 2f, 2.2f, 2.4f, 2.6f, 2.8f, 3f};
     private float[] talent1Probability = {0.1f, 0.2f, 0.2f};
     private float talent1Rate = 1.5f;
+    
+    private bool canAttachElement = false;
 
     private void talent1(ref float multi)
     {
@@ -71,6 +73,8 @@ public class Kroos : OperatorCore
         Vector3 pos = transform.position;
         pos += new Vector3(ac_.dirRight ? 0.6f : -0.6f, 0.5f, 0.35f);
         par.Init(pos, this, target, 12f, endAttack, multi);
+
+        if (proArrow == pyroArrow) canAttachElement = defaultElementTimer.AttachElement(target);
     }
 
     private void NorAttack(float multi, BattleCore tarBC, parabola par)
@@ -100,7 +104,8 @@ public class Kroos : OperatorCore
         ElementSlot elementSlot = new ElementSlot(ElementType.Pyro, 2f);
         bool haveText = multi > 1;
         Battle(tarBC, atk_.val * multi, DamageMode.Physical, elementSlot,
-            defaultElementTimer, haveText);
+            canAttachElement, haveText);
+        canAttachElement = false;
     }
 
 

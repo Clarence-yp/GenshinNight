@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c3c45b4a547140bca8625c627546d, type: 3}
   m_Name: "\u53F2\u90FD\u534E\u5FB7"
   m_EditorClassIdentifier: 
-  type: 0
+  type: 3
   skillType: 0
   Name: "\u53F2\u90FD\u534E\u5FB7"
   EnName: 
@@ -45,14 +45,14 @@ MonoBehaviour:
   atk: 100
   def: 0
   magicDef: 0
-  life: 100
+  life: 1000
   maxBlock: 1
   maxAtkInterval: 2
   cost: 0
   consumPlace: 1
   reTime: 0
   maxLevel: 000000000000000000000000
-  elementalMastery: 0
+  elementalMastery: 200
   elementalDamage: 1
   elementalResistance: 0
   spRecharge: 1

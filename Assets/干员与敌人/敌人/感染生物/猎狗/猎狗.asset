@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711e856df5cc6a64fbd12d1819b750a1, type: 3}
   m_Name: "\u730E\u72D7"
   m_EditorClassIdentifier: 
+  type: 0
   Name: "\u730E\u72D7"
   atk: 100
   def: 10
@@ -20,18 +21,25 @@ MonoBehaviour:
   consumeBlock: 1
   minAtkInterval: 1.5
   talentDescription: "\u65E0"
+  elementType: 0
+  elementalMastery: 0
+  elementalDamage: 1
+  elementalResistance: 0
+  spRecharge: 1
+  shieldStrength: 0
+  aimingMode: 0
   dropCost: 0
   dropExp: 1
   consumeHP: 1
   speed: 1
-  fearResistance: 0
+  mass: 1
   isDrone: 0
   headImage: {fileID: 0}
   enemyPrefab: {fileID: 1161707832541733115, guid: 3a10b470a8bc5234cbfa52bc962dc293, type: 3}
   skillName: "\u5954\u8DD1"
-  RecoverType: 0
-  ReleaseType: 0
-  startSP: 5
+  skill_recoverType: 0
+  skill_releaseType: 0
+  initSP: 0
   maxSP: 5
-  during: 5
+  duration: 0
   skillDescription: "\u730E\u72D7\u8FDB\u5165\u72C2\u5954\u72B6\u6001\uFF0C\u5927\u5E45\u63D0\u5347\u81EA\u8EAB\u7684\u79FB\u52A8\u901F\u5EA6"

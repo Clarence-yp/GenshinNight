@@ -248,7 +248,7 @@ MonoBehaviour:
   animTransform: {fileID: 0}
   frontCanvas: {fileID: 0}
   blockList: []
-  ei_: {fileID: 11400000, guid: 47f2ae0c574b774448ee60bcbe32da86, type: 2}
+  ei_: {fileID: 11400000, guid: 9bf01a45b920e944c83e3b62a02ec31a, type: 2}
   wave: 0
   appearTime: 0
   pointList:
@@ -267,8 +267,8 @@ MonoBehaviour:
   - {x: 1.5, y: 7.5, z: 0}
   - {x: -1.5, y: 7.5, z: 0}
   - {x: -0.5, y: 4.5, z: 0}
-  elementType: 6
-  norArrow: {fileID: 135146, guid: b5bc7f45ffd0820468cba3e03b08260b, type: 3}
+  elementType: 1
+  norArrow: {fileID: 135146, guid: 1f32b066d99748a40aa775b894a3b370, type: 3}
   norHitAnim: {fileID: 1883296549405982, guid: e5eed3a2af8c6f84bbd442b45f0f883e, type: 3}
 --- !u!1001 &182649996452794353
 PrefabInstance:

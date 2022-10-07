@@ -46,7 +46,7 @@ public class enemyInfo : ScriptableObject
     public float speed = 1;
 
     [Header("重量")] 
-    public int mass = 14;
+    public int mass = 1;
     
     [Header("勾选后敌人会沿直线在路径点间移动")] 
     public bool isDrone;
