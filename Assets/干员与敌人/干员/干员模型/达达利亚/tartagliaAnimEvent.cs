@@ -16,14 +16,14 @@ public class tartagliaAnimEvent : MonoBehaviour
         tartaglia.norAtkInterval = 0;
     }
 
-    public void Skill3_Begin()
+    public void Skill2_Begin()
     {
-        tartaglia.Skill3_Begin();
+        tartaglia.Skill2_Begin();
     }
 
-    public void Skill3_CauseDamage()
+    public void Skill2_CauseDamage()
     {
-        tartaglia.Skill3CauseDamage();
+        tartaglia.Skill2CauseDamage();
     }
     
     

@@ -791,10 +791,13 @@
           </e>
           <e p="UI相关" t="Include">
             <e p="OperUI" t="Include">
-              <e p="elitismPutOn.cs" t="Include" />
               <e p="OperUIElements.cs" t="Include" />
               <e p="OperUIFunc.cs" t="Include" />
               <e p="OperUIManager.cs" t="Include" />
+              <e p="鼠标移入移出" t="Include">
+                <e p="elitismPutOn.cs" t="Include" />
+                <e p="skillPutOn.cs" t="Include" />
+              </e>
             </e>
             <e p="UISprite" t="Include">
               <e p="StoreHouse.cs" t="Include" />

@@ -68,6 +68,10 @@ public class OperUIFunc : MonoBehaviour
         oc_.ChangeAtkRange();
         
         OperUIManager.Refresh();
+        
+        //调用精英化函数
+        if (oc_.eliteLevel == 1) oc_.ElitismAction0_1();
+        else if (oc_.eliteLevel == 2) oc_.ElitismAction1_2();
     }
     
     /// <summary>

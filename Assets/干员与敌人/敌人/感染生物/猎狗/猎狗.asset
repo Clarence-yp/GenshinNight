@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711e856df5cc6a64fbd12d1819b750a1, type: 3}
   m_Name: "\u730E\u72D7"
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   Name: "\u730E\u72D7"
   atk: 100
   def: 10

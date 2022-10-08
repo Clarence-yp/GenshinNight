@@ -426,15 +426,24 @@ public class OperatorCore : BattleCore
     public virtual void SkillAtk_3() { }
 
     public virtual string GetTalentDescription(int talentID)
-    {
+    {// 返回天赋的描述
         return talentID == 1 ? od_.talent1[eliteLevel] : od_.talent2[eliteLevel];
     }
     
     public virtual string GetSkillDescription(int SkillID)
-    {
+    {// 返回各个技能的描述
         return SkillID == 0 ? od_.description0[skillLevel[0]] :
             SkillID == 1 ? od_.description1[skillLevel[1]] : od_.description2[skillLevel[2]];
     }
+    
+    public virtual string GetSkillAtkRangeName(int SkillID)
+    {// 返回各个技能的范围名称，可在SearchAndGive.atkRangePos中找到List
+        return "";
+    }
+    
+    public virtual void ElitismAction0_1() { }      // 精0到精1时会调用的函数 
+    
+    public virtual void ElitismAction1_2() { }      // 精1到精2时会调用的函数
 }
 
 public class SpineAnimController

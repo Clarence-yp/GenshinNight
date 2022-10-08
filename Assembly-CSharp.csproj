@@ -57,7 +57,7 @@
      <Compile Include="Assets\rubbish\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
      <Compile Include="Assets\框架代码\基础战斗\动画函数\EnemyAnimEvent.cs" />
      <Compile Include="Assets\框架代码\基础战斗\buff\BuffManager.cs" />
-     <Compile Include="Assets\框架代码\UI相关\OperUI\elitismPutOn.cs" />
+     <Compile Include="Assets\框架代码\UI相关\OperUI\鼠标移入移出\elitismPutOn.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\Tiles\Random Tile\Scripts\RandomTile.cs" />
      <Compile Include="Assets\框架代码\辅助脚本\中文显示\ChineseTranslation.cs" />
      <Compile Include="Assets\rubbish\Addons\Tilemap\GridInformation\Scripts\GridInformation.cs" />
@@ -124,6 +124,7 @@
      <Compile Include="Assets\素材\通用动画\剑光特效\拔刀斩\slash.cs" />
      <Compile Include="Assets\框架代码\UI相关\OperUI\OperUIFunc.cs" />
      <Compile Include="Assets\框架代码\辅助脚本\运动轨迹\TrackMove.cs" />
+     <Compile Include="Assets\框架代码\UI相关\OperUI\鼠标移入移出\skillPutOn.cs" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Spine\version.txt" />
      <None Include="Assets\rubbish\Addons\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

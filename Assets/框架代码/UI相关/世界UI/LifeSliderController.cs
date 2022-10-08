@@ -42,6 +42,7 @@ public class LifeSliderController : MonoBehaviour
         if (sp_.during)
         {
             skillSliderFill.color = duringSkillColor;
+            if (sp_.maxTime <= 1e-6) return;
             skillSlider.value = sp_.remainingTime / sp_.maxTime;
         }
         else

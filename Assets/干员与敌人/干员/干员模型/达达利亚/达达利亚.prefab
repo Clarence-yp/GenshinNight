@@ -89,6 +89,7 @@ MonoBehaviour:
   hydroArrow: {fileID: 135146, guid: 139d45cc58ac94746a2ae71e314a79b5, type: 3}
   norHitAnim: {fileID: 1883296549405982, guid: e5eed3a2af8c6f84bbd442b45f0f883e, type: 3}
   aimHitAnim: {fileID: 2061916438253167811, guid: da2056cd843e18f4eb8678eb18aa7df4, type: 3}
+  skill3HitAnim: {fileID: 1968040539003456, guid: 1849fd7c2affa764c8c998dd6c36be26, type: 3}
   underWater: {fileID: 945327739615883522, guid: 56e2174f9d5776e4f99438b74b0a7fd9, type: 3}
   gatherOnBow: {fileID: 6828780664819609613, guid: bbc2d0d077aaf514fa24fd98918c3bbb, type: 3}
   hydroBomb: {fileID: 6828780664819609613, guid: c657266fff1b56d41a849d6275aa3e03, type: 3}
@@ -96,7 +97,18 @@ MonoBehaviour:
   riptideFlashAnim: {fileID: 1212038522573524, guid: 79193d05d77d76541825002d4bcda742, type: 3}
   riptideSlashAnim: {fileID: 108178, guid: 74eb7656876c62d488d6ebd8963adb54, type: 3}
   riptideBurstAnim: {fileID: 199860, guid: 4f3bb29f0288e9e4aaf91ca35c554b87, type: 3}
-  skill3_tarPos: {x: 0, y: 0, z: 0}
+  Skill2_AtkRange: {fileID: 6645886670027540070, guid: d83d20e73992eec4bb801bc1c55b54d4, type: 3}
+  Skill3_AtkRange: {fileID: 6645886670027540070, guid: 5063eeb8de814af449962b378c35819b, type: 3}
+  skill2_atkSpeedIncrease:
+  - -30
+  - -30
+  - -30
+  - -30
+  - -30
+  - -30
+  - -30
+  skill2_tarPos: {x: 0, y: 0, z: 0}
+  skill3_atkSpeedIncrease: []
 --- !u!1 &4906618417219095867
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,6 +123,7 @@ GameObject:
   - component: {fileID: 1673580913948011518}
   - component: {fileID: 5789005177250266446}
   - component: {fileID: 3551231525062222571}
+  - component: {fileID: 2553576013563223501}
   m_Layer: 0
   m_Name: anim
   m_TagString: Untagged
@@ -249,6 +262,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 057f82d5be717d847aacc294297d8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2553576013563223501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4906618417219095867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f17d9524fc35444b92e677d04f7549c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2258026113687856717

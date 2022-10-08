@@ -115,7 +115,8 @@ public class ElementCore : PropertyCore
         {
             if (attached)       // 受到元素附着，将发生反应
             {
-                AttachedElement(attacker, elementSlot, ref damage, ref isBig, swirl);
+                ElementSlot element2 = new ElementSlot(elementSlot.eleType, elementSlot.eleCount);
+                AttachedElement(attacker, element2, ref damage, ref isBig, swirl);
             }
 
             // 元素抗性
@@ -297,7 +298,7 @@ public class ElementTimer
     {
         if (maxDuring < 0) return true;
         if (elementTimeDict.ContainsKey(elementCore)) return false;
-        elementTimeDict.Add(elementCore, maxDuring - Time.deltaTime);
+        elementTimeDict.Add(elementCore, maxDuring);
         return true;
     }
 

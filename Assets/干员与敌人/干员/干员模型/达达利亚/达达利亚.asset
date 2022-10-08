@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c3c45b4a547140bca8625c627546d, type: 3}
   m_Name: "\u8FBE\u8FBE\u5229\u4E9A"
   m_EditorClassIdentifier: 
-  type: 3
+  type: 5
   skillType: 0
   Name: "\u8FBE\u8FBE\u5229\u4E9A"
   EnName: 
@@ -47,7 +47,7 @@ MonoBehaviour:
   magicDef: 0
   life: 2000
   maxBlock: 2
-  maxAtkInterval: 1.5
+  maxAtkInterval: 1.2
   cost: 20
   consumPlace: 1
   reTime: 10
@@ -93,7 +93,7 @@ MonoBehaviour:
   elitismMagicDef:
   - 4
   - 4
-  elitismBlock: 0500000005000000
+  elitismBlock: 0000000001000000
   elitismExp: 0000000000000000
   elitismCost: 0000000000000000
   trustAtk: 0
@@ -149,8 +149,8 @@ MonoBehaviour:
   star: 0
   skillImage:
   - {fileID: 21300000, guid: 5ef5a6542858a3145903867a9ec4938c, type: 3}
-  - {fileID: 21300000, guid: 2e37c6784dcfab449bcdced331fc393e, type: 3}
   - {fileID: 21300000, guid: cb5fc8342948d3945860c3c7e45795f1, type: 3}
+  - {fileID: 21300000, guid: 2e37c6784dcfab449bcdced331fc393e, type: 3}
   skillName0: "\u7784\u51C6\u5C04\u51FB"
   description0:
   - "\u8FBE\u8FBE\u5229\u4E9A\u8BA9\u6C34\u5143\u7D20\u5728\u7BAD\u77E2\u4E0A\u51DD\u805A\uFF0C\u5BF9\u654C\u4EBA\u9020\u6210<color=\"#87CEFA\">150%</color>\u653B\u51FB\u529B\u7684<color=\"#00BFFF\">\u6C34\u5143\u7D20\u7269\u7406</color>\u4F24\u5BB3\u3002\r\n\u8FBE\u8FBE\u5229\u4E9A\u7684\u6C34\u5143\u7D20\u653B\u51FB\u547D\u4E2D\u5904\u4E8E\u201C\u65AD\u6D41\u201D\u72B6\u6001\u4E0B\u7684\u654C\u4EBA\u65F6\uFF0C\u5C06\u4F1A\u89E6\u53D1\u201D<color=\"#00FFFF\">\u65AD\u6D41\u95EA</color>\u201C\uFF0C\u9020\u62103\u6B21\u5C0F\u8303\u56F4<color=\"#87CEFA\">30%</color>\u653B\u51FB\u529B\u7684<color=\"#00BFFF\">\u6C34\u5143\u7D20\u7269\u7406</color>\u4F24\u5BB3\uFF0C\u5E76\u6D88\u8017\u201C\u65AD\u6D41\u201D\u6548\u679C\u3002\r\n\u540C\u65F6\uFF0C\u9009\u62E9\u8BE5\u6280\u80FD\u4F1A\u4F7F\u5929\u8D4B\u9644\u52A0\u201C\u65AD\u6D41\u201D\u7684\u6982\u7387\u53D8\u4E3A100%"
@@ -174,7 +174,7 @@ MonoBehaviour:
   costNeed0: 000000000000000000000000000000000000000000000000
   skill0_recoverType: 1
   skill0_releaseType: 3
-  skillName1: "\u9B54\u738B\u6B66\u88C5\xB7\u72C2\u6F9C"
+  skillName1: "\u6781\u6076\u6280\xB7\u5C3D\u706D\u95EA"
   description1:
   - 
   - 
@@ -184,9 +184,9 @@ MonoBehaviour:
   - 
   - 
   initSP1: 00000000000000000000000000000000000000000000000000000000
-  maxSP1: 00000000000000000000000000000000000000000000000000000000
+  maxSP1: 01000000000000000000000000000000000000000000000000000000
   duration1:
-  - 0
+  - 30
   - 0
   - 0
   - 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   costNeed1: 000000000000000000000000000000000000000000000000
   skill1_recoverType: 0
   skill1_releaseType: 0
-  skillName2: "\u6781\u6076\u6280\xB7\u5C3D\u706D\u95EA"
+  skillName2: "\u9B54\u738B\u6B66\u88C5\xB7\u72C2\u6F9C"
   description2:
   - 
   - 
